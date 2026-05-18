@@ -9,15 +9,59 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
   <meta property="og:image:alt" content="Phat & Phurious FM — Épisode 001 avec Alcid (from Bash)" />
-  <link rel="canonical" href="https://www.phatandphurious.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Phat & Phurious FM — Bass music. Filmée. Ressentie. Partagée." />
+  <meta name="twitter:description" content="Des DJ sets filmés d'une heure dans l'atmosphère lente et concentrée d'un café vietnamien. Bass Music, UK Garage, Jungle, Liquid DnB. Depuis Montpellier." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="robots" content="index, follow" />
-  <title>Phat & Phurious FM — Bass music underground à Montpellier. Filmée. Ressentie. Partagée.</title>
+  <link rel="canonical" href="https://www.phatandphurious.com" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+  <title>Phat & Phurious FM — Bass music. Filmée. Ressentie. Partagée.</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Phat & Phurious FM",
+        "url": "https://www.phatandphurious.com",
+        "description": "Média indépendant dédié à la bass music underground. Sets filmés d'une heure. Depuis Montpellier.",
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Phat & Phurious FM",
+        "url": "https://www.phatandphurious.com",
+        "description": "Média indépendant dédié à la bass music underground — Bass Music, UK Garage, Jungle, Liquid DnB. Depuis Montpellier.",
+        "genre": ["Bass Music", "UK Garage", "Jungle", "Liquid DnB", "Dubstep"],
+        "location": {
+          "@type": "Place",
+          "name": "Montpellier, France",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Montpellier",
+            "addressCountry": "FR"
+          }
+        },
+        "sameAs": [
+          "https://www.youtube.com/@PhatAndPhuriousFM",
+          "https://instagram.com/phatandphurious.fm",
+          "https://soundcloud.com/phatandphuriousfm",
+          "https://www.mixcloud.com/phatandphurious"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     /* ────────────────────────────────────────────
@@ -51,7 +95,8 @@
       --white:    #FFFFFF;
       --muted:    rgba(255, 255, 255, 0.45);
       --border:   rgba(255, 255, 255, 0.06);
-      --nav-h:    68px;
+      --success:  #1a5c2e;
+      --nav-h:    56px;
       --max-w:    1100px;
       --pad-x:    28px;
       --sec-py:   96px;
@@ -72,7 +117,7 @@
     ──────────────────────────────────────────── */
     .tag {
       display: inline-block;
-      font-size: 0.58rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -98,7 +143,7 @@
       flex-shrink: 0;
     }
     .eyebrow span {
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -122,7 +167,7 @@
     }
 
     .see-all {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -139,7 +184,7 @@
       align-items: center;
       gap: 8px;
       padding: 12px 22px;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -274,6 +319,7 @@
       justify-content: flex-end;
       padding-top: var(--nav-h);
       padding-bottom: 72px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%), #0A0A0A;
     }
 
     .hero-content { position: relative; z-index: 1; }
@@ -329,7 +375,7 @@
       flex-shrink: 0;
     }
     .hero-slogan span {
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -398,7 +444,7 @@
     }
 
     .genre-tag {
-      font-size: 0.58rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -476,7 +522,7 @@
       position: absolute;
       top: 14px;
       left: 14px;
-      font-size: 0.55rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -513,7 +559,7 @@
     }
 
     .ep-num {
-      font-size: 0.55rem;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -530,7 +576,7 @@
     }
 
     .ep-genre {
-      font-size: 0.73rem;
+      font-size: 0.75rem;
       font-weight: 300;
       font-style: italic;
       color: var(--muted);
@@ -549,7 +595,7 @@
 
     .ep-duration,
     .ep-date {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 400;
       color: var(--muted);
       letter-spacing: 0.04em;
@@ -564,7 +610,10 @@
 
     .ep-cta {
       margin-left: auto;
-      font-size: 0.58rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -608,7 +657,7 @@
     }
 
     .art-date {
-      font-size: 0.58rem;
+      font-size: 0.75rem;
       font-weight: 400;
       color: var(--muted);
       letter-spacing: 0.04em;
@@ -642,7 +691,7 @@
     }
 
     .art-read {
-      font-size: 0.58rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -683,14 +732,14 @@
 
     .artistes-body { display: flex; flex-direction: column; gap: 0; }
 
-    .artistes-body p {
+    .artistes-body > p {
       font-size: 0.865rem;
       font-weight: 300;
       line-height: 1.82;
       color: var(--muted);
       margin-bottom: 18px;
     }
-    .artistes-body p:last-of-type { margin-bottom: 0; }
+    .artistes-body > p:last-of-type { margin-bottom: 0; }
     .artistes-body strong { color: var(--white); font-weight: 500; }
 
     .artistes-quote {
@@ -704,7 +753,7 @@
       font-style: italic;
       color: var(--white);
       line-height: 1.65;
-      margin-bottom: 0 !important;
+      margin-bottom: 0;
     }
 
     .artistes-contact {
@@ -785,7 +834,7 @@
     .nl-form .btn { align-self: flex-start; margin-top: 2px; }
 
     .nl-note {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 300;
       color: var(--muted);
       margin-top: 6px;
@@ -822,7 +871,7 @@
     .footer-logo .amp { color: var(--beige); }
 
     .footer-tagline {
-      font-size: 0.68rem;
+      font-size: 0.75rem;
       font-weight: 300;
       font-style: italic;
       color: var(--muted);
@@ -838,7 +887,7 @@
     }
 
     .footer-social-label {
-      font-size: 0.58rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -852,7 +901,7 @@
     }
 
     .fsocial {
-      font-size: 0.64rem;
+      font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -874,7 +923,7 @@
     }
 
     .footer-copy {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 300;
       color: var(--muted);
       letter-spacing: 0.04em;
@@ -886,12 +935,105 @@
       gap: 20px;
     }
     .footer-legal a {
-      font-size: 0.62rem;
+      font-size: 0.75rem;
       font-weight: 400;
       color: var(--muted);
       transition: color 0.2s;
     }
     .footer-legal a:hover { color: var(--white); }
+
+    /* ────────────────────────────────────────────
+       EVENTS
+    ──────────────────────────────────────────── */
+    #events {
+      padding: var(--sec-py) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .events-empty {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+
+    .events-empty-text {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 520px;
+    }
+    .events-empty-text strong { color: var(--white); font-weight: 400; }
+
+    /* ────────────────────────────────────────────
+       CONTACT
+    ──────────────────────────────────────────── */
+    #contact {
+      padding: var(--sec-py) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact-heading {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-top: 16px;
+    }
+    .contact-heading em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-text {
+      font-size: 0.865rem;
+      font-weight: 300;
+      line-height: 1.82;
+      color: var(--muted);
+    }
+    .contact-text strong { color: var(--white); font-weight: 500; }
+
+    .contact-email {
+      color: var(--beige);
+      border-bottom: 1px solid rgba(255,239,229,0.2);
+      transition: border-color 0.2s;
+    }
+    .contact-email:hover { border-color: var(--beige); }
+
+    .contact-socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+    }
+
+    /* ────────────────────────────────────────────
+       NEWSLETTER label
+    ──────────────────────────────────────────── */
+    .nl-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
 
     /* ────────────────────────────────────────────
        RESPONSIVE — Tablette (≤ 960px)
@@ -920,6 +1062,7 @@
 
       .artistes-grid { grid-template-columns: 1fr; gap: 36px; }
       .newsletter-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
 
       .footer-socials { align-items: flex-start; }
     }
@@ -946,6 +1089,7 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
 
+      .events-empty { padding: 28px 20px; }
       .section-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -965,11 +1109,19 @@
         </a>
 
         <ul class="nav-links" role="list">
+<<<<<<< HEAD
           <li><a href="#episodes">Guest Mixes</a></li>
           <li><a href="#webzine">News</a></li>
           <li><a href="#webzine">Events</a></li>
           <li><a href="#artistes">About</a></li>
           <li><a href="#contact">Contact & Collabs</a></li>
+=======
+          <li><a href="guest-mixes.html">Guest Mixes</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact & Collabs</a></li>
+>>>>>>> f354854 (Ajout des 6 pages principales + refonte navbar)
         </ul>
 
         <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
@@ -982,11 +1134,19 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+<<<<<<< HEAD
       <a href="#episodes">Guest Mixes</a>
       <a href="#webzine">News</a>
       <a href="#webzine">Events</a>
       <a href="#artistes">About</a>
       <a href="#contact">Contact & Collabs</a>
+=======
+      <a href="guest-mixes.html">Guest Mixes</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact & Collabs</a>
+>>>>>>> f354854 (Ajout des 6 pages principales + refonte navbar)
     </nav>
   </header>
 
@@ -1016,8 +1176,8 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#episodes" class="btn btn-primary">Voir les épisodes</a>
-            <a href="#webzine" class="btn btn-ghost">Lire le webzine</a>
+            <a href="guest-mixes.html" class="btn btn-primary">Voir les épisodes</a>
+            <a href="news.html" class="btn btn-ghost">Lire le webzine</a>
           </div>
 
           <div class="hero-slogan" aria-label="Slogan">
@@ -1049,7 +1209,7 @@
               <div>
                 <p>
                   Phat & Phurious FM est né d'une conviction simple : une passion pour la musique électronique. La bass music underground mérite un espace
-                  éditorial sérieux.                </p>
+                  éditorial sérieux.</p>
                 <p>
                   Le format signature, c'est le <strong>guest mix filmé d'une heure</strong>. Un artiste, une sélection,
                   une caméra. L'esthétique est empruntée au <em>cà phê sữa đá</em> — ce café vietnamien au lait
@@ -1107,8 +1267,13 @@
 
           <!-- EP 001 -->
           <article class="episode-card" role="listitem">
+<<<<<<< HEAD
             <a href="https://www.youtube.com/watch?v=yPO5NSHOfh8" class="ep-thumb" aria-label="Lire l'épisode 001" target="_blank" rel="noopener noreferrer">
               <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Miniature épisode 001 — Alcid (from Bash)" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/yPO5NSHOfh8/hqdefault.jpg'" />
+=======
+            <a href="guest-mixes/ep-001.html" class="ep-thumb" aria-label="Voir l'épisode 001">
+              <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Miniature épisode 001 — Alcid (from Bash)" width="1280" height="720" loading="lazy" />
+>>>>>>> f354854 (Ajout des 6 pages principales + refonte navbar)
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 001</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -1120,18 +1285,23 @@
               <h3 class="ep-guest">Alcid (from Bash)</h3>
               <p class="ep-genre">Bass Music & UKG</p>
               <div class="ep-foot">
-                <span class="ep-duration">60 min</span>
+                <span class="ep-duration">1h06</span>
                 <span class="ep-dot"></span>
                 <span class="ep-date">Février 2026</span>
-                <a href="https://www.youtube.com/watch?v=yPO5NSHOfh8" class="ep-cta" aria-label="Écouter l'épisode 001" target="_blank" rel="noopener noreferrer">Écouter →</a>
+                <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="ep-cta" aria-label="Écouter l'épisode 001 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
               </div>
             </div>
           </article>
 
           <!-- EP 002 -->
           <article class="episode-card" role="listitem">
+<<<<<<< HEAD
             <a href="https://youtu.be/j1u1AVZNSJ0?si=D9Fk-v8kCDk19pa6" class="ep-thumb" aria-label="Lire l'épisode 002" target="_blank" rel="noopener noreferrer">
               <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Miniature épisode 002 — Onyx" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/j1u1AVZNSJ0/hqdefault.jpg'" />
+=======
+            <a href="guest-mixes/ep-002.html" class="ep-thumb" aria-label="Voir l'épisode 002">
+              <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Miniature épisode 002 — Onyx" width="1280" height="720" loading="lazy" />
+>>>>>>> f354854 (Ajout des 6 pages principales + refonte navbar)
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 002</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -1143,18 +1313,23 @@
               <h3 class="ep-guest">Onyx</h3>
               <p class="ep-genre">Liquid / Drum and Bass</p>
               <div class="ep-foot">
-                <span class="ep-duration">60 min</span>
+                <span class="ep-duration">57:48</span>
                 <span class="ep-dot"></span>
                 <span class="ep-date">Mars 2026</span>
-                <a href="https://youtu.be/j1u1AVZNSJ0?si=D9Fk-v8kCDk19pa6" class="ep-cta" aria-label="Écouter l'épisode 002" target="_blank" rel="noopener noreferrer">Écouter →</a>
+                <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Écouter l'épisode 002 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
               </div>
             </div>
           </article>
 
           <!-- EP 003 -->
           <article class="episode-card" role="listitem">
+<<<<<<< HEAD
             <a href="https://youtu.be/1V7dw6x4z3I?si=BcseLlZOTVBW3JGZ" class="ep-thumb" aria-label="Lire l'épisode 003" target="_blank" rel="noopener noreferrer">
               <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Miniature épisode 003 — Ymka (from The Garage)" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/1V7dw6x4z3I/hqdefault.jpg'" />
+=======
+            <a href="guest-mixes/ep-003.html" class="ep-thumb" aria-label="Voir l'épisode 003">
+              <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Miniature épisode 003 — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
+>>>>>>> f354854 (Ajout des 6 pages principales + refonte navbar)
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 003</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -1166,10 +1341,10 @@
               <h3 class="ep-guest">Ymka (from The Garage)</h3>
               <p class="ep-genre">Bass House / Speed Garage</p>
               <div class="ep-foot">
-                <span class="ep-duration">60 min</span>
+                <span class="ep-duration">1h11</span>
                 <span class="ep-dot"></span>
                 <span class="ep-date">Avril 2026</span>
-                <a href="https://youtu.be/1V7dw6x4z3I?si=BcseLlZOTVBW3JGZ" class="ep-cta" aria-label="Écouter l'épisode 003" target="_blank" rel="noopener noreferrer">Écouter →</a>
+                <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Écouter l'épisode 003 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
               </div>
             </div>
           </article>
@@ -1189,7 +1364,7 @@
             <div class="eyebrow"><span>Webzine</span></div>
             <h2 class="section-title" id="wz-title">News & édito</h2>
           </div>
-          <a href="#" class="see-all">Tous les articles</a>
+          <a href="news.html" class="see-all">Tous les articles</a>
         </div>
 
         <div class="webzine-grid">
@@ -1288,7 +1463,7 @@
 
             <p class="artistes-contact">
               Tu es artiste, producteur·ice, DJ ou collectif et tu veux apparaître sur Phat & Phurious FM ?
-              <a href="mailto:contact@phatandphurious.fm">Écris-nous directement.</a>
+              <a href="mailto:contact@phatandphurious.com">Écris-nous directement.</a>
               On écoute tout.
             </p>
           </div>
@@ -1319,6 +1494,7 @@
 
           <div class="nl-right">
             <form class="nl-form" id="nlForm" novalidate>
+              <label for="nlEmail" class="nl-label">Adresse email</label>
               <input
                 type="email"
                 id="nlEmail"
@@ -1326,7 +1502,6 @@
                 placeholder="ton@adresse.email"
                 required
                 autocomplete="email"
-                aria-label="Adresse email"
                 aria-required="true"
               />
               <button type="submit" class="btn btn-primary">S'inscrire</button>
@@ -1335,6 +1510,67 @@
                 Tes données ne sont jamais partagées.
               </p>
             </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+         EVENTS
+    ════════════════════════════════════════ -->
+    <section id="events" aria-labelledby="ev-title">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="eyebrow"><span>Live</span></div>
+            <h2 class="section-title" id="ev-title">Événements</h2>
+          </div>
+        </div>
+
+        <div class="events-empty">
+          <p class="events-empty-text">
+            Aucun événement programmé pour le moment. On couvre les festivals et les soirées underground
+            de la scène — <strong>inscris-toi à la newsletter</strong> pour être prévenu·e en premier.
+          </p>
+          <a href="#newsletter" class="btn btn-ghost">S'inscrire à la newsletter</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CONTACT & COLLABS
+    ════════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="ct-title">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-left">
+            <div class="eyebrow"><span>Contact</span></div>
+            <h2 class="contact-heading" id="ct-title">
+              Contact<br />
+              <em>& Collabs</em>
+            </h2>
+          </div>
+
+          <div class="contact-right">
+            <p class="contact-text">
+              Pour toute demande de collaboration, accréditation presse ou proposition artistique,
+              écris-nous directement à
+              <a href="mailto:contact@phatandphurious.com" class="contact-email">contact@phatandphurious.com</a>.
+            </p>
+            <p class="contact-text">
+              On répond à tout le monde. Artistes, médias, organisateurs —
+              <strong>si tu fais partie de la scène, on t'écoute.</strong>
+            </p>
+            <div class="contact-socials">
+              <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="https://instagram.com/phatandphurious.fm" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://soundcloud.com/phatandphuriousfm" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            </div>
           </div>
 
         </div>
@@ -1438,7 +1674,7 @@
       if (!email) return;
       const btn = this.querySelector('button[type="submit"]');
       btn.textContent = 'Inscrit·e ✓';
-      btn.style.background = '#1a5c2e';
+      btn.style.background = 'var(--success)';
       btn.disabled = true;
       document.getElementById('nlEmail').value = '';
       setTimeout(() => {
