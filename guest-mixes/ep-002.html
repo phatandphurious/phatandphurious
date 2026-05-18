@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Épisode 001 — Alcid (from Bash) | Bass Music & UKG | 1h06 | Phat & Phurious FM. Set filmé dans l'atmosphère d'un café vietnamien glacé, depuis Montpellier." />
-  <meta property="og:title" content="Ep. 001 — Alcid | Phat & Phurious FM" />
-  <meta property="og:description" content="Bass Music & UKG — 1h06. Set filmé dans l'atmosphère d'un cà phê sữa đá. Février 2026." />
+  <meta name="description" content="Épisode 002 — Onyx | Liquid / Drum and Bass | 57:48 | Phat & Phurious FM. Set filmé dans l'atmosphère d'un café vietnamien glacé, depuis Montpellier." />
+  <meta property="og:title" content="Ep. 002 — Onyx | Phat & Phurious FM" />
+  <meta property="og:description" content="Liquid / Drum and Bass — 57:48. Set filmé dans l'atmosphère d'un cà phê sữa đá. Mars 2026." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
+  <meta property="og:image" content="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ep. 001 — Alcid | Phat & Phurious FM" />
-  <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
-  <link rel="canonical" href="https://www.phatandphurious.com/guest-mixes/ep-001.html" />
+  <meta name="twitter:title" content="Ep. 002 — Onyx | Phat & Phurious FM" />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" />
+  <link rel="canonical" href="https://www.phatandphurious.com/guest-mixes/ep-002.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
-  <title>Ep. 001 — Alcid | Phat & Phurious FM</title>
+  <title>Ep. 002 — Onyx | Phat & Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +36,6 @@
 
     .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
 
-    /* ATOMS */
     .tag { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; padding:4px 9px; border-radius:1px; }
     .tag-red { background:rgba(207,0,0,0.1); color:var(--red); border:1px solid rgba(207,0,0,0.22); }
     .tag-beige { background:rgba(255,239,229,0.06); color:var(--beige); border:1px solid rgba(255,239,229,0.16); }
@@ -146,7 +145,6 @@
       flex-shrink: 0;
     }
 
-    /* BACK LINK */
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -216,7 +214,7 @@
       margin-left: 4px;
     }
 
-    /* ABOUT + TRACKLIST LAYOUT */
+    /* ABOUT + TRACKLIST */
     .ep-content-section {
       padding: var(--sec-py) 0;
       border-bottom: 1px solid var(--border);
@@ -227,8 +225,6 @@
       gap: 72px;
       align-items: start;
     }
-
-    /* ABOUT */
     .ep-about-title {
       font-size: 1.1rem;
       font-weight: 700;
@@ -272,10 +268,7 @@
       justify-content: center;
       gap: 8px;
     }
-    .photo-placeholder-icon {
-      width: 32px; height: 32px;
-      opacity: 0.2;
-    }
+    .photo-placeholder-icon { width: 32px; height: 32px; opacity: 0.2; }
     .photo-placeholder-label {
       font-size: 0.72rem;
       font-weight: 500;
@@ -306,28 +299,9 @@
     }
     .track-item:last-child { border-bottom: none; }
     .track-item:hover { background: var(--card); }
-    .track-num {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: var(--red);
-      min-width: 28px;
-      flex-shrink: 0;
-    }
-    .track-name {
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: var(--white);
-      flex: 1;
-      line-height: 1.4;
-    }
-    .track-time {
-      font-size: 0.72rem;
-      font-weight: 300;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      flex-shrink: 0;
-    }
+    .track-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--red); min-width: 28px; flex-shrink: 0; }
+    .track-name { font-size: 0.82rem; font-weight: 400; color: var(--white); flex: 1; line-height: 1.4; }
+    .track-time { font-size: 0.72rem; font-weight: 300; color: var(--muted); letter-spacing: 0.04em; flex-shrink: 0; }
 
     /* EP NAVIGATION */
     .ep-nav-section {
@@ -340,24 +314,9 @@
       justify-content: space-between;
       gap: 20px;
     }
-    .ep-nav-link {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .ep-nav-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .ep-nav-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--white);
-      transition: color 0.2s;
-    }
+    .ep-nav-link { display: flex; flex-direction: column; gap: 4px; }
+    .ep-nav-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .ep-nav-title { font-size: 0.9rem; font-weight: 600; color: var(--white); transition: color 0.2s; }
     .ep-nav-link:hover .ep-nav-title { color: var(--red); }
     .ep-nav-link.disabled .ep-nav-title { color: var(--muted); cursor: default; }
     .ep-nav-link.disabled:hover .ep-nav-title { color: var(--muted); }
@@ -423,21 +382,19 @@
         <a href="../guest-mixes.html" class="back-link" aria-label="Retour à tous les Guest Mixes">&#8592; Tous les Guest Mixes</a>
         <div class="ep-hero-inner">
           <div>
-            <span class="ep-hero-badge">Épisode 001</span>
-            <h1 class="ep-hero-title" id="ep-title">Alcid</h1>
+            <span class="ep-hero-badge">Épisode 002</span>
+            <h1 class="ep-hero-title" id="ep-title">Onyx</h1>
             <div class="ep-hero-meta">
-              <span class="tag tag-red">Bass Music &amp; UKG</span>
+              <span class="tag tag-red">Liquid / Drum and Bass</span>
               <span class="ep-hero-sep" aria-hidden="true"></span>
-              <span class="ep-hero-detail">1h06</span>
+              <span class="ep-hero-detail">57:48</span>
               <span class="ep-hero-sep" aria-hidden="true"></span>
-              <span class="ep-hero-detail">Février 2026</span>
-              <span class="ep-hero-sep" aria-hidden="true"></span>
-              <span class="ep-hero-detail">from Bash</span>
+              <span class="ep-hero-detail">Mars 2026</span>
             </div>
           </div>
           <div class="ep-hero-actions">
-            <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Écouter sur SoundCloud</a>
-            <a href="https://www.youtube.com/watch?v=yPO5NSHOfh8" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Voir sur YouTube</a>
+            <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Écouter sur SoundCloud</a>
+            <a href="https://youtu.be/j1u1AVZNSJ0" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Voir sur YouTube</a>
           </div>
         </div>
       </div>
@@ -446,9 +403,9 @@
     <!-- VIDEO -->
     <section class="ep-video-section" aria-label="Vidéo du set">
       <div class="container">
-        <div class="video-wrapper" data-video-id="yPO5NSHOfh8" role="button" tabindex="0" aria-label="Lancer la vidéo — Ep. 001 Alcid">
+        <div class="video-wrapper" data-video-id="j1u1AVZNSJ0" role="button" tabindex="0" aria-label="Lancer la vidéo — Ep. 002 Onyx">
           <div class="video-facade" aria-hidden="true">
-            <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="" />
+            <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="" />
             <div class="video-facade-play">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg>
             </div>
@@ -465,19 +422,16 @@
           <!-- ABOUT -->
           <div>
             <div class="eyebrow"><span>L'artiste</span></div>
-            <h2 class="ep-about-title">À propos d'Alcid</h2>
+            <h2 class="ep-about-title">À propos d'Onyx</h2>
             <p class="ep-about-bio">
-              <strong>Alcid</strong> est un DJ et producteur montpelliérain issu du collectif <strong>Bash</strong>, l'un des noyaux les plus actifs de la scène bass music locale. Avec une sélection ancrée dans le <strong>UK Garage et la Bass Music</strong>, Alcid construit ses sets comme des narrations — lents à démarrer, denses dans le développement, précis dans le choix des titres.
+              <strong>Onyx</strong> est un DJ ancré dans les territoires du <strong>Liquid Drum and Bass</strong> — un genre qui privilégie la fluidité des lignes de basse, la précision des breaks et la profondeur émotionnelle des nappes. Sa sélection oscille entre énergie contenue et relâchement progressif, construisant une tension qui ne se résout jamais trop tôt.
             </p>
             <p class="ep-about-bio">
-              Pour ce premier épisode de Phat &amp; Phurious FM, il a livré une heure six minutes de bass music sans filet : pas de compromis de format, pas de transition forcée. Une sélection pensée pour le format filmé, dans l'atmosphère <em>cà phê sữa đá</em> qui définit l'esthétique du projet.
-            </p>
-            <p class="ep-about-bio">
-              Suivre Alcid, c'est suivre une scène qui s'impose progressivement — loin des circuits mainstream, au plus près du dancefloor et de la conviction.
+              Pour ce deuxième épisode de Phat &amp; Phurious FM, Onyx a livré près d'une heure de Liquid DnB dans le cadre intimiste qui définit le projet — une session pensée pour l'image autant que pour l'oreille, dans l'atmosphère <em>cà phê sữa đá</em>.
             </p>
             <div class="ep-artist-links">
-              <a href="#" class="btn btn-ghost" aria-label="Instagram d'Alcid">Instagram</a>
-              <a href="#" class="btn btn-ghost" aria-label="SoundCloud d'Alcid">SoundCloud</a>
+              <a href="#" class="btn btn-ghost" aria-label="Instagram d'Onyx">Instagram</a>
+              <a href="#" class="btn btn-ghost" aria-label="SoundCloud d'Onyx">SoundCloud</a>
             </div>
           </div>
 
@@ -485,7 +439,7 @@
           <div>
             <div class="eyebrow"><span>Tracklist</span></div>
             <h2 class="tracklist-title">Sélection complète</h2>
-            <ol class="tracklist" aria-label="Tracklist de l'épisode 001">
+            <ol class="tracklist" aria-label="Tracklist de l'épisode 002">
               <li class="track-item">
                 <span class="track-num">01</span>
                 <span class="track-name">Track 01 — [Titre placeholder]</span>
@@ -494,47 +448,42 @@
               <li class="track-item">
                 <span class="track-num">02</span>
                 <span class="track-name">Track 02 — [Titre placeholder]</span>
-                <span class="track-time">6:14</span>
+                <span class="track-time">5:52</span>
               </li>
               <li class="track-item">
                 <span class="track-num">03</span>
                 <span class="track-name">Track 03 — [Titre placeholder]</span>
-                <span class="track-time">12:30</span>
+                <span class="track-time">11:30</span>
               </li>
               <li class="track-item">
                 <span class="track-num">04</span>
                 <span class="track-name">Track 04 — [Titre placeholder]</span>
-                <span class="track-time">19:05</span>
+                <span class="track-time">18:10</span>
               </li>
               <li class="track-item">
                 <span class="track-num">05</span>
                 <span class="track-name">Track 05 — [Titre placeholder]</span>
-                <span class="track-time">25:48</span>
+                <span class="track-time">24:45</span>
               </li>
               <li class="track-item">
                 <span class="track-num">06</span>
                 <span class="track-name">Track 06 — [Titre placeholder]</span>
-                <span class="track-time">32:12</span>
+                <span class="track-time">31:20</span>
               </li>
               <li class="track-item">
                 <span class="track-num">07</span>
                 <span class="track-name">Track 07 — [Titre placeholder]</span>
-                <span class="track-time">39:27</span>
+                <span class="track-time">38:00</span>
               </li>
               <li class="track-item">
                 <span class="track-num">08</span>
                 <span class="track-name">Track 08 — [Titre placeholder]</span>
-                <span class="track-time">46:00</span>
+                <span class="track-time">44:30</span>
               </li>
               <li class="track-item">
                 <span class="track-num">09</span>
                 <span class="track-name">Track 09 — [Titre placeholder]</span>
-                <span class="track-time">52:33</span>
-              </li>
-              <li class="track-item">
-                <span class="track-num">10</span>
-                <span class="track-name">Track 10 — [Titre placeholder]</span>
-                <span class="track-time">59:15</span>
+                <span class="track-time">51:10</span>
               </li>
             </ol>
           </div>
@@ -549,7 +498,7 @@
         <div class="eyebrow"><span>Photos</span></div>
         <h2 style="font-size:1.1rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:24px;">Photos du set</h2>
         <div class="photos-grid">
-          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 001 - 1">
+          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 002 - 1">
             <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -557,7 +506,7 @@
             </svg>
             <span class="photo-placeholder-label">Photo du set</span>
           </div>
-          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 001 - 2">
+          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 002 - 2">
             <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -565,7 +514,7 @@
             </svg>
             <span class="photo-placeholder-label">Photo du set</span>
           </div>
-          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 001 - 3">
+          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 002 - 3">
             <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -581,13 +530,13 @@
     <nav class="ep-nav-section" aria-label="Navigation entre épisodes">
       <div class="container">
         <div class="ep-nav-inner">
-          <div class="ep-nav-link disabled" aria-disabled="true">
+          <a href="ep-001.html" class="ep-nav-link" aria-label="Aller à l'épisode 001 — Alcid">
             <span class="ep-nav-label">&#8592; Épisode précédent</span>
-            <span class="ep-nav-title">Pas d'épisode précédent</span>
-          </div>
-          <a href="ep-002.html" class="ep-nav-link ep-nav-right" aria-label="Aller à l'épisode 002 — Onyx">
+            <span class="ep-nav-title">Épisode 001 — Alcid</span>
+          </a>
+          <a href="ep-003.html" class="ep-nav-link ep-nav-right" aria-label="Aller à l'épisode 003 — Ymka">
             <span class="ep-nav-label">Épisode suivant &#8594;</span>
-            <span class="ep-nav-title">Épisode 002 — Onyx</span>
+            <span class="ep-nav-title">Épisode 003 — Ymka</span>
           </a>
         </div>
       </div>
