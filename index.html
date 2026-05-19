@@ -319,10 +319,39 @@
       justify-content: flex-end;
       padding-top: var(--nav-h);
       padding-bottom: 72px;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%), #0A0A0A;
+      position: relative;
+      background: url('images/hero-bg.jpg') center / cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(to bottom,  rgba(0,0,0,0.88) 0%, transparent 22%),
+        linear-gradient(to right,   rgba(0,0,0,0.38) 0%, transparent 30%),
+        linear-gradient(to left,    rgba(0,0,0,0.38) 0%, transparent 30%),
+        linear-gradient(to top,     #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%),
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
     }
 
     .hero-content { position: relative; z-index: 1; }
+
+    #hero .eyebrow::before {
+      width: 20px;
+      height: 2px;
+      background: #CF0000;
+    }
+    #hero .eyebrow span {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #CF0000;
+    }
 
     .hero-headline {
       font-size: clamp(3.6rem, 9vw, 9rem);
@@ -1041,6 +1070,8 @@
     @media (max-width: 960px) {
       :root { --sec-py: 72px; }
 
+      #hero { background-attachment: scroll; }
+
       .nav-links { display: none; }
       .burger { display: flex; }
 
@@ -1150,7 +1181,6 @@
           <h1 class="hero-headline">
             <span class="line-plain">Radio <span class="line-amp">&</span> Media</span>
             <span class="line-plain">Bass music.</span>
-            <span class="line-plain">Montpellier.</span>
           </h1>
 
           <p class="hero-sub">
@@ -1224,6 +1254,7 @@
               <span class="genre-tag" role="listitem">Speed Garage</span>
               <span class="genre-tag" role="listitem">Bassline</span>
               <span class="genre-tag" role="listitem">UK House</span>
+              <span class="genre-tag" role="listitem">Electronic</span>
             </div>
           </div>
 
@@ -1595,6 +1626,25 @@
        SCRIPTS
   ════════════════════════════════════════ -->
   <script>
+    /* Hero — alignement typographique des lignes du titre */
+    function alignHeroLines() {
+      const lines = [...document.querySelectorAll('.hero-headline .line-plain')];
+      lines.forEach(l => l.style.letterSpacing = '');
+      const widths = lines.map(l => l.getBoundingClientRect().width);
+      const max    = Math.max(...widths);
+      lines.forEach((l, i) => {
+        if (widths[i] >= max) return;
+        const fs    = parseFloat(getComputedStyle(l).fontSize);
+        const n     = l.textContent.trimEnd().length;
+        const extra = (max - widths[i]) / n / fs;
+        l.style.letterSpacing = `${(-0.045 + extra).toFixed(4)}em`;
+      });
+    }
+    document.fonts.ready.then(() => {
+      alignHeroLines();
+      window.addEventListener('resize', alignHeroLines, { passive: true });
+    });
+
     /* Navbar — effet au scroll */
     const navbar = document.getElementById('navbar');
     const onScroll = () => {
