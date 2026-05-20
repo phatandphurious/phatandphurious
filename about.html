@@ -51,7 +51,8 @@
     .btn-ghost:hover { border-color:rgba(255,255,255,0.45); }
 
     /* NAVBAR */
-    #navbar { position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h); background:rgba(10,10,10,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--border); transition:background 0.35s ease, border-color 0.35s ease; }
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h); background:rgba(10,10,10,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--border); transition:background 0.35s ease, border-color 0.35s ease; display:flex; align-items:center; }
+    #navbar > .container { height:100%; }
     #navbar.scrolled { background:rgba(10,10,10,0.97); border-bottom-color:rgba(255,255,255,0.1); }
     .nav-inner { display:flex; align-items:center; justify-content:space-between; height:100%; }
     .nav-logo { font-size:1.05rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--white); flex-shrink:0; line-height:1; }
@@ -71,7 +72,7 @@
     .mobile-nav a:hover { color:var(--white); }
 
     /* PAGE HERO */
-    .page-hero { padding-top:calc(var(--nav-h) + 80px); padding-bottom:80px; border-bottom:1px solid var(--border); background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%), #0A0A0A; }
+    .page-hero { padding-top:calc(var(--nav-h) + 80px); padding-bottom:80px; border-bottom:1px solid var(--border); background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,0.07) 0%, transparent 70%), #0A0A0A; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
     .page-hero-title em { color:var(--beige); font-style:italic; font-weight:300; }
     .page-hero-sub { font-size:0.9rem; font-weight:300; line-height:1.78; color:var(--muted); max-width:520px; }
@@ -399,7 +400,7 @@
         <div class="objectif-inner">
           <div class="eyebrow"><span>Objectif</span></div>
           <h2 class="objectif-title" id="objectif-title">
-            Devenir la <em>référence</em><br/>bass music en France.
+            Devenir une <em>référence</em><br/>bass music en France.
           </h2>
           <p class="objectif-para">
             On ne part pas d'une posture. On part d'un travail. <strong>Construire un média crédible prend du temps</strong> — des épisodes réguliers, des articles qui informent vraiment, une présence terrain qui légitime notre voix. Phat &amp; Phurious FM est dans cette construction, épisode après épisode.

@@ -215,6 +215,11 @@
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       transition: background 0.35s ease, border-color 0.35s ease;
+      display: flex;
+      align-items: center;
+    }
+    #navbar > .container {
+      height: 100%;
     }
     #navbar.scrolled {
       background: rgba(10, 10, 10, 0.97);
@@ -974,29 +979,6 @@
     /* ────────────────────────────────────────────
        EVENTS
     ──────────────────────────────────────────── */
-    #events {
-      padding: var(--sec-py) 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .events-empty {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 48px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 24px;
-    }
-
-    .events-empty-text {
-      font-size: 0.88rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 520px;
-    }
-    .events-empty-text strong { color: var(--white); font-weight: 400; }
 
     /* ────────────────────────────────────────────
        CONTACT
@@ -1120,8 +1102,7 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
 
-      .events-empty { padding: 28px 20px; }
-      .section-header { flex-direction: column; align-items: flex-start; }
+.section-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -1516,30 +1497,6 @@
       </div>
     </section>
 
-
-    <!-- ════════════════════════════════════════
-         EVENTS
-    ════════════════════════════════════════ -->
-    <section id="events" aria-labelledby="ev-title">
-      <div class="container">
-
-        <div class="section-header">
-          <div>
-            <div class="eyebrow"><span>Live</span></div>
-            <h2 class="section-title" id="ev-title">Événements</h2>
-          </div>
-        </div>
-
-        <div class="events-empty">
-          <p class="events-empty-text">
-            Aucun événement programmé pour le moment. On couvre les festivals et les soirées underground
-            de la scène — <strong>inscris-toi à la newsletter</strong> pour être prévenu·e en premier.
-          </p>
-          <a href="#newsletter" class="btn btn-ghost">S'inscrire à la newsletter</a>
-        </div>
-
-      </div>
-    </section>
 
     <!-- ════════════════════════════════════════
          CONTACT & COLLABS
