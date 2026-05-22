@@ -248,35 +248,6 @@
       margin-top: 8px;
     }
 
-    /* PHOTOS */
-    .ep-photos-section {
-      padding: var(--sec-py) 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .photos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .photo-placeholder {
-      aspect-ratio: 4 / 3;
-      background: var(--card);
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .photo-placeholder-icon { width: 32px; height: 32px; opacity: 0.2; }
-    .photo-placeholder-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
     /* TRACKLIST */
     .tracklist-title {
       font-size: 1.1rem;
@@ -334,8 +305,7 @@
     }
     @media (max-width: 600px) {
       :root { --sec-py: 56px; --pad-x: 20px; }
-      .photos-grid { grid-template-columns: 1fr; }
-      .footer-top { flex-direction: column; gap: 28px; }
+.footer-top { flex-direction: column; gap: 28px; }
       .footer-socials { flex-direction: row; justify-content: flex-start; flex-wrap: wrap; }
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
@@ -446,91 +416,171 @@
             <ol class="tracklist" aria-label="Tracklist de l'épisode 003">
               <li class="track-item">
                 <span class="track-num">01</span>
-                <span class="track-name">Track 01 — [Titre placeholder]</span>
-                <span class="track-time">0:00</span>
+                <span class="track-name">Baaboo — Savant, Mac Milio</span>
               </li>
               <li class="track-item">
                 <span class="track-num">02</span>
-                <span class="track-name">Track 02 — [Titre placeholder]</span>
-                <span class="track-time">6:20</span>
+                <span class="track-name">War — KDYN</span>
               </li>
               <li class="track-item">
                 <span class="track-num">03</span>
-                <span class="track-name">Track 03 — [Titre placeholder]</span>
-                <span class="track-time">13:05</span>
+                <span class="track-name">Thanks Officer — MNNR</span>
               </li>
               <li class="track-item">
                 <span class="track-num">04</span>
-                <span class="track-name">Track 04 — [Titre placeholder]</span>
-                <span class="track-time">20:30</span>
+                <span class="track-name">Who's She — MNNR &amp; Tombe</span>
               </li>
               <li class="track-item">
                 <span class="track-num">05</span>
-                <span class="track-name">Track 05 — [Titre placeholder]</span>
-                <span class="track-time">28:00</span>
+                <span class="track-name">Gotta Move — Phlegmatic Dogs</span>
               </li>
               <li class="track-item">
                 <span class="track-num">06</span>
-                <span class="track-name">Track 06 — [Titre placeholder]</span>
-                <span class="track-time">35:45</span>
+                <span class="track-name">UFO — FIVEIGHT</span>
               </li>
               <li class="track-item">
                 <span class="track-num">07</span>
-                <span class="track-name">Track 07 — [Titre placeholder]</span>
-                <span class="track-time">43:10</span>
+                <span class="track-name">Trust Nobody — Malaa remix</span>
               </li>
               <li class="track-item">
                 <span class="track-num">08</span>
-                <span class="track-name">Track 08 — [Titre placeholder]</span>
-                <span class="track-time">50:40</span>
+                <span class="track-name">Wet — Wax Motif</span>
               </li>
               <li class="track-item">
                 <span class="track-num">09</span>
-                <span class="track-name">Track 09 — [Titre placeholder]</span>
-                <span class="track-time">58:00</span>
+                <span class="track-name">One Sixty — MPH</span>
               </li>
               <li class="track-item">
                 <span class="track-num">10</span>
-                <span class="track-name">Track 10 — [Titre placeholder]</span>
-                <span class="track-time">1:04:30</span>
+                <span class="track-name">Crave The Bassline — AC Slater &amp; Curbi</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">11</span>
+                <span class="track-name">Bastard — Phlegmatic Dogs</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">12</span>
+                <span class="track-name">Mami — Chris Lorenzo &amp; COBRAH</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">13</span>
+                <span class="track-name">On Sight — Blvckmore</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">14</span>
+                <span class="track-name">Like Jello — GROMKAH</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">15</span>
+                <span class="track-name">Not A Test — Keeld &amp; Frents</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">16</span>
+                <span class="track-name">NBD — Phlegmatic Dogs remix</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">17</span>
+                <span class="track-name">Keepmastik — Phlegmatic Dogs</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">18</span>
+                <span class="track-name">Cuatrocats — Phlegmatic Dogs</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">19</span>
+                <span class="track-name">Cuatrocats — Volac remix</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">20</span>
+                <span class="track-name">Chemistry — Phlegmatic Dogs remix</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">21</span>
+                <span class="track-name">Blackout — Ryan Nevis</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">22</span>
+                <span class="track-name">Enzo — DJ Snake &amp; Sheck Wes</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">23</span>
+                <span class="track-name">Scared To Death — MNNR</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">24</span>
+                <span class="track-name">Big Loud Heavy Bass — AC Slater</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">25</span>
+                <span class="track-name">Too Cocky — Dr. Fresch &amp; BIJOU</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">26</span>
+                <span class="track-name">Raw — MPH</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">27</span>
+                <span class="track-name">Air Force — Ricky West &amp; CYMN (ft. LexBlaze)</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">28</span>
+                <span class="track-name">Chicken Soup — Skrillex &amp; Habstrakt</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">29</span>
+                <span class="track-name">Funky — Volac</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">30</span>
+                <span class="track-name">Rock It Just Like Dat — SILVA BUMPA</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">31</span>
+                <span class="track-name">Voy — San Pacho &amp; Vale</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">32</span>
+                <span class="track-name">Oh Babe — SUBSHIFT</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">33</span>
+                <span class="track-name">Blow — CHYL</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">34</span>
+                <span class="track-name">Scap — LALZIN &amp; Gotlucky</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">35</span>
+                <span class="track-name">The Streets — MPH</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">36</span>
+                <span class="track-name">2 Step — Albin Myers &amp; Jonathan</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">37</span>
+                <span class="track-name">Fly Kicks — Wax Motif remix</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">38</span>
+                <span class="track-name">Pre's — MPH</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">39</span>
+                <span class="track-name">The Count — Qlank</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">40</span>
+                <span class="track-name">Untouchable — MPH &amp; Habstrakt</span>
+              </li>
+              <li class="track-item">
+                <span class="track-num">41</span>
+                <span class="track-name">Asdek — Talk About</span>
               </li>
             </ol>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- PHOTOS -->
-    <section class="ep-photos-section" aria-label="Photos du set">
-      <div class="container">
-        <div class="eyebrow"><span>Photos</span></div>
-        <h2 style="font-size:1.1rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:24px;">Photos du set</h2>
-        <div class="photos-grid">
-          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 003 - 1">
-            <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21,15 16,10 5,21"/>
-            </svg>
-            <span class="photo-placeholder-label">Photo du set</span>
-          </div>
-          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 003 - 2">
-            <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21,15 16,10 5,21"/>
-            </svg>
-            <span class="photo-placeholder-label">Photo du set</span>
-          </div>
-          <div class="photo-placeholder" role="img" aria-label="Photo du set EP 003 - 3">
-            <svg class="photo-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21,15 16,10 5,21"/>
-            </svg>
-            <span class="photo-placeholder-label">Photo du set</span>
-          </div>
         </div>
       </div>
     </section>
