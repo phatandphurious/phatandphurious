@@ -74,13 +74,97 @@
     .mobile-nav a:hover { color:var(--white); }
 
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; border-bottom:1px solid var(--border); position:relative; background:url('images/hero-events.jpg') center / cover no-repeat; background-attachment:fixed; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('images/hero-events.jpg') center / cover no-repeat; background-attachment:fixed; }
     .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
     .page-hero .container { position:relative; z-index:1; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
     .page-hero-title em { color:var(--beige); font-style:italic; font-weight:300; }
     .page-hero-sub { font-size:0.9rem; font-weight:300; line-height:1.78; color:var(--muted); max-width:520px; }
     .page-hero-sub strong { color:var(--white); font-weight:400; }
+
+    /* FESTIVAL TICKER */
+    .festival-ticker {
+      display: flex;
+      align-items: stretch;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .ticker-label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 4px;
+      padding: 20px 24px;
+      background: var(--bg);
+      border-right: 1px solid var(--border);
+      flex-shrink: 0;
+      z-index: 2;
+    }
+    .ticker-label-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      white-space: nowrap;
+    }
+    .ticker-label-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+    }
+    .ticker-overflow {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      padding: 22px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, black 48px, black calc(100% - 48px), transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, black 48px, black calc(100% - 48px), transparent 100%);
+    }
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: ticker-right 40s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker-right {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+    .ticker-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 0 44px;
+      flex-shrink: 0;
+    }
+    .ticker-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+    }
+    .ticker-sub {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .ticker-sep {
+      color: var(--red);
+      font-size: 0.5rem;
+      flex-shrink: 0;
+    }
 
     /* EVENTS À VENIR */
     .upcoming-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
@@ -267,8 +351,8 @@
   <header id="navbar" role="banner">
     <div class="container">
       <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious FM — Accueil">
-          PHAT <span class="amp">&</span> PHURIOUS FM
+        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+          PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
           <li><a href="guest-mixes.html">Guest Mixes</a></li>
@@ -304,6 +388,52 @@
       </div>
     </section>
 
+    <!-- FESTIVAL TICKER -->
+    <div class="festival-ticker" aria-label="Festivals sur notre radar">
+      <div class="ticker-label">
+        <span class="ticker-label-tag">Sur notre radar</span>
+        <span class="ticker-label-title">Festivals 2026</span>
+      </div>
+      <div class="ticker-overflow">
+        <div class="ticker-track">
+          <!-- Set 1 -->
+          <div class="ticker-item"><span class="ticker-name">Ohlala Summer Festival</span><span class="ticker-sub">France · 13 Juin 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Sonar</span><span class="ticker-sub">Barcelona · Juin 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Club Peyrou</span><span class="ticker-sub">France · 3-5 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Dour Festival</span><span class="ticker-sub">Belgique · 15-19 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Outlook Origins</span><span class="ticker-sub">Tisno · 23-27 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Junction 2</span><span class="ticker-sub">London · 24-26 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Rampage x Poney Club</span><span class="ticker-sub">France · 28 Août 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">ADE</span><span class="ticker-sub">Amsterdam · 21-25 Oct. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <!-- Set 2 (duplicate pour boucle seamless) -->
+          <div class="ticker-item"><span class="ticker-name">Ohlala Summer Festival</span><span class="ticker-sub">France · 13 Juin 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Sonar</span><span class="ticker-sub">Barcelona · 18-20 Juin 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Club Peyrou</span><span class="ticker-sub">France · 3-5 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Dour Festival</span><span class="ticker-sub">Belgique · 15-19 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Outlook Origins</span><span class="ticker-sub">Tisno · 23-27 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Junction 2</span><span class="ticker-sub">London · 24-26 Juil. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">Rampage x Poney Club</span><span class="ticker-sub">France · 28 Août 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+          <div class="ticker-item"><span class="ticker-name">ADE</span><span class="ticker-sub">Amsterdam · 21-25 Oct. 2026</span></div>
+          <span class="ticker-sep" aria-hidden="true">◆</span>
+        </div>
+      </div>
+    </div>
+
     <!-- ÉVÉNEMENTS À VENIR -->
     <section class="upcoming-section" aria-labelledby="upcoming-title">
       <div class="container">
@@ -315,6 +445,69 @@
         </div>
 
         <div class="event-list" role="list">
+
+          <!-- Ohlala Summer Festival -->
+          <div class="event-item" role="listitem">
+            <div class="event-date-block">
+              <span class="event-day">13</span>
+              <span class="event-month">JUN</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">Ohlala Summer Festival 2026</h3>
+              <div class="event-meta">
+                <span class="event-venue">Vitry-sur-Seine</span>
+                <span class="event-sep" aria-hidden="true"></span>
+                <span class="event-city">France</span>
+                <span class="event-sep" aria-hidden="true"></span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">13 Juin 2026 · Bass Music, Electronic</p>
+            </div>
+            <div class="event-actions">
+              <a href="https://shotgun.live/fr/festivals/ohlala-summer-festival-2026" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
+            </div>
+          </div>
+
+          <!-- Sonar -->
+          <div class="event-item" role="listitem">
+            <div class="event-date-block">
+              <span class="event-day">18</span>
+              <span class="event-month">JUN</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">Sonar 2026</h3>
+              <div class="event-meta">
+                <span class="event-venue">Fira de Barcelona</span>
+                <span class="event-sep" aria-hidden="true"></span>
+                <span class="event-city">Barcelona, Espagne</span>
+                <span class="event-sep" aria-hidden="true"></span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">18 — 20 Juin 2026 · Electronic, Bass Music, Avant-garde</p>
+            </div>
+            <div class="event-actions">
+              <a href="https://sonar.es/en/tickets" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
+            </div>
+          </div>
+
+          <!-- Club Peyrou -->
+          <div class="event-item" role="listitem">
+            <div class="event-date-block">
+              <span class="event-day">03</span>
+              <span class="event-month">JUL</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">Club Peyrou 2026</h3>
+              <div class="event-meta">
+                <span class="event-venue">Promenade du Peyrou</span>
+                <span class="event-sep" aria-hidden="true"></span>
+                <span class="event-city">Montpellier, France</span>
+                <span class="event-sep" aria-hidden="true"></span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">3 — 5 Juillet 2026 · Bass Music, Electronic</p>
+            </div>
+            <div class="event-actions">
+              <a href="https://xceed.me/fr/montpellier/checkout/all/club-peyrou-2026/ad7c45ae-02b5-11f1-9fc2-0242ac110006" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
+            </div>
+          </div>
 
           <!-- Dour Festival -->
           <div class="event-item" role="listitem">
@@ -329,7 +522,6 @@
                 <span class="event-sep" aria-hidden="true"></span>
                 <span class="event-city">Dour, Belgique</span>
                 <span class="event-sep" aria-hidden="true"></span>
-                <span class="tag tag-green">Accrédité</span>
               </div>
               <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">15 — 19 Juillet 2026 · Bass, Jungle, UKG, Techno</p>
             </div>
@@ -338,24 +530,87 @@
             </div>
           </div>
 
-          <!-- Connexion Festival -->
+          <!-- Outlook Origins -->
           <div class="event-item" role="listitem">
             <div class="event-date-block">
-              <span class="event-month-tbc">TBC</span>
+              <span class="event-day">23</span>
+              <span class="event-month">JUL</span>
             </div>
             <div class="event-info">
-              <h3 class="event-name">Connexion Festival 2026</h3>
+              <h3 class="event-name">Outlook Origins 2026</h3>
               <div class="event-meta">
-                <span class="event-venue">Lieu à confirmer</span>
+                <span class="event-venue">Tisno</span>
                 <span class="event-sep" aria-hidden="true"></span>
-                <span class="event-city">Toulouse, France</span>
+                <span class="event-city">Croatie</span>
                 <span class="event-sep" aria-hidden="true"></span>
-                <span class="tag tag-neutral">En attente</span>
               </div>
-              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">Date à confirmer · Bass Music, UK Underground</p>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">23 — 27 Juillet 2026 · Bass Music, Dub, UKG, Jungle</p>
             </div>
             <div class="event-actions">
-              <span class="btn btn-ghost" style="opacity:0.4; cursor:default;" aria-disabled="true">Billetterie à venir</span>
+              <a href="https://www.outlookorigins.com/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
+            </div>
+          </div>
+
+          <!-- Junction 2 -->
+          <div class="event-item" role="listitem">
+            <div class="event-date-block">
+              <span class="event-day">24</span>
+              <span class="event-month">JUL</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">Junction 2 Festival 2026</h3>
+              <div class="event-meta">
+                <span class="event-venue">Tobacco Dock</span>
+                <span class="event-sep" aria-hidden="true"></span>
+                <span class="event-city">London, UK</span>
+                <span class="event-sep" aria-hidden="true"></span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">24 — 26 Juillet 2026 · Techno, Bass Music</p>
+            </div>
+            <div class="event-actions">
+              <a href="https://www.junction2.london/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
+            </div>
+          </div>
+
+          <!-- Rampage x Poney Club -->
+          <div class="event-item" role="listitem">
+            <div class="event-date-block">
+              <span class="event-day">28</span>
+              <span class="event-month">AOU</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">Rampage x Poney Club 2026</h3>
+              <div class="event-meta">
+                <span class="event-venue">Poney Club</span>
+                <span class="event-sep" aria-hidden="true"></span>
+                <span class="event-city">France</span>
+                <span class="event-sep" aria-hidden="true"></span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">28 Août 2026 · Drum &amp; Bass, Bass Music</p>
+            </div>
+            <div class="event-actions">
+              <a href="https://shotgun.live/fr/festivals/rampage-x-poney-club-2026" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
+            </div>
+          </div>
+
+          <!-- ADE -->
+          <div class="event-item" role="listitem">
+            <div class="event-date-block">
+              <span class="event-day">21</span>
+              <span class="event-month">OCT</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">Amsterdam Dance Event 2026</h3>
+              <div class="event-meta">
+                <span class="event-venue">Ville entière</span>
+                <span class="event-sep" aria-hidden="true"></span>
+                <span class="event-city">Amsterdam, Pays-Bas</span>
+                <span class="event-sep" aria-hidden="true"></span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--muted); font-weight:300; margin-top:2px;">21 — 25 Octobre 2026 · Electronic, Bass Music, toutes scènes</p>
+            </div>
+            <div class="event-actions">
+              <a href="https://www.amsterdam-dance-event.nl/en/tickets/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Billetterie →</a>
             </div>
           </div>
 
@@ -461,7 +716,7 @@
       <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-brand">
-            <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS FM</p>
+            <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
             <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant — Montpellier, France.</p>
           </div>
           <div class="footer-socials">
