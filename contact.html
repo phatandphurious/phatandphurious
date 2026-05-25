@@ -531,7 +531,7 @@
     });
 
     // Form
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
@@ -540,17 +540,43 @@
       if (!name || !email || !type || !message) return;
       const btn = this.querySelector('button[type="submit"]');
       const success = document.getElementById('formSuccess');
-      btn.textContent = 'Envoyé';
-      btn.style.background = 'var(--success)';
+      btn.textContent = 'Envoi en cours…';
       btn.disabled = true;
-      success.style.display = 'block';
-      this.reset();
-      setTimeout(() => {
-        btn.textContent = 'Envoyer le message';
-        btn.style.background = '';
+      try {
+        const res = await fetch('https://formspree.io/f/xojbkwaj', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(this)
+        });
+        if (res.ok) {
+          btn.textContent = 'Envoyé';
+          btn.style.background = 'var(--success)';
+          success.style.display = 'block';
+          this.reset();
+          setTimeout(() => {
+            btn.textContent = 'Envoyer le message';
+            btn.style.background = '';
+            btn.disabled = false;
+            success.style.display = 'none';
+          }, 5000);
+        } else {
+          btn.textContent = 'Erreur — réessaie';
+          btn.style.background = 'var(--red)';
+          btn.disabled = false;
+          setTimeout(() => {
+            btn.textContent = 'Envoyer le message';
+            btn.style.background = '';
+          }, 4000);
+        }
+      } catch {
+        btn.textContent = 'Erreur — réessaie';
+        btn.style.background = 'var(--red)';
         btn.disabled = false;
-        success.style.display = 'none';
-      }, 5000);
+        setTimeout(() => {
+          btn.textContent = 'Envoyer le message';
+          btn.style.background = '';
+        }, 4000);
+      }
     });
   </script>
 
