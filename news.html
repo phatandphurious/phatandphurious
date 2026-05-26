@@ -83,31 +83,6 @@
     .page-hero-sub { font-size:0.9rem; font-weight:300; line-height:1.78; color:var(--muted); max-width:520px; }
     .page-hero-sub strong { color:var(--white); font-weight:400; }
 
-    /* FILTERS */
-    .filters-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .filter-btn {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 7px 14px;
-      border-radius: 1px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    .filter-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
-    .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
-
     /* ARTICLES */
     .articles-section { padding: var(--sec-py) 0; }
 
@@ -131,9 +106,7 @@
     article.article-card:nth-child(3n) { border-right: none; }
     article.article-card:nth-last-child(-n+3):not(:nth-child(3n+1) ~ *) { border-bottom: none; }
     article.article-card:hover { background: #181818; }
-    article.article-card.hidden { display: none; }
-
-    .art-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.art-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
     .art-date { font-size:0.75rem; font-weight:400; color:var(--muted); letter-spacing:0.04em; white-space:nowrap; }
     .art-title { font-size:0.96rem; font-weight:600; letter-spacing:-0.015em; line-height:1.38; color:var(--white); flex:1; }
     .art-excerpt { font-size:0.78rem; font-weight:300; line-height:1.7; color:var(--muted); flex:1; }
@@ -142,27 +115,26 @@
     article.article-card:hover .art-read { color:var(--white); }
     .art-readtime { font-size:0.72rem; font-weight:300; color:var(--muted); }
 
-    /* PAGINATION */
-    .pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding-top: 48px;
+    /* EMPTY STATE */
+    .empty-state {
+      padding: var(--sec-py) 0;
+      max-width: 520px;
     }
-    .page-btn {
-      width: 36px; height: 36px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.78rem; font-weight: 600;
-      border: 1px solid var(--border);
-      background: transparent;
+    .empty-state-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .empty-state-sub {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.8;
       color: var(--muted);
-      border-radius: 1px;
-      transition: all 0.2s;
-      cursor: pointer;
+      margin-bottom: 28px;
     }
-    .page-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
-    .page-btn:hover:not(.active) { color: var(--white); border-color: rgba(255,255,255,0.25); }
+    .empty-state-socials { display: flex; gap: 10px; flex-wrap: wrap; }
 
     /* FOOTER */
     #footer { border-top:1px solid var(--border); padding:48px 0 36px; }
@@ -251,122 +223,18 @@
       </div>
     </section>
 
-    <!-- FILTRES -->
-    <div class="container">
-      <div class="filters-bar" role="group" aria-label="Filtrer les articles par catégorie">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="live-report">Live Report</button>
-        <button class="filter-btn" data-filter="release-review">Release Review</button>
-        <button class="filter-btn" data-filter="interview">Interview</button>
-        <button class="filter-btn" data-filter="decouverte">Découverte</button>
-        <button class="filter-btn" data-filter="festival">Festival</button>
-      </div>
-    </div>
-
     <!-- ARTICLES -->
     <section class="articles-section" aria-labelledby="articles-title">
       <div class="container">
         <h2 class="visually-hidden" id="articles-title">Articles</h2>
-
-        <div class="webzine-grid" id="articlesGrid">
-
-          <!-- Article 1 -->
-          <article class="article-card" data-category="live-report">
-            <div class="art-head">
-              <span class="tag tag-red">Live Report</span>
-              <time class="art-date" datetime="2026-05-10">10 mai 2026</time>
-            </div>
-            <h3 class="art-title">Nuits Sonores 2026 — La bass music s'installe enfin dans la programmation principale</h3>
-            <p class="art-excerpt">
-              Quatre scènes, trois nuits, une conviction : la bass music n'est plus un genre de niche. Retour sur un festival qui commence à tracer la bonne ligne entre accessibilité et exigence underground.
-            </p>
-            <div class="art-foot">
-              <a href="#" class="art-read">Lire l'article →</a>
-            </div>
-          </article>
-
-          <!-- Article 2 -->
-          <article class="article-card" data-category="release-review">
-            <div class="art-head">
-              <span class="tag tag-beige">Release Review</span>
-              <time class="art-date" datetime="2026-05-02">2 mai 2026</time>
-            </div>
-            <h3 class="art-title">SHERELLE — "Pace" EP : une œuvre tribale pour dancefloors à l'arrêt</h3>
-            <p class="art-excerpt">
-              Quatre titres. Aucune concession. SHERELLE livre avec "Pace" un objet sonore qui refuse catégoriquement de s'expliquer — et c'est exactement pour ça que ça fonctionne.
-            </p>
-            <div class="art-foot">
-              <a href="#" class="art-read">Lire l'article →</a>
-            </div>
-          </article>
-
-          <!-- Article 3 -->
-          <article class="article-card" data-category="decouverte">
-            <div class="art-head">
-              <span class="tag tag-neutral">Découverte</span>
-              <time class="art-date" datetime="2026-04-22">22 avril 2026</time>
-            </div>
-            <h3 class="art-title">Bou et la nouvelle géographie du Liquid DnB : entre Bristol et Berlin</h3>
-            <p class="art-excerpt">
-              On suit Bou depuis ses premières sorties sur Liquicity. En 2026, sa musique a pris une dimension qu'on n'avait pas anticipée. Portrait d'un producteur qui joue une partition à part.
-            </p>
-            <div class="art-foot">
-              <a href="#" class="art-read">Lire l'article →</a>
-            </div>
-          </article>
-
-          <!-- Article 4 -->
-          <article class="article-card" data-category="release-review">
-            <div class="art-head">
-              <span class="tag tag-beige">Release Review</span>
-              <time class="art-date" datetime="2026-05-12">12 mai 2026</time>
-            </div>
-            <h3 class="art-title">Skrillex — "Smoke" : le retour du chaos maîtrisé</h3>
-            <p class="art-excerpt">
-              Après <em>Quest For Fire</em> et <em>Don't Get Too Close</em>, Skrillex revient avec "Smoke" — un titre qui tranche net avec la surproduction ambiante. Dense, sombre, efficace. L'instinct dubstep intact, la palette élargie.
-            </p>
-            <div class="art-foot">
-              <a href="#" class="art-read">Lire l'article →</a>
-            </div>
-          </article>
-
-          <!-- Article 5 -->
-          <article class="article-card" data-category="festival">
-            <div class="art-head">
-              <span class="tag tag-green">Festival</span>
-              <time class="art-date" datetime="2026-04-05">5 avril 2026</time>
-            </div>
-            <h3 class="art-title">Junction 2 Festival 2026 : le line-up le plus cohérent de la décennie UK</h3>
-            <p class="art-excerpt">
-              Sous les arches de Tobacco Dock, Junction 2 a réussi l'impossible : assembler une affiche de 40 noms sans une seule tête d'affiche creuse. Analyse d'une programmation qui sait ce qu'elle veut.
-            </p>
-            <div class="art-foot">
-              <a href="#" class="art-read">Lire l'article →</a>
-            </div>
-          </article>
-
-          <!-- Article 6 -->
-          <article class="article-card" data-category="release-review">
-            <div class="art-head">
-              <span class="tag tag-beige">Release Review</span>
-              <time class="art-date" datetime="2026-03-28">28 mars 2026</time>
-            </div>
-            <h3 class="art-title">Kessler — "Bassweight Sessions Vol.3" : l'architecture sonore du dancefloor</h3>
-            <p class="art-excerpt">
-              Troisième volet d'une série qui s'impose comme une référence. Kessler construit ses basses comme un architecte — chaque fréquence a sa place, chaque drop son intention. Impeccable.
-            </p>
-            <div class="art-foot">
-              <a href="#" class="art-read">Lire l'article →</a>
-            </div>
-          </article>
-
+        <div class="empty-state">
+          <p class="empty-state-title">Les articles arrivent.</p>
+          <p class="empty-state-sub">Live reports, release reviews, découvertes — le webzine est en cours de construction. Suis-nous sur les réseaux pour ne rien rater.</p>
+          <div class="empty-state-socials">
+            <a href="https://instagram.com/phatandphurious.fm" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Instagram</a>
+            <a href="https://www.youtube.com/@PhatAndPhuriousFM" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">YouTube</a>
+          </div>
         </div>
-
-        <!-- PAGINATION -->
-        <div class="pagination" aria-label="Pagination">
-          <button class="page-btn active" aria-current="page" aria-label="Page 1">1</button>
-        </div>
-
       </div>
     </section>
 
@@ -429,24 +297,6 @@
       });
     });
 
-    // Filtre articles
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const articles = document.querySelectorAll('#articlesGrid .article-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        articles.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
   </script>
 
 </body>
