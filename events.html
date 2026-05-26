@@ -244,6 +244,7 @@
     }
     .recap-card:last-child { border-right: none; }
     .recap-card:hover { background: #181818; }
+    .recap-link { display:flex; flex-direction:column; height:100%; color:inherit; text-decoration:none; }
     .recap-thumb {
       aspect-ratio: 16 / 9;
       background: #0e0e0e;
@@ -253,6 +254,8 @@
       align-items: center;
       justify-content: center;
     }
+    .recap-thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+    .recap-card:hover .recap-thumb img { transform:scale(1.04); }
     .recap-thumb-placeholder {
       display: flex;
       flex-direction: column;
@@ -631,61 +634,43 @@
 
         <div class="recaps-grid" role="list">
 
-          <!-- Recap 1 -->
           <article class="recap-card" role="listitem">
-            <div class="recap-thumb">
-              <div class="recap-thumb-placeholder">
-                <svg class="recap-thumb-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21,15 16,10 5,21"/>
-                </svg>
-                <span class="recap-thumb-label">Photo du festival</span>
+            <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="recap-link" aria-label="Lire le live report : Sammy Virji — Alexandra Palace">
+              <div class="recap-thumb">
+                <img src="images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji en performance à l'Alexandra Palace, Londres" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
               </div>
-              <span class="recap-thumb-tag tag tag-red">Live Report</span>
-            </div>
-            <div class="recap-body">
-              <h3 class="recap-name">Nuits Sonores 2026</h3>
-              <p class="recap-date">Lyon · Mai 2026</p>
-            </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sammy Virji — Alexandra Palace</h3>
+                <p class="recap-date">Londres, UK · Avril 2026</p>
+              </div>
+            </a>
           </article>
 
-          <!-- Recap 2 -->
           <article class="recap-card" role="listitem">
-            <div class="recap-thumb">
-              <div class="recap-thumb-placeholder">
-                <svg class="recap-thumb-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21,15 16,10 5,21"/>
-                </svg>
-                <span class="recap-thumb-label">Photo du festival</span>
+            <a href="news/habstrakt-lineage-tour-trabendo-mars-2026.html" class="recap-link" aria-label="Lire le live report : Habstrakt Lineage Tour — Le Trabendo">
+              <div class="recap-thumb">
+                <img src="images/event-trabendo-habstrakt-mars-2026.jpg" alt="Affiche du Habstrakt & Asdek Lineage Tour au Trabendo, Paris" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
               </div>
-              <span class="recap-thumb-tag tag tag-beige">Photos</span>
-            </div>
-            <div class="recap-body">
-              <h3 class="recap-name">Junction 2 Festival</h3>
-              <p class="recap-date">Londres, UK · Avril 2026</p>
-            </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Habstrakt Lineage Tour — Trabendo</h3>
+                <p class="recap-date">Paris · Mars 2026</p>
+              </div>
+            </a>
           </article>
 
-          <!-- Recap 3 -->
           <article class="recap-card" role="listitem">
-            <div class="recap-thumb">
-              <div class="recap-thumb-placeholder">
-                <svg class="recap-thumb-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21,15 16,10 5,21"/>
-                </svg>
-                <span class="recap-thumb-label">Photo de la soirée</span>
+            <a href="news/sammy-virji-phantom-mars-2026.html" class="recap-link" aria-label="Lire le live report : Sammy Virji — Le Phantom">
+              <div class="recap-thumb">
+                <img src="images/event-phantom-sammy-virji-mars-2026.jpg" alt="Affiche de la soirée Sammy Virji au Phantom, Paris" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
               </div>
-              <span class="recap-thumb-tag tag tag-red">Live Report</span>
-            </div>
-            <div class="recap-body">
-              <h3 class="recap-name">Soirée Bass Collective</h3>
-              <p class="recap-date">Montpellier · Mars 2026</p>
-            </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sammy Virji — Le Phantom</h3>
+                <p class="recap-date">Paris · Mars 2026</p>
+              </div>
+            </a>
           </article>
 
         </div>

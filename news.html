@@ -95,18 +95,21 @@
 
     article.article-card {
       background: var(--card);
-      padding: 26px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       transition: background 0.22s;
     }
+    article.article-card:hover { background: #181818; }
+    .art-link {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 26px 22px;
+      height: 100%;
+    }
     article.article-card:nth-child(3n) { border-right: none; }
     article.article-card:nth-last-child(-n+3):not(:nth-child(3n+1) ~ *) { border-bottom: none; }
-    article.article-card:hover { background: #181818; }
-.art-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .art-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
     .art-date { font-size:0.75rem; font-weight:400; color:var(--muted); letter-spacing:0.04em; white-space:nowrap; }
     .art-title { font-size:0.96rem; font-weight:600; letter-spacing:-0.015em; line-height:1.38; color:var(--white); flex:1; }
     .art-excerpt { font-size:0.78rem; font-weight:300; line-height:1.7; color:var(--muted); flex:1; }
@@ -226,14 +229,56 @@
     <!-- ARTICLES -->
     <section class="articles-section" aria-labelledby="articles-title">
       <div class="container">
-        <h2 class="visually-hidden" id="articles-title">Articles</h2>
-        <div class="empty-state">
-          <p class="empty-state-title">Les articles arrivent.</p>
-          <p class="empty-state-sub">Live reports, release reviews, découvertes — le webzine est en cours de construction. Suis-nous sur les réseaux pour ne rien rater.</p>
-          <div class="empty-state-socials">
-            <a href="https://instagram.com/phatandphurious.fm" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Instagram</a>
-            <a href="https://www.youtube.com/@PhatAndPhuriousFM" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">YouTube</a>
-          </div>
+        <div class="section-header">
+          <h2 class="section-title" id="articles-title">Live reports</h2>
+        </div>
+        <div class="webzine-grid">
+
+          <article class="article-card">
+            <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link" aria-label="Lire l'article : Sammy Virji — Alexandra Palace, London">
+              <div class="art-head">
+                <span class="tag tag-red">Live Report</span>
+                <span class="art-date">17 avr. 2026</span>
+              </div>
+              <p class="art-title">Sammy Virji à l'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can't Swim</p>
+              <p class="art-excerpt">Alexandra Palace sold out le vendredi soir. Cops and Robbers feat. Skepta en ouverture, pyrotechnics, et une surprise en pleine foule qu'on n'attendait pas.</p>
+              <div class="art-foot">
+                <span class="art-read">Lire l'article →</span>
+                <span class="art-readtime">6 min</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a href="news/habstrakt-lineage-tour-trabendo-mars-2026.html" class="art-link" aria-label="Lire l'article : Habstrakt Lineage Tour — Le Trabendo, Paris">
+              <div class="art-head">
+                <span class="tag tag-red">Live Report</span>
+                <span class="art-date">21 mars 2026</span>
+              </div>
+              <p class="art-title">Habstrakt Lineage Tour — Le Trabendo, Paris. Elmyx, Asdek, et une nuit qui s'est finie à 5h50</p>
+              <p class="art-excerpt">Habstrakt embarque Elmyx et Asdek pour son Lineage Tour au Trabendo. Elmyx sort un unreleased avec Jacknife, Habstrakt joue Chicken Soup x Skrillex. On est restés jusqu'au bout.</p>
+              <div class="art-foot">
+                <span class="art-read">Lire l'article →</span>
+                <span class="art-readtime">7 min</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card">
+            <a href="news/sammy-virji-phantom-mars-2026.html" class="art-link" aria-label="Lire l'article : Sammy Virji — Le Phantom, Paris">
+              <div class="art-head">
+                <span class="tag tag-red">Live Report</span>
+                <span class="art-date">20 mars 2026</span>
+              </div>
+              <p class="art-title">Sammy Virji au Phantom — Une nuit qui commence avec Unsho et Noge, et se ferme sur Nostalgia</p>
+              <p class="art-excerpt">Calypso, Unsho, Noge, puis Sammy Virji à 23h30. Une soirée construite de bout en bout, avec un moment — Nostalgia — qu'on n'est pas près d'oublier.</p>
+              <div class="art-foot">
+                <span class="art-read">Lire l'article →</span>
+                <span class="art-readtime">5 min</span>
+              </div>
+            </a>
+          </article>
+
         </div>
       </div>
     </section>
