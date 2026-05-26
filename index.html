@@ -977,6 +977,75 @@
     .footer-legal a:hover { color: var(--white); }
 
     /* ────────────────────────────────────────────
+       NEXT EVENT BANNER
+    ──────────────────────────────────────────── */
+    #next-event {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .next-event-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .next-event-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .next-event-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--red);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding-right: 32px;
+      border-right: 1px solid var(--border);
+    }
+    .next-event-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--white);
+    }
+    .next-event-meta {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 5px;
+      letter-spacing: 0.04em;
+    }
+    .next-event-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+    .next-event-link {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .next-event-link:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 600px) {
+      .next-event-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .next-event-left { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .next-event-label { border-right: none; padding-right: 0; }
+    }
+
+    /* ────────────────────────────────────────────
        EVENTS
     ──────────────────────────────────────────── */
 
@@ -1182,6 +1251,28 @@
         </div>
       </div>
     </section>
+
+    <!-- ════════════════════════════════════════
+         NEXT EVENT BANNER
+         → Mettre à jour manuellement : nom, dates, ville, lien
+    ════════════════════════════════════════ -->
+    <div id="next-event" aria-label="Prochain événement couvert">
+      <div class="container">
+        <div class="next-event-inner">
+          <div class="next-event-left">
+            <span class="next-event-label">Sur notre radar</span>
+            <div>
+              <p class="next-event-name">Sonar 2026</p>
+              <p class="next-event-meta">18 — 20 Juin · Barcelona, Espagne</p>
+            </div>
+          </div>
+          <div class="next-event-right">
+            <span class="tag tag-red">On y sera</span>
+            <a href="events.html" class="next-event-link">Voir l'agenda →</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ════════════════════════════════════════
          LE CONCEPT
