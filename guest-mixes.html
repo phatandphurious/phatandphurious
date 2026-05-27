@@ -168,6 +168,151 @@
     .ep-cta { margin-left:auto; display:inline-flex; align-items:center; gap:5px; font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); transition:color 0.2s; }
     .ep-cta:hover { color:#e62020; }
 
+
+    /* ────────────────────────────────────────────
+       PHAT AND CURIOUS
+    ──────────────────────────────────────────── */
+    .pac-section {
+      padding: var(--sec-py) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Rangée de cartes portrait (9:16 — YouTube Shorts) */
+    .pac-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .pac-card {
+      width: 240px;
+      flex-shrink: 0;
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      transition: background 0.22s;
+    }
+    .pac-card:hover { background: #181818; }
+
+    /* Thumbnail portrait 9:16 */
+    .pac-thumb {
+      aspect-ratio: 9 / 16;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      cursor: default;
+    }
+    .pac-thumb-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 20px;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(207,0,0,0.12) 0%, transparent 60%),
+        linear-gradient(to bottom, #0e0e0e 0%, #0a0a0a 100%);
+    }
+    .pac-ep-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .pac-thumb-guest {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .pac-thumb-from {
+      font-size: 0.72rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 16px;
+      min-height: 1em;
+    }
+    .pac-soon {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(207,0,0,0.08);
+      border: 1px solid rgba(207,0,0,0.22);
+      border-radius: 1px;
+      padding: 3px 9px;
+    }
+    .pac-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.25s ease;
+      pointer-events: none;
+    }
+    .pac-card:hover .pac-thumb-overlay { background: rgba(0,0,0,0.2); }
+
+    /* Card body */
+    .pac-body {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      border-top: 1px solid var(--border);
+    }
+    .pac-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+    .pac-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .pac-sub {
+      font-size: 0.72rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      flex: 1;
+    }
+    .pac-foot {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .pac-tag, .pac-date {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 600px) {
+      .pac-grid { gap: 16px; }
+      .pac-card { width: calc(50% - 8px); }
+    }
+    @media (max-width: 400px) {
+      .pac-card { width: 100%; max-width: 260px; }
+    }
+
     /* SUBMIT MIX */
     .submit-section {
       padding: var(--sec-py) 0;
@@ -283,7 +428,7 @@
         <div class="eyebrow"><span>Guest Mixes</span></div>
         <h1 class="page-hero-title" id="gm-title">Sets <em>filmés.</em></h1>
         <p class="page-hero-sub">
-          Un artiste. Une heure. Une caméra. L'esthétique empruntée au <strong>cà phê sữa đá</strong> — ce café vietnamien glacé, bu lentement, dense et concentré. <strong>Bass Music, UK Garage, Jungle, Liquid DnB</strong> : des artistes underground filmés dans leur élément, sans compromis de format.
+          Un artiste. Une heure. Une caméra. L'esthétique empruntée au <strong>cà phê sữa đá</strong>, ce café vietnamien glacé, bu lentement, dense et concentré. <strong>Bass Music, UK Garage, Jungle, Liquid DnB</strong> : des artistes underground filmés dans leur élément, sans compromis de format.
         </p>
       </div>
     </section>
@@ -383,6 +528,76 @@
       </div>
     </section>
 
+
+    <!-- ════════════════════════════════════════
+         PHAT AND CURIOUS — YouTube Shorts 9:16
+         Pour activer une carte (Short prêt) :
+         1. Ajouter href="https://youtube.com/shorts/ID" target="_blank" rel="noopener noreferrer" sur le <a.pac-thumb>
+         2. Remplacer <div class="pac-thumb-inner"> par <img src="thumbnail.jpg" alt="..." loading="lazy" />
+         3. Supprimer <span class="pac-soon">
+    ════════════════════════════════════════ -->
+    <section class="pac-section" id="phat-and-curious" aria-labelledby="pac-title">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="eyebrow"><span>Phat and Curious</span></div>
+            <h2 class="section-title" id="pac-title">La chaise chaude.</h2>
+          </div>
+        </div>
+
+        <div class="pac-grid" role="list">
+
+          <!-- P&C — Onyx (Ép. 002) -->
+          <article class="pac-card" role="listitem">
+            <a class="pac-thumb" aria-label="Phat and Curious avec Onyx, bientôt disponible">
+              <div class="pac-thumb-inner">
+                <span class="pac-ep-label">P&amp;C · 002</span>
+                <p class="pac-thumb-guest">Onyx</p>
+                <p class="pac-thumb-from">&nbsp;</p>
+                <span class="pac-soon">Bientôt</span>
+              </div>
+              <div class="pac-thumb-overlay" aria-hidden="true"></div>
+            </a>
+            <div class="pac-body">
+              <p class="pac-num">Phat and Curious #002</p>
+              <h3 class="pac-name">Onyx</h3>
+              <p class="pac-sub">Liquid / Drum and Bass</p>
+              <div class="pac-foot">
+                <span class="pac-tag">YouTube Short</span>
+                <span class="ep-dot"></span>
+                <span class="pac-date">2026</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- P&C — Ymka (Ép. 003) -->
+          <article class="pac-card" role="listitem">
+            <a class="pac-thumb" aria-label="Phat and Curious avec Ymka, bientôt disponible">
+              <div class="pac-thumb-inner">
+                <span class="pac-ep-label">P&amp;C · 003</span>
+                <p class="pac-thumb-guest">Ymka</p>
+                <p class="pac-thumb-from">from The Garage</p>
+                <span class="pac-soon">Bientôt</span>
+              </div>
+              <div class="pac-thumb-overlay" aria-hidden="true"></div>
+            </a>
+            <div class="pac-body">
+              <p class="pac-num">Phat and Curious #003</p>
+              <h3 class="pac-name">Ymka</h3>
+              <p class="pac-sub">from The Garage · Bass House / Speed Garage</p>
+              <div class="pac-foot">
+                <span class="pac-tag">YouTube Short</span>
+                <span class="ep-dot"></span>
+                <span class="pac-date">2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- SOUMETTRE UN MIX -->
     <section class="submit-section" aria-labelledby="submit-title">
       <div class="container">
@@ -391,7 +606,7 @@
             <div class="eyebrow"><span>Artistes</span></div>
             <h2 class="submit-title" id="submit-title">Soumettre <em>un mix.</em></h2>
             <p class="submit-body">
-              Tu es DJ, producteur·ice ou collectif actif·ve sur la scène <strong>bass music underground</strong> ? On sélectionne nos invités sur la qualité de la sélection, pas sur la notoriété. Si ta musique a quelque chose à raconter, on veut l'entendre. Envoie-nous un lien de mix, une courte présentation et ton genre de prédilection — on répond à tout le monde.
+              Tu es DJ, producteur·ice ou collectif actif·ve sur la scène <strong>bass music underground</strong> ? On sélectionne nos invités sur la qualité de la sélection, pas sur la notoriété. Si ta musique a quelque chose à raconter, on veut l'entendre. Envoie-nous un lien de mix, une courte présentation et ton genre de prédilection, on répond à tout le monde.
             </p>
           </div>
           <a href="mailto:contact@phatandphurious.com?subject=Proposition%20Guest%20Mix%20PnP" class="btn btn-primary">
@@ -409,7 +624,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant — Montpellier, France.</p>
+            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
           </div>
           <div class="footer-socials">
             <p class="footer-social-label">Nous suivre</p>
@@ -423,7 +638,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span> — Montpellier, France</p>
+          <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
           <nav class="footer-legal" aria-label="Liens légaux">
             <a href="mentions-legales.html">Mentions légales</a>
             <a href="politique-de-confidentialite.html">Politique de confidentialité</a>

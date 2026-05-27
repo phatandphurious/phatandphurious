@@ -1052,6 +1052,78 @@
     }
 
     /* ────────────────────────────────────────────
+       LOGO TICKER
+    ──────────────────────────────────────────── */
+    .logo-ticker {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Fondu gauche / droite — effet cinématographique */
+    .logo-ticker::before,
+    .logo-ticker::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .logo-ticker::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+    }
+    .logo-ticker::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+    }
+
+    .logo-ticker-inner {
+      display: flex;
+      animation: logo-scroll 22s linear infinite;
+      will-change: transform;
+    }
+
+    .logo-ticker-inner:hover {
+      animation-play-state: paused;
+    }
+
+    /* Chaque set de logos */
+    .logo-ticker-set {
+      display: flex;
+      gap: 20px;
+      padding-right: 20px; /* gap entre les deux sets = même valeur */
+      flex-shrink: 0;
+    }
+
+    .logo-ticker-item {
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .logo-ticker-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    @keyframes logo-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-25%); }
+    }
+
+
+    /* ────────────────────────────────────────────
        EVENTS
     ──────────────────────────────────────────── */
 
@@ -1242,8 +1314,8 @@
 
           <p class="hero-sub">
             On filme des sets d'une heure dans l'atmosphère lente, concentrée et intense
-            d'un café vietnamien glacé (<em>cà phê sữa đá</em>). <strong>Bass House, UK Garage, Jungle, Liquid DnB, Dubstep</strong>
-            — des artistes underground qui méritent d'être entendus.
+            d'un café vietnamien glacé (<em>cà phê sữa đá</em>). <strong>Bass House, UK Garage, Jungle, Liquid DnB, Dubstep</strong>.
+            Des artistes underground qui méritent d'être entendus.
           </p>
 
           <div class="hero-actions">
@@ -1282,6 +1354,75 @@
     </div>
 
     <!-- ════════════════════════════════════════
+         LOGO TICKER
+         Ordre : Noir/Rouge → Rouge/Blanc → Blanc/Rouge → Rouge/Noir
+    ════════════════════════════════════════ -->
+    <div class="logo-ticker" role="img" aria-label="Logos Phat & Phurious FM">
+      <div class="logo-ticker-inner">
+        <!-- Set 1 — visible, alt descriptif -->
+        <div class="logo-ticker-set">
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-noir-rouge.png" alt="Phat & Phurious FM — logo fond noir" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-blanc.png" alt="Phat & Phurious FM — logo fond rouge blanc" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-blanc-rouge.png" alt="Phat & Phurious FM — logo fond blanc" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-noir.png" alt="Phat & Phurious FM — logo fond rouge noir" width="180" height="180" loading="lazy" />
+          </div>
+        </div>
+        <!-- Set 2 (duplicate, aria-hidden) -->
+        <div class="logo-ticker-set" aria-hidden="true">
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+        </div>
+        <!-- Set 3 (duplicate, aria-hidden) -->
+        <div class="logo-ticker-set" aria-hidden="true">
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+        </div>
+        <!-- Set 4 (duplicate, aria-hidden) -->
+        <div class="logo-ticker-set" aria-hidden="true">
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+          <div class="logo-ticker-item">
+            <img src="images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
          LE CONCEPT
     ════════════════════════════════════════ -->
     <section id="concept" aria-labelledby="concept-title">
@@ -1305,7 +1446,7 @@
                   éditorial sérieux.</p>
                 <p>
                   Le format signature, c'est le <strong>guest mix filmé d'une heure</strong>. Un artiste, une sélection,
-                  une caméra. L'esthétique est empruntée au <em>cà phê sữa đá</em> — ce café vietnamien au lait
+                  une caméra. L'esthétique est empruntée au <em>cà phê sữa đá</em>, ce café vietnamien au lait
                   concentré sucré, bu lentement sur de la glace pilée. Lent. Dense. Intense.
                 </p>
               </div>
@@ -1525,7 +1666,7 @@
               exceptionnels qui manquent simplement de visibilité structurée.
             </p>
             <p>
-              On invite des artistes à venir jouer parce qu'on croit dans leur travail — <strong>pas parce qu'ils
+              On invite des artistes à venir jouer parce qu'on croit dans leur travail, <strong>pas parce qu'ils
               ont déjà une audience</strong>. Le format filmé d'une heure leur laisse l'espace de développer
               une sélection cohérente, sans pression de format radio ni de montage court.
             </p>
@@ -1640,7 +1781,7 @@
             </p>
             <p class="footer-tagline">
               Bass music. Filmée. Ressentie. Partagée.<br />
-              Média indépendant — Montpellier, France.
+              Média indépendant, Montpellier, France.
             </p>
           </div>
 
@@ -1658,7 +1799,7 @@
 
         <div class="footer-bottom">
           <p class="footer-copy">
-            © 2026 <span>Phat & Phurious</span> — Montpellier, France
+            © 2026 <span>Phat & Phurious</span>, Montpellier, France
           </p>
           <nav class="footer-legal" aria-label="Liens légaux">
             <a href="mentions-legales.html">Mentions légales</a>
