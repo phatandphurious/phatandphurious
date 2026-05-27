@@ -75,9 +75,11 @@
     .mobile-nav a:hover { color:var(--white); }
 
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('images/hero-events.jpg') center / cover no-repeat; background-attachment:fixed; }
-    .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
-    .page-hero .container { position:relative; z-index:1; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; overflow:hidden; }
+    .hero-video-wrap { position:absolute; inset:0; overflow:hidden; z-index:0; }
+    .hero-video { position:absolute; top:-15%; left:0; width:100%; height:130%; object-fit:cover; will-change:transform; }
+    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
+    .page-hero .container { position:relative; z-index:2; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
     .page-hero-title em { color:var(--beige); font-style:italic; font-weight:300; }
     .page-hero-sub { font-size:0.9rem; font-weight:300; line-height:1.78; color:var(--muted); max-width:520px; }
@@ -319,7 +321,7 @@
     /* RESPONSIVE */
     @media (max-width: 960px) {
       :root { --sec-py: 72px; }
-      .page-hero { background-attachment: scroll; }
+      .hero-video { will-change:auto; }
       .nav-links { display:none; }
       .burger { display:flex; }
       .event-item { grid-template-columns: 80px 1fr; }
@@ -383,6 +385,11 @@
 
     <!-- HERO -->
     <section class="page-hero" aria-labelledby="events-title">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/hero-events.jpg">
+          <source src="videos/hero-events.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="container">
         <div class="eyebrow"><span>Events &amp; Live Reports</span></div>
         <h1 class="page-hero-title" id="events-title">Events<br/><em>&amp; Live Reports</em></h1>

@@ -12,6 +12,17 @@
     onScroll();
   }
 
+  /* Hero video — parallax au scroll */
+  var heroVideo = document.querySelector('.hero-video');
+  if (heroVideo && window.innerWidth >= 961 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var heroSection = document.querySelector('.page-hero');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY <= heroSection.offsetHeight) {
+        heroVideo.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
+      }
+    }, { passive: true });
+  }
+
   /* Burger — menu mobile */
   var burgerBtn = document.getElementById('burgerBtn');
   var mobileNav = document.getElementById('mobileNav');
