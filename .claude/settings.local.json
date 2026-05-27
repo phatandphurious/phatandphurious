@@ -27,7 +27,11 @@
       "Bash(cp \"/Users/phat/Desktop/Live reports/timetableallypally.jpg\" \"/Users/phat/Documents/Sites/phatandphurious/images/event-alexandra-palace-sammy-virji-avril-2026.jpg\")",
       "WebFetch(domain:sonar.es)",
       "Bash(cp /Users/phat/.claude/image-cache/5c548e76-16f3-428d-aea3-ba9882e0023c/5.png /Users/phat/Documents/Sites/phatandphurious/images/sonar-2026-map.png)",
-      "Bash(cp /Users/phat/.claude/image-cache/5c548e76-16f3-428d-aea3-ba9882e0023c/6.png /Users/phat/Documents/Sites/phatandphurious/images/sonar-2026-lineup.png)"
+      "Bash(cp /Users/phat/.claude/image-cache/5c548e76-16f3-428d-aea3-ba9882e0023c/6.png /Users/phat/Documents/Sites/phatandphurious/images/sonar-2026-lineup.png)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/)",
+      "Bash(python3 *)",
+      "Bash(pip3 install *)"
     ]
   }
 }
