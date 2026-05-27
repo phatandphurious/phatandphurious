@@ -513,29 +513,8 @@
     </div>
   </footer>
 
+  <script src="main.js"></script>
   <script>
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    burgerBtn.addEventListener('click', () => {
-      const open = burgerBtn.classList.toggle('open');
-      mobileNav.classList.toggle('open', open);
-      burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('open');
-        mobileNav.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
-      });
-    });
-
     // Form
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();

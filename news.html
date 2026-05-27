@@ -11,7 +11,7 @@
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://www.phatandphurious.com/news.html" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
   <title>Webzine &amp; News — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,7 +39,6 @@
     .tag-beige { background:rgba(255,239,229,0.06); color:var(--beige); border:1px solid rgba(255,239,229,0.16); }
     .tag-green { background:rgba(26,92,46,0.15); color:#4caf50; border:1px solid rgba(76,175,80,0.25); }
     .tag-neutral { background:rgba(255,255,255,0.04); color:var(--muted); border:1px solid var(--border); }
-    .tag-green { background:rgba(26,92,46,0.15); color:#4caf50; border:1px solid rgba(76,175,80,0.25); }
 
     .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
     .eyebrow::before { content:''; display:block; width:24px; height:1px; background:var(--red); flex-shrink:0; }
@@ -403,29 +402,8 @@
     .visually-hidden { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   </style>
 
+  <script src="main.js"></script>
   <script>
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    burgerBtn.addEventListener('click', () => {
-      const open = burgerBtn.classList.toggle('open');
-      mobileNav.classList.toggle('open', open);
-      burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('open');
-        mobileNav.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
-      });
-    });
-
     // Filtre articles
     const filterBtns = document.querySelectorAll('.filter-btn');
     const articles = document.querySelectorAll('#articlesGrid .article-card');

@@ -15,7 +15,7 @@
   <meta name="twitter:title" content="Guest Mixes — Phat & Phurious FM" />
   <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <link rel="canonical" href="https://www.phatandphurious.com/guest-mixes.html" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
   <title>Guest Mixes — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -565,7 +565,7 @@
 
           <!-- P&C — Onyx (Ép. 002) -->
           <article class="pac-card" role="listitem">
-            <a class="pac-thumb" aria-label="Phat and Curious avec Onyx, bientôt disponible">
+            <div class="pac-thumb">
               <div class="pac-thumb-inner">
                 <span class="pac-ep-label">P&amp;C · 002</span>
                 <p class="pac-thumb-guest">Onyx</p>
@@ -573,7 +573,7 @@
                 <span class="pac-soon">Bientôt</span>
               </div>
               <div class="pac-thumb-overlay" aria-hidden="true"></div>
-            </a>
+            </div>
             <div class="pac-body">
               <p class="pac-num">Phat and Curious #002</p>
               <h3 class="pac-name">Onyx</h3>
@@ -585,7 +585,7 @@
 
           <!-- P&C — Ymka (Ép. 003) -->
           <article class="pac-card" role="listitem">
-            <a class="pac-thumb" aria-label="Phat and Curious avec Ymka, bientôt disponible">
+            <div class="pac-thumb">
               <div class="pac-thumb-inner">
                 <span class="pac-ep-label">P&amp;C · 003</span>
                 <p class="pac-thumb-guest">Ymka</p>
@@ -593,7 +593,7 @@
                 <span class="pac-soon">Bientôt</span>
               </div>
               <div class="pac-thumb-overlay" aria-hidden="true"></div>
-            </a>
+            </div>
             <div class="pac-body">
               <p class="pac-num">Phat and Curious #003</p>
               <h3 class="pac-name">Ymka</h3>
@@ -657,29 +657,7 @@
     </div>
   </footer>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    burgerBtn.addEventListener('click', () => {
-      const open = burgerBtn.classList.toggle('open');
-      mobileNav.classList.toggle('open', open);
-      burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('open');
-        mobileNav.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
-      });
-    });
-  </script>
+  <script src="main.js"></script>
 
 </body>
 </html>

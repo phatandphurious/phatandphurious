@@ -11,7 +11,7 @@
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://www.phatandphurious.com/about.html" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
   <title>À propos — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -472,29 +472,7 @@
     </div>
   </footer>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    burgerBtn.addEventListener('click', () => {
-      const open = burgerBtn.classList.toggle('open');
-      mobileNav.classList.toggle('open', open);
-      burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('open');
-        mobileNav.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
-      });
-    });
-  </script>
+  <script src="main.js"></script>
 
 </body>
 </html>

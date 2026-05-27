@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.phatandphurious.com" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>" />
+  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
   <title>Phat & Phurious FM — Bass music. Filmée. Ressentie. Partagée.</title>
 
   <script type="application/ld+json">
@@ -127,6 +127,7 @@
     .tag-red     { background: rgba(207,0,0,0.1);   color: var(--red);   border: 1px solid rgba(207,0,0,0.22); }
     .tag-beige   { background: rgba(255,239,229,0.06); color: var(--beige); border: 1px solid rgba(255,239,229,0.16); }
     .tag-neutral { background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid var(--border); }
+    .tag-green   { background: rgba(26,92,46,0.15);   color: #4caf50;     border: 1px solid rgba(76,175,80,0.25); }
 
     .eyebrow {
       display: flex;
@@ -1442,8 +1443,7 @@
             <div class="concept-paragraphs">
               <div>
                 <p>
-                  Phat & Phurious FM est né d'une conviction simple : une passion pour la musique électronique. La bass music underground mérite un espace
-                  éditorial sérieux.</p>
+                  Phat & Phurious FM est né d'une conviction simple : la bass music underground mérite un espace éditorial sérieux.</p>
                 <p>
                   Le format signature, c'est le <strong>guest mix filmé d'une heure</strong>. Un artiste, une sélection,
                   une caméra. L'esthétique est empruntée au <em>cà phê sữa đá</em>, ce café vietnamien au lait
@@ -1814,6 +1814,7 @@
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
+  <script src="main.js"></script>
   <script>
     /* Hero — alignement typographique des lignes du titre */
     function alignHeroLines() {
@@ -1832,34 +1833,6 @@
     document.fonts.ready.then(() => {
       alignHeroLines();
       window.addEventListener('resize', alignHeroLines, { passive: true });
-    });
-
-    /* Navbar — effet au scroll */
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 16);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    /* Burger — menu mobile */
-    const burgerBtn  = document.getElementById('burgerBtn');
-    const mobileNav  = document.getElementById('mobileNav');
-
-    burgerBtn.addEventListener('click', () => {
-      const open = burgerBtn.classList.toggle('open');
-      mobileNav.classList.toggle('open', open);
-      burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-    });
-
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('open');
-        mobileNav.classList.remove('open');
-        burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
-      });
     });
 
     /* Ancres — offset navbar */
