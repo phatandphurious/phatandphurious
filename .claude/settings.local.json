@@ -9,7 +9,25 @@
       "Bash(git pull *)",
       "Bash(git rebase *)",
       "Bash(git commit *)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(grep -v \"\\\\.html$\")",
+      "Bash(grep -v \"\\\\.jpg$\")",
+      "Bash(xargs sed -i '' 's|https://www.mixcloud.com/phatandphurious|https://www.mixcloud.com/PhatandPhuriousFM/|g')",
+      "Bash(xargs sed -i '' 's/Phat \\\\& Phurious FM — Accueil/Phat \\\\& Phurious — Accueil/g')",
+      "Bash(xargs sed -i '' 's/PHURIOUS FM/PHURIOUS/g')",
+      "WebSearch",
+      "Bash(sed -i '' '/<span class=\"tag tag-neutral\">En attente<\\\\/span>/d' /Users/phat/Documents/Sites/phatandphurious/events.html)",
+      "Bash(sed -i '' '/<span class=\"tag tag-green\">Accrédité<\\\\/span>/d' /Users/phat/Documents/Sites/phatandphurious/events.html)",
+      "Bash(xargs sed -i '' 's/padding-bottom:72px; border-bottom:1px solid var\\(--border\\); position:relative;/padding-bottom:72px; position:relative;/g')",
+      "Bash(sed -i '' 's|<a href=\"#\">Mentions légales</a>|<a href=\"mentions-legales.html\">Mentions légales</a>|g' /Users/phat/Documents/Sites/phatandphurious/__TRACKED_VAR__)",
+      "Bash(sed -i '' 's|<a href=\"#\">Politique de confidentialité</a>|<a href=\"politique-de-confidentialite.html\">Politique de confidentialité</a>|g' /Users/phat/Documents/Sites/phatandphurious/__TRACKED_VAR__)",
+      "Bash(cp \"/Users/phat/Desktop/Live reports/phantom.jpeg\" \"/Users/phat/Documents/Sites/phatandphurious/images/event-phantom-sammy-virji-mars-2026.jpg\")",
+      "Bash(cp \"/Users/phat/Desktop/Live reports/trabendo.jpeg\" \"/Users/phat/Documents/Sites/phatandphurious/images/event-trabendo-habstrakt-mars-2026.jpg\")",
+      "Bash(cp \"/Users/phat/Desktop/Live reports/SammyAllyPally.jpg\" \"/Users/phat/Documents/Sites/phatandphurious/images/sammy-virji-alexandra-palace-avril-2026.jpg\")",
+      "Bash(cp \"/Users/phat/Desktop/Live reports/timetableallypally.jpg\" \"/Users/phat/Documents/Sites/phatandphurious/images/event-alexandra-palace-sammy-virji-avril-2026.jpg\")",
+      "WebFetch(domain:sonar.es)",
+      "Bash(cp /Users/phat/.claude/image-cache/5c548e76-16f3-428d-aea3-ba9882e0023c/5.png /Users/phat/Documents/Sites/phatandphurious/images/sonar-2026-map.png)",
+      "Bash(cp /Users/phat/.claude/image-cache/5c548e76-16f3-428d-aea3-ba9882e0023c/6.png /Users/phat/Documents/Sites/phatandphurious/images/sonar-2026-lineup.png)"
     ]
   }
 }

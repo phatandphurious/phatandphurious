@@ -37,6 +37,7 @@
     .tag { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; padding:4px 9px; border-radius:1px; }
     .tag-red { background:rgba(207,0,0,0.1); color:var(--red); border:1px solid rgba(207,0,0,0.22); }
     .tag-beige { background:rgba(255,239,229,0.06); color:var(--beige); border:1px solid rgba(255,239,229,0.16); }
+    .tag-green { background:rgba(26,92,46,0.15); color:#4caf50; border:1px solid rgba(76,175,80,0.25); }
     .tag-neutral { background:rgba(255,255,255,0.04); color:var(--muted); border:1px solid var(--border); }
     .tag-green { background:rgba(26,92,46,0.15); color:#4caf50; border:1px solid rgba(76,175,80,0.25); }
 
@@ -83,6 +84,31 @@
     .page-hero-sub { font-size:0.9rem; font-weight:300; line-height:1.78; color:var(--muted); max-width:520px; }
     .page-hero-sub strong { color:var(--white); font-weight:400; }
 
+    /* FILTERS */
+    .filters-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-btn {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 1px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .filter-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
+    .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
+
     /* ARTICLES */
     .articles-section { padding: var(--sec-py) 0; }
 
@@ -98,20 +124,42 @@
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       transition: background 0.22s;
+      overflow: hidden;
     }
     article.article-card:hover { background: #181818; }
     .art-link {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      padding: 26px 22px;
       height: 100%;
+      color: inherit;
+      text-decoration: none;
     }
     article.article-card:nth-child(3n) { border-right: none; }
     article.article-card:nth-last-child(-n+3):not(:nth-child(3n+1) ~ *) { border-bottom: none; }
-    .art-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
-    .art-date { font-size:0.75rem; font-weight:400; color:var(--muted); letter-spacing:0.04em; white-space:nowrap; }
-    .art-title { font-size:0.96rem; font-weight:600; letter-spacing:-0.015em; line-height:1.38; color:var(--white); flex:1; }
+    article.article-card.hidden { display: none; }
+
+    /* Thumbnail */
+    .art-thumb {
+      aspect-ratio: 16 / 9;
+      background: #0e0e0e;
+      position: relative;
+      overflow: hidden;
+    }
+    .art-thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+    article.article-card:hover .art-thumb img { transform:scale(1.04); }
+    .art-thumb-tag {
+      position: absolute;
+      top: 12px; left: 12px;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 1px;
+    }
+
+    /* Body */
+    .art-body { padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; border-top: 1px solid var(--border); }
+    .art-meta { font-size:0.73rem; font-weight:300; color:var(--muted); letter-spacing:0.04em; }
+    .art-title { font-size:0.96rem; font-weight:600; letter-spacing:-0.015em; line-height:1.38; color:var(--white); }
     .art-excerpt { font-size:0.78rem; font-weight:300; line-height:1.7; color:var(--muted); flex:1; }
     .art-foot { display:flex; align-items:center; justify-content:space-between; padding-top:14px; border-top:1px solid var(--border); margin-top:auto; gap:12px; }
     .art-read { font-size:0.75rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
@@ -226,55 +274,91 @@
       </div>
     </section>
 
+    <!-- FILTRES -->
+    <div class="container">
+      <div class="filters-bar" role="group" aria-label="Filtrer les articles par catégorie">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="live-report">Live Report</button>
+        <button class="filter-btn" data-filter="release-review">Release Review</button>
+        <button class="filter-btn" data-filter="interview">Interview</button>
+        <button class="filter-btn" data-filter="decouverte">Découverte</button>
+        <button class="filter-btn" data-filter="festival">Festival</button>
+      </div>
+    </div>
+
     <!-- ARTICLES -->
     <section class="articles-section" aria-labelledby="articles-title">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" id="articles-title">Live reports</h2>
-        </div>
-        <div class="webzine-grid">
+        <div class="webzine-grid" id="articlesGrid">
 
-          <article class="article-card">
+          <article class="article-card" data-category="festival">
+            <a href="news/sonar-barcelona-juin-2026.html" class="art-link" aria-label="Lire l'article : Sónar Barcelona 2026 — On y va">
+              <div class="art-thumb">
+                <img src="images/sonar-2026-logo.png" alt="Sónar 2026 — Barcelona" loading="lazy" />
+                <span class="art-thumb-tag tag tag-green">Festival</span>
+              </div>
+              <div class="art-body">
+                <p class="art-meta">Barcelona · 18-20 juin 2026</p>
+                <p class="art-title">Sónar 2026 — Sammy Virji, Goldie b2b Doc Scott, The Prodigy. On a pris les billets.</p>
+                <p class="art-excerpt">98 artistes, 5 scènes, trois jours à Barcelone. Voilà notre programme et pourquoi on n'a pas hésité longtemps.</p>
+                <div class="art-foot">
+                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-readtime">5 min</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card" data-category="live-report">
             <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link" aria-label="Lire l'article : Sammy Virji — Alexandra Palace, London">
-              <div class="art-head">
-                <span class="tag tag-red">Live Report</span>
-                <span class="art-date">17 avr. 2026</span>
+              <div class="art-thumb">
+                <img src="images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji en performance à l'Alexandra Palace, Londres" loading="lazy" />
+                <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
-              <p class="art-title">Sammy Virji à l'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can't Swim</p>
-              <p class="art-excerpt">Alexandra Palace sold out le vendredi soir. Cops and Robbers feat. Skepta en ouverture, pyrotechnics, et une surprise en pleine foule qu'on n'attendait pas.</p>
-              <div class="art-foot">
-                <span class="art-read">Lire l'article →</span>
-                <span class="art-readtime">6 min</span>
+              <div class="art-body">
+                <p class="art-meta">Londres, UK · 17 avr. 2026</p>
+                <p class="art-title">Sammy Virji à l'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can't Swim</p>
+                <p class="art-excerpt">Alexandra Palace sold out le vendredi soir. Cops and Robbers feat. Skepta en ouverture, pyrotechnics, et une surprise en pleine foule qu'on n'attendait pas.</p>
+                <div class="art-foot">
+                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-readtime">6 min</span>
+                </div>
               </div>
             </a>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="live-report">
             <a href="news/habstrakt-lineage-tour-trabendo-mars-2026.html" class="art-link" aria-label="Lire l'article : Habstrakt Lineage Tour — Le Trabendo, Paris">
-              <div class="art-head">
-                <span class="tag tag-red">Live Report</span>
-                <span class="art-date">21 mars 2026</span>
+              <div class="art-thumb">
+                <img src="images/event-trabendo-habstrakt-mars-2026.jpg" alt="Affiche du Habstrakt & Asdek Lineage Tour au Trabendo, Paris" loading="lazy" />
+                <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
-              <p class="art-title">Habstrakt Lineage Tour — Le Trabendo, Paris. Elmyx, Asdek, et une nuit qui s'est finie à 5h50</p>
-              <p class="art-excerpt">Habstrakt embarque Elmyx et Asdek pour son Lineage Tour au Trabendo. Elmyx sort un unreleased avec Jacknife, Habstrakt joue Chicken Soup x Skrillex. On est restés jusqu'au bout.</p>
-              <div class="art-foot">
-                <span class="art-read">Lire l'article →</span>
-                <span class="art-readtime">7 min</span>
+              <div class="art-body">
+                <p class="art-meta">Paris · 21 mars 2026</p>
+                <p class="art-title">Habstrakt Lineage Tour — Un unreleased Elmyx x Jacknife, Tonton Habby dans la place : une soirée sous le signe de la Bass House</p>
+                <p class="art-excerpt">Habstrakt embarque Elmyx et Asdek pour son Lineage Tour au Trabendo. Elmyx sort un unreleased avec Jacknife, Habstrakt joue Chicken Soup x Skrillex. On est restés jusqu'au bout.</p>
+                <div class="art-foot">
+                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-readtime">7 min</span>
+                </div>
               </div>
             </a>
           </article>
 
-          <article class="article-card">
+          <article class="article-card" data-category="live-report">
             <a href="news/sammy-virji-phantom-mars-2026.html" class="art-link" aria-label="Lire l'article : Sammy Virji — Le Phantom, Paris">
-              <div class="art-head">
-                <span class="tag tag-red">Live Report</span>
-                <span class="art-date">20 mars 2026</span>
+              <div class="art-thumb">
+                <img src="images/event-phantom-sammy-virji-mars-2026.jpg" alt="Affiche de la soirée Sammy Virji au Phantom, Paris" loading="lazy" />
+                <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
-              <p class="art-title">Sammy Virji au Phantom — Une nuit qui commence avec Unsho et Noge, et se ferme sur Nostalgia</p>
-              <p class="art-excerpt">Calypso, Unsho, Noge, puis Sammy Virji à 23h30. Une soirée construite de bout en bout, avec un moment — Nostalgia — qu'on n'est pas près d'oublier.</p>
-              <div class="art-foot">
-                <span class="art-read">Lire l'article →</span>
-                <span class="art-readtime">5 min</span>
+              <div class="art-body">
+                <p class="art-meta">Paris · 20 mars 2026</p>
+                <p class="art-title">Sammy Virji au Phantom — Nostalgia joué à la bonne heure, dans la bonne salle. On s'en souviendra.</p>
+                <p class="art-excerpt">Calypso, Unsho, Noge, puis Sammy Virji à 23h30. Une soirée construite de bout en bout, avec un moment — Nostalgia — qu'on n'est pas près d'oublier.</p>
+                <div class="art-foot">
+                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-readtime">5 min</span>
+                </div>
               </div>
             </a>
           </article>
@@ -339,6 +423,25 @@
         mobileNav.classList.remove('open');
         burgerBtn.setAttribute('aria-expanded', 'false');
         burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+
+    // Filtre articles
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('#articlesGrid .article-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        articles.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
       });
     });
 
