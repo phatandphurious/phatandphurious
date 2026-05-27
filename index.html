@@ -1735,20 +1735,61 @@
     });
 
     /* Newsletter */
-    document.getElementById('nlForm').addEventListener('submit', function (e) {
+    document.getElementById('nlForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const email = document.getElementById('nlEmail').value;
+      const email = document.getElementById('nlEmail').value.trim();
       if (!email) return;
+
       const btn = this.querySelector('button[type="submit"]');
-      btn.textContent = 'Inscrit·e ✓';
-      btn.style.background = 'var(--success)';
+      const note = this.querySelector('.nl-note');
+      btn.textContent = 'Envoi…';
       btn.disabled = true;
-      document.getElementById('nlEmail').value = '';
-      setTimeout(() => {
-        btn.textContent = "S'inscrire";
-        btn.style.background = '';
+
+      try {
+        const res = await fetch('https://api.brevo.com/v3/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'api-key': 'BREVO_API_KEY'
+          },
+          body: JSON.stringify({ email: email, listIds: [3], updateEnabled: true })
+        });
+
+        if (res.ok || res.status === 204) {
+          btn.textContent = 'Inscrit·e ✓';
+          btn.style.background = '#1a7a3a';
+          document.getElementById('nlEmail').value = '';
+          note.textContent = 'Bienvenue dans la communauté. À très vite dans ta boîte mail.';
+          setTimeout(() => {
+            btn.textContent = "S'inscrire";
+            btn.style.background = '';
+            btn.disabled = false;
+            note.textContent = 'Aucun spam. Désinscription en un clic à tout moment.\nTes données ne sont jamais partagées.';
+          }, 5000);
+        } else {
+          const data = await res.json().catch(() => ({}));
+          if (res.status === 400 && data.code === 'duplicate_parameter') {
+            btn.textContent = 'Déjà inscrit·e';
+            btn.style.background = '#555';
+          } else {
+            btn.textContent = 'Erreur, réessaie';
+            btn.style.background = 'var(--red)';
+          }
+          btn.disabled = false;
+          setTimeout(() => {
+            btn.textContent = "S'inscrire";
+            btn.style.background = '';
+          }, 4000);
+        }
+      } catch (err) {
+        btn.textContent = 'Erreur réseau';
+        btn.style.background = 'var(--red)';
         btn.disabled = false;
-      }, 4000);
+        setTimeout(() => {
+          btn.textContent = "S'inscrire";
+          btn.style.background = '';
+        }, 4000);
+      }
     });
   </script>
 
