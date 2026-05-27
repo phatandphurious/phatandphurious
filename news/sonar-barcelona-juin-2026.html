@@ -234,6 +234,23 @@
     <article class="article-body">
       <div class="container-narrow">
 
+        <!-- VIDEO SONAR -->
+        <div class="article-video" style="margin:0 0 48px;">
+          <video
+            id="sonarVideo"
+            loop
+            playsinline
+            controls
+            preload="metadata"
+            poster="../images/sonar-2026-logo.png"
+            style="width:100%; display:block; border:1px solid rgba(255,255,255,0.06); background:#0A0A0A;"
+            aria-label="Vidéo — ambiance Sónar Barcelona 2026"
+          >
+            <source src="../videos/sonar-barcelona-2026.mp4" type="video/mp4">
+          </video>
+          <p class="article-photo-caption" style="margin-top:10px;">Sónar Barcelona 2026 · Fira Gran Via</p>
+        </div>
+
         <!-- STATS -->
         <div class="stats-band" aria-label="Chiffres clés">
           <div class="stat-item">
@@ -412,20 +429,6 @@
           </div>
         </div>
 
-        <!-- VIDEO SONAR -->
-        <div class="article-video" style="margin:48px 0;">
-          <video
-            controls
-            preload="metadata"
-            poster="../images/sonar-2026-logo.png"
-            style="width:100%; display:block; border:1px solid rgba(255,255,255,0.06); background:#0A0A0A;"
-            aria-label="Vidéo — ambiance Sónar Barcelona 2026"
-          >
-            <source src="../videos/sonar-barcelona-2026.mp4" type="video/mp4">
-          </video>
-          <p class="article-photo-caption" style="margin-top:10px;">Sónar Barcelona 2026 · Fira Gran Via — on y était.</p>
-        </div>
-
         <div class="prose">
 
           <p class="article-section-label">On est prêts</p>
@@ -500,6 +503,12 @@
     const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    const sonarVideo = document.getElementById('sonarVideo');
+    if (sonarVideo) {
+      sonarVideo.muted = true;
+      sonarVideo.play().catch(() => {});
+    }
 
     const burgerBtn = document.getElementById('burgerBtn');
     const mobileNav = document.getElementById('mobileNav');
