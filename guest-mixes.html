@@ -204,6 +204,7 @@
       cursor: default;
     }
     .pac-thumb[href] { cursor: pointer; }
+    .pac-thumb--playable { cursor: pointer; }
     .pac-thumb img { width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .pac-thumb-inner {
@@ -254,6 +255,22 @@
       border-radius: 1px;
       padding: 3px 9px;
     }
+    .pac-play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px; height: 52px;
+      background: rgba(207,0,0,0.92);
+      border: none; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .pac-thumb--playable:hover .pac-play-btn { background: #CF0000; transform: translate(-50%, -50%) scale(1.1); }
+    .pac-play-btn svg { width: 18px; height: 18px; fill: #fff; margin-left: 3px; }
+    .pac-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
     .pac-thumb-overlay {
       position: absolute;
       inset: 0;
@@ -568,10 +585,13 @@
 
           <!-- P&C — Onyx (Ép. 002) -->
           <article class="pac-card" role="listitem">
-            <a class="pac-thumb" href="https://youtube.com/shorts/a_4Gj4d9pEU" target="_blank" rel="noopener noreferrer" aria-label="Regarder Phat and Curious #002 — Onyx sur YouTube">
+            <div class="pac-thumb pac-thumb--playable" data-video="a_4Gj4d9pEU" role="button" tabindex="0" aria-label="Lire Phat and Curious #002 — Onyx">
               <img src="https://img.youtube.com/vi/a_4Gj4d9pEU/maxresdefault.jpg" alt="Phat and Curious #002 — Onyx" loading="lazy" />
               <div class="pac-thumb-overlay" aria-hidden="true"></div>
-            </a>
+              <button class="pac-play-btn" aria-hidden="true" tabindex="-1">
+                <svg viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+              </button>
+            </div>
             <div class="pac-body">
               <p class="pac-num">Phat and Curious #002</p>
               <h3 class="pac-name">Onyx</h3>
@@ -655,6 +675,16 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelectorAll('.pac-thumb--playable').forEach(thumb => {
+      const activate = () => {
+        const id = thumb.dataset.video;
+        thumb.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Phat and Curious — ${id}"></iframe>`;
+      };
+      thumb.addEventListener('click', activate);
+      thumb.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activate(); });
+    });
+  </script>
   <script src="main.js"></script>
 
 </body>
