@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portrait de dunne, producteur électronique de Brooklyn qui fait ce qu'il appelle de la 'pretty computer music'. Son dernier release prima est à écouter absolument." />
+  <meta property="og:title" content="Découverte — dunne, 'pretty computer music' depuis Brooklyn | Phat & Phurious FM" />
+  <meta property="og:description" content="71 000 auditeurs mensuels, zéro promo, zéro label. dunne construit quelque chose de silencieux et solide depuis Brooklyn. Portrait." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Découverte — dunne | Phat & Phurious FM" />
+  <link rel="canonical" href="https://phatandphurious.com/news/portrait-dunne-prima-2026.html" />
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
+  <title>Découverte — dunne, "pretty computer music" depuis Brooklyn | Phat & Phurious FM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: #0A0A0A; color: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+    input, button, textarea, select { -webkit-appearance: none; appearance: none; }
+
+    :root { --bg:#0A0A0A; --card:#141414; --red:#CF0000; --beige:#FFEFE5; --white:#FFFFFF; --muted:rgba(255,255,255,0.45); --border:rgba(255,255,255,0.06); --nav-h:56px; --max-w:1100px; --pad-x:28px; --sec-py:96px; }
+
+    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+    .container-narrow { width: 100%; max-width: 740px; margin: 0 auto; padding: 0 var(--pad-x); }
+
+    .tag { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; padding:4px 9px; border-radius:1px; }
+    .tag-red { background:rgba(207,0,0,0.1); color:var(--red); border:1px solid rgba(207,0,0,0.22); }
+    .tag-beige { background:rgba(255,239,229,0.06); color:var(--beige); border:1px solid rgba(255,239,229,0.16); }
+
+    .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+    .eyebrow::before { content:''; display:block; width:24px; height:1px; background:var(--red); flex-shrink:0; }
+    .eyebrow span { font-size:0.75rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); }
+
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; border-radius:1px; border:none; transition:all 0.2s ease; white-space:nowrap; cursor:pointer; font-family:inherit; }
+    .btn-ghost { background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.18); }
+    .btn-ghost:hover { border-color:rgba(255,255,255,0.45); }
+
+    /* NAVBAR */
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h); background:rgba(10,10,10,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--border); transition:background 0.35s ease, border-color 0.35s ease; display:flex; align-items:center; }
+    #navbar > .container { height:100%; }
+    #navbar.scrolled { background:rgba(10,10,10,0.97); border-bottom-color:rgba(255,255,255,0.1); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:100%; }
+    .nav-logo { font-size:1.05rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--white); flex-shrink:0; line-height:1; }
+    .nav-logo .amp { color:var(--red); }
+    .nav-links { display:flex; align-items:center; gap:32px; }
+    .nav-links a { font-size:0.92rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.65); transition:color 0.2s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); }
+    .burger { display:none; flex-direction:column; justify-content:center; gap:5px; width:28px; height:28px; background:none; border:none; padding:0; flex-shrink:0; }
+    .burger span { display:block; width:100%; height:1px; background:var(--white); transition:transform 0.25s ease, opacity 0.25s ease; transform-origin:center; }
+    .burger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .burger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+    .mobile-nav { display:none; position:fixed; top:var(--nav-h); left:0; right:0; z-index:199; background:rgba(10,10,10,0.98); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:16px var(--pad-x) 28px; flex-direction:column; }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a { display:block; padding:14px 0; font-size:0.8rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); transition:color 0.2s; }
+    .mobile-nav a:last-of-type { border-bottom:none; }
+    .mobile-nav a:hover { color:var(--white); }
+
+    /* ARTICLE HERO */
+    .article-hero { padding: calc(var(--nav-h) + 64px) 0 56px; border-bottom: 1px solid var(--border); }
+    .article-back { display:inline-flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:32px; transition:color 0.2s; }
+    .article-back:hover { color:var(--white); }
+    .article-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
+    .article-meta-sep { color:var(--muted); font-size:0.75rem; }
+    .article-meta-item { font-size:0.75rem; font-weight:400; color:var(--muted); letter-spacing:0.04em; }
+    .article-title { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight:700; letter-spacing:-0.03em; line-height:1.1; margin-bottom:24px; }
+    .article-title em { color:var(--red); font-style:normal; }
+    .article-subtitle { font-size:1rem; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; max-width:600px; }
+
+    /* ARTICLE BODY */
+    .article-body { padding: 72px 0 96px; }
+    .prose { font-size:0.96rem; font-weight:300; line-height:1.9; color:rgba(255,255,255,0.8); }
+    .prose p { margin-bottom:1.6em; }
+    .prose p:last-child { margin-bottom:0; }
+    .prose strong { color:var(--white); font-weight:600; }
+    .prose em { font-style:italic; color:var(--beige); }
+
+    .pullquote { margin:48px 0; padding:28px 32px; border-left:3px solid var(--red); background:rgba(207,0,0,0.04); }
+    .pullquote p { font-size:1.05rem; font-weight:400; font-style:italic; line-height:1.7; color:var(--white); letter-spacing:-0.01em; }
+
+    .article-section-label { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--red); margin-bottom:16px; margin-top:56px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+
+    /* PHOTO */
+    .article-photo { margin:48px 0; overflow:hidden; border:1px solid var(--border); }
+    .article-photo.landscape { aspect-ratio:16/9; }
+    .article-photo.landscape img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .article-photo.landscape img.crop-right { object-position:72% center; }
+    .article-photo-caption { font-size:0.75rem; font-weight:300; color:var(--muted); margin-top:10px; text-align:center; letter-spacing:0.04em; font-style:italic; border:none; }
+
+    /* PLAYER EMBED */
+    .player-wrap { margin: 48px 0; }
+    .player-label { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+    .player-wrap iframe { width:100%; border-radius:1px; border:1px solid var(--border); display:block; }
+
+    /* TRACKLIST */
+    .tracklist { margin:40px 0; }
+    .tracklist-title { font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+    .tracklist-item { display:flex; align-items:baseline; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); font-size:0.84rem; }
+    .tracklist-item:last-child { border-bottom:none; }
+    .tracklist-num { font-size:0.72rem; color:var(--red); font-weight:600; min-width:20px; }
+    .tracklist-track { color:rgba(255,255,255,0.75); font-weight:300; }
+    .tracklist-note { font-size:0.72rem; color:var(--muted); margin-left:auto; font-style:italic; }
+
+    /* RELATED */
+    .related-section { padding:64px 0; border-top:1px solid var(--border); }
+    .related-title { font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+    .related-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); }
+    .related-card { background:var(--card); padding:24px 20px; display:flex; flex-direction:column; gap:10px; transition:background 0.2s; }
+    .related-card:hover { background:#181818; }
+    .related-card-label { font-size:0.72rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
+    .related-card-title { font-size:0.9rem; font-weight:600; letter-spacing:-0.015em; line-height:1.35; color:var(--white); }
+    .related-card-date { font-size:0.72rem; font-weight:300; color:var(--muted); }
+
+    /* FOOTER */
+    #footer { border-top:1px solid var(--border); padding:48px 0 36px; }
+    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:40px; margin-bottom:40px; flex-wrap:wrap; }
+    .footer-brand { max-width:340px; }
+    .footer-logo { font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); margin-bottom:10px; }
+    .footer-logo .amp { color:var(--beige); }
+    .footer-tagline { font-size:0.75rem; font-weight:300; font-style:italic; color:var(--muted); letter-spacing:0.06em; line-height:1.55; }
+    .footer-socials { display:flex; flex-direction:column; align-items:flex-end; gap:14px; }
+    .footer-social-label { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--red); }
+    .footer-social-links { display:flex; align-items:center; gap:22px; }
+    .fsocial { font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); border-bottom:1px solid transparent; padding-bottom:2px; transition:color 0.2s, border-color 0.2s; }
+    .fsocial:hover { color:var(--red); border-color:var(--red); }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .footer-copy { font-size:0.75rem; font-weight:300; color:var(--muted); letter-spacing:0.04em; }
+    .footer-copy span { color:var(--beige); font-style:italic; }
+    .footer-legal { display:flex; gap:20px; }
+    .footer-legal a { font-size:0.75rem; font-weight:400; color:var(--muted); transition:color 0.2s; }
+    .footer-legal a:hover { color:var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .nav-links { display:none; }
+      .burger { display:flex; }
+      .footer-socials { align-items:flex-start; }
+    }
+    @media (max-width: 600px) {
+      :root { --pad-x:20px; }
+      .article-title { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+      .related-grid { grid-template-columns:1fr; }
+      .footer-top { flex-direction:column; gap:28px; }
+      .footer-socials { flex-direction:row; justify-content:flex-start; flex-wrap:wrap; }
+      .footer-bottom { flex-direction:column; align-items:flex-start; gap:12px; }
+      .footer-social-links { flex-wrap:wrap; gap:14px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="navbar" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Navigation principale">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+          PHAT <span class="amp">&</span> PHURIOUS
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="../guest-mixes.html">Guest Mixes</a></li>
+          <li><a href="../news.html" class="active">News</a></li>
+          <li><a href="../events.html">Events</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact &amp; Collabs</a></li>
+        </ul>
+        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+      <a href="../guest-mixes.html">Guest Mixes</a>
+      <a href="../news.html">News</a>
+      <a href="../events.html">Events</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact &amp; Collabs</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="article-hero">
+      <div class="container-narrow">
+        <a href="../news.html" class="article-back">&#8592; Retour au webzine</a>
+        <div class="article-meta">
+          <span class="tag tag-red">Découverte</span>
+          <span class="article-meta-sep">·</span>
+          <span class="article-meta-item">Mai 2026</span>
+          <span class="article-meta-sep">·</span>
+          <span class="article-meta-item">Brooklyn, NY</span>
+          <span class="article-meta-sep">·</span>
+          <span class="article-meta-item">4 min de lecture</span>
+        </div>
+        <h1 class="article-title">dunne —<br/><em>pretty computer music</em>.</h1>
+        <p class="article-subtitle">
+          71 000 auditeurs mensuels. Zéro promo visible. Zéro label derrière.
+          Depuis Brooklyn, <strong>dunne</strong> construit quelque chose de silencieux et de solide.
+          Son dernier release <em>prima</em> confirme qu'il va falloir s'y habituer à ce nom.
+        </p>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <article class="article-body">
+      <div class="container-narrow">
+
+        <div class="article-photo landscape">
+          <img src="../images/dunne-brooklyn-portrait.jpg" alt="dunne sur un rooftop à Brooklyn, New York" loading="eager" class="crop-right" />
+        </div>
+        <p class="article-photo-caption">dunne · Brooklyn, New York</p>
+
+        <div class="prose">
+
+          <p class="article-section-label">Pretty computer music</p>
+
+          <p>
+            Il y a des artistes qui font de la musique pour des salles, et d'autres pour des casques.
+            <strong>dunne</strong> — tout en minuscules, c'est un choix — appartient clairement à la deuxième catégorie.
+            Et on ne dit pas ça comme un défaut. Au contraire.
+          </p>
+
+          <p>
+            Basé à <strong>Brooklyn, New York</strong>, dunne se définit lui-même comme faisant de la
+            <em>"pretty computer music"</em>. Pas de genre posé sur la table, pas de frontières tracées.
+            Juste de la musique faite sur ordinateur, avec une sensibilité qui n'appartient qu'à lui.
+            Quelque part entre l'électronique introspective, la dance underground et la pop de chambre.
+          </p>
+
+          <p class="article-section-label">Un son qui grandit dans l'ombre</p>
+
+          <p>
+            Ce qui frappe d'emblée, c'est la capacité à construire une émotion sans chercher à épater.
+            Ses productions tournent autour de <strong>basses chaudes</strong>, de textures synthétiques et
+            de rythmiques qui hésitent entre dance et introspection. Pas de bruit pour le bruit.
+            Chaque élément a sa place, chaque silence est intentionnel.
+          </p>
+
+          <p>
+            <strong>"loving"</strong>, son track le plus streamé avec plus de 200 000 écoutes sur Spotify,
+            illustre parfaitement cette direction : construction progressive, lignes de basse qui se posent
+            sans s'imposer, une voix traitée comme un instrument parmi d'autres. Idem pour
+            <strong>"chance"</strong> et <strong>"thought it was love"</strong>, deux morceaux qui
+            confirment une patte cohérente et une écriture qui mûrit release après release.
+          </p>
+
+        </div>
+
+        <div class="pullquote">
+          <p>"pretty computer music" — deux mots et un emoji tournesol. C'est toute la bio de dunne sur Spotify. Ça suffit à comprendre l'essentiel.</p>
+        </div>
+
+        <div class="prose">
+
+          <p class="article-section-label">prima — son dernier release</p>
+
+          <p>
+            Son dernier drop, <strong>prima</strong>, s'inscrit dans la continuité et marque en même temps
+            une étape. Production plus épurée encore, tension sourde qui s'installe dès les premières
+            secondes, une atmosphère qui colle aux oreilles longtemps après la fin du morceau.
+            Pas le track le plus viral de sa discographie — mais peut-être le plus <em>abouti</em>.
+            Celui qui donne envie d'aller chercher tout le reste.
+          </p>
+
+          <p>
+            C'est ce genre de release qu'on envoie à un pote à 2h du matin avec "écoute ça, rien d'autre."
+          </p>
+
+        </div>
+
+        <!-- PLAYER SOUNDCLOUD -->
+        <div class="player-wrap">
+          <p class="player-label">Écouter — prima</p>
+          <iframe
+            height="166"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dunne_music/prima&color=%23CF0000&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+            title="dunne — prima (SoundCloud)">
+          </iframe>
+        </div>
+
+        <!-- INSTAGRAM REEL -->
+        <div class="player-wrap">
+          <p class="player-label">Voir sur Instagram</p>
+          <blockquote
+            class="instagram-media"
+            data-instgrm-captioned
+            data-instgrm-permalink="https://www.instagram.com/reel/DYQTKAvNl0m/?utm_source=ig_embed&utm_campaign=loading"
+            data-instgrm-version="14"
+            style="background:#141414; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5); margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;">
+            <a href="https://www.instagram.com/reel/DYQTKAvNl0m/" target="_blank" rel="noopener noreferrer">Voir cette publication sur Instagram</a>
+          </blockquote>
+          <script async src="https://www.instagram.com/embed.js"></script>
+        </div>
+
+        <div class="prose">
+
+          <p class="article-section-label">Pourquoi on le suit</p>
+
+          <p>
+            Brooklyn a toujours été un terrain fertile pour l'underground électronique.
+            Mais dunne, c'est autre chose que le classique "producteur de Brooklyn" — il n'est pas dans
+            la surenchère, il n'essaie pas de cocher les cases d'un genre particulier.
+            Il fait sa musique, la poste, et ça grandit tout seul.
+          </p>
+
+          <p>
+            71 000 auditeurs mensuels sans promo visible ni label derrière — c'est le signe d'un artiste
+            qui progresse au <strong>bouche-à-oreille pur</strong>, par la qualité seule.
+            On ne sait pas encore où il va. Peut-être qu'il ne le sait pas non plus.
+            Mais la trajectoire est claire, et <em>prima</em> en est la meilleure preuve à date.
+          </p>
+
+          <p>
+            dunne est un nom à retenir. Maintenant.
+          </p>
+
+        </div>
+
+        <div class="tracklist">
+          <p class="tracklist-title">Discographie — par où commencer</p>
+          <div class="tracklist-item">
+            <span class="tracklist-num">01</span>
+            <span class="tracklist-track">prima</span>
+            <span class="tracklist-note">dernier release</span>
+          </div>
+          <div class="tracklist-item">
+            <span class="tracklist-num">02</span>
+            <span class="tracklist-track">loving</span>
+            <span class="tracklist-note">200k streams</span>
+          </div>
+          <div class="tracklist-item">
+            <span class="tracklist-num">03</span>
+            <span class="tracklist-track">chance</span>
+            <span class="tracklist-note">194k streams</span>
+          </div>
+          <div class="tracklist-item">
+            <span class="tracklist-num">04</span>
+            <span class="tracklist-track">thought it was love</span>
+            <span class="tracklist-note">154k streams</span>
+          </div>
+          <div class="tracklist-item">
+            <span class="tracklist-num">05</span>
+            <span class="tracklist-track">closer</span>
+            <span class="tracklist-note">95k streams</span>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- RELATED ARTICLES -->
+    <section class="related-section">
+      <div class="container">
+        <p class="related-title">Lire aussi</p>
+        <div class="related-grid">
+          <a href="sammy-virji-phantom-mars-2026.html" class="related-card">
+            <span class="related-card-label">Live Report</span>
+            <p class="related-card-title">Sammy Virji au Phantom, Paris</p>
+            <span class="related-card-date">20 mars 2026</span>
+          </a>
+          <a href="habstrakt-lineage-tour-trabendo-mars-2026.html" class="related-card">
+            <span class="related-card-label">Live Report</span>
+            <p class="related-card-title">Habstrakt Lineage Tour — Le Trabendo, Paris</p>
+            <span class="related-card-date">21 mars 2026</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
+            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
+          </div>
+          <div class="footer-socials">
+            <p class="footer-social-label">Nous suivre</p>
+            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+              <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+              <a href="https://www.mixcloud.com/PhatandPhuriousFM/" class="fsocial" target="_blank" rel="noopener noreferrer">Mixcloud</a>
+              <a href="https://www.tiktok.com/@phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
+          <nav class="footer-legal" aria-label="Liens légaux">
+            <a href="../mentions-legales.html">Mentions légales</a>
+            <a href="../politique-de-confidentialite.html">Politique de confidentialité</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    burgerBtn.addEventListener('click', () => {
+      const open = burgerBtn.classList.toggle('open');
+      mobileNav.classList.toggle('open', open);
+      burgerBtn.setAttribute('aria-expanded', String(open));
+      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerBtn.classList.remove('open');
+        mobileNav.classList.remove('open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  </script>
+
+</body>
+</html>
