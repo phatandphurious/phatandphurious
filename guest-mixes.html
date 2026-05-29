@@ -203,6 +203,9 @@
       display: block;
       cursor: default;
     }
+    .pac-thumb[href] { cursor: pointer; }
+    .pac-thumb img { width: 100%; height: 100%; object-fit: cover; display: block;
+    }
     .pac-thumb-inner {
       position: absolute;
       inset: 0;
@@ -565,15 +568,10 @@
 
           <!-- P&C — Onyx (Ép. 002) -->
           <article class="pac-card" role="listitem">
-            <div class="pac-thumb">
-              <div class="pac-thumb-inner">
-                <span class="pac-ep-label">P&amp;C · 002</span>
-                <p class="pac-thumb-guest">Onyx</p>
-                <p class="pac-thumb-from">&nbsp;</p>
-                <span class="pac-soon">Bientôt</span>
-              </div>
+            <a class="pac-thumb" href="https://youtube.com/shorts/a_4Gj4d9pEU" target="_blank" rel="noopener noreferrer" aria-label="Regarder Phat and Curious #002 — Onyx sur YouTube">
+              <img src="https://img.youtube.com/vi/a_4Gj4d9pEU/maxresdefault.jpg" alt="Phat and Curious #002 — Onyx" loading="lazy" />
               <div class="pac-thumb-overlay" aria-hidden="true"></div>
-            </div>
+            </a>
             <div class="pac-body">
               <p class="pac-num">Phat and Curious #002</p>
               <h3 class="pac-name">Onyx</h3>
