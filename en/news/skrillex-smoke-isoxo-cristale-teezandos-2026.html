@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Live report — Sammy Virji au Phantom, Paris, 20 mars 2026. Une nuit de bass music qui restera gravée, entre la montée de Noge, d'Unsho, et un closing de Sammy Virji habité." />
-  <meta property="og:title" content="Live Report — Sammy Virji au Phantom, Paris | Phat & Phurious FM" />
-  <meta property="og:description" content="Le 20 mars 2026, Le Phantom accueillait Sammy Virji pour une nuit de bass music dense et émotionnelle. On y était." />
+  <meta name="description" content="Review — Skrillex & ISOxo finally release 'Smoke', their collab with Cristale and TeeZandos. The track known as 'Killers' since 2022 is finally here. Our take." />
+  <meta property="og:title" content="Skrillex & ISOxo — Smoke | Phat & Phurious FM" />
+  <meta property="og:description" content="Awaited since 2022 as 'Killers', 'Smoke' finally drops May 1, 2026. Skrillex, ISOxo, Cristale and TeeZandos. The track delivers." />
   <meta property="og:type" content="article" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="https://www.phatandphurious.com/images/event-phantom-sammy-virji-mars-2026.jpg" />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Live Report — Sammy Virji au Phantom, Paris | Phat & Phurious FM" />
-  <meta name="twitter:image" content="https://www.phatandphurious.com/images/event-phantom-sammy-virji-mars-2026.jpg" />
-  <link rel="canonical" href="https://www.phatandphurious.com/news/sammy-virji-phantom-mars-2026.html" />
-  <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/news/sammy-virji-phantom-mars-2026.html" />
-  <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/news/sammy-virji-phantom-mars-2026.html" />
-  <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/news/sammy-virji-phantom-mars-2026.html" />
-  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
-  <title>Live Report — Sammy Virji au Phantom | Phat & Phurious FM</title>
+  <link rel="canonical" href="https://www.phatandphurious.com/en/news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" />
+  <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" />
+  <link rel="icon" type="image/png" href="../../images/logo-pnp-rouge-blanc.png" />
+  <title>Skrillex &amp; ISOxo — Smoke | Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,10 +39,6 @@
     .tag { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; padding:4px 9px; border-radius:1px; }
     .tag-red { background:rgba(207,0,0,0.1); color:var(--red); border:1px solid rgba(207,0,0,0.22); }
     .tag-beige { background:rgba(255,239,229,0.06); color:var(--beige); border:1px solid rgba(255,239,229,0.16); }
-
-    .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
-    .eyebrow::before { content:''; display:block; width:24px; height:1px; background:var(--red); flex-shrink:0; }
-    .eyebrow span { font-size:0.75rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); }
 
     .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; border-radius:1px; border:none; transition:all 0.2s ease; white-space:nowrap; cursor:pointer; font-family:inherit; }
     .btn-ghost { background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.18); }
@@ -98,26 +91,21 @@
 
     .article-section-label { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--red); margin-bottom:16px; margin-top:56px; padding-bottom:10px; border-bottom:1px solid var(--border); }
 
+    /* COVER + PLAYER */
+    .release-wrap { display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:start; margin:40px 0; }
+    .release-cover { aspect-ratio:1/1; overflow:hidden; border:1px solid var(--border); flex-shrink:0; }
+    .release-cover img { width:100%; height:100%; object-fit:cover; display:block; }
+    .release-player { display:flex; flex-direction:column; gap:12px; }
+
     /* PHOTO */
-    .article-photo { margin:48px 0; overflow:hidden; border:1px solid var(--border); }
-    .article-photo.landscape { aspect-ratio:16/9; }
-    .article-photo.landscape img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
-    .article-photo-caption { font-size:0.75rem; font-weight:300; color:var(--muted); margin-top:10px; text-align:center; letter-spacing:0.04em; font-style:italic; border:none; }
+    .article-photo-caption { font-size:0.75rem; font-weight:300; color:var(--muted); margin-top:10px; text-align:center; letter-spacing:0.04em; font-style:italic; }
 
-    /* VIDEO EMBED — format portrait 9:16 */
-    .video-wrap { margin: 48px auto; max-width: 380px; }
-    .video-ratio { position:relative; width:100%; padding-bottom:177.78%; background:#111; border:1px solid var(--border); }
-    .video-ratio iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
-    .video-caption { font-size:0.75rem; font-weight:300; color:var(--muted); margin-top:10px; text-align:center; letter-spacing:0.04em; }
-
-    /* TRACK LIST */
-    .tracklist { margin:40px 0; }
-    .tracklist-title { font-size:0.72rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
-    .tracklist-item { display:flex; align-items:baseline; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); font-size:0.84rem; }
-    .tracklist-item:last-child { border-bottom:none; }
-    .tracklist-num { font-size:0.72rem; color:var(--red); font-weight:600; min-width:20px; }
-    .tracklist-track { color:rgba(255,255,255,0.75); font-weight:300; }
-    .tracklist-note { font-size:0.72rem; color:var(--muted); margin-left:auto; font-style:italic; }
+    /* ARTISTS BAND */
+    .artists-band { display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:40px 0; }
+    .artist-item { background:var(--card); padding:20px; }
+    .artist-name { font-size:0.96rem; font-weight:600; color:var(--white); letter-spacing:-0.01em; margin-bottom:4px; }
+    .artist-role { font-size:0.72rem; font-weight:400; color:var(--red); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px; }
+    .artist-note { font-size:0.8rem; font-weight:300; color:var(--muted); line-height:1.55; }
 
     /* RELATED */
     .related-section { padding:64px 0; border-top:1px solid var(--border); }
@@ -158,6 +146,8 @@
     @media (max-width: 600px) {
       :root { --sec-py:56px; --pad-x:20px; }
       .article-title { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+      .release-wrap { grid-template-columns:1fr; }
+      .artists-band { grid-template-columns:1fr; }
       .related-grid { grid-template-columns:1fr; }
       .footer-top { flex-direction:column; gap:28px; }
       .footer-socials { flex-direction:row; justify-content:flex-start; flex-wrap:wrap; }
@@ -179,8 +169,8 @@
 
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
@@ -190,20 +180,19 @@
           <li><a href="../about.html">About</a></li>
           <li><a href="../contact.html">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/news/sammy-virji-phantom-mars-2026.html" hreflang="en">EN</a></div>
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <div class="lang-switch" aria-label="Language"><a href="/news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="../guest-mixes.html">Guest Mixes</a>
       <a href="../news.html">News</a>
       <a href="../events.html">Events</a>
       <a href="../about.html">About</a>
       <a href="../contact.html">Contact &amp; Collabs</a>
-    
-      <a href="/en/news/sammy-virji-phantom-mars-2026.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="/news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
@@ -212,20 +201,21 @@
     <!-- HERO -->
     <section class="article-hero">
       <div class="container-narrow">
-        <a href="../news.html" class="article-back">Retour au webzine</a>
+        <a href="../news.html" class="article-back">Back to the webzine</a>
         <div class="article-meta">
-          <span class="tag tag-red">Live Report</span>
+          <span class="tag tag-beige">Release</span>
           <span class="article-meta-sep">·</span>
-          <span class="article-meta-item">20 mars 2026</span>
+          <span class="article-meta-item">May 1, 2026</span>
           <span class="article-meta-sep">·</span>
-          <span class="article-meta-item">Le Phantom, Paris</span>
+          <span class="article-meta-item">Trap / Dubstep / UK Drill</span>
           <span class="article-meta-sep">·</span>
-          <span class="article-meta-item">5 min de lecture</span>
+          <span class="article-meta-item">3 min read</span>
         </div>
-        <h1 class="article-title">Sammy Virji<br/>au <em>Phantom.</em></h1>
+        <h1 class="article-title">Skrillex &amp; ISOxo.<br/><em>Smoke.</em></h1>
         <p class="article-subtitle">
-          Paris, vendredi soir. Le Phantom accueillait <strong>Sammy Virji</strong> pour une nuit de bass music
-          sans filet, warmup soigné, salle qui monte progressivement, et un closing qui n'a pas laissé grand monde indifférent.
+          Awaited since 2022 as <strong>"Killers"</strong>, the track is finally out.
+          Skrillex and ISOxo, with UK drill vocals from <strong>Cristale</strong> and <strong>TeeZandos</strong>.
+          OWSLA / Atlantic. It delivered.
         </p>
       </div>
     </section>
@@ -234,147 +224,123 @@
     <article class="article-body">
       <div class="container-narrow">
 
-        <!-- Affiche de l'événement -->
-        <div class="article-photo landscape">
-          <img
-            src="../images/event-phantom-sammy-virji-mars-2026.jpg"
-            alt="Affiche de la soirée Sammy Virji au Phantom, Paris — 20 mars 2026"
-            loading="eager"
-          />
+        <!-- COVER + PLAYER -->
+        <div class="release-wrap">
+          <div class="release-cover">
+            <img
+              src="../../images/skrillex-smoke-2026.jpg"
+              alt="Cover art Smoke — Skrillex, ISOxo, Cristale, TeeZandos (2026)"
+              loading="eager"
+              onerror="this.style.background='#141414';this.style.aspectRatio='1/1';"
+            />
+          </div>
+          <div class="release-player">
+            <iframe
+              style="border-radius:0;"
+              src="https://open.spotify.com/embed/track/2KFJYXqd3fVEHfWSNhlTEp?utm_source=generator&theme=0"
+              width="100%"
+              height="152"
+              frameBorder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Skrillex, ISOxo, Cristale, TeeZandos — Smoke on Spotify">
+            </iframe>
+          </div>
         </div>
-        <p class="article-photo-caption">Sammy Virji — Europe Tour 2026 · Le Phantom, Paris · 20.03.2026</p>
 
         <div class="prose">
 
-          <p class="article-section-label">Le Phantom — Paris</p>
+          <p class="article-section-label">A festival ID that finally becomes a track</p>
 
           <p>
-            Certaines salles font le travail avant même que le premier BPM ne soit lancé. Le Phantom est de celles-là :
-            un club parisien XXL pouvant accueillir jusqu'à 3400 personnes, une acoustique pensée pour la basse, et une façon de calibrer l'ambiance
-            qui met d'emblée tout le monde dans le bon état d'esprit. Ce vendredi 20 mars, le lineup s'annonçait serré :
-            un warmup avant que Sammy Virji ne prenne la cabine à 23h30, puis deux sets pour finir la nuit après lui.
-
+            <em>"Smoke"</em> has been circulating in sets since 2022. Under the name <em>"Killers"</em>,
+            the track had already built a solid reputation before even officially existing —
+            those few seconds captured on video at festivals, that unmistakable bass line,
+            that wait stretching across three years.
+            On May 1, 2026, Skrillex, ISOxo, Cristale and TeeZandos finally put the track on streaming platforms. And it delivered.
           </p>
 
-          <p class="article-section-label">La montée</p>
+          <p class="article-section-label">What you hear</p>
 
           <p>
-            <strong>Calypso</strong> ouvre. Discret, mais précis, le genre de set qu'on n'écoute pas activement
-            mais qui pose les fondations sans qu'on s'en rende compte. La salle se remplit lentement,
-            les conversations se font plus rares. La salle est pleine. L'attente est palpable.
-          </p>
-
-          <p class="article-section-label">23h30</p>
-
-          <p>
-            Sammy Virji entre en cabine avec la décontraction tranquille de quelqu'un qui sait exactement ce qu'il a
-            dans les mains. Pas de grande cérémonie, juste le premier track qui tombe, et la salle qui répond
-            immédiatement. Sa signature sonore est là : cette basse organique qui roule, ce crossover entre UK garage,
-            broken beat et bass music qui lui est entièrement personnel.
-          </p>
-
-          <p>
-            Le set monte par paliers, les tracks s'enchaînent avec une cohérence qui trahit des heures de préparation
-            derrière une apparente fluidité. Et puis, quelque part dans la deuxième heure, <em>Nostalgia</em>.
+            <em>"Smoke"</em> combines Skrillex and ISOxo's registers with brutal efficiency.
+            You can hear Sonny Moore's dubstep DNA — that way of building a drop that crushes everything before it —
+            blended with ISOxo's colder, more industrial trap production.
+            All carried by the UK drill vocals of <strong>Cristale</strong> and <strong>TeeZandos</strong>:
+            precise flows, a direct tone, an energy that perfectly matches the track's soundscape.
+            The track is built to work in large formats, with the sonic density that comes with it.
+            Yet it still holds something effective in headphone listening — the production details hold up at every scale.
           </p>
 
         </div>
 
         <div class="pullquote">
-          <p>« Nostalgia » dans ce contexte-là, dans cette salle-là, à cette heure-là, c'est le genre de moment
-          qu'on cherche dans les clubs et qu'on ne trouve pas à chaque sortie.</p>
+          <p>Three years of festival ID, a reputation built on a few seconds of blurry video,
+          and finally a track that fully delivers on what it promised.</p>
         </div>
 
         <div class="prose">
 
-          <p>
-            Le morceau, déjà fort sur enregistrement, prend une autre dimension en live. La mélodie qui s'ouvre,
-            la basse qui enfle, toute la salle qui le connaît par cœur et le vit différemment
-            cette nuit-là. On ne va pas prétendre qu'on n'a pas eu les yeux qui brillent.
-          </p>
-
-          <p>
-            Le closing arrive avec <strong>"If U Need It"</strong>, un choix presque évident pour terminer,
-            et pourtant parfaitement exécuté. Le genre de track qui ramène tout le monde au même endroit,
-            qui efface les barrières entre ceux qui sont là depuis le début et ceux qui ont rejoint en chemin.
-            La salle sort de cette nuit avec quelque chose.
-          </p>
+          <p class="article-section-label">The four behind the track</p>
 
         </div>
 
-        <!-- VIDEO EMBED -->
-        <!-- Remplacer VIDEO_ID_ICI par l'ID YouTube de la vidéo une fois uploadée -->
-        <div class="video-wrap">
-          <div class="video-ratio">
-            <iframe
-              src="https://www.youtube.com/embed/0SgafuwLh3U"
-              title="Sammy Virji — Le Phantom, Paris — 20 mars 2026 | Phat & Phurious FM"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
+        <div class="artists-band">
+          <div class="artist-item">
+            <p class="artist-name">Skrillex</p>
+            <p class="artist-role">Production</p>
+            <p class="artist-note">Sonny Moore. Pioneer of American dubstep, founder of OWSLA. Always showing up where you least expect him.</p>
           </div>
-          <p class="video-caption">Sammy Virji @ Le Phantom, Paris — 20.03.2026 · Filmé par Phat & Phurious FM</p>
+          <div class="artist-item">
+            <p class="artist-name">ISOxo</p>
+            <p class="artist-role">Production</p>
+            <p class="artist-note">Dalton Tran, San Diego. Experimental trap, bass music. Second collab with Skrillex after "fuze" in late 2025.</p>
+          </div>
+          <div class="artist-item">
+            <p class="artist-name">Cristale</p>
+            <p class="artist-role">Vocals · UK Drill</p>
+            <p class="artist-note">British rapper from the UK drill scene. First collaboration with Skrillex.</p>
+          </div>
+          <div class="artist-item">
+            <p class="artist-name">TeeZandos</p>
+            <p class="artist-role">Vocals · UK Drill</p>
+            <p class="artist-note">UK drill rapper. Completes the vocal duo with Cristale. First collaboration with Skrillex.</p>
+          </div>
         </div>
 
         <div class="prose">
 
-          <p class="article-section-label">Après Sammy</p>
+          <p class="article-section-label">What we take away</p>
 
           <p>
-            <strong>Unsho</strong> prend le relai : artiste qu'on connaît et qu'on suit de près ici chez Phat & Phurious,
-            il confirme en club ce qu'il annonce en studio, une sélection avec du mordant, une lecture du dancefloor
-            qui ne laisse rien au hasard. <strong>Noge</strong> ferme la nuit, une dernière descente en pression,
-            le son qui s'étire, la salle qui lâche progressivement.
+            After <em>"fuze"</em> dropped in late 2025, this is the second Skrillex/ISOxo collaboration,
+            and clearly not the last. The crossover between their worlds — dubstep on one side,
+            experimental trap on the other — produces something that sounds like no one else.
+            The addition of Cristale and TeeZandos's UK drill vocals gives the track a hybrid dimension
+            that perfectly suits the moment. <em>"Smoke"</em> is out on OWSLA / Atlantic.
+            It didn't need three years of anticipation to be good, but that didn't hurt either.
           </p>
 
-          <p class="article-section-label">Ce qu'on retient</p>
-
-          <p>
-            Une soirée construite avec soin, de l'entrée à la sortie. Un warmup qui remplit vraiment son rôle.
-            ce n'est pas toujours le cas. Et un Sammy Virji en pleine possession de ses moyens, capable de tenir
-            une salle sur la durée avec une signature sonore qu'on reconnaîtrait entre mille.
-          </p>
-
-          <p>
-            Le Phantom a confirmé ce soir-là pourquoi il compte parmi les salles parisiennes où il fait bon
-            jouer de la bass music. Grand format, son excellent, ambiance sans faute.
-            On reviendra.
-          </p>
-
-        </div>
-
-        <div class="tracklist">
-          <p class="tracklist-title">Moments forts du set</p>
-          <div class="tracklist-item">
-            <span class="tracklist-num">01</span>
-            <span class="tracklist-track">Nostalgia — Sammy Virji</span>
-            <span class="tracklist-note">moment de la nuit</span>
-          </div>
-          <div class="tracklist-item">
-            <span class="tracklist-num">02</span>
-            <span class="tracklist-track">If U Need It — Sammy Virji</span>
-            <span class="tracklist-note">closing</span>
-          </div>
         </div>
 
       </div>
     </article>
 
-    <!-- RELATED ARTICLES -->
+    <!-- RELATED -->
     <section class="related-section">
-      <div class="container">
-        <p class="related-title">Lire aussi</p>
+      <div class="container-narrow">
+        <p class="related-title">Read also</p>
         <div class="related-grid">
           <a href="habstrakt-lineage-tour-trabendo-mars-2026.html" class="related-card">
             <span class="related-card-label">Live Report</span>
-            <p class="related-card-title">Habstrakt Lineage Tour — Le Trabendo, Paris</p>
-            <span class="related-card-date">21 mars 2026</span>
+            <span class="related-card-title">Habstrakt Lineage Tour at Le Trabendo — until 6am, a night that deserved better than the morning alarm.</span>
+            <span class="related-card-date">March 21, 2026 · Paris</span>
           </a>
           <a href="sammy-virji-alexandra-palace-avril-2026.html" class="related-card">
             <span class="related-card-label">Live Report</span>
-            <p class="related-card-title">Sammy Virji — Alexandra Palace, London</p>
-            <span class="related-card-date">17 avril 2026</span>
+            <span class="related-card-title">Sammy Virji at Ally Pally — 10,000 people, sold out, and a surprise B2B with Barry Can't Swim</span>
+            <span class="related-card-date">April 17, 2026 · London</span>
           </a>
         </div>
       </div>
@@ -384,30 +350,27 @@
 
   <footer id="footer" role="contentinfo">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-top">
-          <div class="footer-brand">
-            <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
-          </div>
-          <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
-              <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
-              <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-              <a href="https://www.mixcloud.com/PhatandPhuriousFM/" class="fsocial" target="_blank" rel="noopener noreferrer">Mixcloud</a>
-              <a href="https://www.tiktok.com/@phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">TikTok</a>
-            </nav>
-          </div>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
+          <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
         </div>
-        <div class="footer-bottom">
-          <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="../mentions-legales.html">Mentions légales</a>
-            <a href="../politique-de-confidentialite.html">Politique de confidentialité</a>
+        <div class="footer-socials">
+          <p class="footer-social-label">Follow us</p>
+          <nav class="footer-social-links" aria-label="Social media">
+            <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.mixcloud.com/PhatAndPhurious/" class="fsocial" target="_blank" rel="noopener noreferrer">Mixcloud</a>
           </nav>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="../mentions-legales.html">Legal notice</a>
+          <a href="../politique-de-confidentialite.html">Privacy policy</a>
+        </nav>
       </div>
     </div>
   </footer>
@@ -424,14 +387,14 @@
       const open = burgerBtn.classList.toggle('open');
       mobileNav.classList.toggle('open', open);
       burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      burgerBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         burgerBtn.classList.remove('open');
         mobileNav.classList.remove('open');
         burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
+        burgerBtn.setAttribute('aria-label', 'Open menu');
       });
     });
   </script>
