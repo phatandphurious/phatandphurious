@@ -42,4 +42,11 @@
       });
     });
   }
+  /* Events passés — masquage automatique */
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  document.querySelectorAll('[data-event-end]').forEach(function (el) {
+    var end = new Date(el.getAttribute('data-event-end'));
+    if (end < today) el.style.display = 'none';
+  });
 })();
