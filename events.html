@@ -227,6 +227,32 @@
 
     .event-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; }
 
+    /* ÉVÉNEMENTS PASSÉS — dépliant */
+    .past-details { margin-top: 12px; }
+    .past-details summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      list-style: none;
+      -webkit-user-select: none;
+      user-select: none;
+      transition: background 0.22s;
+    }
+    .past-details summary::-webkit-details-marker { display: none; }
+    .past-details summary:hover { background: #181818; }
+    .past-details[open] summary { border-bottom: 1px solid var(--border); }
+    .past-summary-left { display: flex; align-items: center; gap: 14px; }
+    .past-summary-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .past-summary-count { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; padding: 3px 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 1px; color: var(--muted); }
+    .past-chevron { width: 16px; height: 16px; color: var(--muted); transition: transform 0.25s ease; flex-shrink: 0; }
+    .past-details[open] .past-chevron { transform: rotate(180deg); }
+    .past-details .event-list { border-top: none; }
+    .past-details .event-item { opacity: 0.55; }
+
     /* RECAPS */
     .recaps-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
 
@@ -672,6 +698,20 @@
           </div>
 
         </div>
+
+        <details class="past-details" id="past-events-details" style="display:none;">
+          <summary>
+            <div class="past-summary-left">
+              <span class="past-summary-label">Événements passés</span>
+              <span class="past-summary-count" id="past-events-count"></span>
+            </div>
+            <svg class="past-chevron" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="event-list" id="past-events-list" role="list"></div>
+        </details>
+
       </div>
     </section>
 

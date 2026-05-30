@@ -42,11 +42,22 @@
       });
     });
   }
-  /* Events passés — masquage automatique */
+  /* Events passés — archivage automatique dans le dépliant */
   var today = new Date();
   today.setHours(0, 0, 0, 0);
+  var pastItems = [];
   document.querySelectorAll('[data-event-end]').forEach(function (el) {
     var end = new Date(el.getAttribute('data-event-end'));
-    if (end < today) el.style.display = 'none';
+    if (end < today) pastItems.push(el);
   });
+  if (pastItems.length > 0) {
+    var pastList = document.getElementById('past-events-list');
+    var pastDetails = document.getElementById('past-events-details');
+    var pastCount = document.getElementById('past-events-count');
+    if (pastList && pastDetails) {
+      pastItems.reverse().forEach(function (el) { pastList.appendChild(el); });
+      if (pastCount) pastCount.textContent = pastItems.length;
+      pastDetails.style.display = '';
+    }
+  }
 })();
