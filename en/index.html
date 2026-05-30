@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Phat & Phurious FM — Média indépendant dédié à la bass music underground. Sets filmés d'une heure, ambiance cà phê sữa đá, artistes underground. Depuis Montpellier." />
-  <meta property="og:title" content="Phat & Phurious FM — Bass music. Filmée. Ressentie. Partagée." />
-  <meta property="og:description" content="Des DJ sets filmés d'une heure dans l'atmosphère lente et concentrée d'un café vietnamien. Bass Music, UK Garage, Jungle, Liquid DnB. Depuis Montpellier." />
+  <meta name="description" content="Phat & Phurious FM — Independent media dedicated to underground bass music. One-hour filmed DJ sets, slow and intense atmosphere. Bass House, UK Garage, Jungle, Liquid DnB. From Montpellier, France." />
+  <meta property="og:title" content="Phat & Phurious FM — Bass music. Filmed. Felt. Shared." />
+  <meta property="og:description" content="One-hour filmed DJ sets in the slow, focused and intense atmosphere of an iced Vietnamese coffee. Bass Music, UK Garage, Jungle, Liquid DnB. From Montpellier." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
-  <meta property="og:image:alt" content="Phat & Phurious FM — Épisode 001 avec Alcid (from Bash)" />
+  <meta property="og:image:alt" content="Phat & Phurious FM — Episode 001 with Alcid (from Bash)" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Phat & Phurious FM — Bass music. Filmée. Ressentie. Partagée." />
-  <meta name="twitter:description" content="Des DJ sets filmés d'une heure dans l'atmosphère lente et concentrée d'un café vietnamien. Bass Music, UK Garage, Jungle, Liquid DnB. Depuis Montpellier." />
+  <meta name="twitter:title" content="Phat & Phurious FM — Bass music. Filmed. Felt. Shared." />
+  <meta name="twitter:description" content="One-hour filmed DJ sets in the slow, focused and intense atmosphere of an iced Vietnamese coffee. Bass Music, UK Garage, Jungle, Liquid DnB. From Montpellier." />
   <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.phatandphurious.com" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/index.html" />
   <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/" />
   <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/index.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/" />
-  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
-  <title>Phat & Phurious FM — Bass music. Filmée. Ressentie. Partagée.</title>
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
+  <title>Phat & Phurious FM — Bass music. Filmed. Felt. Shared.</title>
 
   <script type="application/ld+json">
   {
@@ -32,14 +32,14 @@
         "@type": "WebSite",
         "name": "Phat & Phurious FM",
         "url": "https://www.phatandphurious.com",
-        "description": "Média indépendant dédié à la bass music underground. Sets filmés d'une heure. Depuis Montpellier.",
-        "inLanguage": "fr-FR"
+        "description": "Independent media dedicated to underground bass music. One-hour filmed sets. From Montpellier.",
+        "inLanguage": "en-US"
       },
       {
         "@type": "MusicGroup",
         "name": "Phat & Phurious FM",
         "url": "https://www.phatandphurious.com",
-        "description": "Média indépendant dédié à la bass music underground — Bass Music, UK Garage, Jungle, Liquid DnB. Depuis Montpellier.",
+        "description": "Independent media dedicated to underground bass music — Bass Music, UK Garage, Jungle, Liquid DnB. From Montpellier.",
         "genre": ["Bass Music", "UK Garage", "Jungle", "Liquid DnB", "Dubstep"],
         "location": {
           "@type": "Place",
@@ -318,6 +318,14 @@
     .mobile-nav a:last-of-type { border-bottom: none; }
     .mobile-nav a:hover { color: var(--white); }
 
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
     /* ────────────────────────────────────────────
        HERO
     ──────────────────────────────────────────── */
@@ -329,7 +337,7 @@
       padding-top: var(--nav-h);
       padding-bottom: 72px;
       position: relative;
-      background: url('images/hero-bg.jpg') center / cover no-repeat;
+      background: url('../images/hero-bg.jpg') center / cover no-repeat;
       background-attachment: fixed;
     }
 
@@ -1067,7 +1075,6 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* Fondu gauche / droite — effet cinématographique */
     .logo-ticker::before,
     .logo-ticker::after {
       content: '';
@@ -1097,11 +1104,10 @@
       animation-play-state: paused;
     }
 
-    /* Chaque set de logos */
     .logo-ticker-set {
       display: flex;
       gap: 20px;
-      padding-right: 20px; /* gap entre les deux sets = même valeur */
+      padding-right: 20px;
       flex-shrink: 0;
     }
 
@@ -1125,11 +1131,6 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(-25%); }
     }
-
-
-    /* ────────────────────────────────────────────
-       EVENTS
-    ──────────────────────────────────────────── */
 
     /* ────────────────────────────────────────────
        CONTACT
@@ -1178,13 +1179,6 @@
       transition: border-color 0.2s;
     }
     .contact-email:hover { border-color: var(--beige); }
-
-    .contact-socials {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding-top: 8px;
-    }
 
     /* ────────────────────────────────────────────
        NEWSLETTER label
@@ -1256,14 +1250,6 @@
 
 .section-header { flex-direction: column; align-items: flex-start; }
     }
-
-    /* LANG SWITCH */
-    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
-    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
-    .lang-switch a.active { color:var(--white); }
-    .lang-switch a:hover { color:var(--white); }
-    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
-    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -1274,9 +1260,9 @@
   ════════════════════════════════════════ -->
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
+      <nav class="nav-inner" aria-label="Main navigation">
 
-        <a href="/" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+        <a href="/en/index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
 
@@ -1285,12 +1271,12 @@
           <li><a href="news.html">News</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact & Collabs</a></li>
+          <li><a href="contact.html">Contact &amp; Collabs</a></li>
         </ul>
 
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/index.html" hreflang="en">EN</a></div>
+        <div class="lang-switch" aria-label="Language"><a href="/" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
 
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span>
           <span></span>
           <span></span>
@@ -1299,13 +1285,13 @@
       </nav>
     </div>
 
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="guest-mixes.html">Guest Mixes</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact & Collabs</a>
-      <a href="/en/index.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="contact.html">Contact &amp; Collabs</a>
+      <a href="/" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
@@ -1314,12 +1300,12 @@
     <!-- ════════════════════════════════════════
          HERO
     ════════════════════════════════════════ -->
-    <section id="hero" aria-label="Présentation">
+    <section id="hero" aria-label="Presentation">
       <div class="container">
         <div class="hero-content">
 
           <div class="eyebrow" aria-hidden="true">
-            <span>Média indépendant — Montpellier</span>
+            <span>Independent media — Montpellier</span>
           </div>
 
           <h1 class="hero-headline">
@@ -1328,18 +1314,18 @@
           </h1>
 
           <p class="hero-sub">
-            On filme des sets d'une heure dans l'atmosphère lente, concentrée et intense
-            d'un café vietnamien glacé (<em>cà phê sữa đá</em>). <strong>Bass House, UK Garage, Jungle, Liquid DnB, Dubstep</strong>.
-            Des artistes underground qui méritent d'être entendus.
+            We film one-hour sets in the slow, focused and intense atmosphere
+            of an iced Vietnamese coffee (<em>cà phê sữa đá</em>). <strong>Bass House, UK Garage, Jungle, Liquid DnB, Dubstep</strong>.
+            Underground artists that deserve to be heard.
           </p>
 
           <div class="hero-actions">
-            <a href="guest-mixes.html" class="btn btn-primary">Voir les épisodes</a>
-            <a href="news.html" class="btn btn-ghost">Lire le webzine</a>
+            <a href="guest-mixes.html" class="btn btn-primary">Watch episodes</a>
+            <a href="news.html" class="btn btn-ghost">Read the webzine</a>
           </div>
 
           <div class="hero-slogan" aria-label="Slogan">
-            <span>Bass music. Filmée. Ressentie. Partagée.</span>
+            <span>Bass music. Filmed. Felt. Shared.</span>
           </div>
 
         </div>
@@ -1348,21 +1334,20 @@
 
     <!-- ════════════════════════════════════════
          NEXT EVENT BANNER
-         → Mettre à jour manuellement : nom, dates, ville, lien
     ════════════════════════════════════════ -->
-    <div id="next-event" aria-label="Prochain événement couvert">
+    <div id="next-event" aria-label="Next covered event">
       <div class="container">
         <div class="next-event-inner">
           <div class="next-event-left">
-            <span class="next-event-label">Sur notre radar</span>
+            <span class="next-event-label">On our radar</span>
             <div>
               <p class="next-event-name">Sonar 2026</p>
-              <p class="next-event-meta">18 — 20 Juin · Barcelona, Espagne</p>
+              <p class="next-event-meta">Jun 18 — 20 · Barcelona, Spain</p>
             </div>
           </div>
           <div class="next-event-right">
-            <span class="tag tag-red">On y sera</span>
-            <a href="events.html" class="next-event-link">Voir l'agenda →</a>
+            <span class="tag tag-red">We'll be there</span>
+            <a href="events.html" class="next-event-link">See the agenda →</a>
           </div>
         </div>
       </div>
@@ -1370,86 +1355,61 @@
 
     <!-- ════════════════════════════════════════
          LOGO TICKER
-         Ordre : Noir/Rouge → Rouge/Blanc → Blanc/Rouge → Rouge/Noir
     ════════════════════════════════════════ -->
-    <div class="logo-ticker" role="img" aria-label="Logos Phat & Phurious FM">
+    <div class="logo-ticker" role="img" aria-label="Phat & Phurious FM logos">
       <div class="logo-ticker-inner">
-        <!-- Set 1 — visible, alt descriptif -->
+        <!-- Set 1 -->
         <div class="logo-ticker-set">
           <div class="logo-ticker-item">
-            <img src="images/logo-pnp-noir-rouge.png" alt="Phat & Phurious FM — logo fond noir" width="180" height="180" loading="lazy" />
+            <img src="../images/logo-pnp-noir-rouge.png" alt="Phat & Phurious FM — black background logo" width="180" height="180" loading="lazy" />
           </div>
           <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-blanc.png" alt="Phat & Phurious FM — logo fond rouge blanc" width="180" height="180" loading="lazy" />
+            <img src="../images/logo-pnp-rouge-blanc.png" alt="Phat & Phurious FM — red and white logo" width="180" height="180" loading="lazy" />
           </div>
           <div class="logo-ticker-item">
-            <img src="images/logo-pnp-blanc-rouge.png" alt="Phat & Phurious FM — logo fond blanc" width="180" height="180" loading="lazy" />
+            <img src="../images/logo-pnp-blanc-rouge.png" alt="Phat & Phurious FM — white background logo" width="180" height="180" loading="lazy" />
           </div>
           <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-noir.png" alt="Phat & Phurious FM — logo fond rouge noir" width="180" height="180" loading="lazy" />
+            <img src="../images/logo-pnp-rouge-noir.png" alt="Phat & Phurious FM — red and black logo" width="180" height="180" loading="lazy" />
           </div>
         </div>
         <!-- Set 2 (duplicate, aria-hidden) -->
         <div class="logo-ticker-set" aria-hidden="true">
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" /></div>
         </div>
         <!-- Set 3 (duplicate, aria-hidden) -->
         <div class="logo-ticker-set" aria-hidden="true">
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" /></div>
         </div>
         <!-- Set 4 (duplicate, aria-hidden) -->
         <div class="logo-ticker-set" aria-hidden="true">
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
-          <div class="logo-ticker-item">
-            <img src="images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" />
-          </div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-noir-rouge.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-rouge-blanc.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-blanc-rouge.png" alt="" width="180" height="180" loading="lazy" /></div>
+          <div class="logo-ticker-item"><img src="../images/logo-pnp-rouge-noir.png" alt="" width="180" height="180" loading="lazy" /></div>
         </div>
       </div>
     </div>
 
     <!-- ════════════════════════════════════════
-         LE CONCEPT
+         THE CONCEPT
     ════════════════════════════════════════ -->
     <section id="concept" aria-labelledby="concept-title">
       <div class="container">
         <div class="concept-grid">
 
           <div class="concept-left">
-            <div class="eyebrow"><span>Le concept</span></div>
+            <div class="eyebrow"><span>The concept</span></div>
             <h2 class="concept-heading" id="concept-title">
-              Un format.<br />
-              Une heure.<br />
-              <em>Un café glacé.</em>
+              One format.<br />
+              One hour.<br />
+              <em>One iced coffee.</em>
             </h2>
           </div>
 
@@ -1457,26 +1417,26 @@
             <div class="concept-paragraphs">
               <div>
                 <p>
-                  Phat & Phurious FM est né d'une conviction simple : la bass music underground mérite un espace éditorial sérieux.</p>
+                  Phat & Phurious FM was born from a simple conviction: underground bass music deserves a serious editorial space.</p>
                 <p>
-                  Le format signature, c'est le <strong>guest mix filmé d'une heure</strong>. Un artiste, une sélection,
-                  une caméra. L'esthétique est empruntée au <em>cà phê sữa đá</em>, ce café vietnamien au lait
-                  concentré sucré, bu lentement sur de la glace pilée. Lent. Dense. Intense.
+                  The signature format is the <strong>one-hour filmed guest mix</strong>. One artist, one selection,
+                  one camera. The aesthetic is borrowed from <em>cà phê sữa đá</em>, the Vietnamese iced milk
+                  coffee, drunk slowly over crushed ice. Slow. Dense. Intense.
                 </p>
               </div>
               <div>
                 <p>
-                  On travaille avec des artistes qui évoluent en dehors des circuits mainstream : <strong>producteurs
-                  indépendants, DJs de la scène underground française et européenne</strong>, collectifs qui
-                  expérimentent aux marges du club et du dancefloor.
+                  We work with artists who operate outside mainstream circuits: <strong>independent
+                  producers, DJs from the French and European underground scene</strong>, collectives
+                  experimenting at the edges of the club and dancefloor.
                 </p>
                 <p>
-                  Basés à <strong>Montpellier</strong>, on construit un média crédible pour couvrir les festivals et donner de la visibilité à une scène qui le mérite depuis longtemps.
+                  Based in <strong>Montpellier</strong>, we're building a credible media outlet to cover festivals and give visibility to a scene that has long deserved it.
                 </p>
               </div>
             </div>
 
-            <div class="concept-genres" role="list" aria-label="Genres musicaux couverts">
+            <div class="concept-genres" role="list" aria-label="Covered music genres">
               <span class="genre-tag" role="listitem">Bass Music</span>
               <span class="genre-tag" role="listitem">UK Garage</span>
               <span class="genre-tag" role="listitem">Jungle</span>
@@ -1496,7 +1456,7 @@
     </section>
 
     <!-- ════════════════════════════════════════
-         ÉPISODES / GUEST MIXES
+         EPISODES / GUEST MIXES
     ════════════════════════════════════════ -->
     <section id="episodes" aria-labelledby="ep-title">
       <div class="container">
@@ -1504,10 +1464,10 @@
         <div class="section-header">
           <div>
             <div class="eyebrow"><span>Guest Mixes</span></div>
-            <h2 class="section-title" id="ep-title">Derniers épisodes</h2>
+            <h2 class="section-title" id="ep-title">Latest episodes</h2>
           </div>
           <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="see-all" target="_blank" rel="noopener noreferrer">
-            Tout voir sur YouTube
+            View all on YouTube
           </a>
         </div>
 
@@ -1515,8 +1475,8 @@
 
           <!-- EP 003 -->
           <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-003.html" class="ep-thumb" aria-label="Voir l'épisode 003">
-              <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Miniature épisode 003 — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
+            <a href="guest-mixes/ep-003.html" class="ep-thumb" aria-label="Watch episode 003">
+              <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Episode 003 thumbnail — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 003</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -1524,22 +1484,22 @@
               </div>
             </a>
             <div class="ep-body">
-              <p class="ep-num">Épisode 003</p>
+              <p class="ep-num">Episode 003</p>
               <h3 class="ep-guest">Ymka (from The Garage)</h3>
               <p class="ep-genre">Bass House / Speed Garage</p>
               <div class="ep-foot">
                 <span class="ep-duration">1h11</span>
                 <span class="ep-dot"></span>
-                <span class="ep-date">Avril 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Écouter l'épisode 003 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
+                <span class="ep-date">April 2026</span>
+                <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Listen to episode 003 on SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Listen →</a>
               </div>
             </div>
           </article>
 
           <!-- EP 002 -->
           <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-002.html" class="ep-thumb" aria-label="Voir l'épisode 002">
-              <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Miniature épisode 002 — Onyx" width="1280" height="720" loading="lazy" />
+            <a href="guest-mixes/ep-002.html" class="ep-thumb" aria-label="Watch episode 002">
+              <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Episode 002 thumbnail — Onyx" width="1280" height="720" loading="lazy" />
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 002</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -1547,22 +1507,22 @@
               </div>
             </a>
             <div class="ep-body">
-              <p class="ep-num">Épisode 002</p>
+              <p class="ep-num">Episode 002</p>
               <h3 class="ep-guest">Onyx</h3>
               <p class="ep-genre">Liquid / Drum and Bass</p>
               <div class="ep-foot">
                 <span class="ep-duration">57:48</span>
                 <span class="ep-dot"></span>
-                <span class="ep-date">Mars 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Écouter l'épisode 002 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
+                <span class="ep-date">March 2026</span>
+                <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Listen to episode 002 on SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Listen →</a>
               </div>
             </div>
           </article>
 
           <!-- EP 001 -->
           <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-001.html" class="ep-thumb" aria-label="Voir l'épisode 001">
-              <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Miniature épisode 001 — Alcid (from Bash)" width="1280" height="720" loading="lazy" />
+            <a href="guest-mixes/ep-001.html" class="ep-thumb" aria-label="Watch episode 001">
+              <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Episode 001 thumbnail — Alcid (from Bash)" width="1280" height="720" loading="lazy" />
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 001</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -1570,14 +1530,14 @@
               </div>
             </a>
             <div class="ep-body">
-              <p class="ep-num">Épisode 001</p>
+              <p class="ep-num">Episode 001</p>
               <h3 class="ep-guest">Alcid (from Bash)</h3>
               <p class="ep-genre">Bass Music & UKG</p>
               <div class="ep-foot">
                 <span class="ep-duration">1h06</span>
                 <span class="ep-dot"></span>
-                <span class="ep-date">Février 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="ep-cta" aria-label="Écouter l'épisode 001 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
+                <span class="ep-date">February 2026</span>
+                <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="ep-cta" aria-label="Listen to episode 001 on SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Listen →</a>
               </div>
             </div>
           </article>
@@ -1595,25 +1555,25 @@
         <div class="section-header">
           <div>
             <div class="eyebrow"><span>Webzine</span></div>
-            <h2 class="section-title" id="wz-title">News & édito</h2>
+            <h2 class="section-title" id="wz-title">News & editorial</h2>
           </div>
-          <a href="news.html" class="see-all">Tous les articles →</a>
+          <a href="news.html" class="see-all">All articles →</a>
         </div>
 
         <div class="webzine-grid">
 
-          <!-- Article 1 — le plus récent -->
+          <!-- Article 1 -->
           <article class="article-card">
-            <a href="news/sonar-barcelona-juin-2026.html" class="art-link">
+            <a href="../news/sonar-barcelona-juin-2026.html" class="art-link">
               <div class="art-thumb">
-                <img src="images/sonar-2026-logo.png" alt="Sónar 2026 — Barcelona" loading="lazy" />
+                <img src="../images/sonar-2026-logo.png" alt="Sónar 2026 — Barcelona" loading="lazy" />
                 <span class="art-thumb-tag tag tag-green">Festival</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">27 mai 2026</p>
-                <p class="art-title">Sónar 2026 — Sammy Virji, Goldie b2b Doc Scott, The Prodigy. On a pris les billets.</p>
+                <p class="art-meta">May 27, 2026</p>
+                <p class="art-title">Sónar 2026 — Sammy Virji, Goldie b2b Doc Scott, The Prodigy. We got our tickets.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire →</span>
+                  <span class="art-read">Read →</span>
                 </div>
               </div>
             </a>
@@ -1621,16 +1581,16 @@
 
           <!-- Article 2 -->
           <article class="article-card">
-            <a href="news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" class="art-link">
+            <a href="../news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" class="art-link">
               <div class="art-thumb">
-                <img src="images/skrillex-smoke-2026.jpg" alt="Skrillex & ISOxo — Smoke" loading="lazy" />
+                <img src="../images/skrillex-smoke-2026.jpg" alt="Skrillex & ISOxo — Smoke" loading="lazy" />
                 <span class="art-thumb-tag tag tag-beige">Release</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">1er mai 2026</p>
-                <p class="art-title">Skrillex & ISOxo — Smoke. Attendu depuis 2022, le track tient enfin ses promesses.</p>
+                <p class="art-meta">May 1, 2026</p>
+                <p class="art-title">Skrillex & ISOxo — Smoke. Awaited since 2022, the track finally delivers.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire →</span>
+                  <span class="art-read">Read →</span>
                 </div>
               </div>
             </a>
@@ -1638,16 +1598,16 @@
 
           <!-- Article 3 -->
           <article class="article-card">
-            <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link">
+            <a href="../news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link">
               <div class="art-thumb">
-                <img src="images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji à l'Alexandra Palace, Londres" loading="lazy" />
+                <img src="../images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji at Alexandra Palace, London" loading="lazy" />
                 <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">17 avril 2026</p>
-                <p class="art-title">Sammy Virji à l'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can't Swim</p>
+                <p class="art-meta">April 17, 2026</p>
+                <p class="art-title">Sammy Virji at Ally Pally — 10,000 people, sold out, and a surprise B2B with Barry Can't Swim</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire →</span>
+                  <span class="art-read">Read →</span>
                 </div>
               </div>
             </a>
@@ -1658,43 +1618,43 @@
     </section>
 
     <!-- ════════════════════════════════════════
-         ARTISTES — ON LES SOUTIENT
+         ARTISTS — WE SUPPORT THEM
     ════════════════════════════════════════ -->
     <section id="artistes" aria-labelledby="art-title">
       <div class="container">
         <div class="artistes-grid">
 
           <div class="artistes-left">
-            <div class="eyebrow"><span>Artistes</span></div>
+            <div class="eyebrow"><span>Artists</span></div>
             <h2 class="artistes-heading" id="art-title">
-              On les soutient.<br />
-              <em>Sans condition.</em>
+              We support them.<br />
+              <em>Unconditionally.</em>
             </h2>
           </div>
 
           <div class="artistes-body">
             <p>
-              Phat & Phurious n'est pas une plateforme de promotion. C'est un <strong>espace éditorial</strong>
-              construit autour d'une conviction : la scène bass music underground regorge d'artistes
-              exceptionnels qui manquent simplement de visibilité structurée.
+              Phat & Phurious is not a promotional platform. It's an <strong>editorial space</strong>
+              built around a conviction: the underground bass music scene is full of exceptional
+              artists who simply lack structured visibility.
             </p>
             <p>
-              On invite des artistes à venir jouer parce qu'on croit dans leur travail, <strong>pas parce qu'ils
-              ont déjà une audience</strong>. Le format filmé d'une heure leur laisse l'espace de développer
-              une sélection cohérente, sans pression de format radio ni de montage court.
+              We invite artists to play because we believe in their work, <strong>not because they
+              already have an audience</strong>. The one-hour filmed format gives them the space to develop
+              a coherent selection, without the pressure of a radio format or short-form edit.
             </p>
 
             <blockquote class="artistes-quote">
               <p>
-                "Un set d'une heure filmé dans le calme d'un café, c'est le temps de raconter quelque chose.
-                Pas un DJ set live. Une déclaration."
+                "A one-hour set filmed in the calm of a café — it's enough time to say something.
+                Not a live DJ set. A statement."
               </p>
             </blockquote>
 
             <p class="artistes-contact">
-              Tu es artiste, producteur·ice, DJ ou collectif et tu veux apparaître sur Phat & Phurious FM ?
-              <a href="mailto:contact@phatandphurious.com">Écris-nous directement.</a>
-              On écoute tout.
+              Are you an artist, producer, DJ or collective and want to appear on Phat & Phurious FM?
+              <a href="mailto:contact@phatandphurious.com">Write to us directly.</a>
+              We listen to everything.
             </p>
           </div>
 
@@ -1710,34 +1670,34 @@
         <div class="newsletter-grid">
 
           <div class="nl-left">
-            <div class="eyebrow"><span>Communauté</span></div>
+            <div class="eyebrow"><span>Community</span></div>
             <h2 class="nl-heading" id="nl-title">
-              Rejoindre<br />
-              <em>la communauté.</em>
+              Join<br />
+              <em>the community.</em>
             </h2>
             <p class="nl-text">
-              Une lettre par mois, pas plus. On t'envoie les nouveaux épisodes, les articles du webzine
-              et les <strong>dates d'événements</strong> sur la scène. Pas de newsletter marketing.
-              Juste l'essentiel, écrit par des gens qui écoutent la même musique que toi.
+              One email per month, no more. New episodes, webzine articles and <strong>event dates</strong>
+              from the scene. No marketing newsletter.
+              Just the essentials, written by people who listen to the same music as you.
             </p>
           </div>
 
           <div class="nl-right">
             <form class="nl-form" id="nlForm" novalidate>
-              <label for="nlEmail" class="nl-label">Adresse email</label>
+              <label for="nlEmail" class="nl-label">Email address</label>
               <input
                 type="email"
                 id="nlEmail"
                 name="email"
-                placeholder="ton@adresse.email"
+                placeholder="your@email.com"
                 required
                 autocomplete="email"
                 aria-required="true"
               />
-              <button type="submit" class="btn btn-primary">S'inscrire</button>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
               <p class="nl-note">
-                Aucun spam. Désinscription en un clic à tout moment.<br />
-                Tes données ne sont jamais partagées.
+                No spam. Unsubscribe with one click at any time.<br />
+                Your data is never shared.
               </p>
             </form>
           </div>
@@ -1764,13 +1724,13 @@
 
           <div class="contact-right">
             <p class="contact-text">
-              Pour toute demande de collaboration, accréditation presse ou proposition artistique,
-              écris-nous directement à
+              For any collaboration request, press accreditation or artistic proposal,
+              write to us directly at
               <a href="mailto:contact@phatandphurious.com" class="contact-email">contact@phatandphurious.com</a>.
             </p>
             <p class="contact-text">
-              On répond à tout le monde. Artistes, médias, organisateurs —
-              <strong>si tu fais partie de la scène, on t'écoute.</strong>
+              We respond to everyone. Artists, media, organizers —
+              <strong>if you're part of the scene, we're listening.</strong>
             </p>
           </div>
 
@@ -1793,14 +1753,14 @@
               PHAT <span class="amp">&</span> PHURIOUS
             </p>
             <p class="footer-tagline">
-              Bass music. Filmée. Ressentie. Partagée.<br />
-              Média indépendant, Montpellier, France.
+              Bass music. Filmed. Felt. Shared.<br />
+              Independent media, Montpellier, France.
             </p>
           </div>
 
           <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
@@ -1814,9 +1774,9 @@
           <p class="footer-copy">
             © 2026 <span>Phat & Phurious</span>, Montpellier, France
           </p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="mentions-legales.html">Legal notice</a>
+            <a href="politique-de-confidentialite.html">Privacy policy</a>
           </nav>
         </div>
 
@@ -1827,9 +1787,9 @@
   <!-- ════════════════════════════════════════
        SCRIPTS
   ════════════════════════════════════════ -->
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
   <script>
-    /* Hero — alignement typographique des lignes du titre */
+    /* Hero — typographic alignment */
     function alignHeroLines() {
       const lines = [...document.querySelectorAll('.hero-headline .line-plain')];
       lines.forEach(l => l.style.letterSpacing = '');
@@ -1848,7 +1808,7 @@
       window.addEventListener('resize', alignHeroLines, { passive: true });
     });
 
-    /* Ancres — offset navbar */
+    /* Anchor offset */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const id = this.getAttribute('href');
@@ -1869,7 +1829,7 @@
 
       const btn = this.querySelector('button[type="submit"]');
       const note = this.querySelector('.nl-note');
-      btn.textContent = 'Envoi…';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
 
       try {
@@ -1883,37 +1843,37 @@
         });
 
         if (res.ok || res.status === 204) {
-          btn.textContent = 'Inscrit·e ✓';
+          btn.textContent = 'Subscribed ✓';
           btn.style.background = '#1a7a3a';
           document.getElementById('nlEmail').value = '';
-          note.textContent = 'Bienvenue dans la communauté. À très vite dans ta boîte mail.';
+          note.textContent = 'Welcome to the community. See you in your inbox soon.';
           setTimeout(() => {
-            btn.textContent = "S'inscrire";
+            btn.textContent = 'Subscribe';
             btn.style.background = '';
             btn.disabled = false;
-            note.textContent = 'Aucun spam. Désinscription en un clic à tout moment.\nTes données ne sont jamais partagées.';
+            note.textContent = 'No spam. Unsubscribe with one click at any time.\nYour data is never shared.';
           }, 5000);
         } else {
           const data = await res.json().catch(() => ({}));
           if (res.status === 400 && data.code === 'duplicate_parameter') {
-            btn.textContent = 'Déjà inscrit·e';
+            btn.textContent = 'Already subscribed';
             btn.style.background = '#555';
           } else {
-            btn.textContent = 'Erreur, réessaie';
+            btn.textContent = 'Error, try again';
             btn.style.background = 'var(--red)';
           }
           btn.disabled = false;
           setTimeout(() => {
-            btn.textContent = "S'inscrire";
+            btn.textContent = 'Subscribe';
             btn.style.background = '';
           }, 4000);
         }
       } catch (err) {
-        btn.textContent = 'Erreur réseau';
+        btn.textContent = 'Network error';
         btn.style.background = 'var(--red)';
         btn.disabled = false;
         setTimeout(() => {
-          btn.textContent = "S'inscrire";
+          btn.textContent = 'Subscribe';
           btn.style.background = '';
         }, 4000);
       }

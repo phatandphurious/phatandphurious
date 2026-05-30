@@ -15,6 +15,9 @@
   <meta name="twitter:title" content="Ep. 003 — Ymka | Phat & Phurious FM" />
   <meta name="twitter:image" content="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" />
   <link rel="canonical" href="https://www.phatandphurious.com/guest-mixes/ep-003.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/guest-mixes/ep-003.html" />
+  <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/guest-mixes/ep-003.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/guest-mixes/ep-003.html" />
   <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
   <title>Ep. 003 — Ymka | Phat & Phurious FM</title>
 
@@ -313,6 +316,14 @@
       .ep-nav-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
       .ep-nav-right { text-align: left; }
     }
+
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -331,6 +342,7 @@
           <li><a href="../about.html">About</a></li>
           <li><a href="../contact.html">Contact &amp; Collabs</a></li>
         </ul>
+        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/guest-mixes/ep-003.html" hreflang="en">EN</a></div>
         <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
@@ -342,6 +354,7 @@
       <a href="../events.html">Events</a>
       <a href="../about.html">About</a>
       <a href="../contact.html">Contact &amp; Collabs</a>
+      <a href="/en/guest-mixes/ep-003.html" hreflang="en" style="color:var(--red);">EN — English</a>
     </nav>
   </header>
 

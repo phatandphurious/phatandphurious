@@ -1,0 +1,6 @@
+# Vidéos — gérées directement sur le serveur, pas dans git
+videos/
+
+# Fichiers système
+.DS_Store
+**/.DS_Store

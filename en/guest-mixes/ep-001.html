@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Episode 001 — Alcid (from Bash) | Bass Music & UKG | 1h06 | Phat & Phurious FM. Filmed set in the atmosphere of an iced Vietnamese coffee, from Montpellier." />
+  <meta property="og:title" content="Ep. 001 — Alcid | Phat & Phurious FM" />
+  <meta property="og:description" content="Bass Music & UKG — 1h06. Filmed set in the atmosphere of a cà phê sữa đá. February 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ep. 001 — Alcid | Phat & Phurious FM" />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/guest-mixes/ep-001.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/guest-mixes/ep-001.html" />
+  <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/guest-mixes/ep-001.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/guest-mixes/ep-001.html" />
+  <link rel="icon" type="image/png" href="../../images/logo-pnp-rouge-blanc.png" />
+  <title>Ep. 001 — Alcid | Phat & Phurious FM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: #0A0A0A; color: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+    input, button, textarea, select { -webkit-appearance: none; appearance: none; }
+
+    :root { --bg:#0A0A0A; --card:#141414; --red:#CF0000; --beige:#FFEFE5; --white:#FFFFFF; --muted:rgba(255,255,255,0.45); --border:rgba(255,255,255,0.06); --success:#1a5c2e; --nav-h:56px; --max-w:1100px; --pad-x:28px; --sec-py:96px; }
+
+    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+
+    /* ATOMS */
+    .tag { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; padding:4px 9px; border-radius:1px; }
+    .tag-red { background:rgba(207,0,0,0.1); color:var(--red); border:1px solid rgba(207,0,0,0.22); }
+    .tag-beige { background:rgba(255,239,229,0.06); color:var(--beige); border:1px solid rgba(255,239,229,0.16); }
+    .tag-neutral { background:rgba(255,255,255,0.04); color:var(--muted); border:1px solid var(--border); }
+
+    .eyebrow { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+    .eyebrow::before { content:''; display:block; width:24px; height:1px; background:var(--red); flex-shrink:0; }
+    .eyebrow span { font-size:0.75rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); }
+
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; border-radius:1px; border:none; transition:all 0.2s ease; white-space:nowrap; cursor:pointer; font-family:inherit; }
+    .btn-primary { background:var(--red); color:var(--white); }
+    .btn-primary:hover { background:#e00000; }
+    .btn-ghost { background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.18); }
+    .btn-ghost:hover { border-color:rgba(255,255,255,0.45); }
+
+    /* NAVBAR */
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h); background:rgba(10,10,10,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--border); transition:background 0.35s ease, border-color 0.35s ease; display:flex; align-items:center; }
+    #navbar > .container { height:100%; }
+    #navbar.scrolled { background:rgba(10,10,10,0.97); border-bottom-color:rgba(255,255,255,0.1); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:100%; }
+    .nav-logo { font-size:1.05rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--white); flex-shrink:0; line-height:1; }
+    .nav-logo .amp { color:var(--red); }
+    .nav-links { display:flex; align-items:center; gap:32px; }
+    .nav-links a { font-size:0.92rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.65); transition:color 0.2s; position:relative; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); }
+    .burger { display:none; flex-direction:column; justify-content:center; gap:5px; width:28px; height:28px; background:none; border:none; padding:0; flex-shrink:0; }
+    .burger span { display:block; width:100%; height:1px; background:var(--white); transition:transform 0.25s ease, opacity 0.25s ease; transform-origin:center; }
+    .burger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .burger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+    .mobile-nav { display:none; position:fixed; top:var(--nav-h); left:0; right:0; z-index:199; background:rgba(10,10,10,0.98); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:16px var(--pad-x) 28px; flex-direction:column; }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a { display:block; padding:14px 0; font-size:0.8rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); transition:color 0.2s; }
+    .mobile-nav a:last-of-type { border-bottom:none; }
+    .mobile-nav a:hover { color:var(--white); }
+
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
+    /* FOOTER */
+    #footer { border-top:1px solid var(--border); padding:48px 0 36px; }
+    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:40px; margin-bottom:40px; flex-wrap:wrap; }
+    .footer-brand { max-width:340px; }
+    .footer-logo { font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); margin-bottom:10px; }
+    .footer-logo .amp { color:var(--beige); }
+    .footer-tagline { font-size:0.75rem; font-weight:300; font-style:italic; color:var(--muted); letter-spacing:0.06em; line-height:1.55; }
+    .footer-socials { display:flex; flex-direction:column; align-items:flex-end; gap:14px; }
+    .footer-social-label { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--red); }
+    .footer-social-links { display:flex; align-items:center; gap:22px; }
+    .fsocial { font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); border-bottom:1px solid transparent; padding-bottom:2px; transition:color 0.2s, border-color 0.2s; }
+    .fsocial:hover { color:var(--red); border-color:var(--red); }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .footer-copy { font-size:0.75rem; font-weight:300; color:var(--muted); letter-spacing:0.04em; }
+    .footer-copy span { color:var(--beige); font-style:italic; }
+    .footer-legal { display:flex; gap:20px; }
+    .footer-legal a { font-size:0.75rem; font-weight:400; color:var(--muted); transition:color 0.2s; }
+    .footer-legal a:hover { color:var(--white); }
+
+    /* EP HERO */
+    .ep-hero { padding-top: calc(var(--nav-h) + 64px); padding-bottom: 64px; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(207,0,0,0.06) 0%, transparent 65%), #0A0A0A; }
+    .ep-hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+    .ep-hero-badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-bottom: 18px; display: block; }
+    .ep-hero-title { font-size: clamp(3rem, 7vw, 6rem); font-weight: 700; letter-spacing: -0.045em; line-height: 0.92; margin-bottom: 20px; }
+    .ep-hero-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .ep-hero-meta .tag { font-size: 0.7rem; }
+    .ep-hero-sep { width: 1px; height: 14px; background: var(--border); flex-shrink: 0; }
+    .ep-hero-detail { font-size: 0.8rem; font-weight: 300; color: var(--muted); letter-spacing: 0.04em; }
+    .ep-hero-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0; }
+
+    /* BACK LINK */
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; margin-bottom: 32px; }
+    .back-link:hover { color: var(--white); }
+
+    /* VIDEO */
+    .ep-video-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
+    .video-wrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; overflow: hidden; cursor: pointer; }
+    .video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .video-facade { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .video-facade img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .video-facade-play { position: relative; z-index: 2; width: 72px; height: 72px; background: rgba(207, 0, 0, 0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.2s; flex-shrink: 0; }
+    .video-wrapper:hover .video-facade-play { background: #e00000; transform: scale(1.08); }
+    .video-facade-play svg { margin-left: 4px; }
+
+    /* ABOUT + TRACKLIST */
+    .ep-content-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
+    .ep-content-grid { display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start; }
+    .ep-about-title { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .ep-about-bio { font-size: 0.865rem; font-weight: 300; line-height: 1.82; color: var(--muted); margin-bottom: 18px; }
+    .ep-about-bio strong { color: var(--white); font-weight: 500; }
+    .ep-artist-links { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--border); margin-top: 8px; }
+
+    /* TRACKLIST */
+    .tracklist-title { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .tracklist { display: flex; flex-direction: column; border: 1px solid var(--border); }
+    .track-item { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid var(--border); transition: background 0.18s; }
+    .track-item:last-child { border-bottom: none; }
+    .track-item:hover { background: var(--card); }
+    .track-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--red); min-width: 28px; flex-shrink: 0; }
+    .track-name { font-size: 0.82rem; font-weight: 400; color: var(--white); flex: 1; line-height: 1.4; }
+    .track-time { font-size: 0.72rem; font-weight: 300; color: var(--muted); letter-spacing: 0.04em; flex-shrink: 0; }
+
+    /* EP NAVIGATION */
+    .ep-nav-section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .ep-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .ep-nav-link { display: flex; flex-direction: column; gap: 4px; }
+    .ep-nav-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+    .ep-nav-title { font-size: 0.9rem; font-weight: 600; color: var(--white); transition: color 0.2s; }
+    .ep-nav-link:hover .ep-nav-title { color: var(--red); }
+    .ep-nav-link.disabled .ep-nav-title { color: var(--muted); cursor: default; }
+    .ep-nav-link.disabled:hover .ep-nav-title { color: var(--muted); }
+    .ep-nav-right { text-align: right; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      :root { --sec-py: 72px; }
+      .nav-links { display:none; }
+      .burger { display:flex; }
+      .ep-hero-inner { grid-template-columns: 1fr; }
+      .ep-hero-actions { flex-direction: row; align-items: flex-start; }
+      .ep-content-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-socials { align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      :root { --sec-py: 56px; --pad-x: 20px; }
+.footer-top { flex-direction: column; gap: 28px; }
+      .footer-socials { flex-direction: row; justify-content: flex-start; flex-wrap: wrap; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .footer-social-links { flex-wrap: wrap; gap: 14px; }
+      .ep-nav-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
+      .ep-nav-right { text-align: left; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="navbar" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
+          PHAT <span class="amp">&</span> PHURIOUS
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="../guest-mixes.html" class="active">Guest Mixes</a></li>
+          <li><a href="../news.html">News</a></li>
+          <li><a href="../events.html">Events</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact &amp; Collabs</a></li>
+        </ul>
+        <div class="lang-switch" aria-label="Language"><a href="/guest-mixes/ep-001.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="../guest-mixes.html">Guest Mixes</a>
+      <a href="../news.html">News</a>
+      <a href="../events.html">Events</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact &amp; Collabs</a>
+      <a href="/guest-mixes/ep-001.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="ep-hero" aria-labelledby="ep-title">
+      <div class="container">
+        <a href="../guest-mixes.html" class="back-link" aria-label="Back to all Guest Mixes">&#8592; All Guest Mixes</a>
+        <div class="ep-hero-inner">
+          <div>
+            <span class="ep-hero-badge">Episode 001</span>
+            <h1 class="ep-hero-title" id="ep-title">Alcid</h1>
+            <div class="ep-hero-meta">
+              <span class="tag tag-red">Bass Music &amp; UKG</span>
+              <span class="ep-hero-sep" aria-hidden="true"></span>
+              <span class="ep-hero-detail">1h06</span>
+              <span class="ep-hero-sep" aria-hidden="true"></span>
+              <span class="ep-hero-detail">February 2026</span>
+              <span class="ep-hero-sep" aria-hidden="true"></span>
+              <span class="ep-hero-detail">from Bash</span>
+            </div>
+          </div>
+          <div class="ep-hero-actions">
+            <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Listen on SoundCloud</a>
+            <a href="https://www.youtube.com/watch?v=yPO5NSHOfh8" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="ep-video-section" aria-label="Set video">
+      <div class="container">
+        <div class="video-wrapper" data-video-id="yPO5NSHOfh8" role="button" tabindex="0" aria-label="Play video — Ep. 001 Alcid">
+          <div class="video-facade" aria-hidden="true">
+            <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="" />
+            <div class="video-facade-play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + TRACKLIST -->
+    <section class="ep-content-section" aria-label="About and tracklist">
+      <div class="container">
+        <div class="ep-content-grid">
+
+          <!-- ABOUT -->
+          <div>
+            <div class="eyebrow"><span>The artist</span></div>
+            <h2 class="ep-about-title">About Alcid</h2>
+            <p class="ep-about-bio">
+              <strong>Alcid</strong> is a DJ and producer from Montpellier, part of the <strong>Bash</strong> collective, one of the most active cores of the local bass music scene. With a selection rooted in <strong>UK Garage and Bass Music</strong>, Alcid builds his sets like narratives — slow to start, dense in development, precise in track selection.
+            </p>
+            <p class="ep-about-bio">
+              For this first episode of Phat &amp; Phurious FM, he delivered one hour and six minutes of bass music without a safety net: no format compromise, no forced transitions. A selection designed for the filmed format, in the <em>cà phê sữa đá</em> atmosphere that defines the project's aesthetic.
+            </p>
+            <p class="ep-about-bio">
+              Following Alcid means following a scene that is steadily asserting itself, far from mainstream circuits, as close as possible to the dancefloor and conviction.
+            </p>
+            <div class="ep-artist-links">
+              <a href="https://www.instagram.com/alexalcid/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Alcid's Instagram">Instagram</a>
+              <a href="https://soundcloud.com/alcid" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Alcid's SoundCloud">SoundCloud</a>
+              <a href="https://www.instagram.com/bash_mtp/" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Bash collective's Instagram">Insta: Bash</a>
+            </div>
+          </div>
+
+          <!-- TRACKLIST -->
+          <div>
+            <div class="eyebrow"><span>Tracklist</span></div>
+            <h2 class="tracklist-title">Full selection</h2>
+            <ol class="tracklist" aria-label="Episode 001 tracklist">
+              <li class="track-item"><span class="track-num">01</span><span class="track-name">Lost In Heaven (feat. E) — Sub Focus</span></li>
+              <li class="track-item"><span class="track-num">02</span><span class="track-name">CHROMA 003 Bi83 — DOVE</span></li>
+              <li class="track-item"><span class="track-num">03</span><span class="track-name">BALLYBANK005 - Giberish — DJ Jackum</span></li>
+              <li class="track-item"><span class="track-num">04</span><span class="track-name">Comsi Comsa (Original Mix) — Pavane, FM-3</span></li>
+              <li class="track-item"><span class="track-num">05</span><span class="track-name">Lady (Neumonic UKG) — Modjo</span></li>
+              <li class="track-item"><span class="track-num">06</span><span class="track-name">you're a star — Fred again.. &amp; Amyl and The Sniffers</span></li>
+              <li class="track-item"><span class="track-num">07</span><span class="track-name">Neuralware — Phasmid</span></li>
+              <li class="track-item"><span class="track-num">08</span><span class="track-name">Skanka P Money Vocal — P Money, Hamdi</span></li>
+              <li class="track-item"><span class="track-num">09</span><span class="track-name">Gun Finger Salute (Ro) — Robustt, B.O.M &amp; Swift</span></li>
+              <li class="track-item"><span class="track-num">10</span><span class="track-name">Dub It In +++ — Sammy Virji</span></li>
+              <li class="track-item"><span class="track-num">11</span><span class="track-name">hip hop (at flip) — dead prez</span></li>
+              <li class="track-item"><span class="track-num">12</span><span class="track-name">Winny (Lestone Remix) — Fred again.., Sammy Virji</span></li>
+              <li class="track-item"><span class="track-num">13</span><span class="track-name">San Frandisco (Hamdi &amp; Oppidan Edit) — Dom Dolla</span></li>
+              <li class="track-item"><span class="track-num">14</span><span class="track-name">Damager (KMK remix) — Sammy Virji &amp; Interplanetary Criminal</span></li>
+              <li class="track-item"><span class="track-num">15</span><span class="track-name">m.A.A.d City (FNEH Flip) — Kendrick Lamar</span></li>
+              <li class="track-item"><span class="track-num">16</span><span class="track-name">DADADA — Zoey808 &amp; Gentlemens Club</span></li>
+              <li class="track-item"><span class="track-num">17</span><span class="track-name">OGdub — Fred again.., Danny Brown, BEAM &amp; PARISI</span></li>
+              <li class="track-item"><span class="track-num">18</span><span class="track-name">Kmk (Original Mix) 136 — What's Up</span></li>
+              <li class="track-item"><span class="track-num">19</span><span class="track-name">CHROMA 001 HELIUM — BICEP</span></li>
+              <li class="track-item"><span class="track-num">20</span><span class="track-name">Nikko Zg (Original Mix) — Rastaman</span></li>
+              <li class="track-item"><span class="track-num">21</span><span class="track-name">Vibe — DJ Jackum</span></li>
+              <li class="track-item"><span class="track-num">22</span><span class="track-name">Baby baby baby... — Raredub</span></li>
+              <li class="track-item"><span class="track-num">23</span><span class="track-name">If U Need It (Extended) — Sammy Virji</span></li>
+              <li class="track-item"><span class="track-num">24</span><span class="track-name">flex fm (freddit) feat. Lil Yachty, Future, Playboi Carti — Joy Orbison</span></li>
+              <li class="track-item"><span class="track-num">25</span><span class="track-name">Connections (Original) — Prototyperz</span></li>
+              <li class="track-item"><span class="track-num">26</span><span class="track-name">REGULATION RELOADED — Vald, Vladimir Cauchemar, Todiefor</span></li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVIGATION PREV/NEXT -->
+    <nav class="ep-nav-section" aria-label="Episode navigation">
+      <div class="container">
+        <div class="ep-nav-inner">
+          <div class="ep-nav-link disabled" aria-disabled="true">
+            <span class="ep-nav-label">&#8592; Previous episode</span>
+            <span class="ep-nav-title">No previous episode</span>
+          </div>
+          <a href="ep-002.html" class="ep-nav-link ep-nav-right" aria-label="Go to episode 002 — Onyx">
+            <span class="ep-nav-label">Next episode &#8594;</span>
+            <span class="ep-nav-title">Episode 002 — Onyx</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+  </main>
+
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
+            <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
+          </div>
+          <div class="footer-socials">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
+              <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+              <a href="https://www.mixcloud.com/PhatandPhuriousFM/" class="fsocial" target="_blank" rel="noopener noreferrer">Mixcloud</a>
+              <a href="https://www.tiktok.com/@phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="../mentions-legales.html">Legal notice</a>
+            <a href="../politique-de-confidentialite.html">Privacy policy</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => { navbar.classList.toggle('scrolled', window.scrollY > 16); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    burgerBtn.addEventListener('click', () => {
+      const open = burgerBtn.classList.toggle('open');
+      mobileNav.classList.toggle('open', open);
+      burgerBtn.setAttribute('aria-expanded', String(open));
+      burgerBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerBtn.classList.remove('open');
+        mobileNav.classList.remove('open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        burgerBtn.setAttribute('aria-label', 'Open menu');
+      });
+    });
+
+    /* Video facade player — loads iframe on click only */
+    document.querySelectorAll('.video-wrapper[data-video-id]').forEach(wrapper => {
+      const launch = () => {
+        const id = wrapper.dataset.videoId;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+        iframe.title = wrapper.getAttribute('aria-label') || 'YouTube Video';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+        wrapper.querySelector('.video-facade').replaceWith(iframe);
+        wrapper.removeAttribute('tabindex');
+        wrapper.removeAttribute('role');
+      };
+      wrapper.addEventListener('click', launch);
+      wrapper.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); launch(); } });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Webzine & News — Phat & Phurious FM. Live reports, release reviews, interviews et découvertes de la scène bass music underground." />
+  <meta name="description" content="Webzine & News — Phat & Phurious FM. Live reports, release reviews, interviews and discoveries from the underground bass music scene." />
   <meta property="og:title" content="Webzine & News — Phat & Phurious FM" />
-  <meta property="og:description" content="Live reports, release reviews, interviews et découvertes de la scène bass music underground. Média indépendant depuis Montpellier." />
+  <meta property="og:description" content="Live reports, release reviews, interviews and discoveries from the underground bass music scene. Independent media from Montpellier." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://www.phatandphurious.com/news.html" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/news.html" />
   <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/news.html" />
   <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/news.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/news.html" />
-  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
   <title>Webzine &amp; News — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,8 +77,16 @@
     .mobile-nav a:last-of-type { border-bottom:none; }
     .mobile-nav a:hover { color:var(--white); }
 
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('images/hero-news.jpg') center / cover no-repeat; background-attachment:fixed; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('../images/hero-news.jpg') center / cover no-repeat; background-attachment:fixed; }
     .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
     .page-hero .container { position:relative; z-index:1; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
@@ -87,78 +95,24 @@
     .page-hero-sub strong { color:var(--white); font-weight:400; }
 
     /* FILTERS */
-    .filters-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .filter-btn {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 7px 14px;
-      border-radius: 1px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      transition: all 0.2s;
-      cursor: pointer;
-    }
+    .filters-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 28px 0; border-bottom: 1px solid var(--border); }
+    .filter-btn { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 7px 14px; border-radius: 1px; border: 1px solid var(--border); background: transparent; color: var(--muted); transition: all 0.2s; cursor: pointer; }
     .filter-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
     .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
 
     /* ARTICLES */
     .articles-section { padding: var(--sec-py) 0; }
-
-    .webzine-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      gap: 0;
-    }
-
-    article.article-card {
-      background: var(--card);
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.22s;
-      overflow: hidden;
-    }
+    .webzine-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); gap: 0; }
+    article.article-card { background: var(--card); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.22s; overflow: hidden; }
     article.article-card:hover { background: #181818; }
-    .art-link {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      color: inherit;
-      text-decoration: none;
-    }
+    .art-link { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
     article.article-card:nth-child(3n) { border-right: none; }
     article.article-card:nth-last-child(-n+3):not(:nth-child(3n+1) ~ *) { border-bottom: none; }
     article.article-card.hidden { display: none; }
-
-    /* Thumbnail */
-    .art-thumb {
-      aspect-ratio: 16 / 9;
-      background: #0e0e0e;
-      position: relative;
-      overflow: hidden;
-    }
+    .art-thumb { aspect-ratio: 16 / 9; background: #0e0e0e; position: relative; overflow: hidden; }
     .art-thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
     article.article-card:hover .art-thumb img { transform:scale(1.04); }
-    .art-thumb-tag {
-      position: absolute;
-      top: 12px; left: 12px;
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 1px;
-    }
-
-    /* Body */
+    .art-thumb-tag { position: absolute; top: 12px; left: 12px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; border-radius: 1px; }
     .art-body { padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; border-top: 1px solid var(--border); }
     .art-meta { font-size:0.73rem; font-weight:300; color:var(--muted); letter-spacing:0.04em; }
     .art-title { font-size:0.96rem; font-weight:600; letter-spacing:-0.015em; line-height:1.38; color:var(--white); }
@@ -167,27 +121,6 @@
     .art-read { font-size:0.75rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
     article.article-card:hover .art-read { color:var(--white); }
     .art-readtime { font-size:0.72rem; font-weight:300; color:var(--muted); }
-
-    /* EMPTY STATE */
-    .empty-state {
-      padding: var(--sec-py) 0;
-      max-width: 520px;
-    }
-    .empty-state-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .empty-state-sub {
-      font-size: 0.875rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 28px;
-    }
-    .empty-state-socials { display: flex; gap: 10px; flex-wrap: wrap; }
 
     /* FOOTER */
     #footer { border-top:1px solid var(--border); padding:48px 0 36px; }
@@ -231,14 +164,6 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
     }
-
-    /* LANG SWITCH */
-    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
-    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
-    .lang-switch a.active { color:var(--white); }
-    .lang-switch a:hover { color:var(--white); }
-    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
-    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -246,8 +171,8 @@
 
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
@@ -257,19 +182,19 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/news.html" hreflang="en">EN</a></div>
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <div class="lang-switch" aria-label="Language"><a href="/news.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="guest-mixes.html">Guest Mixes</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact &amp; Collabs</a>
-      <a href="/en/news.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="/news.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
@@ -279,21 +204,21 @@
     <section class="page-hero" aria-labelledby="news-title">
       <div class="container">
         <div class="eyebrow"><span>Webzine</span></div>
-        <h1 class="page-hero-title" id="news-title">Bass music.<br/><em>Écrite.</em></h1>
+        <h1 class="page-hero-title" id="news-title">Bass music.<br/><em>Written.</em></h1>
         <p class="page-hero-sub">
-          On écrit sur <strong>ce qu'on écoute</strong>. Reviews de sorties, live reports de festivals, découvertes d'artistes <strong>qu'on suit de près</strong>. Pas de quota, pas de calendrier éditorial imposé.
+          We write about <strong>what we listen to</strong>. Release reviews, festival live reports, artist discoveries <strong>we follow closely</strong>. No quota, no imposed editorial calendar.
         </p>
       </div>
     </section>
 
-    <!-- FILTRES -->
+    <!-- FILTERS -->
     <div class="container">
-      <div class="filters-bar" role="group" aria-label="Filtrer les articles par catégorie">
-        <button class="filter-btn active" data-filter="all">Tous</button>
+      <div class="filters-bar" role="group" aria-label="Filter articles by category">
+        <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="live-report">Live Report</button>
         <button class="filter-btn" data-filter="release-review">Release Review</button>
         <button class="filter-btn" data-filter="interview">Interview</button>
-        <button class="filter-btn" data-filter="decouverte">Découverte</button>
+        <button class="filter-btn" data-filter="decouverte">Discovery</button>
         <button class="filter-btn" data-filter="festival">Festival</button>
       </div>
     </div>
@@ -304,17 +229,17 @@
         <div class="webzine-grid" id="articlesGrid">
 
           <article class="article-card" data-category="decouverte">
-            <a href="news/portrait-dunne-prima-2026.html" class="art-link" aria-label="Lire l'article : Découverte — dunne">
+            <a href="../news/portrait-dunne-prima-2026.html" class="art-link" aria-label="Read the article: Discovery — dunne">
               <div class="art-thumb">
-                <img src="images/dunne-brooklyn-portrait.jpg" alt="dunne — Brooklyn, New York" loading="lazy" />
-                <span class="art-thumb-tag tag tag-red">Découverte</span>
+                <img src="../images/dunne-brooklyn-portrait.jpg" alt="dunne — Brooklyn, New York" loading="lazy" />
+                <span class="art-thumb-tag tag tag-red">Discovery</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">Mai 2026 · Brooklyn, NY</p>
-                <p class="art-title">dunne — "pretty computer music" depuis Brooklyn. Son dernier release prima est à écouter maintenant.</p>
-                <p class="art-excerpt">71 000 auditeurs mensuels, zéro promo, zéro label. dunne construit quelque chose de silencieux et de solide.</p>
+                <p class="art-meta">May 2026 · Brooklyn, NY</p>
+                <p class="art-title">dunne — "pretty computer music" from Brooklyn. Her latest release prima is worth hearing now.</p>
+                <p class="art-excerpt">71,000 monthly listeners, zero promo, zero label. dunne is building something quiet and solid.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-read">Read the article →</span>
                   <span class="art-readtime">4 min</span>
                 </div>
               </div>
@@ -322,17 +247,17 @@
           </article>
 
           <article class="article-card" data-category="release-review">
-            <a href="news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" class="art-link" aria-label="Lire l'article : Skrillex & ISOxo — Smoke">
+            <a href="../news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" class="art-link" aria-label="Read the article: Skrillex & ISOxo — Smoke">
               <div class="art-thumb">
-                <img src="images/skrillex-smoke-2026.jpg" alt="Pochette Smoke — Skrillex, ISOxo, Cristale, TeeZandos" loading="lazy" />
+                <img src="../images/skrillex-smoke-2026.jpg" alt="Cover art Smoke — Skrillex, ISOxo, Cristale, TeeZandos" loading="lazy" />
                 <span class="art-thumb-tag tag tag-beige">Release</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">1er mai 2026 · Trap / Dubstep / UK Drill</p>
-                <p class="art-title">Skrillex & ISOxo — Smoke. Le "Killers" ID sort enfin, avec Cristale et TeeZandos.</p>
-                <p class="art-excerpt">Attendu depuis 2022 comme festival ID, le track est là. OWSLA / Atlantic. Il tenait ses promesses.</p>
+                <p class="art-meta">May 1, 2026 · Trap / Dubstep / UK Drill</p>
+                <p class="art-title">Skrillex & ISOxo — Smoke. The "Killers" ID finally drops, with Cristale and TeeZandos.</p>
+                <p class="art-excerpt">Awaited since 2022 as a festival ID, the track is here. OWSLA / Atlantic. It delivered.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-read">Read the article →</span>
                   <span class="art-readtime">3 min</span>
                 </div>
               </div>
@@ -340,17 +265,17 @@
           </article>
 
           <article class="article-card" data-category="festival">
-            <a href="news/sonar-barcelona-juin-2026.html" class="art-link" aria-label="Lire l'article : Sónar Barcelona 2026 — On y va">
+            <a href="../news/sonar-barcelona-juin-2026.html" class="art-link" aria-label="Read the article: Sónar Barcelona 2026 — We're going">
               <div class="art-thumb">
-                <img src="images/sonar-2026-logo.png" alt="Sónar 2026 — Barcelona" loading="lazy" />
+                <img src="../images/sonar-2026-logo.png" alt="Sónar 2026 — Barcelona" loading="lazy" />
                 <span class="art-thumb-tag tag tag-green">Festival</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">Barcelona · 18-20 juin 2026</p>
-                <p class="art-title">Sónar 2026 — Sammy Virji, Goldie b2b Doc Scott, The Prodigy. On a pris les billets.</p>
-                <p class="art-excerpt">98 artistes, 5 scènes, trois jours à Barcelone. Voilà notre programme et pourquoi on n'a pas hésité longtemps.</p>
+                <p class="art-meta">Barcelona · Jun 18-20, 2026</p>
+                <p class="art-title">Sónar 2026 — Sammy Virji, Goldie b2b Doc Scott, The Prodigy. We got our tickets.</p>
+                <p class="art-excerpt">98 artists, 5 stages, three days in Barcelona. Here's our programme and why we didn't hesitate long.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-read">Read the article →</span>
                   <span class="art-readtime">5 min</span>
                 </div>
               </div>
@@ -358,17 +283,17 @@
           </article>
 
           <article class="article-card" data-category="live-report">
-            <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link" aria-label="Lire l'article : Sammy Virji — Alexandra Palace, London">
+            <a href="../news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link" aria-label="Read the article: Sammy Virji — Alexandra Palace, London">
               <div class="art-thumb">
-                <img src="images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji en performance à l'Alexandra Palace, Londres" loading="lazy" />
+                <img src="../images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji performing at Alexandra Palace, London" loading="lazy" />
                 <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">Londres, UK · 17 avr. 2026</p>
-                <p class="art-title">Sammy Virji à l'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can't Swim</p>
-                <p class="art-excerpt">Alexandra Palace sold out le vendredi soir. Cops and Robbers feat. Skepta en ouverture, pyrotechnics, et une surprise en pleine foule qu'on n'attendait pas.</p>
+                <p class="art-meta">London, UK · Apr 17, 2026</p>
+                <p class="art-title">Sammy Virji at Ally Pally — 10,000 people, sold out, and a surprise B2B with Barry Can't Swim</p>
+                <p class="art-excerpt">Alexandra Palace sold out on Friday night. Cops and Robbers feat. Skepta as opener, pyrotechnics, and a surprise in the middle of the crowd we didn't see coming.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-read">Read the article →</span>
                   <span class="art-readtime">6 min</span>
                 </div>
               </div>
@@ -376,17 +301,17 @@
           </article>
 
           <article class="article-card" data-category="live-report">
-            <a href="news/habstrakt-lineage-tour-trabendo-mars-2026.html" class="art-link" aria-label="Lire l'article : Habstrakt Lineage Tour — Le Trabendo, Paris">
+            <a href="../news/habstrakt-lineage-tour-trabendo-mars-2026.html" class="art-link" aria-label="Read the article: Habstrakt Lineage Tour — Le Trabendo, Paris">
               <div class="art-thumb">
-                <img src="images/event-trabendo-habstrakt-mars-2026.jpg" alt="Affiche du Habstrakt & Asdek Lineage Tour au Trabendo, Paris" loading="lazy" />
+                <img src="../images/event-trabendo-habstrakt-mars-2026.jpg" alt="Habstrakt & Asdek Lineage Tour poster at Le Trabendo, Paris" loading="lazy" />
                 <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">Paris · 21 mars 2026</p>
-                <p class="art-title">Habstrakt Lineage Tour — Un unreleased Elmyx x Jacknife, Tonton Habby dans la place : une soirée sous le signe de la Bass House</p>
-                <p class="art-excerpt">Habstrakt embarque Elmyx et Asdek pour son Lineage Tour au Trabendo. Elmyx sort un unreleased avec Jacknife, Habstrakt joue Chicken Soup x Skrillex. On est restés jusqu'au bout.</p>
+                <p class="art-meta">Paris · Mar 21, 2026</p>
+                <p class="art-title">Habstrakt Lineage Tour — An unreleased Elmyx x Jacknife, Tonton Habby in the building: a night under the sign of Bass House</p>
+                <p class="art-excerpt">Habstrakt brings Elmyx and Asdek for his Lineage Tour at Le Trabendo. Elmyx drops an unreleased with Jacknife, Habstrakt plays Chicken Soup x Skrillex. We stayed until the end.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-read">Read the article →</span>
                   <span class="art-readtime">7 min</span>
                 </div>
               </div>
@@ -394,17 +319,17 @@
           </article>
 
           <article class="article-card" data-category="live-report">
-            <a href="news/sammy-virji-phantom-mars-2026.html" class="art-link" aria-label="Lire l'article : Sammy Virji — Le Phantom, Paris">
+            <a href="../news/sammy-virji-phantom-mars-2026.html" class="art-link" aria-label="Read the article: Sammy Virji — Le Phantom, Paris">
               <div class="art-thumb">
-                <img src="images/event-phantom-sammy-virji-mars-2026.jpg" alt="Affiche de la soirée Sammy Virji au Phantom, Paris" loading="lazy" />
+                <img src="../images/event-phantom-sammy-virji-mars-2026.jpg" alt="Sammy Virji at Le Phantom, Paris event poster" loading="lazy" />
                 <span class="art-thumb-tag tag tag-red">Live Report</span>
               </div>
               <div class="art-body">
-                <p class="art-meta">Paris · 20 mars 2026</p>
-                <p class="art-title">Sammy Virji au Phantom — Nostalgia joué à la bonne heure, dans la bonne salle. On s'en souviendra.</p>
-                <p class="art-excerpt">Calypso, Unsho, Noge, puis Sammy Virji à 23h30. Une soirée construite de bout en bout, avec un moment, Nostalgia, qu'on n'est pas près d'oublier.</p>
+                <p class="art-meta">Paris · Mar 20, 2026</p>
+                <p class="art-title">Sammy Virji at Le Phantom — Nostalgia played at the right time, in the right room. We'll remember this one.</p>
+                <p class="art-excerpt">Calypso, Unsho, Noge, then Sammy Virji at 11:30pm. A night built from start to finish, with one moment — Nostalgia — we won't forget anytime soon.</p>
                 <div class="art-foot">
-                  <span class="art-read">Lire l'article →</span>
+                  <span class="art-read">Read the article →</span>
                   <span class="art-readtime">5 min</span>
                 </div>
               </div>
@@ -423,11 +348,11 @@
         <div class="footer-top">
           <div class="footer-brand">
             <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
+            <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
           </div>
           <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
@@ -438,9 +363,9 @@
         </div>
         <div class="footer-bottom">
           <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="mentions-legales.html">Legal notice</a>
+            <a href="politique-de-confidentialite.html">Privacy policy</a>
           </nav>
         </div>
       </div>
@@ -451,9 +376,9 @@
     .visually-hidden { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   </style>
 
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
   <script>
-    // Filtre articles
+    // Article filter
     const filterBtns = document.querySelectorAll('.filter-btn');
     const articles = document.querySelectorAll('#articlesGrid .article-card');
 
@@ -471,7 +396,6 @@
         });
       });
     });
-
   </script>
 
 </body>

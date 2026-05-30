@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Politique de confidentialité — Phat & Phurious. Comment nous traitons vos données personnelles." />
+  <meta name="description" content="Privacy Policy — Phat & Phurious. How we process your personal data." />
   <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://www.phatandphurious.com/politique-de-confidentialite.html" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/politique-de-confidentialite.html" />
   <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/politique-de-confidentialite.html" />
   <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/politique-de-confidentialite.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/politique-de-confidentialite.html" />
-  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
-  <title>Politique de confidentialité — Phat &amp; Phurious</title>
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
+  <title>Privacy Policy — Phat &amp; Phurious</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,84 +56,33 @@
     .mobile-nav a:last-of-type { border-bottom:none; }
     .mobile-nav a:hover { color:var(--white); }
 
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
     /* PAGE HEADER */
-    .page-header {
-      padding-top: calc(var(--nav-h) + 72px);
-      padding-bottom: 64px;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-header h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .page-header .subtitle {
-      font-size: 0.85rem;
-      font-weight: 300;
-      color: var(--muted);
-    }
+    .page-header { padding-top: calc(var(--nav-h) + 72px); padding-bottom: 64px; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; margin-bottom: 16px; }
+    .page-header .subtitle { font-size: 0.85rem; font-weight: 300; color: var(--muted); }
 
     /* CONTENT */
-    .legal-content {
-      padding: var(--sec-py) 0;
-      max-width: 720px;
-    }
-
-    .legal-section {
-      margin-bottom: 52px;
-    }
+    .legal-content { padding: var(--sec-py) 0; max-width: 720px; }
+    .legal-section { margin-bottom: 52px; }
     .legal-section:last-child { margin-bottom: 0; }
-
-    .legal-section h2 {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .legal-section p {
-      font-size: 0.865rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
+    .legal-section h2 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .legal-section p { font-size: 0.865rem; font-weight: 300; line-height: 1.85; color: var(--muted); margin-bottom: 14px; }
     .legal-section p:last-child { margin-bottom: 0; }
     .legal-section strong { color: var(--white); font-weight: 500; }
-    .legal-section a {
-      color: var(--beige);
-      border-bottom: 1px solid rgba(255,239,229,0.2);
-      transition: border-color 0.2s;
-    }
+    .legal-section a { color: var(--beige); border-bottom: 1px solid rgba(255,239,229,0.2); transition: border-color 0.2s; }
     .legal-section a:hover { border-color: var(--beige); }
 
-    .legal-list {
-      margin: 10px 0 14px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .legal-list li {
-      font-size: 0.865rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--muted);
-      padding-left: 16px;
-      position: relative;
-    }
-    .legal-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--red);
-      font-weight: 400;
-    }
+    .legal-list { margin: 10px 0 14px 0; display: flex; flex-direction: column; gap: 6px; }
+    .legal-list li { font-size: 0.865rem; font-weight: 300; line-height: 1.7; color: var(--muted); padding-left: 16px; position: relative; }
+    .legal-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); font-weight: 400; }
     .legal-list strong { color: var(--white); font-weight: 500; }
 
     /* FOOTER */
@@ -168,14 +117,6 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
     }
-
-    /* LANG SWITCH */
-    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
-    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
-    .lang-switch a.active { color:var(--white); }
-    .lang-switch a:hover { color:var(--white); }
-    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
-    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -183,8 +124,8 @@
 
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
@@ -194,28 +135,28 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/politique-de-confidentialite.html" hreflang="en">EN</a></div>
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <div class="lang-switch" aria-label="Language"><a href="/politique-de-confidentialite.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="guest-mixes.html">Guest Mixes</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact &amp; Collabs</a>
-      <a href="/en/politique-de-confidentialite.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="/politique-de-confidentialite.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
   <main>
     <div class="page-header">
       <div class="container">
-        <div class="eyebrow"><span>Légal</span></div>
-        <h1>Politique de confidentialité</h1>
-        <p class="subtitle">En vigueur au 1er juin 2026. Conformément au RGPD (Règlement UE 2016/679)</p>
+        <div class="eyebrow"><span>Legal</span></div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Effective June 1, 2026. In accordance with the GDPR (EU Regulation 2016/679)</p>
       </div>
     </div>
 
@@ -223,88 +164,88 @@
       <div class="legal-content">
 
         <div class="legal-section">
-          <h2>Responsable du traitement</h2>
+          <h2>Data controller</h2>
           <p>
-            Le responsable du traitement des données collectées sur ce site est :<br />
+            The controller of data collected on this site is:<br />
             <strong>Phat &amp; Phurious</strong>, Montpellier, France<br />
-            Contact : <a href="mailto:contact@phatandphurious.com">contact@phatandphurious.com</a>
+            Contact: <a href="mailto:contact@phatandphurious.com">contact@phatandphurious.com</a>
           </p>
         </div>
 
         <div class="legal-section">
-          <h2>Données collectées</h2>
-          <p>Ce site collecte uniquement les données que vous nous transmettez volontairement via le formulaire de contact :</p>
+          <h2>Data collected</h2>
+          <p>This site only collects data that you voluntarily provide via the contact form:</p>
           <ul class="legal-list">
-            <li><strong>Nom ou pseudo</strong> : pour identifier votre demande</li>
-            <li><strong>Adresse email</strong> : pour vous répondre</li>
-            <li><strong>Type de demande et message</strong> : pour traiter votre demande</li>
+            <li><strong>Name or alias</strong>: to identify your request</li>
+            <li><strong>Email address</strong>: to respond to you</li>
+            <li><strong>Request type and message</strong>: to process your request</li>
           </ul>
           <p>
-            Aucun cookie de traçage, aucune donnée de navigation et aucune donnée de localisation ne sont collectés par ce site.
+            No tracking cookies, no browsing data and no location data are collected by this site.
           </p>
         </div>
 
         <div class="legal-section">
-          <h2>Finalité du traitement</h2>
+          <h2>Purpose of processing</h2>
           <p>
-            Les données collectées via le formulaire de contact sont utilisées <strong>uniquement pour répondre à votre demande</strong>. Elles ne sont ni revendues, ni partagées avec des tiers à des fins commerciales, ni utilisées à des fins de prospection.
+            Data collected via the contact form is used <strong>solely to respond to your request</strong>. It is neither resold, nor shared with third parties for commercial purposes, nor used for prospecting.
           </p>
         </div>
 
         <div class="legal-section">
-          <h2>Services tiers</h2>
-          <p>Ce site fait appel aux services tiers suivants, susceptibles de traiter des données vous concernant :</p>
+          <h2>Third-party services</h2>
+          <p>This site uses the following third-party services, which may process data about you:</p>
           <ul class="legal-list">
             <li>
-              <strong>Formspree</strong> (formspree.io) : traitement des soumissions du formulaire de contact. Les données sont transmises aux serveurs de Formspree. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Formspree →</a>
+              <strong>Formspree</strong> (formspree.io): processes contact form submissions. Data is transmitted to Formspree's servers. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Formspree Privacy Policy →</a>
             </li>
             <li>
-              <strong>Google Fonts</strong> (fonts.googleapis.com) : chargement de la police Poppins. Cela implique une requête vers les serveurs de Google lors du chargement de la page. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Google →</a>
+              <strong>Google Fonts</strong> (fonts.googleapis.com): loads the Poppins font. This involves a request to Google's servers when the page loads. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy →</a>
             </li>
             <li>
-              <strong>YouTube</strong> (youtube.com) : les miniatures des épisodes sont chargées depuis les serveurs YouTube. La lecture des vidéos s'effectue sur la plateforme YouTube. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité YouTube →</a>
+              <strong>YouTube</strong> (youtube.com): episode thumbnails are loaded from YouTube servers. Video playback takes place on the YouTube platform. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">YouTube Privacy Policy →</a>
             </li>
           </ul>
         </div>
 
         <div class="legal-section">
-          <h2>Durée de conservation</h2>
+          <h2>Retention period</h2>
           <p>
-            Les données transmises via le formulaire de contact sont conservées le temps nécessaire au traitement de votre demande, puis supprimées dans un délai maximum de <strong>12 mois</strong>.
+            Data submitted via the contact form is retained for the time necessary to process your request, then deleted within a maximum period of <strong>12 months</strong>.
           </p>
         </div>
 
         <div class="legal-section">
-          <h2>Vos droits</h2>
-          <p>Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :</p>
+          <h2>Your rights</h2>
+          <p>Under the GDPR, you have the following rights regarding your personal data:</p>
           <ul class="legal-list">
-            <li><strong>Droit d'accès</strong> : obtenir une copie des données vous concernant</li>
-            <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
-            <li><strong>Droit à l'effacement</strong> : supprimer vos données</li>
-            <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
+            <li><strong>Right of access</strong>: obtain a copy of the data concerning you</li>
+            <li><strong>Right of rectification</strong>: correct inaccurate data</li>
+            <li><strong>Right to erasure</strong>: have your data deleted</li>
+            <li><strong>Right to object</strong>: object to the processing of your data</li>
           </ul>
           <p>
-            Pour exercer ces droits, contactez-nous à <a href="mailto:contact@phatandphurious.com">contact@phatandphurious.com</a>. Nous répondrons dans un délai maximum de 30 jours.
+            To exercise these rights, contact us at <a href="mailto:contact@phatandphurious.com">contact@phatandphurious.com</a>. We will respond within a maximum of 30 days.
           </p>
           <p>
-            Vous avez également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
+            You also have the right to lodge a complaint with the <strong>CNIL</strong> (French data protection authority): <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
           </p>
         </div>
 
         <div class="legal-section">
           <h2>Cookies</h2>
           <p>
-            Ce site n'utilise <strong>aucun cookie propriétaire</strong> à des fins de traçage ou d'analyse. Aucun bandeau de consentement aux cookies n'est donc requis pour notre propre usage.
+            This site uses <strong>no first-party cookies</strong> for tracking or analytics purposes. No cookie consent banner is therefore required for our own use.
           </p>
           <p>
-            Les services tiers mentionnés ci-dessus (Google Fonts, YouTube) peuvent déposer leurs propres cookies lors du chargement de leurs ressources. Nous n'avons pas de contrôle sur ces cookies.
+            The third-party services mentioned above (Google Fonts, YouTube) may set their own cookies when loading their resources. We have no control over these cookies.
           </p>
         </div>
 
         <div class="legal-section">
           <h2>Modifications</h2>
           <p>
-            Cette politique de confidentialité peut être mise à jour à tout moment. La date de mise en vigueur indiquée en haut de page fait foi. Nous vous encourageons à la consulter régulièrement.
+            This privacy policy may be updated at any time. The effective date shown at the top of this page is authoritative. We encourage you to consult it regularly.
           </p>
         </div>
 
@@ -318,11 +259,11 @@
         <div class="footer-top">
           <div class="footer-brand">
             <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
+            <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
           </div>
           <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
@@ -333,9 +274,9 @@
         </div>
         <div class="footer-bottom">
           <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="mentions-legales.html">Legal notice</a>
+            <a href="politique-de-confidentialite.html">Privacy policy</a>
           </nav>
         </div>
       </div>
@@ -354,14 +295,14 @@
       const open = burgerBtn.classList.toggle('open');
       mobileNav.classList.toggle('open', open);
       burgerBtn.setAttribute('aria-expanded', String(open));
-      burgerBtn.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      burgerBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         burgerBtn.classList.remove('open');
         mobileNav.classList.remove('open');
         burgerBtn.setAttribute('aria-expanded', 'false');
-        burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
+        burgerBtn.setAttribute('aria-label', 'Open menu');
       });
     });
   </script>

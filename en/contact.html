@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact & Collaborations — Phat & Phurious FM. Artistes, festivals, labels, marques et presse : contactez-nous pour des propositions, accréditations et partenariats." />
+  <meta name="description" content="Contact & Collaborations — Phat & Phurious FM. Artists, festivals, labels, brands and press: contact us for proposals, accreditations and partnerships." />
   <meta property="og:title" content="Contact & Collaborations — Phat & Phurious FM" />
-  <meta property="og:description" content="Artistes, festivals, labels, marques, presse — on répond à tout le monde. Média indépendant bass music depuis Montpellier." />
+  <meta property="og:description" content="Artists, festivals, labels, brands, press — we respond to everyone. Independent bass music media from Montpellier." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://www.phatandphurious.com/contact.html" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/contact.html" />
   <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/contact.html" />
   <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/contact.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/contact.html" />
-  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
   <title>Contact &amp; Collaborations — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,8 +68,16 @@
     .mobile-nav a:last-of-type { border-bottom:none; }
     .mobile-nav a:hover { color:var(--white); }
 
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('images/hero-contact.jpg') center center / cover no-repeat; background-attachment:fixed; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('../images/hero-contact.jpg') center center / cover no-repeat; background-attachment:fixed; }
     .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
     .page-hero .container { position:relative; z-index:1; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
@@ -79,168 +87,45 @@
 
     /* CONTACT TYPES */
     .types-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-    .types-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border);
-      gap: 0;
-    }
-    .type-card {
-      background: var(--card);
-      padding: 32px 24px;
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transition: background 0.22s;
-    }
+    .types-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); gap: 0; }
+    .type-card { background: var(--card); padding: 32px 24px; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 16px; transition: background 0.22s; }
     .type-card:last-child { border-right: none; }
     .type-card:hover { background: #181818; }
-    .type-icon {
-      width: 40px; height: 40px;
-      color: var(--red);
-      flex-shrink: 0;
-    }
-    .type-title {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    .type-desc {
-      font-size: 0.8rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--muted);
-      flex: 1;
-    }
-    .type-link {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--red);
-      transition: color 0.2s;
-      align-self: flex-start;
-    }
+    .type-icon { width: 40px; height: 40px; color: var(--red); flex-shrink: 0; }
+    .type-title { font-size: 1rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+    .type-desc { font-size: 0.8rem; font-weight: 300; line-height: 1.7; color: var(--muted); flex: 1; }
+    .type-link { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); transition: color 0.2s; align-self: flex-start; }
     .type-link:hover { color: #e62020; }
 
     /* CONTACT FORM + INFO */
     .contact-main-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-    .contact-main-grid {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 72px;
-      align-items: start;
-    }
+    .contact-main-grid { display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start; }
 
     /* FORM */
-    .contact-form-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-top: 16px;
-      margin-bottom: 28px;
-    }
+    .contact-form-title { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; margin-top: 16px; margin-bottom: 28px; }
     .contact-form-title em { color: var(--beige); font-style: italic; font-weight: 300; }
-
     .contact-form { display: flex; flex-direction: column; gap: 14px; }
-
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
     .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 1px;
-      padding: 13px 16px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 300;
-      color: var(--white);
-      outline: none;
-      transition: border-color 0.2s;
-    }
+    .form-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .form-input, .form-select, .form-textarea { width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 1px; padding: 13px 16px; font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 300; color: var(--white); outline: none; transition: border-color 0.2s; }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(255,255,255,0.22); }
     .form-select { cursor: pointer; color: var(--white); }
     .form-select option { background: #141414; color: var(--white); }
     .form-textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
-
     .form-submit { align-self: flex-start; margin-top: 4px; }
-    .form-note {
-      font-size: 0.72rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.55;
-    }
+    .form-note { font-size: 0.72rem; font-weight: 300; color: var(--muted); line-height: 1.55; }
 
     /* CONTACT INFO SIDEBAR */
-    .contact-info-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-top: 16px;
-      margin-bottom: 24px;
-    }
-    .contact-email-block {
-      padding: 20px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 28px;
-    }
-    .contact-email-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .contact-email-link {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--beige);
-      border-bottom: 1px solid rgba(255,239,229,0.2);
-      padding-bottom: 1px;
-      transition: border-color 0.2s;
-      word-break: break-all;
-    }
+    .contact-info-title { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 16px; margin-bottom: 24px; }
+    .contact-email-block { padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+    .contact-email-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .contact-email-link { font-size: 0.92rem; font-weight: 600; color: var(--beige); border-bottom: 1px solid rgba(255,239,229,0.2); padding-bottom: 1px; transition: border-color 0.2s; word-break: break-all; }
     .contact-email-link:hover { border-color: var(--beige); }
-
-    .contact-socials-title {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
+    .contact-socials-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
     .contact-socials-list { display: flex; flex-direction: column; gap: 8px; }
-    .contact-social-btn {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 1px;
-      transition: all 0.2s;
-    }
+    .contact-social-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--border); background: transparent; color: var(--muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 1px; transition: all 0.2s; }
     .contact-social-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
 
     /* FOOTER */
@@ -263,16 +148,7 @@
     .footer-legal a:hover { color:var(--white); }
 
     /* SUCCESS */
-    .form-success {
-      display: none;
-      background: rgba(26,92,46,0.12);
-      border: 1px solid rgba(76,175,80,0.25);
-      padding: 16px 20px;
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: #4caf50;
-      border-radius: 1px;
-    }
+    .form-success { display: none; background: rgba(26,92,46,0.12); border: 1px solid rgba(76,175,80,0.25); padding: 16px 20px; font-size: 0.82rem; font-weight: 400; color: #4caf50; border-radius: 1px; }
 
     /* RESPONSIVE */
     @media (max-width: 960px) {
@@ -298,14 +174,6 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
     }
-
-    /* LANG SWITCH */
-    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
-    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
-    .lang-switch a.active { color:var(--white); }
-    .lang-switch a:hover { color:var(--white); }
-    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
-    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -313,8 +181,8 @@
 
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
@@ -324,19 +192,19 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html" class="active">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/contact.html" hreflang="en">EN</a></div>
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <div class="lang-switch" aria-label="Language"><a href="/contact.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="guest-mixes.html">Guest Mixes</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact &amp; Collabs</a>
-      <a href="/en/contact.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="/contact.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
@@ -348,18 +216,18 @@
         <div class="eyebrow"><span>Contact</span></div>
         <h1 class="page-hero-title" id="contact-title">Contact<br/><em>&amp; Collabs</em></h1>
         <p class="page-hero-sub">
-          On répond à tout le monde. Artistes, festivals, labels, marques ou presse, <strong>si tu fais partie de la scène</strong>, on t'écoute. Utilise le formulaire ou écris-nous directement.
+          We respond to everyone. Artists, festivals, labels, brands or press — <strong>if you're part of the scene</strong>, we're listening. Use the form or write to us directly.
         </p>
       </div>
     </section>
 
-    <!-- TYPES DE CONTACT -->
+    <!-- CONTACT TYPES -->
     <section class="types-section" aria-labelledby="types-title">
       <div class="container">
-        <div class="eyebrow"><span>Tu es...</span></div>
+        <div class="eyebrow"><span>You are...</span></div>
         <div class="types-grid" role="list">
 
-          <!-- Artistes -->
+          <!-- Artists -->
           <div class="type-card" role="listitem">
             <svg class="type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
@@ -367,9 +235,9 @@
               <line x1="12" x2="12" y1="19" y2="22"/>
               <line x1="8" x2="16" y1="22" y2="22"/>
             </svg>
-            <h3 class="type-title">Artiste / DJ</h3>
-            <p class="type-desc">Tu veux passer un guest mix ou faire une interview ? Envoie-nous un lien de mix et une courte présentation. On sélectionne sur la musique, pas sur la notoriété.</p>
-            <a href="mailto:contact@phatandphurious.com?subject=Proposition%20Guest%20Mix" class="type-link">Proposer un set →</a>
+            <h3 class="type-title">Artist / DJ</h3>
+            <p class="type-desc">Want to record a guest mix or do an interview? Send us a mix link and a short introduction. We select based on the music, not on notoriety.</p>
+            <a href="mailto:contact@phatandphurious.com?subject=Guest%20Mix%20Proposal" class="type-link">Submit a set →</a>
           </div>
 
           <!-- Festivals & Labels -->
@@ -382,21 +250,21 @@
               <path d="M16 2v4"/>
             </svg>
             <h3 class="type-title">Festival / Label</h3>
-            <p class="type-desc">Partenariats, accréditations presse, couverture événement. On couvre les festivals qui correspondent à notre ligne éditoriale avec live reports, photos et interviews.</p>
-            <a href="mailto:contact@phatandphurious.com?subject=Demande%20accr%C3%A9ditation%20/%20partenariat" class="type-link">Demander une couverture →</a>
+            <p class="type-desc">Partnerships, press accreditations, event coverage. We cover festivals that match our editorial line with live reports, photos and interviews.</p>
+            <a href="mailto:contact@phatandphurious.com?subject=Accreditation%20/%20Partnership%20Request" class="type-link">Request coverage →</a>
           </div>
 
-          <!-- Marques -->
+          <!-- Brands -->
           <div class="type-card" role="listitem">
             <svg class="type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
-            <h3 class="type-title">Marque</h3>
-            <p class="type-desc">Collaborations éditoriales et brand deals avec des marques dont les valeurs s'alignent avec notre ligne. On ne fait pas de publicité déguisée, uniquement des partenariats transparents.</p>
-            <a href="mailto:contact@phatandphurious.com?subject=Proposition%20partenariat%20marque" class="type-link">Proposer un partenariat →</a>
+            <h3 class="type-title">Brand</h3>
+            <p class="type-desc">Editorial collaborations and brand deals with brands whose values align with ours. No hidden advertising, only transparent partnerships.</p>
+            <a href="mailto:contact@phatandphurious.com?subject=Brand%20Partnership%20Proposal" class="type-link">Propose a partnership →</a>
           </div>
 
-          <!-- Presse -->
+          <!-- Press -->
           <div class="type-card" role="listitem">
             <svg class="type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
@@ -404,69 +272,69 @@
               <path d="M15 18h-5"/>
               <path d="M10 6h8v4h-8V6z"/>
             </svg>
-            <h3 class="type-title">Presse</h3>
-            <p class="type-desc">Demandes médias, dossier de presse et informations sur le projet. Phat &amp; Phurious FM est disponible pour des interviews ou collaborations avec d'autres médias culturels.</p>
-            <a href="mailto:contact@phatandphurious.com?subject=Demande%20presse%20/%20media" class="type-link">Demande presse →</a>
+            <h3 class="type-title">Press</h3>
+            <p class="type-desc">Media requests, press kit and project information. Phat &amp; Phurious FM is available for interviews or collaborations with other cultural media.</p>
+            <a href="mailto:contact@phatandphurious.com?subject=Press%20Request%20/%20Media" class="type-link">Press request →</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- FORMULAIRE + INFO -->
+    <!-- FORM + INFO -->
     <section class="contact-main-section" aria-labelledby="form-title">
       <div class="container">
         <div class="contact-main-grid">
 
-          <!-- FORMULAIRE -->
+          <!-- FORM -->
           <div>
-            <div class="eyebrow"><span>Formulaire</span></div>
+            <div class="eyebrow"><span>Form</span></div>
             <h2 class="contact-form-title" id="form-title">
-              Écrire un <em>message.</em>
+              Send a <em>message.</em>
             </h2>
             <form class="contact-form" id="contactForm" novalidate>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label" for="contact-name">Nom / Artiste</label>
-                  <input class="form-input" type="text" id="contact-name" name="name" placeholder="Ton nom ou pseudo" required autocomplete="name" aria-required="true" />
+                  <label class="form-label" for="contact-name">Name / Artist</label>
+                  <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name or alias" required autocomplete="name" aria-required="true" />
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="contact-email">Email</label>
-                  <input class="form-input" type="email" id="contact-email" name="email" placeholder="ton@email.com" required autocomplete="email" aria-required="true" />
+                  <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label" for="contact-type">Type de demande</label>
+                <label class="form-label" for="contact-type">Request type</label>
                 <select class="form-select" id="contact-type" name="type" required aria-required="true">
-                  <option value="" disabled selected>Sélectionner...</option>
-                  <option value="artiste">Artiste / Guest Mix / Interview</option>
-                  <option value="festival">Festival / Accréditation / Label</option>
-                  <option value="marque">Collaboration marque / Brand deal</option>
-                  <option value="presse">Demande presse / Média</option>
+                  <option value="" disabled selected>Select...</option>
+                  <option value="artiste">Artist / Guest Mix / Interview</option>
+                  <option value="festival">Festival / Accreditation / Label</option>
+                  <option value="marque">Brand collaboration / Brand deal</option>
+                  <option value="presse">Press request / Media</option>
                 </select>
               </div>
               <div class="form-group">
                 <label class="form-label" for="contact-message">Message</label>
-                <textarea class="form-textarea" id="contact-message" name="message" placeholder="Décris ton projet, ta proposition ou ta demande..." required aria-required="true"></textarea>
+                <textarea class="form-textarea" id="contact-message" name="message" placeholder="Describe your project, proposal or request..." required aria-required="true"></textarea>
               </div>
               <div class="form-success" id="formSuccess" aria-live="polite">
-                Message envoyé. On te répondra dans les meilleurs délais.
+                Message sent. We'll get back to you as soon as possible.
               </div>
-              <button type="submit" class="btn btn-primary form-submit">Envoyer le message</button>
-              <p class="form-note">Tes données ne sont utilisées que pour répondre à ta demande. Aucun spam.</p>
+              <button type="submit" class="btn btn-primary form-submit">Send message</button>
+              <p class="form-note">Your data is only used to respond to your request. No spam.</p>
             </form>
           </div>
 
           <!-- INFO -->
           <div>
-            <div class="eyebrow"><span>Infos</span></div>
-            <h2 class="contact-info-title">Nous joindre directement</h2>
+            <div class="eyebrow"><span>Info</span></div>
+            <h2 class="contact-info-title">Contact us directly</h2>
             <div class="contact-email-block">
-              <p class="contact-email-label">Email pro</p>
+              <p class="contact-email-label">Professional email</p>
               <a href="mailto:contact@phatandphurious.com" class="contact-email-link">contact@phatandphurious.com</a>
             </div>
-            <p class="contact-socials-title">Réseaux sociaux</p>
-            <nav class="contact-socials-list" aria-label="Réseaux sociaux">
+            <p class="contact-socials-title">Social media</p>
+            <nav class="contact-socials-list" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="contact-social-btn" target="_blank" rel="noopener noreferrer">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 YouTube
@@ -502,11 +370,11 @@
         <div class="footer-top">
           <div class="footer-brand">
             <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
+            <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
           </div>
           <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
@@ -517,16 +385,16 @@
         </div>
         <div class="footer-bottom">
           <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="mentions-legales.html">Legal notice</a>
+            <a href="politique-de-confidentialite.html">Privacy policy</a>
           </nav>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
   <script>
     // Form
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -538,7 +406,7 @@
       if (!name || !email || !type || !message) return;
       const btn = this.querySelector('button[type="submit"]');
       const success = document.getElementById('formSuccess');
-      btn.textContent = 'Envoi en cours…';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
       try {
         const res = await fetch('https://formspree.io/f/xojbkwaj', {
@@ -547,31 +415,31 @@
           body: new FormData(this)
         });
         if (res.ok) {
-          btn.textContent = 'Envoyé';
+          btn.textContent = 'Sent';
           btn.style.background = 'var(--success)';
           success.style.display = 'block';
           this.reset();
           setTimeout(() => {
-            btn.textContent = 'Envoyer le message';
+            btn.textContent = 'Send message';
             btn.style.background = '';
             btn.disabled = false;
             success.style.display = 'none';
           }, 5000);
         } else {
-          btn.textContent = 'Erreur, réessaie';
+          btn.textContent = 'Error, try again';
           btn.style.background = 'var(--red)';
           btn.disabled = false;
           setTimeout(() => {
-            btn.textContent = 'Envoyer le message';
+            btn.textContent = 'Send message';
             btn.style.background = '';
           }, 4000);
         }
       } catch {
-        btn.textContent = 'Erreur, réessaie';
+        btn.textContent = 'Error, try again';
         btn.style.background = 'var(--red)';
         btn.disabled = false;
         setTimeout(() => {
-          btn.textContent = 'Envoyer le message';
+          btn.textContent = 'Send message';
           btn.style.background = '';
         }, 4000);
       }

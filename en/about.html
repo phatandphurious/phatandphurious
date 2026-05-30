@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="À propos — Phat & Phurious FM. Média indépendant dédié à la bass music underground depuis Montpellier. Découvrez notre vision, notre concept et notre ADN éditorial." />
-  <meta property="og:title" content="À propos — Phat & Phurious FM" />
-  <meta property="og:description" content="Média indépendant dédié à la bass music underground. Sets filmés, webzine, terrain. Depuis Montpellier, France." />
+  <meta name="description" content="About — Phat & Phurious FM. Independent media dedicated to underground bass music since Montpellier. Discover our vision, concept and editorial DNA." />
+  <meta property="og:title" content="About — Phat & Phurious FM" />
+  <meta property="og:description" content="Independent media dedicated to underground bass music. Filmed sets, webzine, on the ground. From Montpellier, France." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://www.phatandphurious.com/about.html" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/about.html" />
   <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/about.html" />
   <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/about.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/about.html" />
-  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
-  <title>À propos — Phat &amp; Phurious FM</title>
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
+  <title>About — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,8 +75,16 @@
     .mobile-nav a:last-of-type { border-bottom:none; }
     .mobile-nav a:hover { color:var(--white); }
 
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('images/hero-about.jpg') center center / cover no-repeat; background-attachment:fixed; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('../images/hero-about.jpg') center center / cover no-repeat; background-attachment:fixed; }
     .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
     .page-hero .container { position:relative; z-index:1; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
@@ -84,152 +92,53 @@
     .page-hero-sub { font-size:0.9rem; font-weight:300; line-height:1.78; color:var(--muted); max-width:520px; }
     .page-hero-sub strong { color:var(--white); font-weight:400; }
 
-    /* LA VISION */
+    /* VISION */
     .vision-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-    .vision-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 72px;
-      align-items: start;
-    }
+    .vision-grid { display: grid; grid-template-columns: 280px 1fr; gap: 72px; align-items: start; }
     .vision-left { padding-top: 2px; }
-    .vision-heading {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-top: 16px;
-    }
+    .vision-heading { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; margin-top: 16px; }
     .vision-heading em { color: var(--beige); font-style: italic; font-weight: 300; }
-    .vision-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 40px;
-    }
-    .vision-para {
-      font-size: 0.865rem;
-      font-weight: 300;
-      line-height: 1.82;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
+    .vision-right { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    .vision-para { font-size: 0.865rem; font-weight: 300; line-height: 1.82; color: var(--muted); margin-bottom: 20px; }
     .vision-para strong { color: var(--white); font-weight: 500; }
     .vision-para:last-child { margin-bottom: 0; }
 
-    /* LE CONCEPT */
+    /* CONCEPT */
     .concept-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-    .concept-grid {
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 72px;
-      align-items: start;
-    }
-    .concept-text-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.25;
-      margin-top: 16px;
-      margin-bottom: 24px;
-    }
+    .concept-grid { display: grid; grid-template-columns: 1fr 340px; gap: 72px; align-items: start; }
+    .concept-text-title { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25; margin-top: 16px; margin-bottom: 24px; }
     .concept-text-title em { color: var(--beige); font-style: italic; font-weight: 300; }
-    .concept-para {
-      font-size: 0.865rem;
-      font-weight: 300;
-      line-height: 1.82;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
+    .concept-para { font-size: 0.865rem; font-weight: 300; line-height: 1.82; color: var(--muted); margin-bottom: 18px; }
     .concept-para strong { color: var(--white); font-weight: 500; }
     .concept-para:last-child { margin-bottom: 0; }
 
     /* STATS */
-    .stats-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--border);
-    }
-    .stat-item {
-      padding: 28px 24px;
-      border-bottom: 1px solid var(--border);
-    }
+    .stats-block { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+    .stat-item { padding: 28px 24px; border-bottom: 1px solid var(--border); }
     .stat-item:last-child { border-bottom: none; }
-    .stat-number {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      line-height: 1;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
+    .stat-number { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: var(--white); margin-bottom: 6px; }
     .stat-number em { color: var(--beige); font-style: italic; font-weight: 300; }
-    .stat-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+    .stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 
-    /* L'OBJECTIF */
+    /* GOAL */
     .objectif-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
     .objectif-inner { max-width: 760px; }
-    .objectif-title {
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.15;
-      margin-bottom: 28px;
-    }
+    .objectif-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.15; margin-bottom: 28px; }
     .objectif-title em { color: var(--beige); font-style: italic; font-weight: 300; }
-    .objectif-para {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
+    .objectif-para { font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: var(--muted); margin-bottom: 20px; }
     .objectif-para strong { color: var(--white); font-weight: 500; }
     .objectif-para:last-child { margin-bottom: 0; }
 
-    blockquote.about-quote {
-      border-left: 2px solid var(--red);
-      padding-left: 24px;
-      margin: 40px 0;
-    }
-    blockquote.about-quote p {
-      font-size: 1rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--white);
-      line-height: 1.65;
-    }
+    blockquote.about-quote { border-left: 2px solid var(--red); padding-left: 24px; margin: 40px 0; }
+    blockquote.about-quote p { font-size: 1rem; font-weight: 400; font-style: italic; color: var(--white); line-height: 1.65; }
 
-    /* CTA FINAL */
+    /* CTA */
     .cta-section { padding: var(--sec-py) 0; }
-    .cta-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
     .cta-text-area { max-width: 540px; }
-    .cta-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
+    .cta-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.15; margin-bottom: 12px; }
     .cta-title em { color: var(--beige); font-style: italic; font-weight: 300; }
-    .cta-sub {
-      font-size: 0.865rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: var(--muted);
-    }
+    .cta-sub { font-size: 0.865rem; font-weight: 300; line-height: 1.75; color: var(--muted); }
     .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0; }
 
     /* FOOTER */
@@ -270,14 +179,6 @@
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
       .cta-inner { flex-direction: column; align-items: flex-start; }
     }
-
-    /* LANG SWITCH */
-    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
-    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
-    .lang-switch a.active { color:var(--white); }
-    .lang-switch a:hover { color:var(--white); }
-    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
-    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -285,8 +186,8 @@
 
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
@@ -296,19 +197,19 @@
           <li><a href="about.html" class="active">About</a></li>
           <li><a href="contact.html">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/about.html" hreflang="en">EN</a></div>
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <div class="lang-switch" aria-label="Language"><a href="/about.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="guest-mixes.html">Guest Mixes</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact &amp; Collabs</a>
-      <a href="/en/about.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="/about.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
@@ -317,40 +218,40 @@
     <!-- HERO -->
     <section class="page-hero" aria-labelledby="about-title">
       <div class="container">
-        <div class="eyebrow"><span>À propos</span></div>
-        <h1 class="page-hero-title" id="about-title">Un média<br/><em>indépendant.</em></h1>
+        <div class="eyebrow"><span>About</span></div>
+        <h1 class="page-hero-title" id="about-title">An independent<br/><em>media.</em></h1>
         <p class="page-hero-sub">
-          Phat &amp; Phurious FM est né d'une conviction : la bass music underground mérite un espace éditorial sérieux, indépendant et <strong>construit dans la durée</strong>. Sets filmés, webmedia, terrain, on couvre la scène sans compromis.
+          Phat &amp; Phurious FM was born from a conviction: underground bass music deserves a serious, independent editorial space <strong>built to last</strong>. Filmed sets, web media, on the ground — we cover the scene without compromise.
         </p>
       </div>
     </section>
 
-    <!-- LA VISION -->
+    <!-- VISION -->
     <section class="vision-section" aria-labelledby="vision-title">
       <div class="container">
         <div class="vision-grid">
           <div class="vision-left">
             <div class="eyebrow"><span>Vision</span></div>
             <h2 class="vision-heading" id="vision-title">
-              L'ADN<br />bass music.<br />
+              The bass music<br />DNA.<br />
               <em>Underground.</em>
             </h2>
           </div>
           <div class="vision-right">
             <div>
               <p class="vision-para">
-                Phat &amp; Phurious FM n'est pas une plateforme de promotion. C'est un <strong>espace éditorial</strong> construit autour d'une conviction : la scène bass music underground regorge d'artistes exceptionnels qui manquent simplement de visibilité structurée.
+                Phat &amp; Phurious FM is not a promotional platform. It's an <strong>editorial space</strong> built around a conviction: the underground bass music scene is full of exceptional artists who simply lack structured visibility.
               </p>
               <p class="vision-para">
-                On couvre les genres qui définissent la bass music d'aujourd'hui : <strong>UK Garage, Jungle, Liquid DnB, Bass House, Speed Garage, Dubstep, Bassline</strong>, avec la même exigence qu'un magazine spécialisé et l'agilité d'un média digital indépendant.
+                We cover the genres that define today's bass music: <strong>UK Garage, Jungle, Liquid DnB, Bass House, Speed Garage, Dubstep, Bassline</strong>, with the same exigence as a specialist magazine and the agility of an independent digital media.
               </p>
             </div>
             <div>
               <p class="vision-para">
-                <strong>L'indépendance éditoriale</strong> n'est pas un argument marketing. C'est la condition nécessaire pour couvrir honnêtement une scène. Pas de partenariats qui dictent notre programmation. Pas d'articles commandés. On invite les artistes qu'on estime, on couvre les événements qu'on choisit.
+                <strong>Editorial independence</strong> is not a marketing argument. It's the necessary condition for covering a scene honestly. No partnerships that dictate our programming. No commissioned articles. We invite the artists we believe in, we cover the events we choose.
               </p>
               <p class="vision-para">
-                Basés à <strong>Montpellier</strong>, on construit un média crédible pour couvrir les festivals et donner de la visibilité à une scène qui le mérite depuis longtemps.
+                Based in <strong>Montpellier</strong>, we're building a credible media outlet to cover festivals and give visibility to a scene that has long deserved it.
               </p>
             </div>
           </div>
@@ -358,43 +259,43 @@
       </div>
     </section>
 
-    <!-- LE CONCEPT -->
+    <!-- THE CONCEPT -->
     <section class="concept-section" aria-labelledby="concept-title">
       <div class="container">
         <div class="concept-grid">
 
           <div>
-            <div class="eyebrow"><span>Le format</span></div>
+            <div class="eyebrow"><span>The format</span></div>
             <h2 class="concept-text-title" id="concept-title">
-              Un format.<br />
-              Une heure.<br />
-              <em>Un café glacé.</em>
+              One format.<br />
+              One hour.<br />
+              <em>One iced coffee.</em>
             </h2>
             <p class="concept-para">
-              Le format signature, c'est le <strong>guest mix filmé d'une heure</strong>. Un artiste, une sélection, une caméra. Pas de montage court, pas de format radio, pas de contrainte de durée imposée par un algorithme. Une heure, complète, pour raconter quelque chose.
+              The signature format is the <strong>one-hour filmed guest mix</strong>. One artist, one selection, one camera. No short edit, no radio format, no duration constraint imposed by an algorithm. One full hour to say something.
             </p>
             <p class="concept-para">
-              L'esthétique est empruntée au <em>cà phê sữa đá</em>, ce café vietnamien au lait concentré sucré, bu lentement sur de la glace pilée. Lent. Dense. Intense. Ce n'est pas une image commerciale. C'est une façon d'aborder la musique et la création de contenu : avec patience et conviction.
+              The aesthetic is borrowed from <em>cà phê sữa đá</em>, the Vietnamese sweetened condensed milk coffee, drunk slowly over crushed ice. Slow. Dense. Intense. It's not a commercial image. It's a way of approaching music and content creation: with patience and conviction.
             </p>
             <p class="concept-para">
-              Chaque épisode est pensé comme un document. Une trace. Quelque chose qui existera encore dans dix ans et dira : <strong>voilà ce que jouait la scène bass music à Montpellier en 2026.</strong>
+              Each episode is conceived as a document. A trace. Something that will still exist in ten years and say: <strong>this is what the bass music scene was playing in Montpellier in 2026.</strong>
             </p>
             <blockquote class="about-quote">
-              <p>"Un set d'une heure filmé dans le calme d'un café, c'est le temps de raconter quelque chose. Pas un DJ set live. Une déclaration."</p>
+              <p>"A one-hour set filmed in the calm of a café — it's enough time to say something. Not a live DJ set. A statement."</p>
             </blockquote>
           </div>
 
           <!-- STATS -->
           <div>
-            <div class="eyebrow"><span>Chiffres clés</span></div>
-            <div class="stats-block" aria-label="Chiffres clés Phat & Phurious FM">
+            <div class="eyebrow"><span>Key figures</span></div>
+            <div class="stats-block" aria-label="Phat & Phurious FM key figures">
               <div class="stat-item">
                 <p class="stat-number">3</p>
-                <p class="stat-label">Épisodes filmés</p>
+                <p class="stat-label">Filmed episodes</p>
               </div>
               <div class="stat-item">
-                <p class="stat-number"><em>Fév.</em><br/>2026</p>
-                <p class="stat-label">Lancement du projet</p>
+                <p class="stat-number"><em>Feb.</em><br/>2026</p>
+                <p class="stat-label">Project launch</p>
               </div>
               <div class="stat-item">
                 <p class="stat-number" style="font-size:clamp(1.4rem,3vw,2rem); letter-spacing:-0.02em;">Montpellier</p>
@@ -402,7 +303,7 @@
               </div>
               <div class="stat-item">
                 <p class="stat-number" style="font-size:clamp(1.2rem,2.5vw,1.7rem); letter-spacing:-0.02em; line-height:1.2;">Bass<br/>Music</p>
-                <p class="stat-label">Genre principal</p>
+                <p class="stat-label">Main genre</p>
               </div>
             </div>
           </div>
@@ -411,43 +312,43 @@
       </div>
     </section>
 
-    <!-- L'OBJECTIF -->
+    <!-- THE GOAL -->
     <section class="objectif-section" aria-labelledby="objectif-title">
       <div class="container">
         <div class="objectif-inner">
-          <div class="eyebrow"><span>Objectif</span></div>
+          <div class="eyebrow"><span>Goal</span></div>
           <h2 class="objectif-title" id="objectif-title">
-            Devenir une <em>référence</em><br/>bass music en France.
+            Becoming a <em>reference</em><br/>for bass music in France.
           </h2>
           <p class="objectif-para">
-            On ne part pas d'une posture. On part d'un travail. <strong>Construire un média crédible prend du temps</strong> : des épisodes réguliers, des articles qui informent vraiment, une présence terrain qui légitime notre voix. Phat &amp; Phurious FM est dans cette construction, épisode après épisode.
+            We don't start from a posture. We start from work. <strong>Building a credible media takes time</strong>: consistent episodes, articles that truly inform, a field presence that legitimises our voice. Phat &amp; Phurious FM is in that process, episode after episode.
           </p>
           <p class="objectif-para">
-            L'objectif à moyen terme est clair : <strong>accréditations dans les grands festivals européens</strong> (Dour, Nuits Sonores, Junction 2, Fabric, Berghain Media), interviews avec les artistes qui structurent la scène, et un catalogue de sets filmés qui documentent l'état de la bass music underground en France et en Europe.
+            The medium-term goal is clear: <strong>press accreditations at major European festivals</strong> (Dour, Nuits Sonores, Junction 2, Fabric, Berghain Media), interviews with the artists who shape the scene, and a catalogue of filmed sets that document the state of underground bass music in France and Europe.
           </p>
           <p class="objectif-para">
-            On n'est pas une institution. On est un projet porté par la passion, l'exigence, et une conviction profonde que <strong>la musique qu'on aime mérite d'être racontée sérieusement.</strong> Le reste suivra.
+            We're not an institution. We're a project driven by passion, exigence, and a deep conviction that <strong>the music we love deserves to be covered seriously.</strong> The rest will follow.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- CTA -->
     <section class="cta-section" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-inner">
           <div class="cta-text-area">
-            <div class="eyebrow"><span>Rejoindre</span></div>
+            <div class="eyebrow"><span>Join</span></div>
             <h2 class="cta-title" id="cta-title">
-              Rejoindre<br/><em>l'aventure.</em>
+              Join<br/><em>the adventure.</em>
             </h2>
             <p class="cta-sub">
-              Tu veux soutenir le projet, soumettre un mix, proposer un partenariat ou juste rester dans la boucle ? On est joignables.
+              Want to support the project, submit a mix, propose a partnership or just stay in the loop? We're reachable.
             </p>
           </div>
           <div class="cta-actions">
-            <a href="contact.html" class="btn btn-primary">Nous contacter</a>
-            <a href="guest-mixes.html" class="btn btn-ghost">Voir les sets</a>
+            <a href="contact.html" class="btn btn-primary">Contact us</a>
+            <a href="guest-mixes.html" class="btn btn-ghost">Watch the sets</a>
           </div>
         </div>
       </div>
@@ -461,11 +362,11 @@
         <div class="footer-top">
           <div class="footer-brand">
             <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
+            <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
           </div>
           <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
@@ -476,16 +377,16 @@
         </div>
         <div class="footer-bottom">
           <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="mentions-legales.html">Legal notice</a>
+            <a href="politique-de-confidentialite.html">Privacy policy</a>
           </nav>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
 
 </body>
 </html>

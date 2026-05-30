@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Guest Mixes — Phat & Phurious FM. Sets filmés d'une heure dans l'atmosphère d'un cà phê sữa đá. Bass Music, UK Garage, Jungle, Liquid DnB. Depuis Montpellier." />
+  <meta name="description" content="Guest Mixes — Phat & Phurious FM. One-hour filmed sets in the atmosphere of a cà phê sữa đá. Bass Music, UK Garage, Jungle, Liquid DnB. From Montpellier." />
   <meta property="og:title" content="Guest Mixes — Phat & Phurious FM" />
-  <meta property="og:description" content="Sets filmés d'une heure dans l'atmosphère d'un café vietnamien glacé. Bass Music, UK Garage, Jungle, Liquid DnB." />
+  <meta property="og:description" content="One-hour filmed sets in the atmosphere of an iced Vietnamese coffee. Bass Music, UK Garage, Jungle, Liquid DnB." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Guest Mixes — Phat & Phurious FM" />
   <meta name="twitter:image" content="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" />
-  <link rel="canonical" href="https://www.phatandphurious.com/guest-mixes.html" />
+  <link rel="canonical" href="https://www.phatandphurious.com/en/guest-mixes.html" />
   <link rel="alternate" hreflang="fr" href="https://www.phatandphurious.com/guest-mixes.html" />
   <link rel="alternate" hreflang="en" href="https://www.phatandphurious.com/en/guest-mixes.html" />
   <link rel="alternate" hreflang="x-default" href="https://www.phatandphurious.com/guest-mixes.html" />
-  <link rel="icon" type="image/png" href="images/logo-pnp-rouge-blanc.png" />
+  <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
   <title>Guest Mixes — Phat &amp; Phurious FM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,8 +80,16 @@
     .mobile-nav a:last-of-type { border-bottom:none; }
     .mobile-nav a:hover { color:var(--white); }
 
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('images/hero-guestmixes.jpg') center / cover no-repeat; background-attachment:fixed; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('../images/hero-guestmixes.jpg') center / cover no-repeat; background-attachment:fixed; }
     .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
     .page-hero .container { position:relative; z-index:1; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
@@ -91,77 +99,20 @@
 
     /* EPISODES GRID */
     .episodes-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-
-    .episodes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      gap: 0;
-    }
-    .episode-card {
-      background: var(--card);
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid var(--border);
-      transition: background 0.22s;
-    }
+    .episodes-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); gap: 0; }
+    .episode-card { background: var(--card); display: flex; flex-direction: column; border-right: 1px solid var(--border); transition: background 0.22s; }
     .episode-card:last-child { border-right: none; }
     .episode-card:hover { background: #181818; }
-
-    .ep-thumb {
-      aspect-ratio: 16 / 9;
-      background: #000;
-      position: relative;
-      overflow: hidden;
-      display: block;
-    }
-    .ep-thumb img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease, opacity 0.3s ease;
-    }
+    .ep-thumb { aspect-ratio: 16 / 9; background: #000; position: relative; overflow: hidden; display: block; }
+    .ep-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease, opacity 0.3s ease; }
     .episode-card:hover .ep-thumb img { transform: scale(1.04); }
-    .ep-thumb-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0);
-      transition: background 0.25s ease;
-      z-index: 1;
-    }
+    .ep-thumb-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.25s ease; z-index: 1; }
     .episode-card:hover .ep-thumb-overlay { background: rgba(0,0,0,0.45); }
-    .ep-thumb-ep {
-      position: absolute;
-      top: 14px; left: 14px;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      z-index: 2;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-    }
-    .ep-thumb-play {
-      width: 52px; height: 52px;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      z-index: 2;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
+    .ep-thumb-ep { position: absolute; top: 14px; left: 14px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); z-index: 2; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+    .ep-thumb-play { width: 52px; height: 52px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; z-index: 2; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); }
     .ep-thumb-play svg { fill: var(--white); margin-left: 3px; }
     .episode-card:hover .ep-thumb-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-
-    .ep-body {
-      padding: 22px 20px;
-      display: flex; flex-direction: column; flex: 1;
-      border-top: 1px solid var(--border);
-    }
+    .ep-body { padding: 22px 20px; display: flex; flex-direction: column; flex: 1; border-top: 1px solid var(--border); }
     .ep-num { font-size:0.75rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--red); margin-bottom:10px; }
     .ep-guest { font-size:1.15rem; font-weight:700; letter-spacing:-0.025em; line-height:1.18; margin-bottom:6px; }
     .ep-genre { font-size:0.75rem; font-weight:300; font-style:italic; color:var(--muted); flex:1; }
@@ -171,209 +122,45 @@
     .ep-cta { margin-left:auto; display:inline-flex; align-items:center; gap:5px; font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--red); transition:color 0.2s; }
     .ep-cta:hover { color:#e62020; }
 
-
-    /* ────────────────────────────────────────────
-       PHAT AND CURIOUS
-    ──────────────────────────────────────────── */
-    .pac-section {
-      padding: var(--sec-py) 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* Rangée de cartes portrait (9:16 — YouTube Shorts) */
-    .pac-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .pac-card {
-      width: 240px;
-      flex-shrink: 0;
-      background: var(--card);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--border);
-      transition: background 0.22s;
-    }
+    /* PHAT AND CURIOUS */
+    .pac-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
+    .pac-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+    .pac-card { width: 240px; flex-shrink: 0; background: var(--card); display: flex; flex-direction: column; border: 1px solid var(--border); transition: background 0.22s; }
     .pac-card:hover { background: #181818; }
-
-    /* Thumbnail portrait 9:16 */
-    .pac-thumb {
-      aspect-ratio: 9 / 16;
-      position: relative;
-      overflow: hidden;
-      display: block;
-      cursor: default;
-    }
+    .pac-thumb { aspect-ratio: 9 / 16; position: relative; overflow: hidden; display: block; cursor: default; }
     .pac-thumb[href] { cursor: pointer; }
     .pac-thumb--playable { cursor: pointer; }
-    .pac-thumb img { width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    .pac-thumb-inner {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      padding: 20px;
-      background:
-        radial-gradient(ellipse at 50% 20%, rgba(207,0,0,0.12) 0%, transparent 60%),
-        linear-gradient(to bottom, #0e0e0e 0%, #0a0a0a 100%);
-    }
-    .pac-ep-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 10px;
-    }
-    .pac-thumb-guest {
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .pac-thumb-from {
-      font-size: 0.72rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 16px;
-      min-height: 1em;
-    }
-    .pac-soon {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--red);
-      background: rgba(207,0,0,0.08);
-      border: 1px solid rgba(207,0,0,0.22);
-      border-radius: 1px;
-      padding: 3px 9px;
-    }
-    .pac-play-btn {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 52px; height: 52px;
-      background: rgba(207,0,0,0.92);
-      border: none; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      z-index: 2;
-      pointer-events: none;
-    }
+    .pac-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pac-thumb-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 20px; background: radial-gradient(ellipse at 50% 20%, rgba(207,0,0,0.12) 0%, transparent 60%), linear-gradient(to bottom, #0e0e0e 0%, #0a0a0a 100%); }
+    .pac-ep-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+    .pac-thumb-guest { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--white); margin-bottom: 4px; }
+    .pac-thumb-from { font-size: 0.72rem; font-weight: 300; font-style: italic; color: var(--muted); margin-bottom: 16px; min-height: 1em; }
+    .pac-soon { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); background: rgba(207,0,0,0.08); border: 1px solid rgba(207,0,0,0.22); border-radius: 1px; padding: 3px 9px; }
+    .pac-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; background: rgba(207,0,0,0.92); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s; z-index: 2; pointer-events: none; }
     .pac-thumb--playable:hover .pac-play-btn { background: #CF0000; transform: translate(-50%, -50%) scale(1.1); }
     .pac-play-btn svg { width: 18px; height: 18px; fill: #fff; margin-left: 3px; }
     .pac-thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-    .pac-thumb-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0);
-      transition: background 0.25s ease;
-      pointer-events: none;
-    }
+    .pac-thumb-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.25s ease; pointer-events: none; }
     .pac-card:hover .pac-thumb-overlay { background: rgba(0,0,0,0.2); }
-
-    /* Card body */
-    .pac-body {
-      padding: 16px 18px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      border-top: 1px solid var(--border);
-    }
-    .pac-num {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 6px;
-    }
-    .pac-name {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
-    .pac-sub {
-      font-size: 0.72rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--muted);
-      flex: 1;
-    }
-    .pac-foot {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
-    .pac-tag, .pac-date {
-      font-size: 0.7rem;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-    .pac-intro {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 40px;
-    }
+    .pac-body { padding: 16px 18px; display: flex; flex-direction: column; flex: 1; border-top: 1px solid var(--border); }
+    .pac-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+    .pac-name { font-size: 1rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 4px; }
+    .pac-sub { font-size: 0.72rem; font-weight: 300; font-style: italic; color: var(--muted); flex: 1; }
+    .pac-foot { display: flex; align-items: center; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .pac-tag, .pac-date { font-size: 0.7rem; font-weight: 400; color: var(--muted); letter-spacing: 0.04em; }
+    .pac-intro { font-size: 0.9rem; font-weight: 300; line-height: 1.8; color: var(--muted); max-width: 620px; margin-bottom: 40px; }
     .pac-intro strong { color: var(--white); font-weight: 400; }
 
-    @media (max-width: 600px) {
-      .pac-grid { gap: 16px; }
-      .pac-card { width: calc(50% - 8px); }
-    }
-    @media (max-width: 400px) {
-      .pac-card { width: 100%; max-width: 260px; }
-    }
+    @media (max-width: 600px) { .pac-grid { gap: 16px; } .pac-card { width: calc(50% - 8px); } }
+    @media (max-width: 400px) { .pac-card { width: 100%; max-width: 260px; } }
 
     /* SUBMIT MIX */
-    .submit-section {
-      padding: var(--sec-py) 0;
-    }
-    .submit-block {
-      border: 1px solid rgba(207,0,0,0.15);
-      background: rgba(207,0,0,0.03);
-      padding: 52px 48px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+    .submit-section { padding: var(--sec-py) 0; }
+    .submit-block { border: 1px solid rgba(207,0,0,0.15); background: rgba(207,0,0,0.03); padding: 52px 48px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
     .submit-text-area { max-width: 560px; }
-    .submit-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
+    .submit-title { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 16px; }
     .submit-title em { color: var(--beige); font-style: italic; font-weight: 300; }
-    .submit-body {
-      font-size: 0.865rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--muted);
-    }
+    .submit-body { font-size: 0.865rem; font-weight: 300; line-height: 1.8; color: var(--muted); }
     .submit-body strong { color: var(--white); font-weight: 400; }
 
     /* FOOTER */
@@ -420,14 +207,6 @@
       .footer-social-links { flex-wrap: wrap; gap: 14px; }
       .submit-block { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
     }
-
-    /* LANG SWITCH */
-    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
-    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
-    .lang-switch a.active { color:var(--white); }
-    .lang-switch a:hover { color:var(--white); }
-    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
-    @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
   </style>
 </head>
 
@@ -435,8 +214,8 @@
 
   <header id="navbar" role="banner">
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Phat & Phurious — Accueil">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
           PHAT <span class="amp">&</span> PHURIOUS
         </a>
         <ul class="nav-links" role="list">
@@ -446,19 +225,19 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/guest-mixes.html" hreflang="en">EN</a></div>
-        <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+        <div class="lang-switch" aria-label="Language"><a href="/guest-mixes.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </nav>
     </div>
-    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="guest-mixes.html">Guest Mixes</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact &amp; Collabs</a>
-      <a href="/en/guest-mixes.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a href="/guest-mixes.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
     </nav>
   </header>
 
@@ -468,30 +247,30 @@
     <section class="page-hero" aria-labelledby="gm-title">
       <div class="container">
         <div class="eyebrow"><span>Guest Mixes</span></div>
-        <h1 class="page-hero-title" id="gm-title">Sets <em>filmés.</em></h1>
+        <h1 class="page-hero-title" id="gm-title">Filmed <em>sets.</em></h1>
         <p class="page-hero-sub">
-          Un artiste. Une heure. Une caméra. L'esthétique empruntée au <strong>cà phê sữa đá</strong>, ce café vietnamien glacé, bu lentement, dense et concentré. <strong>Bass Music, UK Garage, Jungle, Liquid DnB</strong> : des artistes underground filmés dans leur élément, sans compromis de format.
+          One artist. One hour. One camera. The aesthetic borrowed from <strong>cà phê sữa đá</strong>, that iced Vietnamese coffee, drunk slowly, dense and concentrated. <strong>Bass Music, UK Garage, Jungle, Liquid DnB</strong>: underground artists filmed in their element, without format compromise.
         </p>
       </div>
     </section>
 
-    <!-- ÉPISODES -->
+    <!-- EPISODES -->
     <section class="episodes-section" aria-labelledby="ep-grid-title">
       <div class="container">
         <div class="section-header">
           <div>
-            <div class="eyebrow"><span>Tous les épisodes</span></div>
-            <h2 class="section-title" id="ep-grid-title">La collection</h2>
+            <div class="eyebrow"><span>All episodes</span></div>
+            <h2 class="section-title" id="ep-grid-title">The collection</h2>
           </div>
-          <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Tout voir sur YouTube</a>
+          <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">View all on YouTube</a>
         </div>
 
         <div class="episodes-grid" role="list">
 
           <!-- EP 001 -->
           <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-001.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Voir l'épisode 001 — Alcid (from Bash)">
-              <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Miniature épisode 001 — Alcid (from Bash)" width="1280" height="720" loading="lazy" />
+            <a href="guest-mixes/ep-001.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Watch episode 001 — Alcid (from Bash)">
+              <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Episode 001 thumbnail — Alcid (from Bash)" width="1280" height="720" loading="lazy" />
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 001</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -499,16 +278,16 @@
               </div>
             </a>
             <div class="ep-body">
-              <p class="ep-num">Épisode 001</p>
+              <p class="ep-num">Episode 001</p>
               <h3 class="ep-guest">Alcid (from Bash)</h3>
               <p class="ep-genre">Bass Music &amp; UKG</p>
               <div class="ep-foot">
                 <span class="ep-duration">1h06</span>
                 <span class="ep-dot"></span>
-                <span class="ep-date">Février 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="ep-cta" aria-label="Écouter l'épisode 001 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                <span class="ep-date">February 2026</span>
+                <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="ep-cta" aria-label="Listen to episode 001 on SoundCloud" target="_blank" rel="noopener noreferrer">
                   <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
-                  Écouter →
+                  Listen →
                 </a>
               </div>
             </div>
@@ -516,8 +295,8 @@
 
           <!-- EP 002 -->
           <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-002.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Voir l'épisode 002 — Onyx">
-              <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Miniature épisode 002 — Onyx" width="1280" height="720" loading="lazy" />
+            <a href="guest-mixes/ep-002.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Watch episode 002 — Onyx">
+              <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Episode 002 thumbnail — Onyx" width="1280" height="720" loading="lazy" />
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 002</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -525,16 +304,16 @@
               </div>
             </a>
             <div class="ep-body">
-              <p class="ep-num">Épisode 002</p>
+              <p class="ep-num">Episode 002</p>
               <h3 class="ep-guest">Onyx</h3>
               <p class="ep-genre">Liquid / Drum and Bass</p>
               <div class="ep-foot">
                 <span class="ep-duration">57:48</span>
                 <span class="ep-dot"></span>
-                <span class="ep-date">Mars 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Écouter l'épisode 002 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                <span class="ep-date">March 2026</span>
+                <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Listen to episode 002 on SoundCloud" target="_blank" rel="noopener noreferrer">
                   <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
-                  Écouter →
+                  Listen →
                 </a>
               </div>
             </div>
@@ -542,8 +321,8 @@
 
           <!-- EP 003 -->
           <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-003.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Voir l'épisode 003 — Ymka (from The Garage)">
-              <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Miniature épisode 003 — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
+            <a href="guest-mixes/ep-003.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Watch episode 003 — Ymka (from The Garage)">
+              <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Episode 003 thumbnail — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
               <div class="ep-thumb-overlay" aria-hidden="true"></div>
               <span class="ep-thumb-ep">Ep. 003</span>
               <div class="ep-thumb-play" aria-hidden="true">
@@ -551,16 +330,16 @@
               </div>
             </a>
             <div class="ep-body">
-              <p class="ep-num">Épisode 003</p>
+              <p class="ep-num">Episode 003</p>
               <h3 class="ep-guest">Ymka (from The Garage)</h3>
               <p class="ep-genre">Bass House / Speed Garage</p>
               <div class="ep-foot">
                 <span class="ep-duration">1h11</span>
                 <span class="ep-dot"></span>
-                <span class="ep-date">Avril 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Écouter l'épisode 003 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                <span class="ep-date">April 2026</span>
+                <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Listen to episode 003 on SoundCloud" target="_blank" rel="noopener noreferrer">
                   <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
-                  Écouter →
+                  Listen →
                 </a>
               </div>
             </div>
@@ -570,35 +349,28 @@
       </div>
     </section>
 
-
-    <!-- ════════════════════════════════════════
-         PHAT AND CURIOUS — YouTube Shorts 9:16
-         Pour activer une carte (Short prêt) :
-         1. Ajouter href="https://youtube.com/shorts/ID" target="_blank" rel="noopener noreferrer" sur le <a.pac-thumb>
-         2. Remplacer <div class="pac-thumb-inner"> par <img src="thumbnail.jpg" alt="..." loading="lazy" />
-         3. Supprimer <span class="pac-soon">
-    ════════════════════════════════════════ -->
+    <!-- PHAT AND CURIOUS -->
     <section class="pac-section" id="phat-and-curious" aria-labelledby="pac-title">
       <div class="container">
 
         <div class="section-header">
           <div>
             <div class="eyebrow"><span>Phat and Curious</span></div>
-            <h2 class="section-title" id="pac-title">Le canapé bouillant.</h2>
+            <h2 class="section-title" id="pac-title">The hot couch.</h2>
           </div>
         </div>
 
         <p class="pac-intro">
-          Le canapé rouge. Un format avec des questions directes.
-          Chaque guest répond à ce qu'on avait vraiment envie de lui poser,
-          avec un cà phê sữa đá avant son set.
+          The red couch. A format with direct questions.
+          Each guest answers what we really wanted to ask them,
+          with a cà phê sữa đá before their set.
         </p>
 
         <div class="pac-grid" role="list">
 
-          <!-- P&C — Onyx (Ép. 002) -->
+          <!-- P&C — Onyx (Ep. 002) -->
           <article class="pac-card" role="listitem">
-            <div class="pac-thumb pac-thumb--playable" data-video="a_4Gj4d9pEU" role="button" tabindex="0" aria-label="Lire Phat and Curious #002 — Onyx">
+            <div class="pac-thumb pac-thumb--playable" data-video="a_4Gj4d9pEU" role="button" tabindex="0" aria-label="Watch Phat and Curious #002 — Onyx">
               <img src="https://img.youtube.com/vi/a_4Gj4d9pEU/maxresdefault.jpg" alt="Phat and Curious #002 — Onyx" loading="lazy" />
               <div class="pac-thumb-overlay" aria-hidden="true"></div>
               <button class="pac-play-btn" aria-hidden="true" tabindex="-1">
@@ -609,19 +381,19 @@
               <p class="pac-num">Phat and Curious #002</p>
               <h3 class="pac-name">Onyx</h3>
               <div class="pac-foot">
-                <span class="pac-date">Mars 2026</span>
+                <span class="pac-date">March 2026</span>
               </div>
             </div>
           </article>
 
-          <!-- P&C — Ymka (Ép. 003) -->
+          <!-- P&C — Ymka (Ep. 003) -->
           <article class="pac-card" role="listitem">
             <div class="pac-thumb">
               <div class="pac-thumb-inner">
                 <span class="pac-ep-label">P&amp;C · 003</span>
                 <p class="pac-thumb-guest">Ymka</p>
                 <p class="pac-thumb-from">from The Garage</p>
-                <span class="pac-soon">Bientôt</span>
+                <span class="pac-soon">Coming soon</span>
               </div>
               <div class="pac-thumb-overlay" aria-hidden="true"></div>
             </div>
@@ -629,7 +401,7 @@
               <p class="pac-num">Phat and Curious #003</p>
               <h3 class="pac-name">Ymka</h3>
               <div class="pac-foot">
-                <span class="pac-date">Avril 2026</span>
+                <span class="pac-date">April 2026</span>
               </div>
             </div>
           </article>
@@ -638,19 +410,19 @@
       </div>
     </section>
 
-    <!-- SOUMETTRE UN MIX -->
+    <!-- SUBMIT A MIX -->
     <section class="submit-section" aria-labelledby="submit-title">
       <div class="container">
         <div class="submit-block">
           <div class="submit-text-area">
-            <div class="eyebrow"><span>Artistes</span></div>
-            <h2 class="submit-title" id="submit-title">Soumettre <em>un mix.</em></h2>
+            <div class="eyebrow"><span>Artists</span></div>
+            <h2 class="submit-title" id="submit-title">Submit <em>a mix.</em></h2>
             <p class="submit-body">
-              Tu es DJ, producteur·ice ou collectif actif·ve sur la scène <strong>bass music underground</strong> ? On sélectionne nos invités sur la qualité de la sélection, pas sur la notoriété. Si ta musique a quelque chose à raconter, on veut l'entendre. Envoie-nous un lien de mix, une courte présentation et ton genre de prédilection, on répond à tout le monde.
+              Are you a DJ, producer or collective active on the <strong>underground bass music scene</strong>? We select our guests based on selection quality, not notoriety. If your music has something to say, we want to hear it. Send us a mix link, a short introduction and your preferred genre — we respond to everyone.
             </p>
           </div>
-          <a href="mailto:contact@phatandphurious.com?subject=Proposition%20Guest%20Mix%20PnP" class="btn btn-primary">
-            Nous contacter
+          <a href="mailto:contact@phatandphurious.com?subject=Guest%20Mix%20Proposal%20PnP" class="btn btn-primary">
+            Contact us
           </a>
         </div>
       </div>
@@ -664,11 +436,11 @@
         <div class="footer-top">
           <div class="footer-brand">
             <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
-            <p class="footer-tagline">Bass music. Filmée. Ressentie. Partagée.<br/>Média indépendant, Montpellier, France.</p>
+            <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
           </div>
           <div class="footer-socials">
-            <p class="footer-social-label">Nous suivre</p>
-            <nav class="footer-social-links" aria-label="Réseaux sociaux">
+            <p class="footer-social-label">Follow us</p>
+            <nav class="footer-social-links" aria-label="Social media">
               <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
               <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
@@ -679,9 +451,9 @@
         </div>
         <div class="footer-bottom">
           <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
-          <nav class="footer-legal" aria-label="Liens légaux">
-            <a href="mentions-legales.html">Mentions légales</a>
-            <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="mentions-legales.html">Legal notice</a>
+            <a href="politique-de-confidentialite.html">Privacy policy</a>
           </nav>
         </div>
       </div>
@@ -698,7 +470,7 @@
       thumb.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activate(); });
     });
   </script>
-  <script src="main.js"></script>
+  <script src="../main.js"></script>
 
 </body>
 </html>
