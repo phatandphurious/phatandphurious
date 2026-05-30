@@ -180,6 +180,7 @@
     .lang-switch a:hover { color:var(--white); }
     .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
     @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+    .lang-switch a.disabled { color:rgba(255,255,255,0.15); cursor:default; pointer-events:none; }
   </style>
 </head>
 
@@ -198,7 +199,7 @@
           <li><a href="../about.html">About</a></li>
           <li><a href="../contact.html">Contact &amp; Collabs</a></li>
         </ul>
-        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="/en/news.html" hreflang="en">EN</a></div>
+        <div class="lang-switch" aria-label="Langue"><a href="#" class="active" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a class="disabled" aria-disabled="true" title="Not available in English">EN</a></div>
         <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
@@ -211,7 +212,7 @@
       <a href="../about.html">About</a>
       <a href="../contact.html">Contact &amp; Collabs</a>
     
-      <a href="/en/news.html" hreflang="en" style="color:var(--red);">EN — English</a>
+      <a style="color:rgba(255,255,255,0.15); pointer-events:none; cursor:default;">EN — Not available</a>
     </nav>
   </header>
 
