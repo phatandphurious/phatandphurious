@@ -61,6 +61,8 @@
   }
   </script>
 
+  <link rel="preload" as="image" href="../images/hero-bg.webp" type="image/webp" fetchpriority="high" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -338,6 +340,8 @@
       padding-bottom: 72px;
       position: relative;
       background: url('../images/hero-bg.jpg') center / cover no-repeat;
+      background-image: image-set(url('../images/hero-bg.webp') type('image/webp'), url('../images/hero-bg.jpg') type('image/jpeg'));
+      background-position: center; background-size: cover; background-repeat: no-repeat;
       background-attachment: fixed;
     }
 
@@ -1197,7 +1201,7 @@
     @media (max-width: 960px) {
       :root { --sec-py: 72px; }
 
-      #hero { background-attachment: scroll; }
+      #hero { background-attachment: scroll; background-image: image-set(url('../images/hero-bg-mobile.webp') type('image/webp'), url('../images/hero-bg.jpg') type('image/jpeg')); }
 
       .nav-links { display: none; }
       .burger { display: flex; }

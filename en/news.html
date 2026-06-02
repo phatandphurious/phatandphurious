@@ -17,6 +17,8 @@
   <link rel="icon" type="image/png" href="../images/logo-pnp-rouge-blanc.png" />
   <title>Webzine &amp; News — Phat &amp; Phurious FM</title>
 
+  <link rel="preload" as="image" href="../images/hero-news.webp" type="image/webp" fetchpriority="high" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -86,7 +88,7 @@
     @media (max-width: 960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
 
     /* PAGE HERO */
-    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('../images/hero-news.jpg') center / cover no-repeat; background-attachment:fixed; }
+    .page-hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-top:var(--nav-h); padding-bottom:72px; position:relative; background:url('../images/hero-news.jpg') center / cover no-repeat; background-image:image-set(url('../images/hero-news.webp') type('image/webp'), url('../images/hero-news.jpg') type('image/jpeg')); background-position:center; background-size:cover; background-repeat:no-repeat; background-attachment:fixed; }
     .page-hero::before { content:''; position:absolute; inset:0; z-index:0; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
     .page-hero .container { position:relative; z-index:1; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
@@ -144,7 +146,7 @@
     /* RESPONSIVE */
     @media (max-width: 960px) {
       :root { --sec-py: 72px; }
-      .page-hero { background-attachment: scroll; }
+      .page-hero { background-attachment: scroll; background-image: image-set(url('../images/hero-news-mobile.webp') type('image/webp'), url('../images/hero-news.jpg') type('image/jpeg')); }
       .nav-links { display:none; }
       .burger { display:flex; }
       .webzine-grid { grid-template-columns: 1fr 1fr; }
