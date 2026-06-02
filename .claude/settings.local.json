@@ -43,7 +43,13 @@
       "Bash(cp \"/Users/phat/Desktop/Logo ALL COLORS/Rouge Blanc.png\" \"/Users/phat/Documents/Sites/phatandphurious/images/logo-pnp-rouge-blanc.png\")",
       "Bash(cp \"/Users/phat/Desktop/Logo ALL COLORS/Blanc rouge.png\" \"/Users/phat/Documents/Sites/phatandphurious/images/logo-pnp-blanc-rouge.png\")",
       "Bash(cp \"/Users/phat/Desktop/Logo ALL COLORS/Rouge Noir.png\" \"/Users/phat/Documents/Sites/phatandphurious/images/logo-pnp-rouge-noir.png\")",
-      "Bash(ssh *)"
+      "Bash(ssh *)",
+      "WebFetch(domain:www.ohlalaprod.com)",
+      "Bash(curl -s \"https://www.ohlalaprod.com/\")",
+      "Bash(lsof -ti:8080)",
+      "Bash(xargs kill -9)",
+      "Bash(curl -sI https://phatandphurious.com/videos/hero-events.mp4)",
+      "Bash(gh pr *)"
     ]
   }
 }
