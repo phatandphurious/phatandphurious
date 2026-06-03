@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /mentions-legales.html
-Disallow: /politique-de-confidentialite.html
-
-Sitemap: https://www.phatandphurious.com/sitemap.xml
+Sitemap: https://phatandphurious.com/sitemap.xml
