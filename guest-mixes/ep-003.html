@@ -243,6 +243,19 @@
       margin-left: 4px;
     }
 
+    /* PnC VIDEO */
+    .pnc-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
+    .pnc-header { margin-bottom: 32px; }
+    .pnc-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+    .pnc-title { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; }
+    .pnc-video-wrap { max-width: 380px; margin: 0 auto; }
+    .pnc-video-inner { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; overflow: hidden; cursor: pointer; }
+    .pnc-video-inner iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .pnc-video-facade { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .pnc-video-facade img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .pnc-video-facade-play { position: relative; z-index: 2; width: 64px; height: 64px; background: rgba(207,0,0,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.2s; }
+    .pnc-video-inner:hover .pnc-video-facade-play { background: #e00000; transform: scale(1.08); }
+
     /* ABOUT + TRACKLIST */
     .ep-content-section {
       padding: var(--sec-py) 0;
@@ -419,6 +432,26 @@
             <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="" />
             <div class="video-facade-play">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHAT AND CURIOUS -->
+    <section class="pnc-section" aria-label="Phat and Curious — Ymka">
+      <div class="container">
+        <div class="pnc-header">
+          <p class="pnc-label">Phat and Curious</p>
+          <h2 class="pnc-title">Ymka répond aux questions</h2>
+        </div>
+        <div class="pnc-video-wrap">
+          <div class="pnc-video-inner" data-video-id="UAyELTxNUqk" role="button" tabindex="0" aria-label="Lancer la vidéo — Phat and Curious avec Ymka">
+            <div class="pnc-video-facade" aria-hidden="true">
+              <img src="https://img.youtube.com/vi/UAyELTxNUqk/maxresdefault.jpg" alt="" />
+              <div class="pnc-video-facade-play">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="6,4 20,12 6,20"/></svg>
+              </div>
             </div>
           </div>
         </div>
@@ -696,7 +729,7 @@
     });
 
     /* Lecteur vidéo façade — charge l'iframe au clic uniquement */
-    document.querySelectorAll('.video-wrapper[data-video-id]').forEach(wrapper => {
+    document.querySelectorAll('[data-video-id]').forEach(wrapper => {
       const launch = () => {
         const id = wrapper.dataset.videoId;
         const iframe = document.createElement('iframe');
@@ -705,7 +738,8 @@
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
         iframe.allowFullscreen = true;
         iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
-        wrapper.querySelector('.video-facade').replaceWith(iframe);
+        const facade = wrapper.querySelector('.video-facade, .pnc-video-facade');
+        if (facade) facade.replaceWith(iframe);
         wrapper.removeAttribute('tabindex');
         wrapper.removeAttribute('role');
       };
