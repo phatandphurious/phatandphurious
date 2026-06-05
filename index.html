@@ -1602,10 +1602,10 @@
           <a href="news.html" class="see-all">Tous les articles →</a>
         </div>
 
-        <div class="webzine-grid">
+        <div class="webzine-grid" id="webzine-grid">
 
-          <!-- Article 1 — le plus récent -->
-          <article class="article-card">
+          <!-- Article épinglé — Sónar -->
+          <article class="article-card" data-pinned="true">
             <a href="news/sonar-barcelona-juin-2026.html" class="art-link">
               <div class="art-thumb">
                 <img src="images/sonar-2026-logo.png" alt="Sónar 2026 — Barcelona" loading="lazy" />
@@ -1621,39 +1621,9 @@
             </a>
           </article>
 
-          <!-- Article 2 -->
-          <article class="article-card">
-            <a href="news/skrillex-smoke-isoxo-cristale-teezandos-2026.html" class="art-link">
-              <div class="art-thumb">
-                <img src="images/skrillex-smoke-2026.jpg" alt="Skrillex & ISOxo — Smoke" loading="lazy" />
-                <span class="art-thumb-tag tag tag-beige">Release</span>
-              </div>
-              <div class="art-body">
-                <p class="art-meta">1er mai 2026</p>
-                <p class="art-title">Skrillex & ISOxo — Smoke. Attendu depuis 2022, le track tient enfin ses promesses.</p>
-                <div class="art-foot">
-                  <span class="art-read">Lire →</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 3 -->
-          <article class="article-card">
-            <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="art-link">
-              <div class="art-thumb">
-                <img src="images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji à l'Alexandra Palace, Londres" loading="lazy" />
-                <span class="art-thumb-tag tag tag-red">Live Report</span>
-              </div>
-              <div class="art-body">
-                <p class="art-meta">17 avril 2026</p>
-                <p class="art-title">Sammy Virji à l'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can't Swim</p>
-                <div class="art-foot">
-                  <span class="art-read">Lire →</span>
-                </div>
-              </div>
-            </a>
-          </article>
+          <!-- Articles 2 & 3 — générés aléatoirement par JS -->
+          <article class="article-card" data-random-slot></article>
+          <article class="article-card" data-random-slot></article>
 
         </div>
       </div>
@@ -1831,6 +1801,32 @@
   ════════════════════════════════════════ -->
   <script src="main.js"></script>
   <script>
+    /* Webzine — articles aléatoires (sauf Sónar épinglé) */
+    (function() {
+      const pool = [
+        { href: 'news/skrillex-soma-review-juin-2026.html', img: 'images/skrillex-soma-cover-2026.png', alt: 'Pochette SOMA — Skrillex 2026', tag: 'Release', tagClass: 'tag-beige', meta: '5 juin 2026', title: 'Skrillex — SOMA est sorti à minuit. 13 titres, 42 minutes. Voici ce que ça vaut.' },
+        { href: 'news/skrillex-soma-album-2026.html', img: 'images/skrillex-portrait-2026.png', alt: 'Skrillex — portrait 2026', tag: 'Découverte', tagClass: 'tag-blue', meta: '4 juin 2026', title: 'Skrillex annonce SOMA — 13 titres, FEID, ISOxo, Chris Lake. Et le collectif Contra.' },
+        { href: 'news/habstrakt-live-trabendo-youtube-2026.html', img: 'images/habstrakt-portrait-2026.png', alt: 'Habstrakt — portrait 2026', tag: 'Live Report', tagClass: 'tag-red', meta: 'Juin 2026', title: 'Habstrakt publie son live complet du Trabendo. Asdek aussi. La nuit du 21 mars repasse en boucle.' },
+        { href: 'news/never-say-die-vol-7-skism-2026.html', img: 'images/never-say-die-vol-7-artwork.webp', alt: 'Never Say Die Vol. 7 artwork', tag: 'Release', tagClass: 'tag-beige', meta: 'Juin 2026', title: 'Never Say Die Vol. 7 — SKisM tire le rideau sur 15 ans de bass music.' },
+        { href: 'news/portrait-dunne-prima-2026.html', img: 'images/dunne-brooklyn-portrait.jpg', alt: 'dunne — Brooklyn, New York', tag: 'Découverte', tagClass: 'tag-blue', meta: 'Mai 2026', title: 'dunne — La prima donna du halftime qui vient de Brooklyn et ne demande rien à personne.' },
+        { href: 'news/skrillex-smoke-isoxo-cristale-teezandos-2026.html', img: 'images/skrillex-smoke-2026.jpg', alt: 'Skrillex & ISOxo — Smoke', tag: 'Release', tagClass: 'tag-beige', meta: '1er mai 2026', title: 'Skrillex & ISOxo — Smoke. Attendu depuis 2022, le track tient enfin ses promesses.' },
+        { href: 'news/sammy-virji-alexandra-palace-avril-2026.html', img: 'images/sammy-virji-alexandra-palace-avril-2026.jpg', alt: 'Sammy Virji à l\'Alexandra Palace', tag: 'Live Report', tagClass: 'tag-red', meta: '17 avril 2026', title: 'Sammy Virji à l\'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can\'t Swim' },
+        { href: 'news/habstrakt-lineage-tour-trabendo-mars-2026.html', img: 'images/event-trabendo-habstrakt-mars-2026.jpg', alt: 'Habstrakt Lineage Tour — Le Trabendo', tag: 'Live Report', tagClass: 'tag-red', meta: 'Mars 2026', title: 'Habstrakt Lineage Tour — Un unreleased Elmyx x Jacknife, Tonton Habby dans la place.' },
+        { href: 'news/sammy-virji-phantom-mars-2026.html', img: 'images/event-phantom-sammy-virji-mars-2026.jpg', alt: 'Sammy Virji au Phantom, Paris', tag: 'Live Report', tagClass: 'tag-red', meta: 'Mars 2026', title: 'Sammy Virji au Phantom — Nostalgia joué à la bonne heure, dans la bonne salle. On s\'en souviendra.' }
+      ];
+
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+
+      document.querySelectorAll('[data-random-slot]').forEach((slot, i) => {
+        const a = pool[i];
+        if (!a) return;
+        slot.innerHTML = `<a href="${a.href}" class="art-link"><div class="art-thumb"><img src="${a.img}" alt="${a.alt}" loading="lazy" /><span class="art-thumb-tag tag ${a.tagClass}">${a.tag}</span></div><div class="art-body"><p class="art-meta">${a.meta}</p><p class="art-title">${a.title}</p><div class="art-foot"><span class="art-read">Lire →</span></div></div></a>`;
+      });
+    })();
+
     /* Hero — alignement typographique des lignes du titre */
     function alignHeroLines() {
       const lines = [...document.querySelectorAll('.hero-headline .line-plain')];
