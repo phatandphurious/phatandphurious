@@ -61,33 +61,53 @@
     }
   }
 
-  /* Ticker festivals — filtre les events passés et reconstruit les 2 sets */
+  /* Ticker — construit dynamiquement depuis la liste des events à venir */
   var tickerTrack = document.getElementById('ticker-track');
   if (tickerTrack) {
-    var tickerNodes = Array.from(tickerTrack.children);
-    var kept = [];
-    for (var t = 0; t < tickerNodes.length; t++) {
-      var tNode = tickerNodes[t];
-      if (tNode.classList && tNode.classList.contains('ticker-item')) {
-        var tEnd = tNode.getAttribute('data-end');
-        var tDate = tEnd ? new Date(tEnd) : null;
-        if (!tDate || tDate >= today) {
-          kept.push({ item: tNode, sep: tickerNodes[t + 1] || null });
-        }
-      }
-    }
-    if (kept.length === 0) {
+    var lang = document.documentElement.lang || 'fr';
+    var months = lang === 'en'
+      ? ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+      : ['Jan.','Fév.','Mar.','Avr.','Mai','Juin','Juil.','Août','Sep.','Oct.','Nov.','Déc.'];
+    var tickerData = [];
+    document.querySelectorAll('[data-event-end]').forEach(function (el) {
+      var endDate = new Date(el.getAttribute('data-event-end'));
+      if (endDate < today) return;
+      var nameEl = el.querySelector('.event-name');
+      var cityEl = el.querySelector('.event-city');
+      if (!nameEl) return;
+      var d = endDate;
+      var dateStr = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+      var city = cityEl ? cityEl.textContent.trim() : '';
+      tickerData.push({ name: nameEl.textContent.trim(), sub: (city ? city + ' · ' : '') + dateStr });
+    });
+    if (tickerData.length === 0) {
       var tickerEl = tickerTrack.closest('.festival-ticker');
       if (tickerEl) tickerEl.style.display = 'none';
     } else {
-      tickerTrack.innerHTML = '';
-      [kept, kept].forEach(function (set) {
-        set.forEach(function (pair) {
-          tickerTrack.appendChild(pair.item.cloneNode(true));
-          if (pair.sep) tickerTrack.appendChild(pair.sep.cloneNode(true));
+      function buildTickerSet(data) {
+        data.forEach(function (d) {
+          var item = document.createElement('div');
+          item.className = 'ticker-item';
+          var nameSpan = document.createElement('span');
+          nameSpan.className = 'ticker-name';
+          nameSpan.textContent = d.name;
+          var subSpan = document.createElement('span');
+          subSpan.className = 'ticker-sub';
+          subSpan.textContent = d.sub;
+          item.appendChild(nameSpan);
+          item.appendChild(subSpan);
+          tickerTrack.appendChild(item);
+          var sep = document.createElement('span');
+          sep.className = 'ticker-sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '◆';
+          tickerTrack.appendChild(sep);
         });
-      });
-      tickerTrack.style.animationDuration = Math.max(12, kept.length * 4.5) + 's';
+      }
+      tickerTrack.innerHTML = '';
+      buildTickerSet(tickerData);
+      buildTickerSet(tickerData);
+      tickerTrack.style.animationDuration = Math.max(12, tickerData.length * 4.5) + 's';
     }
   }
 })();
