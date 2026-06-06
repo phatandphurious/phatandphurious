@@ -60,4 +60,34 @@
       pastDetails.style.display = '';
     }
   }
+
+  /* Ticker festivals — filtre les events passés et reconstruit les 2 sets */
+  var tickerTrack = document.getElementById('ticker-track');
+  if (tickerTrack) {
+    var tickerNodes = Array.from(tickerTrack.children);
+    var kept = [];
+    for (var t = 0; t < tickerNodes.length; t++) {
+      var tNode = tickerNodes[t];
+      if (tNode.classList && tNode.classList.contains('ticker-item')) {
+        var tEnd = tNode.getAttribute('data-end');
+        var tDate = tEnd ? new Date(tEnd) : null;
+        if (!tDate || tDate >= today) {
+          kept.push({ item: tNode, sep: tickerNodes[t + 1] || null });
+        }
+      }
+    }
+    if (kept.length === 0) {
+      var tickerEl = tickerTrack.closest('.festival-ticker');
+      if (tickerEl) tickerEl.style.display = 'none';
+    } else {
+      tickerTrack.innerHTML = '';
+      [kept, kept].forEach(function (set) {
+        set.forEach(function (pair) {
+          tickerTrack.appendChild(pair.item.cloneNode(true));
+          if (pair.sep) tickerTrack.appendChild(pair.sep.cloneNode(true));
+        });
+      });
+      tickerTrack.style.animationDuration = Math.max(12, kept.length * 4.5) + 's';
+    }
+  }
 })();
