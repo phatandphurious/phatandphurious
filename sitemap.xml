@@ -47,9 +47,16 @@
 
   <url>
     <loc>https://phatandphurious.com/news.html</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/news/release-dropout-marsh-what-remains-2026.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
@@ -189,8 +196,15 @@
 
   <url>
     <loc>https://phatandphurious.com/en/news.html</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/en/news/release-dropout-marsh-what-remains-2026.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.75</priority>
   </url>
 
