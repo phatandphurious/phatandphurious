@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photo gallery — Sónar 2026, Barcelona. Shots from the Fira Gran Via by Phat & Phurious FM. Friday, June 18 and Saturday, June 19, 2026." />
+  <meta property="og:title" content="Sónar 2026 Gallery — Photos by Phat & Phurious FM" />
+  <meta property="og:description" content="Shots from Sónar 2026 in Barcelona. RIRIA, Nimino, The Prodigy, Sammy Virji. Friday and Saturday, June 18-19, 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://phatandphurious.com/images/sonar-2026-01.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://phatandphurious.com/en/events/sonar-2026-galerie.html" />
+  <link rel="alternate" hreflang="fr" href="https://phatandphurious.com/events/sonar-2026-galerie.html" />
+  <link rel="alternate" hreflang="en" href="https://phatandphurious.com/en/events/sonar-2026-galerie.html" />
+  <link rel="alternate" hreflang="x-default" href="https://phatandphurious.com/events/sonar-2026-galerie.html" />
+  <link rel="icon" type="image/png" href="../../images/favicon-pnp.png" />
+  <title>Photo Gallery — Sónar 2026 | Phat &amp; Phurious FM</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: #0A0A0A; color: #FFFFFF; -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    :root { --bg:#0A0A0A; --card:#141414; --red:#CF0000; --beige:#FFEFE5; --white:#FFFFFF; --muted:rgba(255,255,255,0.50); --border:rgba(255,255,255,0.06); --nav-h:56px; --max-w:1200px; --pad-x:28px; }
+
+    .container { width:100%; max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x); }
+
+    /* NAVBAR */
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:200; height:var(--nav-h); background:rgba(10,10,10,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; }
+    #navbar > .container { height:100%; }
+    #navbar.scrolled { background:rgba(10,10,10,0.97); border-bottom-color:rgba(255,255,255,0.1); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:100%; }
+    .nav-logo { font-size:1.05rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--white); flex-shrink:0; line-height:1; }
+    .nav-logo .amp { color:var(--red); }
+    .nav-links { display:flex; align-items:center; gap:32px; }
+    .nav-links a { font-size:0.92rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.65); transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); }
+    .burger { display:none; flex-direction:column; justify-content:center; gap:5px; width:28px; height:28px; background:none; border:none; padding:0; flex-shrink:0; }
+    .burger span { display:block; width:100%; height:1px; background:var(--white); transition:transform 0.25s ease, opacity 0.25s ease; transform-origin:center; }
+    .burger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .burger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+    .mobile-nav { display:none; position:fixed; top:var(--nav-h); left:0; right:0; z-index:199; background:rgba(10,10,10,0.98); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:16px var(--pad-x) 28px; flex-direction:column; }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a { display:block; padding:14px 0; font-size:0.8rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); transition:color 0.2s; }
+    .mobile-nav a:last-of-type { border-bottom:none; }
+    .mobile-nav a:hover { color:var(--white); }
+
+    /* PAGE HEADER */
+    .gallery-header { padding-top:calc(var(--nav-h) + 64px); padding-bottom:52px; border-bottom:1px solid var(--border); }
+    .gallery-back { display:inline-flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:36px; transition:color 0.2s; }
+    .gallery-back:hover { color:var(--white); }
+    .gallery-back::before { content:'←'; }
+    .gallery-header-inner { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+    .gallery-eyebrow { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+    .gallery-title { font-size:clamp(2.4rem,5vw,4.2rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; }
+    .gallery-title em { color:var(--beige); font-style:italic; font-weight:300; }
+    .gallery-meta { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:20px; }
+    .gallery-meta-item { font-size:0.78rem; font-weight:300; color:var(--muted); }
+    .gallery-meta-sep { color:rgba(255,255,255,0.15); font-size:0.7rem; }
+    .gallery-right { display:flex; flex-direction:column; align-items:flex-end; gap:12px; flex-shrink:0; }
+    .gallery-hint { font-size:0.72rem; font-weight:300; color:var(--muted); letter-spacing:0.04em; text-align:right; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; border-radius:1px; border:none; transition:all 0.2s ease; white-space:nowrap; cursor:pointer; font-family:inherit; }
+    .btn-ghost { background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.18); }
+    .btn-ghost:hover { border-color:rgba(255,255,255,0.45); }
+    .btn-primary { background:var(--red); color:var(--white); }
+    .btn-primary:hover { background:#e00000; }
+
+    /* GALLERY GRID */
+    .gallery-section { padding:52px 0 96px; }
+    .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:4px;
+    }
+    .gallery-item {
+      position:relative;
+      overflow:hidden;
+      aspect-ratio:3/2;
+      background:#0e0e0e;
+      cursor:pointer;
+    }
+    .gallery-item img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.4s ease;
+      display:block;
+    }
+    .gallery-item:hover img { transform:scale(1.04); }
+    .gallery-item-overlay {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%);
+      opacity:0;
+      transition:opacity 0.3s ease;
+      display:flex;
+      align-items:flex-end;
+      padding:16px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity:1; }
+    .gallery-item-caption { font-size:0.72rem; font-weight:400; color:rgba(255,255,255,0.85); letter-spacing:0.04em; }
+    .gallery-item-num { position:absolute; top:10px; left:12px; font-size:0.6rem; font-weight:700; letter-spacing:0.18em; color:rgba(255,255,255,0.4); }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      background:rgba(0,0,0,0.95);
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+    }
+    #lightbox.open { display:flex; }
+    .lb-img-wrap {
+      position:relative;
+      max-width:90vw;
+      max-height:82vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    #lb-img {
+      max-width:90vw;
+      max-height:82vh;
+      object-fit:contain;
+      display:block;
+      user-select:none;
+    }
+    .lb-caption { margin-top:16px; font-size:0.78rem; font-weight:300; color:var(--muted); letter-spacing:0.06em; text-align:center; }
+    .lb-counter { margin-top:6px; font-size:0.68rem; font-weight:600; letter-spacing:0.2em; color:rgba(255,255,255,0.3); text-align:center; }
+    .lb-close {
+      position:fixed;
+      top:24px; right:28px;
+      background:none;
+      border:1px solid rgba(255,255,255,0.2);
+      color:var(--white);
+      width:40px; height:40px;
+      font-size:1.1rem;
+      line-height:1;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      transition:border-color 0.2s, background 0.2s;
+      z-index:1001;
+    }
+    .lb-close:hover { border-color:var(--red); background:rgba(207,0,0,0.1); }
+    .lb-nav {
+      position:fixed;
+      top:50%;
+      transform:translateY(-50%);
+      background:none;
+      border:1px solid rgba(255,255,255,0.15);
+      color:var(--white);
+      width:48px; height:48px;
+      font-size:1.2rem;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      transition:border-color 0.2s, background 0.2s;
+      z-index:1001;
+    }
+    .lb-nav:hover { border-color:var(--white); background:rgba(255,255,255,0.06); }
+    .lb-prev { left:20px; }
+    .lb-next { right:20px; }
+
+    /* FOOTER */
+    #footer { border-top:1px solid var(--border); padding:48px 0 36px; }
+    .footer-top { display:flex; align-items:flex-start; justify-content:space-between; gap:40px; margin-bottom:40px; flex-wrap:wrap; }
+    .footer-brand { max-width:340px; }
+    .footer-logo { font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); margin-bottom:10px; }
+    .footer-logo .amp { color:var(--beige); }
+    .footer-tagline { font-size:0.75rem; font-weight:300; font-style:italic; color:var(--muted); letter-spacing:0.06em; line-height:1.55; }
+    .footer-socials { display:flex; flex-direction:column; align-items:flex-end; gap:14px; }
+    .footer-social-label { font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--red); }
+    .footer-social-links { display:flex; align-items:center; gap:22px; }
+    .fsocial { font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); border-bottom:1px solid transparent; padding-bottom:2px; transition:color 0.2s, border-color 0.2s; }
+    .fsocial:hover { color:var(--red); border-color:var(--red); }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+    .footer-copy { font-size:0.75rem; font-weight:300; color:var(--muted); letter-spacing:0.04em; }
+    .footer-copy span { color:var(--beige); font-style:italic; }
+    .footer-legal { display:flex; gap:20px; }
+    .footer-legal a { font-size:0.75rem; font-weight:400; color:var(--muted); transition:color 0.2s; }
+    .footer-legal a:hover { color:var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width:960px) {
+      .nav-links { display:none; }
+      .burger { display:flex; }
+      .gallery-grid { grid-template-columns:repeat(2, 1fr); }
+      .gallery-right { align-items:flex-start; }
+      .gallery-hint { text-align:left; }
+      .footer-socials { align-items:flex-start; }
+    }
+    @media (max-width:600px) {
+      :root { --pad-x:20px; }
+      .gallery-grid { grid-template-columns:repeat(2, 1fr); gap:3px; }
+      .lb-nav { width:38px; height:38px; font-size:1rem; }
+      .lb-prev { left:8px; }
+      .lb-next { right:8px; }
+      .footer-top { flex-direction:column; gap:28px; }
+      .footer-socials { flex-direction:row; justify-content:flex-start; flex-wrap:wrap; }
+      .footer-bottom { flex-direction:column; align-items:flex-start; gap:12px; }
+      .footer-social-links { flex-wrap:wrap; gap:14px; }
+    }
+
+    /* LANG SWITCH */
+    .lang-switch { display:flex; align-items:center; gap:8px; margin-left:16px; padding-left:20px; border-left:1px solid var(--border); flex-shrink:0; }
+    .lang-switch a { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); transition:color 0.2s; }
+    .lang-switch a.active { color:var(--white); }
+    .lang-switch a:hover { color:var(--white); }
+    .lang-sep { font-size:0.6rem; color:rgba(255,255,255,0.15); }
+    @media (max-width:960px) { .lang-switch { margin-left:12px; padding-left:14px; } }
+  </style>
+</head>
+
+<body>
+
+  <header id="navbar" role="banner">
+    <div class="container">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../index.html" class="nav-logo" aria-label="Phat & Phurious — Home">
+          PHAT <span class="amp">&</span> PHURIOUS
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="../guest-mixes.html">Guest Mixes</a></li>
+          <li><a href="../news.html">News</a></li>
+          <li><a href="../events.html" class="active">Events</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact &amp; Collabs</a></li>
+        </ul>
+        <div class="lang-switch" aria-label="Language"><a href="/events/sonar-2026-galerie.html" hreflang="fr">FR</a><span class="lang-sep" aria-hidden="true">|</span><a href="#" class="active" hreflang="en">EN</a></div>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="../guest-mixes.html">Guest Mixes</a>
+      <a href="../news.html">News</a>
+      <a href="../events.html">Events</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact &amp; Collabs</a>
+      <a href="/events/sonar-2026-galerie.html" hreflang="fr" style="color:var(--red);">FR — Français</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HEADER -->
+    <div class="gallery-header">
+      <div class="container">
+        <a href="../events.html" class="gallery-back">Back to events</a>
+        <div class="gallery-header-inner">
+          <div>
+            <p class="gallery-eyebrow">Photo gallery</p>
+            <h1 class="gallery-title">Sónar 2026<br/><em>Barcelona</em></h1>
+            <div class="gallery-meta">
+              <span class="gallery-meta-item">June 18 &amp; 19, 2026</span>
+              <span class="gallery-meta-sep">·</span>
+              <span class="gallery-meta-item">Fira Gran Via</span>
+              <span class="gallery-meta-sep">·</span>
+              <span class="gallery-meta-item">Phat &amp; Phurious FM</span>
+            </div>
+          </div>
+          <div class="gallery-right">
+            <p class="gallery-hint">Click a photo to enlarge<br/>← → to navigate · Esc to close</p>
+            <a href="../news/live-report-sonar-barcelona-2026.html" class="btn btn-ghost">Read the live report →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="gallery-section">
+      <div class="container">
+        <div class="gallery-grid" id="galleryGrid" role="list">
+
+          <div class="gallery-item" role="listitem" data-index="0" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 1">
+            <span class="gallery-item-num">01</span>
+            <img src="../../images/sonar-2026/sonar-2026-001.webp" alt="Sónar 2026 — Friday, June 18, photo 01" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="1" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 2">
+            <span class="gallery-item-num">02</span>
+            <img src="../../images/sonar-2026/sonar-2026-002.webp" alt="Sónar 2026 — Friday, June 18, photo 02" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="2" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 3">
+            <span class="gallery-item-num">03</span>
+            <img src="../../images/sonar-2026/sonar-2026-003.webp" alt="Sónar 2026 — Friday, June 18, photo 03" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="3" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 4">
+            <span class="gallery-item-num">04</span>
+            <img src="../../images/sonar-2026/sonar-2026-004.webp" alt="Sónar 2026 — Friday, June 18, photo 04" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="4" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 5">
+            <span class="gallery-item-num">05</span>
+            <img src="../../images/sonar-2026/sonar-2026-005.webp" alt="Sónar 2026 — Friday, June 18, photo 05" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="5" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 6">
+            <span class="gallery-item-num">06</span>
+            <img src="../../images/sonar-2026/sonar-2026-006.webp" alt="Sónar 2026 — Friday, June 18, photo 06" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="6" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 7">
+            <span class="gallery-item-num">07</span>
+            <img src="../../images/sonar-2026/sonar-2026-007.webp" alt="Sónar 2026 — Friday, June 18, photo 07" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="7" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 8">
+            <span class="gallery-item-num">08</span>
+            <img src="../../images/sonar-2026/sonar-2026-008.webp" alt="Sónar 2026 — Friday, June 18, photo 08" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="8" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 9">
+            <span class="gallery-item-num">09</span>
+            <img src="../../images/sonar-2026/sonar-2026-009.webp" alt="Sónar 2026 — Friday, June 18, photo 09" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="9" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 10">
+            <span class="gallery-item-num">10</span>
+            <img src="../../images/sonar-2026/sonar-2026-010.webp" alt="Sónar 2026 — Friday, June 18, photo 10" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="10" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 11">
+            <span class="gallery-item-num">11</span>
+            <img src="../../images/sonar-2026/sonar-2026-011.webp" alt="Sónar 2026 — Friday, June 18, photo 11" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="11" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 12">
+            <span class="gallery-item-num">12</span>
+            <img src="../../images/sonar-2026/sonar-2026-012.webp" alt="Sónar 2026 — Friday, June 18, photo 12" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="12" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 13">
+            <span class="gallery-item-num">13</span>
+            <img src="../../images/sonar-2026/sonar-2026-013.webp" alt="Sónar 2026 — Friday, June 18, photo 13" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="13" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 14">
+            <span class="gallery-item-num">14</span>
+            <img src="../../images/sonar-2026/sonar-2026-014.webp" alt="Sónar 2026 — Friday, June 18, photo 14" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="14" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 15">
+            <span class="gallery-item-num">15</span>
+            <img src="../../images/sonar-2026/sonar-2026-015.webp" alt="Sónar 2026 — Friday, June 18, photo 15" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="15" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 16">
+            <span class="gallery-item-num">16</span>
+            <img src="../../images/sonar-2026/sonar-2026-016.webp" alt="Sónar 2026 — Friday, June 18, photo 16" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="16" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 17">
+            <span class="gallery-item-num">17</span>
+            <img src="../../images/sonar-2026/sonar-2026-017.webp" alt="Sónar 2026 — Friday, June 18, photo 17" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="17" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 18">
+            <span class="gallery-item-num">18</span>
+            <img src="../../images/sonar-2026/sonar-2026-018.webp" alt="Sónar 2026 — Friday, June 18, photo 18" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="18" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 19">
+            <span class="gallery-item-num">19</span>
+            <img src="../../images/sonar-2026/sonar-2026-019.webp" alt="Sónar 2026 — Friday, June 18, photo 19" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="19" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 20">
+            <span class="gallery-item-num">20</span>
+            <img src="../../images/sonar-2026/sonar-2026-020.webp" alt="Sónar 2026 — Friday, June 18, photo 20" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="20" data-caption="Sónar 2026 — Friday, June 18" tabindex="0" aria-label="Photo 21">
+            <span class="gallery-item-num">21</span>
+            <img src="../../images/sonar-2026/sonar-2026-021.webp" alt="Sónar 2026 — Friday, June 18, photo 21" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Friday, June 18</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="21" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 22">
+            <span class="gallery-item-num">22</span>
+            <img src="../../images/sonar-2026/sonar-2026-022.webp" alt="Sónar 2026 — Saturday, June 19, photo 22" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="22" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 23">
+            <span class="gallery-item-num">23</span>
+            <img src="../../images/sonar-2026/sonar-2026-023.webp" alt="Sónar 2026 — Saturday, June 19, photo 23" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="23" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 24">
+            <span class="gallery-item-num">24</span>
+            <img src="../../images/sonar-2026/sonar-2026-024.webp" alt="Sónar 2026 — Saturday, June 19, photo 24" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="24" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 25">
+            <span class="gallery-item-num">25</span>
+            <img src="../../images/sonar-2026/sonar-2026-025.webp" alt="Sónar 2026 — Saturday, June 19, photo 25" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="25" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 26">
+            <span class="gallery-item-num">26</span>
+            <img src="../../images/sonar-2026/sonar-2026-026.webp" alt="Sónar 2026 — Saturday, June 19, photo 26" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="26" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 27">
+            <span class="gallery-item-num">27</span>
+            <img src="../../images/sonar-2026/sonar-2026-027.webp" alt="Sónar 2026 — Saturday, June 19, photo 27" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="27" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 28">
+            <span class="gallery-item-num">28</span>
+            <img src="../../images/sonar-2026/sonar-2026-028.webp" alt="Sónar 2026 — Saturday, June 19, photo 28" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="28" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 29">
+            <span class="gallery-item-num">29</span>
+            <img src="../../images/sonar-2026/sonar-2026-029.webp" alt="Sónar 2026 — Saturday, June 19, photo 29" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="29" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 30">
+            <span class="gallery-item-num">30</span>
+            <img src="../../images/sonar-2026/sonar-2026-030.webp" alt="Sónar 2026 — Saturday, June 19, photo 30" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="30" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 31">
+            <span class="gallery-item-num">31</span>
+            <img src="../../images/sonar-2026/sonar-2026-031.webp" alt="Sónar 2026 — Saturday, June 19, photo 31" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="31" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 32">
+            <span class="gallery-item-num">32</span>
+            <img src="../../images/sonar-2026/sonar-2026-032.webp" alt="Sónar 2026 — Saturday, June 19, photo 32" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="32" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 33">
+            <span class="gallery-item-num">33</span>
+            <img src="../../images/sonar-2026/sonar-2026-033.webp" alt="Sónar 2026 — Saturday, June 19, photo 33" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="33" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 34">
+            <span class="gallery-item-num">34</span>
+            <img src="../../images/sonar-2026/sonar-2026-034.webp" alt="Sónar 2026 — Saturday, June 19, photo 34" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="34" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 35">
+            <span class="gallery-item-num">35</span>
+            <img src="../../images/sonar-2026/sonar-2026-035.webp" alt="Sónar 2026 — Saturday, June 19, photo 35" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="35" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 36">
+            <span class="gallery-item-num">36</span>
+            <img src="../../images/sonar-2026/sonar-2026-036.webp" alt="Sónar 2026 — Saturday, June 19, photo 36" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="36" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 37">
+            <span class="gallery-item-num">37</span>
+            <img src="../../images/sonar-2026/sonar-2026-037.webp" alt="Sónar 2026 — Saturday, June 19, photo 37" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="37" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 38">
+            <span class="gallery-item-num">38</span>
+            <img src="../../images/sonar-2026/sonar-2026-038.webp" alt="Sónar 2026 — Saturday, June 19, photo 38" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="38" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 39">
+            <span class="gallery-item-num">39</span>
+            <img src="../../images/sonar-2026/sonar-2026-039.webp" alt="Sónar 2026 — Saturday, June 19, photo 39" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="39" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 40">
+            <span class="gallery-item-num">40</span>
+            <img src="../../images/sonar-2026/sonar-2026-040.webp" alt="Sónar 2026 — Saturday, June 19, photo 40" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="40" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 41">
+            <span class="gallery-item-num">41</span>
+            <img src="../../images/sonar-2026/sonar-2026-041.webp" alt="Sónar 2026 — Saturday, June 19, photo 41" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="41" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 42">
+            <span class="gallery-item-num">42</span>
+            <img src="../../images/sonar-2026/sonar-2026-042.webp" alt="Sónar 2026 — Saturday, June 19, photo 42" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="42" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 43">
+            <span class="gallery-item-num">43</span>
+            <img src="../../images/sonar-2026/sonar-2026-043.webp" alt="Sónar 2026 — Saturday, June 19, photo 43" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="43" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 44">
+            <span class="gallery-item-num">44</span>
+            <img src="../../images/sonar-2026/sonar-2026-044.webp" alt="Sónar 2026 — Saturday, June 19, photo 44" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="44" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 45">
+            <span class="gallery-item-num">45</span>
+            <img src="../../images/sonar-2026/sonar-2026-045.webp" alt="Sónar 2026 — Saturday, June 19, photo 45" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="45" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 46">
+            <span class="gallery-item-num">46</span>
+            <img src="../../images/sonar-2026/sonar-2026-046.webp" alt="Sónar 2026 — Saturday, June 19, photo 46" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="46" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 47">
+            <span class="gallery-item-num">47</span>
+            <img src="../../images/sonar-2026/sonar-2026-047.webp" alt="Sónar 2026 — Saturday, June 19, photo 47" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="47" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 48">
+            <span class="gallery-item-num">48</span>
+            <img src="../../images/sonar-2026/sonar-2026-048.webp" alt="Sónar 2026 — Saturday, June 19, photo 48" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="48" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 49">
+            <span class="gallery-item-num">49</span>
+            <img src="../../images/sonar-2026/sonar-2026-049.webp" alt="Sónar 2026 — Saturday, June 19, photo 49" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="49" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 50">
+            <span class="gallery-item-num">50</span>
+            <img src="../../images/sonar-2026/sonar-2026-050.webp" alt="Sónar 2026 — Saturday, June 19, photo 50" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="50" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 51">
+            <span class="gallery-item-num">51</span>
+            <img src="../../images/sonar-2026/sonar-2026-051.webp" alt="Sónar 2026 — Saturday, June 19, photo 51" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="51" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 52">
+            <span class="gallery-item-num">52</span>
+            <img src="../../images/sonar-2026/sonar-2026-052.webp" alt="Sónar 2026 — Saturday, June 19, photo 52" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="52" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 53">
+            <span class="gallery-item-num">53</span>
+            <img src="../../images/sonar-2026/sonar-2026-053.webp" alt="Sónar 2026 — Saturday, June 19, photo 53" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="53" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 54">
+            <span class="gallery-item-num">54</span>
+            <img src="../../images/sonar-2026/sonar-2026-054.webp" alt="Sónar 2026 — Saturday, June 19, photo 54" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+          <div class="gallery-item" role="listitem" data-index="54" data-caption="Sónar 2026 — Saturday, June 19" tabindex="0" aria-label="Photo 55">
+            <span class="gallery-item-num">55</span>
+            <img src="../../images/sonar-2026/sonar-2026-055.webp" alt="Sónar 2026 — Saturday, June 19, photo 55" loading="lazy" />
+            <div class="gallery-item-overlay"><span class="gallery-item-caption">Sónar 2026 — Saturday, June 19</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Full-screen photo">
+    <button class="lb-close" id="lbClose" aria-label="Close">&#10005;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">&#8592;</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="" />
+    </div>
+    <p class="lb-caption" id="lb-caption"></p>
+    <p class="lb-counter" id="lb-counter"></p>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">&#8594;</button>
+  </div>
+
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-logo">PHAT <span class="amp">&</span> PHURIOUS</p>
+          <p class="footer-tagline">Bass music. Filmed. Felt. Shared.<br/>Independent media, Montpellier, France.</p>
+        </div>
+        <div class="footer-socials">
+          <p class="footer-social-label">Follow us</p>
+          <nav class="footer-social-links" aria-label="Social media">
+            <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="fsocial" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://instagram.com/phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://soundcloud.com/phatandphuriousfm" class="fsocial" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <a href="https://www.mixcloud.com/PhatandPhuriousFM/" class="fsocial" target="_blank" rel="noopener noreferrer">Mixcloud</a>
+            <a href="https://www.tiktok.com/@phatandphurious.fm" class="fsocial" target="_blank" rel="noopener noreferrer">TikTok</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>Phat &amp; Phurious</span>, Montpellier, France</p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="../mentions-legales.html">Legal notice</a>
+          <a href="../politique-de-confidentialite.html">Privacy policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    // Lightbox
+    const items = document.querySelectorAll('.gallery-item');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbCaption = document.getElementById('lb-caption');
+    const lbCounter = document.getElementById('lb-counter');
+    const total = items.length;
+    let current = 0;
+
+    function openLightbox(index) {
+      current = index;
+      const item = items[current];
+      const img = item.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = item.dataset.caption || '';
+      lbCounter.textContent = (current + 1) + ' / ' + total;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbImg.focus();
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function navigate(dir) {
+      current = (current + dir + total) % total;
+      const item = items[current];
+      const img = item.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = item.dataset.caption || '';
+      lbCounter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    items.forEach(item => {
+      item.addEventListener('click', () => openLightbox(parseInt(item.dataset.index)));
+      item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openLightbox(parseInt(item.dataset.index)); });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrev').addEventListener('click', () => navigate(-1));
+    document.getElementById('lbNext').addEventListener('click', () => navigate(1));
+
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+    });
+  </script>
+
+</body>
+</html>
