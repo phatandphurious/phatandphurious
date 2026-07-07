@@ -103,7 +103,14 @@
 
   <url>
     <loc>https://phatandphurious.com/news/family-piknik-2026-montpellier.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/news/plages-electroniques-2026-cannes.html</loc>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>never</changefreq>
     <priority>0.75</priority>
   </url>
@@ -280,7 +287,14 @@
 
   <url>
     <loc>https://phatandphurious.com/en/news/family-piknik-2026-montpellier.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/en/news/plages-electroniques-2026-cannes.html</loc>
+    <lastmod>2026-07-07</lastmod>
     <changefreq>never</changefreq>
     <priority>0.70</priority>
   </url>
