@@ -144,7 +144,7 @@
 
     /* RECAPS */
     .recaps-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-    .recaps-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); gap: 0; }
+    .recaps-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); gap: 0; }
     .recap-card { background: var(--card); border-right: 1px solid var(--border); display: flex; flex-direction: column; transition: background 0.22s; overflow: hidden; }
     .recap-card:last-child { border-right: none; }
     .recap-card:hover { background: #181818; }
@@ -153,6 +153,9 @@
     .recap-thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
     .recap-card:hover .recap-thumb img { transform:scale(1.04); }
     .recap-thumb-tag { position: absolute; top: 12px; left: 12px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; border-radius: 1px; }
+    .recap-play { position: absolute; inset: 0; margin: auto; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(207,0,0,0.9); border: 1px solid rgba(255,255,255,0.85); pointer-events: none; transition: transform 0.3s ease; z-index: 2; }
+    .recap-play::before { content: ''; width: 0; height: 0; border-style: solid; border-width: 7px 0 7px 13px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+    .recap-card:hover .recap-play { transform: scale(1.08); }
     .recap-body { padding: 20px 18px; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--border); }
     .recap-name { font-size: 0.96rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
     .recap-date { font-size: 0.75rem; font-weight: 300; color: var(--muted); }
@@ -736,6 +739,20 @@
               <div class="recap-body">
                 <h3 class="recap-name">Sónar 2026 — Barcelona</h3>
                 <p class="recap-date">Barcelona, Spain · June 2026 · <a href="../events/sonar-2026-galerie.html" style="color:var(--red);">28 photos</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
+            <a href="../events/sonar-2026-videos.html" class="recap-link" aria-label="Watch the video live report: Sónar 2026, Friday zapping">
+              <div class="recap-thumb">
+                <img src="../images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA at the SonarLab — Sónar 2026, Barcelona" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+                <span class="recap-play" aria-hidden="true"></span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Video zapping</h3>
+                <p class="recap-date">Barcelona, Spain · June 2026 · <a href="../events/sonar-2026-videos.html" style="color:var(--red);">Watch the video</a></p>
               </div>
             </a>
           </article>

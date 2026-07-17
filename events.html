@@ -261,7 +261,7 @@
 
     .recaps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       border: 1px solid var(--border);
       gap: 0;
     }
@@ -306,6 +306,24 @@
       padding: 3px 8px;
       border-radius: 1px;
     }
+    .recap-play {
+      position: absolute; inset: 0; margin: auto;
+      width: 50px; height: 50px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: rgba(207,0,0,0.9);
+      border: 1px solid rgba(255,255,255,0.85);
+      pointer-events: none;
+      transition: transform 0.3s ease;
+      z-index: 2;
+    }
+    .recap-play::before {
+      content: ''; width: 0; height: 0;
+      border-style: solid; border-width: 7px 0 7px 13px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 3px;
+    }
+    .recap-card:hover .recap-play { transform: scale(1.08); }
     .recap-body { padding: 20px 18px; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--border); }
     .recap-name { font-size: 0.96rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; }
     .recap-date { font-size: 0.75rem; font-weight: 300; color: var(--muted); }
@@ -906,6 +924,20 @@
               <div class="recap-body">
                 <h3 class="recap-name">Sónar 2026 — Barcelone</h3>
                 <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-galerie.html" style="color:var(--red);">28 photos</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-videos.html" class="recap-link" aria-label="Voir le live report vidéo : Sónar 2026, le zapping du vendredi">
+              <div class="recap-thumb">
+                <img src="images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA au SonarLab — Sónar 2026, Barcelone" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+                <span class="recap-play" aria-hidden="true"></span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Zapping vidéo</h3>
+                <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-videos.html" style="color:var(--red);">Voir la vidéo</a></p>
               </div>
             </a>
           </article>

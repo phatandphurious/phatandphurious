@@ -164,6 +164,23 @@
       padding: 3px 8px;
       border-radius: 1px;
     }
+    .art-play {
+      position: absolute; inset: 0; margin: auto;
+      width: 54px; height: 54px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: rgba(207,0,0,0.9);
+      border: 1px solid rgba(255,255,255,0.85);
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+    .art-play::before {
+      content: ''; width: 0; height: 0;
+      border-style: solid; border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 3px;
+    }
+    article.article-card:hover .art-play { transform: scale(1.08); }
 
     /* Body */
     .art-body { padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; border-top: 1px solid var(--border); }
@@ -359,6 +376,25 @@
                 <div class="art-foot">
                   <span class="art-read">Lire le live report →</span>
                   <span class="art-readtime">8 min</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="article-card" data-category="live-report">
+            <a href="events/sonar-2026-videos.html" class="art-link" aria-label="Voir le live report vidéo : Sónar 2026, le zapping du vendredi">
+              <div class="art-thumb">
+                <img src="images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA au SonarLab — Sónar 2026, Barcelone" loading="lazy" />
+                <span class="art-thumb-tag tag tag-red">Live Report</span>
+                <span class="art-play" aria-hidden="true"></span>
+              </div>
+              <div class="art-body">
+                <p class="art-meta">Vidéo · Sónar 2026, Barcelone</p>
+                <p class="art-title">Sónar 2026 — le zapping vidéo du vendredi. Skepta, Kelis, Sammy Virji, filmés de l'intérieur.</p>
+                <p class="art-excerpt">On switche entre les stages, la foule et tout ce qu'il y a entre les deux. Partie 1 sur 2, le zapping du samedi arrive.</p>
+                <div class="art-foot">
+                  <span class="art-read">Voir la vidéo →</span>
+                  <span class="art-readtime">Vidéo</span>
                 </div>
               </div>
             </a>
