@@ -261,7 +261,7 @@
 
     .recaps-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       border: 1px solid var(--border);
       gap: 0;
     }
@@ -376,7 +376,7 @@
       .recaps-grid { grid-template-columns: 1fr 1fr; }
       .recap-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
       .recap-card:nth-child(2n) { border-right: none; }
-      .recap-card:nth-last-child(-n+2) { border-bottom: none; }
+      .recap-card:last-child { border-bottom: none; }
       .footer-socials { align-items: flex-start; }
       .section-header { flex-direction: column; align-items: flex-start; }
       .accred-block { padding: 36px 28px; }
@@ -869,6 +869,47 @@
         <div class="recaps-grid" role="list">
 
           <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-videos-samedi.html" class="recap-link" aria-label="Voir le live report vidéo : Sónar 2026, le zapping du samedi">
+              <div class="recap-thumb">
+                <img src="images/the-prodigy-flames-sonarclub-sonar-2026.webp" alt="The Prodigy au SonarClub — Sónar 2026, Barcelone" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+                <span class="recap-play" aria-hidden="true"></span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Zapping vidéo, samedi</h3>
+                <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-videos-samedi.html" style="color:var(--red);">Partie 2 sur 2</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-videos.html" class="recap-link" aria-label="Voir le live report vidéo : Sónar 2026, le zapping du vendredi">
+              <div class="recap-thumb">
+                <img src="images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA au SonarLab — Sónar 2026, Barcelone" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+                <span class="recap-play" aria-hidden="true"></span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Zapping vidéo, vendredi</h3>
+                <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-videos.html" style="color:var(--red);">Partie 1 sur 2</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-galerie.html" class="recap-link" aria-label="Voir la galerie photos : Sónar 2026, Barcelone">
+              <div class="recap-thumb">
+                <img src="images/nimino-sonarvillage-sonar-2026.webp" alt="Nimino @ SonarVillage — Sónar 2026, Barcelone" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Barcelone</h3>
+                <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-galerie.html" style="color:var(--red);">55 photos</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
             <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="recap-link" aria-label="Lire le live report : Sammy Virji — Alexandra Palace">
               <div class="recap-thumb">
                 <img src="images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji en performance à l'Alexandra Palace, Londres" loading="lazy" />
@@ -890,33 +931,6 @@
               <div class="recap-body">
                 <h3 class="recap-name">Habstrakt Lineage Tour — Trabendo</h3>
                 <p class="recap-date">Paris · Mars 2026</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="recap-card" role="listitem">
-            <a href="events/sonar-2026-galerie.html" class="recap-link" aria-label="Voir la galerie photos : Sónar 2026, Barcelone">
-              <div class="recap-thumb">
-                <img src="images/nimino-sonarvillage-sonar-2026.webp" alt="Nimino @ SonarVillage — Sónar 2026, Barcelone" loading="lazy" />
-                <span class="recap-thumb-tag tag tag-red">Live Report</span>
-              </div>
-              <div class="recap-body">
-                <h3 class="recap-name">Sónar 2026 — Barcelone</h3>
-                <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-galerie.html" style="color:var(--red);">55 photos</a></p>
-              </div>
-            </a>
-          </article>
-
-          <article class="recap-card" role="listitem">
-            <a href="events/sonar-2026-videos.html" class="recap-link" aria-label="Voir le live report vidéo : Sónar 2026, le zapping du vendredi">
-              <div class="recap-thumb">
-                <img src="images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA au SonarLab — Sónar 2026, Barcelone" loading="lazy" />
-                <span class="recap-thumb-tag tag tag-red">Live Report</span>
-                <span class="recap-play" aria-hidden="true"></span>
-              </div>
-              <div class="recap-body">
-                <h3 class="recap-name">Sónar 2026 — Zapping vidéo</h3>
-                <p class="recap-date">Barcelone, Espagne · Juin 2026 · <a href="events/sonar-2026-videos.html" style="color:var(--red);">Voir la vidéo</a></p>
               </div>
             </a>
           </article>

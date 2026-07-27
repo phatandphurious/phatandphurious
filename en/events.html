@@ -144,7 +144,7 @@
 
     /* RECAPS */
     .recaps-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
-    .recaps-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); gap: 0; }
+    .recaps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border: 1px solid var(--border); gap: 0; }
     .recap-card { background: var(--card); border-right: 1px solid var(--border); display: flex; flex-direction: column; transition: background 0.22s; overflow: hidden; }
     .recap-card:last-child { border-right: none; }
     .recap-card:hover { background: #181818; }
@@ -199,7 +199,7 @@
       .recaps-grid { grid-template-columns: 1fr 1fr; }
       .recap-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
       .recap-card:nth-child(2n) { border-right: none; }
-      .recap-card:nth-last-child(-n+2) { border-bottom: none; }
+      .recap-card:last-child { border-bottom: none; }
       .footer-socials { align-items: flex-start; }
       .section-header { flex-direction: column; align-items: flex-start; }
       .accred-block { padding: 36px 28px; }
@@ -684,6 +684,47 @@
         <div class="recaps-grid" role="list">
 
           <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-videos-samedi.html" class="recap-link" aria-label="Watch the video live report: Sónar 2026, Saturday zapping">
+              <div class="recap-thumb">
+                <img src="../images/the-prodigy-flames-sonarclub-sonar-2026.webp" alt="The Prodigy at the SonarClub — Sónar 2026, Barcelona" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+                <span class="recap-play" aria-hidden="true"></span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Video zapping, Saturday</h3>
+                <p class="recap-date">Barcelona, Spain · June 2026 · <a href="events/sonar-2026-videos-samedi.html" style="color:var(--red);">Part 2 of 2</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-videos.html" class="recap-link" aria-label="Watch the video live report: Sónar 2026, Friday zapping">
+              <div class="recap-thumb">
+                <img src="../images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA at the SonarLab — Sónar 2026, Barcelona" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+                <span class="recap-play" aria-hidden="true"></span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Video zapping, Friday</h3>
+                <p class="recap-date">Barcelona, Spain · June 2026 · <a href="events/sonar-2026-videos.html" style="color:var(--red);">Part 1 of 2</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
+            <a href="events/sonar-2026-galerie.html" class="recap-link" aria-label="View the photo gallery: Sónar 2026, Barcelona">
+              <div class="recap-thumb">
+                <img src="../images/nimino-sonarvillage-sonar-2026.webp" alt="Nimino @ SonarVillage — Sónar 2026, Barcelona" loading="lazy" />
+                <span class="recap-thumb-tag tag tag-red">Live Report</span>
+              </div>
+              <div class="recap-body">
+                <h3 class="recap-name">Sónar 2026 — Barcelona</h3>
+                <p class="recap-date">Barcelona, Spain · June 2026 · <a href="events/sonar-2026-galerie.html" style="color:var(--red);">55 photos</a></p>
+              </div>
+            </a>
+          </article>
+
+          <article class="recap-card" role="listitem">
             <a href="news/sammy-virji-alexandra-palace-avril-2026.html" class="recap-link" aria-label="Read the live report: Sammy Virji — Alexandra Palace">
               <div class="recap-thumb">
                 <img src="../images/sammy-virji-alexandra-palace-avril-2026.jpg" alt="Sammy Virji performing at Alexandra Palace, London" loading="lazy" />
@@ -705,33 +746,6 @@
               <div class="recap-body">
                 <h3 class="recap-name">Habstrakt Lineage Tour — Trabendo</h3>
                 <p class="recap-date">Paris · March 2026</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="recap-card" role="listitem">
-            <a href="events/sonar-2026-galerie.html" class="recap-link" aria-label="View the photo gallery: Sónar 2026, Barcelona">
-              <div class="recap-thumb">
-                <img src="../images/nimino-sonarvillage-sonar-2026.webp" alt="Nimino @ SonarVillage — Sónar 2026, Barcelona" loading="lazy" />
-                <span class="recap-thumb-tag tag tag-red">Live Report</span>
-              </div>
-              <div class="recap-body">
-                <h3 class="recap-name">Sónar 2026 — Barcelona</h3>
-                <p class="recap-date">Barcelona, Spain · June 2026 · <a href="events/sonar-2026-galerie.html" style="color:var(--red);">55 photos</a></p>
-              </div>
-            </a>
-          </article>
-
-          <article class="recap-card" role="listitem">
-            <a href="events/sonar-2026-videos.html" class="recap-link" aria-label="Watch the video live report: Sónar 2026, Friday zapping">
-              <div class="recap-thumb">
-                <img src="../images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA at the SonarLab — Sónar 2026, Barcelona" loading="lazy" />
-                <span class="recap-thumb-tag tag tag-red">Live Report</span>
-                <span class="recap-play" aria-hidden="true"></span>
-              </div>
-              <div class="recap-body">
-                <h3 class="recap-name">Sónar 2026 — Video zapping</h3>
-                <p class="recap-date">Barcelona, Spain · June 2026 · <a href="events/sonar-2026-videos.html" style="color:var(--red);">Watch the video</a></p>
               </div>
             </a>
           </article>

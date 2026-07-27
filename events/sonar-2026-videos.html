@@ -101,6 +101,7 @@
     /* VIDEO SECTION — vertical 9:16 video left, text + chapters right */
     .video-section { padding:52px 0 96px; }
     .video-layout { display:grid; grid-template-columns:minmax(280px,360px) 1fr; gap:52px; align-items:start; }
+    .video-block + .video-block { margin-top:80px; padding-top:80px; border-top:1px solid var(--border); }
 
     .video-col { position:sticky; top:calc(var(--nav-h) + 24px); }
     .video-frame { position:relative; width:100%; aspect-ratio:9/16; background:#0e0e0e; border:1px solid var(--border); overflow:hidden; border-radius:2px; }
@@ -243,12 +244,12 @@
     <!-- VIDEO -->
     <div class="video-section">
       <div class="container">
-        <div class="video-layout">
+        <div class="video-block video-layout" data-video-id="QdfcI8xaNgI">
 
           <div class="video-col">
             <div class="video-frame">
               <iframe
-                id="ytPlayer"
+                class="yt-player"
                 src="https://www.youtube.com/embed/QdfcI8xaNgI?rel=0"
                 title="SÓNAR Barcelona 2026 - Friday zapping | Phat & Phurious"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -287,11 +288,12 @@
             </aside>
 
             <div class="video-next">
-              <strong>Partie 1 sur 2.</strong> Le zapping du samedi arrive bientôt.
+              <strong>Partie 1 sur 2.</strong> Le zapping du samedi est en ligne : <a href="sonar-2026-videos-samedi.html" style="color:var(--red);font-weight:600;">voir la partie 2 →</a>
             </div>
 
             <div class="video-actions">
-              <a href="sonar-2026-galerie.html" class="btn btn-primary">Voir la galerie photos →</a>
+              <a href="sonar-2026-videos-samedi.html" class="btn btn-primary">Voir la partie 2 · Samedi →</a>
+              <a href="sonar-2026-galerie.html" class="btn btn-ghost">Voir la galerie photos →</a>
               <a href="https://www.youtube.com/watch?v=QdfcI8xaNgI" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Regarder sur YouTube ↗</a>
             </div>
           </div>
@@ -332,14 +334,16 @@
 
   <script src="../main.js"></script>
   <script>
-    // Chapter seek — reload the embed at the chosen timestamp and autoplay
-    const player = document.getElementById('ytPlayer');
-    const VIDEO_ID = 'QdfcI8xaNgI';
-    document.querySelectorAll('.chapter').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const t = parseInt(btn.dataset.time, 10) || 0;
-        player.src = 'https://www.youtube.com/embed/' + VIDEO_ID + '?start=' + t + '&autoplay=1&rel=0';
-        player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Chapter seek — reload the embed of the matching block at the chosen timestamp and autoplay
+    document.querySelectorAll('.video-block').forEach(block => {
+      const player = block.querySelector('.yt-player');
+      const videoId = block.dataset.videoId;
+      block.querySelectorAll('.chapter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const t = parseInt(btn.dataset.time, 10) || 0;
+          player.src = 'https://www.youtube.com/embed/' + videoId + '?start=' + t + '&autoplay=1&rel=0';
+          player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
       });
     });
   </script>
