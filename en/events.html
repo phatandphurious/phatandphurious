@@ -94,7 +94,7 @@
     /* Sous 961px on sert la boucle verticale : on annule le cadrage du parallaxe desktop */
     @media (max-width:960px) { .hero-video { top:0; height:100%; } }
     @media (prefers-reduced-motion: reduce) { .hero-video-wrap { display:none; } }
-    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)); }
+    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background: linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, transparent 22%), linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to left, rgba(0,0,0,0.38) 0%, transparent 30%), linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.62) 20%, rgba(10,10,10,0.22) 40%, transparent 60%), linear-gradient(rgba(0,0,0,0.26), rgba(0,0,0,0.26)); }
     .page-hero .container { position:relative; z-index:2; }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
     .page-hero-title em { color:var(--beige); font-style:italic; font-weight:300; }
@@ -264,9 +264,9 @@
     <!-- HERO -->
     <section class="page-hero" aria-labelledby="events-title">
       <div class="hero-video-wrap" aria-hidden="true">
-        <video class="hero-video" muted loop playsinline preload="none" poster="../images/hero-events.webp" data-src="../videos/hero-events.mp4"></video>
+        <video class="hero-video" muted loop playsinline preload="none" poster="../images/hero-events.webp" data-src="../videos/hero-events.mp4" data-src-mobile="../videos/hero-events-vertical.mp4" data-poster-mobile="../images/hero-events-vertical.webp"></video>
       </div>
-      <div class=" data-src-mobile="../videos/hero-events-vertical.mp4" data-poster-mobile="../images/hero-events-vertical.webp"container">
+      <div class="container">
         <div class="eyebrow"><span>Events &amp; Live Reports</span></div>
         <h1 class="page-hero-title" id="events-title">Events<br/><em>&amp; Live Reports</em></h1>
         <p class="page-hero-sub">
