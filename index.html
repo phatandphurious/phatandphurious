@@ -325,11 +325,6 @@
     ──────────────────────────────────────────── */
     #hero {
       min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding-top: var(--nav-h);
-      padding-bottom: 72px;
       position: relative;
       background: url('images/hero-bg.jpg') center / cover no-repeat;
       background-image: image-set(url('images/hero-bg.webp') type('image/webp'), url('images/hero-bg.jpg') type('image/jpeg'));
@@ -337,7 +332,23 @@
       background-attachment: fixed;
     }
 
-    #hero::before {
+    /* Le contenu du hero vit dans ce conteneur. Sans l'effet tache il fait
+       simplement la hauteur de l'ecran ; avec, #hero devient une piste de
+       scroll plus haute et ce bloc reste colle en haut pendant que la tache
+       s'ouvre (c'est l'epinglage). */
+    .hero-sticky {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: var(--nav-h);
+      padding-bottom: 72px;
+      overflow: hidden;
+    }
+
+    .hero-sticky::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -355,6 +366,32 @@
     .hero-video-wrap { position:absolute; inset:0; overflow:hidden; z-index:0; background:var(--bg); }
     .hero-video-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
     @media (prefers-reduced-motion: reduce) { .hero-video-wrap { display:none; } }
+
+    /* ── EFFET TACHE ──────────────────────────────────────────
+       La video n'apparait qu'a travers une forme organique qui grossit
+       au scroll. La taille du masque et celle du contour sont posees en
+       JS (voir le script en bas de page) ; sans JS, ou si le masque n'est
+       pas supporte, la classe .blob-on n'est jamais ajoutee et le hero
+       reste tel quel, video plein cadre. */
+    #hero {
+      --blob: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath d='M300,58 C398,58 484,118 522,208 C560,298 540,404 462,468 C384,532 268,544 186,498 C104,452 52,352 62,252 C72,152 152,78 252,62 C268,59 284,58 300,58 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+      --blob-ring: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cpath d='M300,58 C398,58 484,118 522,208 C560,298 540,404 462,468 C384,532 268,544 186,498 C104,452 52,352 62,252 C72,152 152,78 252,62 C268,59 284,58 300,58 Z' fill='none' stroke='%23CF0000' stroke-width='4'/%3E%3C/svg%3E");
+    }
+    /* Hors de la tache on veut le noir de la charte, pas la photo de fond :
+       celle-ci reste le repli quand l'effet ne tourne pas.
+       La hauteur supplementaire est la piste de scroll pendant laquelle le
+       hero reste epingle : 100svh de plus = un ecran entier de defilement
+       avant que la page ne reprenne son cours. */
+    #hero.blob-on { background-image:none; background-color:var(--bg); min-height:0; height:200svh; }
+    #hero.blob-on .hero-video-wrap {
+      -webkit-mask-image:var(--blob); mask-image:var(--blob);
+      -webkit-mask-repeat:no-repeat;  mask-repeat:no-repeat;
+      -webkit-mask-position:center;   mask-position:center;
+    }
+    .hero-blob-ring {
+      position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0;
+      background-image:var(--blob-ring); background-repeat:no-repeat; background-position:center;
+    }
 
     .hero-content { position: relative; z-index: 2; }
 
@@ -1446,9 +1483,11 @@
          HERO
     ════════════════════════════════════════ -->
     <section id="hero" aria-label="Présentation">
+     <div class="hero-sticky">
       <div class="hero-video-wrap" aria-hidden="true">
         <video class="hero-video-bg" muted loop playsinline preload="none" poster="images/hero-index-video.webp" data-src="videos/hero-index.mp4" data-src-mobile="videos/hero-index-vertical.mp4" data-poster-mobile="images/hero-index-vertical.webp"></video>
       </div>
+      <div class="hero-blob-ring" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-content">
 
@@ -1478,6 +1517,7 @@
 
         </div>
       </div>
+     </div>
     </section>
 
     <!-- ════════════════════════════════════════
@@ -1993,6 +2033,72 @@
       if (mobile && v.dataset.posterMobile) v.poster = v.dataset.posterMobile;
       v.src = src;
       v.play().catch(function () {});
+    })();
+  </script>
+  <script>
+    // Effet tache : la video est revelee par une forme organique qui s'ouvre
+    // a l'arrivee sur la page, puis grossit au scroll jusqu'a remplir le hero.
+    // Reversible, puisque la taille est calculee directement depuis scrollY.
+    (function () {
+      var hero = document.getElementById('hero');
+      if (!hero) return;
+      var wrap = hero.querySelector('.hero-video-wrap');
+      var ring = hero.querySelector('.hero-blob-ring');
+      if (!wrap || !ring) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      // sans support du masque, on laisse le hero en video plein cadre
+      var ok = window.CSS && CSS.supports &&
+               (CSS.supports('mask-image', 'url("")') || CSS.supports('-webkit-mask-image', 'url("")'));
+      if (!ok) return;
+
+      // La taille de repos se cale sur la PLUS PETITE dimension, sinon en
+      // portrait la tache deborde de l'ecran des le depart et on ne voit plus
+      // la forme. La taille finale, elle, se cale sur la plus grande pour
+      // garantir le recouvrement complet dans les deux orientations.
+      var REST = 1.02;    // fraction de la plus petite dimension, au repos
+      var FULL = 2.60;    // fraction de la plus grande dimension, une fois ouverte
+      var intro = 0;      // 0 -> 1 pendant l'animation d'arrivee
+      var queued = false;
+
+      function draw() {
+        queued = false;
+        // La progression se mesure sur la piste d'epinglage (la hauteur du
+        // hero moins un ecran), pas sur la hauteur totale : c'est exactement
+        // la portion pendant laquelle le hero reste colle. On termine a 80 %
+        // pour laisser un moment de video plein cadre avant le decrochage.
+        var track = Math.max(1, hero.offsetHeight - window.innerHeight);
+        var p = Math.min(1, Math.max(0, window.scrollY / (track * 0.8)));
+        var e = p * p * (3 - 2 * p);                      // lissage smoothstep
+        var rest = Math.min(window.innerWidth, window.innerHeight) * REST;
+        var full = Math.max(window.innerWidth, window.innerHeight) * FULL;
+        var px = (rest * intro + (full - rest) * e).toFixed(1) + 'px';
+        var size = px + ' ' + px;
+        wrap.style.webkitMaskSize = size;
+        wrap.style.maskSize = size;
+        ring.style.backgroundSize = size;
+        ring.style.opacity = Math.max(0, Math.min(1, intro - e * 1.2)).toFixed(3);
+      }
+
+      function onScroll() {
+        if (!queued) { queued = true; requestAnimationFrame(draw); }
+      }
+
+      hero.classList.add('blob-on');
+      draw();
+
+      // ouverture a l'arrivee : la tache s'ecarte de 0 a sa taille de repos
+      var t0 = null, DUR = 1400;
+      function open(ts) {
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / DUR);
+        intro = 1 - Math.pow(1 - k, 3);                   // ease-out cubique
+        draw();
+        if (k < 1) requestAnimationFrame(open);
+      }
+      requestAnimationFrame(open);
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
     })();
   </script>
   <script>
