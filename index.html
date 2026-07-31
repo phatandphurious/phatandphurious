@@ -380,9 +380,9 @@
     /* Hors de la tache on veut le noir de la charte, pas la photo de fond :
        celle-ci reste le repli quand l'effet ne tourne pas.
        La hauteur supplementaire est la piste de scroll pendant laquelle le
-       hero reste epingle : 100svh de plus = un ecran entier de defilement
-       avant que la page ne reprenne son cours. */
-    #hero.blob-on { background-image:none; background-color:var(--bg); min-height:0; height:200svh; }
+       hero reste epingle : 50svh de plus, soit un demi-ecran de defilement.
+       C'est le reglage a bouger si l'epinglage parait trop long ou trop court. */
+    #hero.blob-on { background-image:none; background-color:var(--bg); min-height:0; height:150svh; }
     #hero.blob-on .hero-video-wrap {
       -webkit-mask-image:var(--blob); mask-image:var(--blob);
       -webkit-mask-repeat:no-repeat;  mask-repeat:no-repeat;
