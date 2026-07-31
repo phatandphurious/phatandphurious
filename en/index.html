@@ -382,17 +382,23 @@
       content: '';
       position: absolute;
       inset: 0;
-      z-index: 0;
+      z-index: 1;
       pointer-events: none;
       background:
         linear-gradient(to bottom,  rgba(0,0,0,0.88) 0%, transparent 22%),
         linear-gradient(to right,   rgba(0,0,0,0.38) 0%, transparent 30%),
         linear-gradient(to left,    rgba(0,0,0,0.38) 0%, transparent 30%),
-        linear-gradient(to top,     #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.78) 20%, rgba(10,10,10,0.32) 40%, transparent 60%),
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+        linear-gradient(to top,     #0A0A0A 0%, rgba(10,10,10,0.96) 8%, rgba(10,10,10,0.62) 20%, rgba(10,10,10,0.22) 40%, transparent 60%),
+        linear-gradient(rgba(0,0,0,0.26), rgba(0,0,0,0.26));
     }
 
-    .hero-content { position: relative; z-index: 1; }
+    /* Video de fond du hero — desktop uniquement, mobile garde l'image */
+    .hero-video-wrap { position:absolute; inset:0; overflow:hidden; z-index:0; background:var(--bg); }
+    .hero-video-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+    @media (max-width:960px) { .hero-video-wrap { display:none; } }
+    @media (prefers-reduced-motion: reduce) { .hero-video-wrap { display:none; } }
+
+    .hero-content { position: relative; z-index: 2; }
 
     #hero .eyebrow::before {
       width: 20px;
@@ -1338,6 +1344,9 @@
          HERO
     ════════════════════════════════════════ -->
     <section id="hero" aria-label="Presentation">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video class="hero-video-bg" muted loop playsinline preload="none" poster="../images/hero-index-video.webp" data-src="../videos/hero-index.mp4"></video>
+      </div>
       <div class="container">
         <div class="hero-content">
 
@@ -1843,6 +1852,16 @@
        SCRIPTS
   ════════════════════════════════════════ -->
   <script src="../main.js"></script>
+  <script>
+    // Hero video: desktop only, so mobile keeps the lighter background image
+    (function () {
+      var v = document.querySelector('.hero-video-bg');
+      if (!v || window.innerWidth < 961) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      v.src = v.dataset.src;
+      v.play().catch(function () {});
+    })();
+  </script>
   <script>
     /* Webzine — random articles (Sónar pinned) */
     (function() {
