@@ -86,7 +86,6 @@
     .page-hero .container { position:relative; z-index:2; }
     .hero-video-wrap { position:absolute; inset:0; overflow:hidden; z-index:0; background:var(--bg); }
     .hero-video-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
-    @media (max-width:960px) { .hero-video-wrap { display:none; } }
     @media (prefers-reduced-motion: reduce) { .hero-video-wrap { display:none; } }
     .page-hero-title { font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.95; margin-bottom:24px; }
     .page-hero-title em { color:var(--beige); font-style:italic; font-weight:300; }
@@ -308,7 +307,7 @@
       <div class="hero-video-wrap" aria-hidden="true">
         <video class="hero-video-bg" muted loop playsinline preload="none" poster="images/hero-news-video.webp" data-src="videos/hero-news.mp4"></video>
       </div>
-      <div class="container">
+      <div class=" data-src-mobile="videos/hero-news-vertical.mp4" data-poster-mobile="images/hero-news-vertical.webp"container">
         <div class="eyebrow"><span>Webzine</span></div>
         <h1 class="page-hero-title" id="news-title">Bass music.<br/><em>Écrite.</em></h1>
         <p class="page-hero-sub">
@@ -666,12 +665,17 @@
 
   <script src="main.js"></script>
   <script>
-    // Hero video: desktop only, so mobile keeps the lighter background image
+    // Hero video: source verticale 9:16 sous 961px, horizontale au-dessus.
+    // Si ce script ne tourne pas, l'image de fond du hero reste affichee.
     (function () {
       var v = document.querySelector('.hero-video-bg');
-      if (!v || window.innerWidth < 961) return;
+      if (!v) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      v.src = v.dataset.src;
+      var mobile = window.innerWidth < 961;
+      var src = mobile ? v.dataset.srcMobile : v.dataset.src;
+      if (!src) return;
+      if (mobile && v.dataset.posterMobile) v.poster = v.dataset.posterMobile;
+      v.src = src;
       v.play().catch(function () {});
     })();
   </script>
