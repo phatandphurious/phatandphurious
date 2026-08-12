@@ -131,7 +131,12 @@
 
     .photo-wide { margin:48px 0 0; }
     .photo-wide .article-photo { aspect-ratio:4/3; }
-    .photo-wide .article-photo img { object-position:center 28%; }
+    .photo-wide .article-photo img { object-position:center 55%; }
+
+    /* Photo d'ouverture : format carre, la source verticale supporte mal le 4:3 */
+    .photo-opener { margin:48px 0 0; }
+    .photo-opener .article-photo { aspect-ratio:1/1; }
+    .photo-opener .article-photo img { object-position:center 55%; }
 
     .photo-duo { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin:48px 0 0; }
     .photo-duo .article-photo { aspect-ratio:2/3; }
@@ -278,7 +283,7 @@
         <p class="article-subtitle">
           Pour une fois, pas de train ni d'avion. Le festival qu'on couvre est à vingt minutes de chez nous, et il fêtait
           ses quinze ans. Deux jours au Parc des Expositions avec <strong>Armand Van Helden</strong> qui déroule les classiques,
-          <strong>Hysta</strong> qui met le Hard Stage à genoux, <strong>Étienne de Crécy</strong> et sa chemise en jean,
+          <strong>Hysta</strong> qui met le Hard Stage à genoux, <strong>Étienne de Crécy</strong> et sa légendaire chemise en jean,
           <strong>Blond:ish</strong> en révélation du dimanche et <strong>Rebekah</strong> pour finir dans le rouge.
         </p>
         <p class="article-byline">
@@ -294,17 +299,17 @@
       <div class="container-narrow">
 
         <!-- PHOTO PRINCIPALE -->
-        <div class="photo-wide">
+        <div class="photo-opener">
           <div class="article-photo">
             <img
-              src="../images/armand-van-helden-elrow-family-piknik-2026.webp"
-              alt="Armand Van Helden en set sur l'Elrow Stage, Family Piknik 2026, Parc des Expositions de Pérols"
+              src="../images/elrow-stage-family-piknik-2026.webp"
+              alt="Armand Van Helden de dos face à la foule de l'Elrow Stage, en t-shirt Björk, Family Piknik 2026, Parc des Expositions de Pérols"
               loading="eager"
               fetchpriority="high"
             />
           </div>
         </div>
-        <p class="article-photo-caption">Armand Van Helden @ Elrow Stage - Family Piknik 2026 · Photo : Phat &amp; Phurious FM</p>
+        <p class="article-photo-caption">Armand Van Helden et son t-shirt Björk, « I don't know my future after this weekend, and I don't want to. » @ Elrow Stage - Family Piknik 2026 · Photo : Phat &amp; Phurious FM</p>
 
         <!-- STATS -->
         <div class="stats-band" aria-label="Chiffres clés">
@@ -342,14 +347,14 @@
 
           <p>
             Le format a changé d'échelle mais garde sa colonne vertébrale : quatre scènes, plus de soixante artistes,
-            de midi à deux heures du matin. La <span class="stage">Elrow Stage</span> pour la fiesta et la house festive,
+            de midi à deux heures du matin. L'<span class="stage">Elrow Stage</span> pour la fiesta et la House festive,
             le <span class="stage">Hard Stage</span> installé en intérieur dans un hall du parc, la
             <span class="stage">Nomad Stage</span> sous sa charpente en bois pour les sélections pointues, et la
             <span class="stage">Scène Tremplin</span> qui donne leur créneau aux talents de la région. Chacune
             avec sa population, son rythme, sa température.
           </p>
 
-          <h2 class="article-section-label">Samedi : Armand Van Helden fait le job</h2>
+          <h2 class="article-section-label">Samedi : Armand Van Helden en guest star de l'Elrow Stage</h2>
 
           <p>
             On ouvre au <span class="stage">Hard Stage</span> avec <a href="https://www.instagram.com/25emeheure/" target="_blank" rel="noopener" class="artist-link"><strong>25EMEHEURE</strong></a> à 18h.
@@ -373,45 +378,73 @@
         <div class="prose">
 
           <p>
-            Direction l'<span class="stage">Elrow Stage</span> pour 18h30, et là c'est une autre affaire. La venue
-            d'<a href="https://www.instagram.com/armandvanhelden/" target="_blank" rel="noopener" class="artist-link"><strong>Armand Van Helden</strong></a> dans le coin relève de l'événement rare, et ça se sentait à
-            la densité de la foule bien avant son créneau. Pendant une heure trente, le New-Yorkais enchaîne les classiques
-            house à dominante funk et disco sans jamais chercher l'esbroufe. Que des tubes, joués magistralement.
+            Direction l'<span class="stage">Elrow Stage</span> pour 18h30. Digne représentant de la scène House
+            new-yorkaise, <a href="https://www.instagram.com/armandvanhelden/" target="_blank" rel="noopener" class="artist-link"><strong>Armand Van Helden</strong></a> vient si rarement dans le coin ! Sa venue
+            a suscité une forte attente, et ça se sentait à la densité de la foule bien avant son créneau. Pendant près
+            d'1h30, il enchaîne les classiques House à dominante Funk et Disco, sans jamais chercher l'esbroufe.
+            Que des tubes, joués magistralement.
           </p>
 
           <p>
-            Ce qui rend le moment aussi fort, c'est la collision entre cette sélection fédératrice et l'univers
-            <strong>Elrow</strong>. Pour ceux qui n'ont jamais mis les pieds dans une de leurs soirées : attendez-vous à
-            une scénographie démesurée, des dizaines de performers costumés qui investissent la scène et déambulent
-            dans le public, des acrobates, des mascottes géantes, des tonnes de confettis. C'est visuel, immersif,
-            et franchement à la hauteur de la réputation.
+            Le revers, c'est qu'un set 100 % classiques ne prend aucun risque. On savait à quoi s'attendre, et
+            c'est exactement ce qu'on venait chercher. Ceux qui espéraient l'entendre creuser ailleurs, ou sortir
+            deux ou trois raretés de son propre catalogue, sont restés sur leur faim.
+          </p>
+
+          <p>
+            Un détail qu'on ne pouvait pas rater, vu qu'il nous a tourné le dos une bonne partie du set : son t-shirt
+            était un t-shirt Björk, le portrait de la chanteuse au recto et le refrain de <em>Big Time Sensuality</em>
+            imprimé au dos. « I don't know my future after this weekend, and I don't want to. » On cherche encore un
+            meilleur programme pour un samedi soir de festival !
+          </p>
+
+          <p>
+            Sa tracklist fédératrice combinée à l'ambiance carnaval façon <strong>Elrow</strong>, c'était de la pure
+            folie. Pour ceux qui n'ont jamais fait l'expérience d'une soirée Elrow : attendez-vous à une scénographie
+            spectaculaire et de qualité. Des dizaines de performers déjantés (comédiens, acrobates, personnages
+            costumés) investissent la scène, déambulent et interagissent avec le public. Ajoutez les mascottes géantes
+            et les tonnes de confettis. La fête est immersive, très visuelle, et l'ambiance est unique.
+          </p>
+
+          <p>
+            Sauf que le public tenait largement la comparaison. Un ami à nous se baladait avec une piscine gonflable
+            en guise de pantalon, canard jaune posé dedans et un pistolet à bulles dans chaque main. Ailleurs sur le site,
+            une bande entière en slip de bain et rien d'autre, ou encore un type en coiffe à plumes qui traversait
+            la foule sans que personne ne relève. Elrow met la barre très haut côté costumes, on a connu des publics
+            qui faisaient moins d'efforts pour suivre.
           </p>
 
         </div>
 
         <div class="photo-solo">
           <div class="article-photo">
-            <img src="../images/elrow-stage-family-piknik-2026.webp" alt="DJ de dos face à la foule de l'Elrow Stage, t-shirt humoristique, Family Piknik 2026" loading="lazy" />
+            <img src="../images/armand-van-helden-elrow-family-piknik-2026.webp" alt="Armand Van Helden en set sur l'Elrow Stage, Family Piknik 2026" loading="lazy" />
           </div>
         </div>
-        <p class="article-photo-caption">« I don't know my future after this weekend, and I don't want to. » @ Elrow Stage - Family Piknik 2026 · Photo : Phat &amp; Phurious FM</p>
+        <p class="article-photo-caption">Armand Van Helden @ Elrow Stage - Family Piknik 2026 · Photo : Phat &amp; Phurious FM</p>
 
         <div class="prose">
+
+          <h2 class="article-section-label">Le chassé-croisé du samedi soir</h2>
 
           <p>
             Retour au <span class="stage">Hard Stage</span> pour <a href="https://www.instagram.com/todiefor/" target="_blank" rel="noopener" class="artist-link"><strong>Todiefor</strong></a> à 19h,
             puis <a href="https://www.instagram.com/creeds.music/" target="_blank" rel="noopener" class="artist-link"><strong>Creeds</strong></a> à 20h.
-            Entre les deux, un crochet par la <span class="stage">Nomad Stage</span> pour
-            <a href="https://www.instagram.com/kikomusic/" target="_blank" rel="noopener" class="artist-link"><strong>Kiko b2b Lucye</strong></a>.
-            Habitué des lieux, Kiko signe avec Lucye l'un des sets les plus solides du samedi. Intense, parfaitement
-            maîtrisé, et surtout un format qui met en valeur leur complémentarité plutôt que de les faire se marcher dessus.
+            Entre les deux, un crochet par la <span class="stage">Nomad Stage</span> pour un autre pilier de la scène
+            électronique française :
+            <a href="https://www.instagram.com/kikomusic/" target="_blank" rel="noopener" class="artist-link"><strong>Kiko b2b Lucye</strong></a> !
+            Habitué de Family Piknik, Kiko signe avec Lucye l'un des sets les plus solides du samedi. Intense et
+            parfaitement maîtrisé. Un format qui met en valeur leur complémentarité plutôt que de les faire se
+            marcher dessus.
           </p>
 
           <p>
-            À 20h45, la <span class="stage">Scène Tremplin</span> accueillait <strong>IRINA</strong>. C'est le genre
+            À 20h45, la <span class="stage">Scène Tremplin</span> accueillait <strong>IRINA</strong> sur de la
+            hypnotic groove techno. La salle est toute petite et elle était bien remplie, ce qui n'a rien d'évident
+            à cette heure-là avec trois autres scènes qui tournent à plein régime dehors. C'est précisément le genre
             de créneau qu'on ne devrait jamais négliger dans un live report : ces scènes sont l'endroit où se
-            construisent les carrières locales, et les regarder est le meilleur moyen de savoir ce qui arrive
-            dans deux ans.
+            construisent les carrières locales. Et quand c'est ta région, tu les regardes autrement. Dans deux ans,
+            ces noms-là seront sur les affiches qu'on croise en ville.
           </p>
 
         </div>
@@ -434,23 +467,25 @@
           <h2 class="article-section-label">La Nomad Stage, le refuge des curieux</h2>
 
           <p>
-            C'est sur la <span class="stage">Nomad Stage by Afterseason</span> que le festival a placé sa programmation
-            la plus intimiste. Une approche plus underground, tournée vers les passionnés, sous une charpente en bois
-            barrée d'un néon rouge. Le contraste avec la démesure d'Elrow est saisissant, et c'est exactement ce qui
-            rend le site intéressant à parcourir.
+            Sur la <span class="stage">Nomad Stage by Afterseason</span>, le Family Piknik a fait le choix d'une
+            programmation plus intimiste, curieuse et tournée vers les passionnés d'électronique. Une approche
+            résolument underground, sous une charpente en bois barrée d'un néon rouge. Le contraste avec la démesure
+            d'Elrow est saisissant, et c'est exactement ce qui rend le site intéressant à parcourir.
           </p>
 
           <p>
             <a href="https://www.instagram.com/etiennedecrecy/" target="_blank" rel="noopener" class="artist-link"><strong>Étienne de Crécy</strong></a> y jouait à 21h, chemise en jean sur le dos comme une signature.
-            Le set était élégant, fédérateur, sans le moindre effet spectaculaire, et c'est précisément la démonstration :
-            le pionnier de la French Touch n'a pas besoin d'artifice pour rappeler ce qu'il vaut. Son passage improvisé
-            en b2b avec Erol Alkan en a cueilli plus d'un.
+            Un set toujours élégant et fédérateur, sans effets spectaculaires. Artiste à forte identité musicale,
+            il a rappelé pourquoi le pionnier de la French Touch demeure une référence incontournable. Et il ne s'est pas arrêté à
+            l'heure prévue : il a largement débordé sur le créneau suivant, rejoint aux platines par
+            <a href="https://www.instagram.com/erolalkan/" target="_blank" rel="noopener" class="artist-link"><strong>Erol Alkan</strong></a> venu lui prêter main forte. Ce b2b imprévu en a ravi plus d'un !
           </p>
 
           <p>
-            <a href="https://www.instagram.com/brinaknauss/" target="_blank" rel="noopener" class="artist-link"><strong>Brina Knauss</strong></a> prend la suite à 22h30 avec un set qui épouse parfaitement l'identité
-            mélodique de la scène. Melodic house et techno atmosphérique, des montées progressives, des textures
-            travaillées. De la finesse plutôt que de la puissance.
+            <a href="https://www.instagram.com/brinaknauss/" target="_blank" rel="noopener" class="artist-link"><strong>Brina Knauss</strong></a> a elle aussi marqué la Nomad Stage, avec un set qui s'inscrivait
+            parfaitement dans l'identité mélodique et immersive de cette scène. Mêlant Melodic House et techno
+            atmosphérique, elle a offert une sélection tout en finesse, portée par des montées progressives et des
+            textures travaillées.
           </p>
 
         </div>
@@ -468,25 +503,27 @@
         <div class="prose">
 
           <p>
-            À minuit, le b2b le plus pointu de tout le week-end :
-            <a href="https://www.instagram.com/romanfluegel/" target="_blank" rel="noopener" class="artist-link"><strong>Roman Flügel</strong></a> et
-            <a href="https://www.instagram.com/erolalkan/" target="_blank" rel="noopener" class="artist-link"><strong>Erol Alkan</strong></a>.
-            Leur proximité musicale remonte au début des années 2010, et Flügel compte parmi les artistes phares
-            de Phantasy, le label d'Alkan. Ça s'entend.
+            À minuit, Alkan revient sur la même scène, cette fois avec
+            <a href="https://www.instagram.com/romanfluegel/" target="_blank" rel="noopener" class="artist-link"><strong>Roman Flügel</strong></a>, pour ce qui restera probablement l'un des sets les plus pointus de
+            toute la programmation. Une sélection exigeante et un sens rare de la narration musicale. Leur proximité
+            musicale remonte à longtemps, vers les années 2010, et Flügel a signé quelques EP chez Phantasy, le label
+            d'Alkan, dont il fait partie des artistes phares. Ça s'entend.
           </p>
 
           <p>
-            D'un côté Roman Flügel et son éclectisme, capable de passer de la house minimale à la techno hypnotique
-            en glissant de l'IDM, de l'acid ou des textures franchement expérimentales. De l'autre Erol Alkan,
-            qui mélange techno, electro, cosmic disco, krautrock, breaks et morceaux psychédéliques. Les deux partagent
-            le goût des transitions longues, des progressions organiques, des raretés et des edits qu'on n'entend nulle
-            part ailleurs. Aucun drop appelé, aucune rupture facile.
+            D'un côté, Roman Flügel, reconnu pour son éclectisme. Il passe avec une grande fluidité de la House
+            minimale à la techno hypnotique, en intégrant souvent de l'IDM, de l'acid ou des sonorités plus
+            expérimentales. De l'autre, Erol Alkan, qui aime mélanger techno, electro, cosmic disco, krautrock, breaks
+            et morceaux psychédéliques. Les deux partagent plusieurs affinités : les transitions longues, une
+            progression organique du set plutôt que les drops et les ruptures brusques, un goût pour les morceaux
+            rares, les edits exclusifs et les classiques revisités. C'est précisément ce qui fait que leur b2b
+            fonctionne si bien !
           </p>
 
         </div>
 
         <div class="pullquote">
-          <p>Un set à contre-courant de tout ce qu'un grand festival propose habituellement. C'est précisément pour ça qu'il restera.</p>
+          <p>Un set salué pour son éclectisme et sa profondeur, à contre-courant des formats plus conventionnels des grands festivals.</p>
         </div>
 
         <div class="photo-solo">
@@ -501,16 +538,28 @@
           <h2 class="article-section-label">Hysta, ou l'art de tromper son monde</h2>
 
           <p>
-            Minuit également au <span class="stage">Hard Stage</span>, et c'est notre claque du samedi.
-            <a href="https://www.instagram.com/hystamusic/" target="_blank" rel="noopener" class="artist-link"><strong>Hysta</strong></a> arrive avec un visage d'ange et un sourire de gamine, et pendant une heure
-            elle balance de la frappe atomique. Le décalage entre la présence scénique et la violence du son est
+            Minuit également au <span class="stage">Hard Stage</span>, et c'est notre claque du samedi. C'est aussi
+            le seul accroc qu'on trouvera à cette programmation : Hysta et le b2b Flügel / Alkan démarraient à la
+            même minute, sur deux scènes opposées. Deux des plus beaux moments du week-end, et un festivalier ne
+            peut pas être aux deux endroits. Sur une affiche aussi dense, ce genre d'arbitrage frustre.
+          </p>
+
+          <p>
+            <a href="https://www.instagram.com/hystamusic/" target="_blank" rel="noopener" class="artist-link"><strong>Hysta</strong></a> arrive tout sourire, l'air parfaitement détendue, et pendant une heure
+            elle balance de la frappe atomique. Le décalage entre la décontraction affichée et la violence du son est
             total, le public ne s'y trompe pas une seconde, et la main room est pleine à craquer.
           </p>
+
+          <h2 class="article-section-label">Space 92 referme un samedi qui ne redescend pas</h2>
 
           <p>
             Le samedi se referme à 00h30 sur l'<span class="stage">Elrow Stage</span> avec
             <a href="https://www.instagram.com/space92official/" target="_blank" rel="noopener" class="artist-link"><strong>Space 92</strong></a>,
-            maillot de hockey sur le dos, pour envoyer tout le monde au lit dans le désordre.
+            maillot de hockey sur le dos. À cette heure-là, on s'attend à voir le site se vider doucement et les
+            derniers courageux tenir par principe. C'est exactement l'inverse qui s'est produit : le public était en
+            délire, l'énergie est montée d'un cran au lieu de retomber, et la scénographie Elrow a sorti ses dernières
+            cartouches de confettis comme s'il était minuit moins le quart. Le Français a tenu sa foule jusqu'au bout
+            avant de renvoyer tout le monde au lit dans le désordre !
           </p>
 
         </div>
@@ -527,19 +576,32 @@
 
         <div class="prose">
 
-          <h2 class="article-section-label">Dimanche : la journée house et la révélation Blond:ish</h2>
+          <h2 class="article-section-label">Dimanche : la journée House</h2>
 
           <p>
-            Le dimanche change de couleur. Moins de kicks, plus de groove, un public visiblement là pour danser
-            plutôt que pour encaisser. <a href="https://www.instagram.com/chelinamanuhutu/" target="_blank" rel="noopener" class="artist-link"><strong>Chelina Manuhutu</strong></a> ouvre notre journée
-            à 18h sur l'<span class="stage">Elrow Stage</span>, pendant que <strong>Xandy</strong> tient la
-            <span class="stage">Scène Tremplin</span>. Au <span class="stage">Hard Stage</span>, désormais curaté
-            par <strong>Procrastination</strong>, <strong>Blakeys</strong> prend le relais à 19h.
+            Le dimanche change de couleur, du moins sur une partie du site. Moins de kicks, plus de groove, un public
+            d'humeur à danser. Le <span class="stage">Hard Stage</span>, lui, tabassait autant que la veille : la journée
+            n'était pas plus douce, elle était plus contrastée.
+            <a href="https://www.instagram.com/chelinamanuhutu/" target="_blank" rel="noopener" class="artist-link"><strong>Chelina Manuhutu</strong></a> ouvre notre journée à 18h sur l'<span class="stage">Elrow Stage</span>.
+            Née à Amsterdam d'un père indonésien et d'une mère néerlandaise, installée à Ibiza, elle s'est fait un nom
+            sur une tech house groovy traversée de percussions afro et latines. Sur le papier, un créneau de début de
+            soirée. Dans les faits, tout le monde était déjà en mouvement au bout de dix minutes. Le genre de set qui
+            donne le ton d'une journée.
+          </p>
+
+          <p>
+            Pendant ce temps, <strong>Xandy</strong> tenait la <span class="stage">Scène Tremplin</span>. Au
+            <span class="stage">Hard Stage</span>, désormais curaté par <strong>Procrastination</strong>,
+            <strong>Blakeys</strong> prend le relais à 19h. Le Français est un habitué du collectif, avec qui il
+            tourne régulièrement, et il envoie une acid rave brute et galopante, saturée jusqu'à la moelle.
+            À 19h un dimanche, le hall aurait pu se remplir tranquillement. Il était déjà plein.
           </p>
 
           <p>
             À 20h, <a href="https://www.instagram.com/cebbmusic/" target="_blank" rel="noopener" class="artist-link"><strong>CEBB</strong></a> occupe la <span class="stage">Nomad Stage</span>, passée
-            ce jour-là sous bannière United et Paillote Paradise. Puis vient le set qu'on n'attendait pas.
+            ce jour-là sous bannière United et Paillote Paradise. Autant dire à domicile : le Montpelliérain est un
+            pilier de la Paillote, à Aigues-Mortes, à une demi-heure de route du Parc des Expositions. Sa house
+            solaire collait à l'heure, au lieu et à la température. Puis vient le set qu'on n'attendait pas.
           </p>
 
         </div>
@@ -556,12 +618,15 @@
 
         <div class="prose">
 
+          <h2 class="article-section-label">Blond:ish, la révélation du dimanche</h2>
+
           <p>
             <a href="https://www.instagram.com/blondish/" target="_blank" rel="noopener" class="artist-link"><strong>Blond:ish</strong></a> à 21h, qu'on ne connaissait que de nom. Une heure plus tard, on était
-            embarqués. Sa tech house tire vers l'esthétique Defected, avec une touche pop et des rythmiques afro
-            qui donnent au set une couleur résolument feel good. Elle maintient sa dynamique de bout en bout,
-            et à chaque montée la scénographie Elrow prend le relais comme un deuxième instrument. Sélection à la
-            fois pointue et accessible. On en redemande.
+            embarqués, et on n'était pas les seuls : elle a fait l'unanimité sur l'<span class="stage">Elrow Stage</span>.
+            Un set bien ficelé entre House mélodique, une touche de Pop et des rythmes afro, qui rappelle l'esthétique
+            Defected. Elle a su maintenir une belle dynamique tout du long, et à chaque montée la scénographie
+            démesurée d'Elrow prenait le relais. Une sélection à la fois pointue, accessible et résolument feel good.
+            Blond:ish, une valeur sûre.
           </p>
 
         </div>
@@ -575,19 +640,28 @@
 
         <div class="prose">
 
-          <h2 class="article-section-label">Rebekah, la techno industrielle sans concession</h2>
+          <h2 class="article-section-label">Rebekah, pionnière d'une techno industrielle sans concession</h2>
 
           <p>
             Fin de soirée au <span class="stage">Hard Stage</span>. <strong>William Luck</strong> chauffe la salle
-            à 22h, puis <a href="https://www.instagram.com/rebekah_techno/" target="_blank" rel="noopener" class="artist-link"><strong>Rebekah</strong></a> arrive à 23h et change complètement la nature de
-            l'endroit. Derrière une présence scénique tout en retenue se cache une force de frappe rare, à la
+            à 22h, et le mot est faible. Le Parisien s'est fait un nom sur une hard techno brutale et viscérale,
+            nourrie de culture rave underground et de schranz du début des années 2000. Il a préparé le terrain
+            sans jamais lever le pied.
+          </p>
+
+          <p>
+            Puis <a href="https://www.instagram.com/rebekah_techno/" target="_blank" rel="noopener" class="artist-link"><strong>Rebekah</strong></a> arrive à 23h et change complètement la nature de
+            l'endroit. Derrière une présence scénique classieuse se cache une véritable force de frappe, à la
             croisée de la techno industrielle et des sonorités hard dance.
           </p>
 
           <p>
-            Son set est sans compromis, puissant, précis, et il impose une vision plus sombre et plus radicale
-            que tout ce qui a défilé sur cette scène pendant deux jours. C'est la démonstration que l'intensité
-            ne se mesure pas au BPM mais à la personnalité de celle qui la porte. Une performance qui force le respect.
+            Son set sans compromis marque par sa puissance et sa précision, transformant la scène et le dancefloor
+            en terrain d'expression et d'explosion. Car oui, l'intensité musicale ne se mesure pas uniquement aux BPM,
+            mais aussi à la personnalité et à la vision de l'artiste qui la porte. Une performance qui force le respect.
+            Elle a clairement apporté une autre dimension au <span class="stage">Hard Stage</span>, là où la plupart
+            des sets de la journée cherchaient l'impact immédiat. Une signature reconnaissable dès les premières
+            mesures, qui confirme pourquoi Rebekah est une figure iconique du genre.
           </p>
 
         </div>
@@ -610,10 +684,11 @@
           <h2 class="article-section-label">Le Hard Stage, la vraie surprise de l'édition</h2>
 
           <p>
-            S'il fallait retenir une tendance de ce week-end, ce serait celle-là. La main room est restée pleine
-            les deux jours, du début à la fin, avec un public qui connaissait les morceaux et venait spécifiquement
-            pour ça. L'intérêt pour les musiques hard n'est plus une niche, c'est une lame de fond, et le Family
-            Piknik a eu le nez creux en confiant la programmation à Organik le samedi puis à Procrastination le dimanche.
+            S'il fallait retenir une tendance de ce week-end, ce serait celle-là. Une programmation de kicks
+            ravageurs, et une main room comble durant les deux jours du festival, du début à la fin, avec un public
+            qui connaissait les morceaux et venait spécifiquement pour ça. L'immense intérêt pour les musiques hard
+            n'est plus une niche, c'est une lame de fond, et le Family Piknik a eu le nez creux en confiant la
+            programmation à Organik le samedi puis à Procrastination le dimanche.
           </p>
 
         </div>
@@ -632,9 +707,14 @@
           <p>
             Parlons de ce qui fait ou défait un festival en août dans l'Hérault : la chaleur. Elle était
             extrême les deux jours. L'organisation avait installé des ventilateurs brumisateurs un peu partout
-            et ça change tout, on y revenait volontiers entre deux sets. Seul regret, l'absence de climatisation
-            dans le hall du <span class="stage">Hard Stage</span>. Cela dit, vu la surface à couvrir et le monde
-            présent, on doute qu'une clim aurait suffi à faire tomber la température d'une pareille fournaise.
+            et ça change tout, on y revenait volontiers entre deux sets.
+          </p>
+
+          <p>
+            Le point noir du site, c'est le hall du <span class="stage">Hard Stage</span>. Aucune climatisation, une
+            main room pleine deux jours d'affilée, et une chaleur qui devenait franchement difficile à tenir en fin
+            de soirée. On veut bien croire qu'une clim n'aurait pas suffi sur une pareille surface, mais il y a là
+            un vrai sujet pour les prochaines éditions, d'autant que le festival mise de plus en plus sur cette scène.
           </p>
 
           <p>
