@@ -551,15 +551,11 @@
       border-top: 1px solid var(--border);
     }
 
-    .episodes-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      gap: 0;
-    }
-
     .episode-card {
       background: var(--card);
+      flex: 0 0 33.3333%;
+      min-width: 0;
+      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       border-right: 1px solid var(--border);
@@ -714,15 +710,25 @@
       border-top: 1px solid var(--border);
     }
 
-    .webzine-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    /* Carrousels : piste horizontale qui defile, 3 cartes visibles a la fois */
+    .carousel-track {
+      display: flex;
       border: 1px solid var(--border);
       gap: 0;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
+    .carousel-track::-webkit-scrollbar { display: none; }
 
     article.article-card {
       background: var(--card);
+      flex: 0 0 33.3333%;
+      min-width: 0;
+      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       border-right: 1px solid var(--border);
@@ -731,6 +737,30 @@
     }
     article.article-card:last-child { border-right: none; }
     article.article-card:hover { background: #181818; }
+
+    /* Fleches de navigation, partagees par les carrousels webzine et episodes */
+    .carousel { position: relative; }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 58px; height: 58px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(10, 10, 10, 0.7);
+      -webkit-backdrop-filter: blur(3px);
+      backdrop-filter: blur(3px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: var(--white);
+      transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    }
+    /* on chevauche la bordure : moitie dehors sur le fond noir, moitie sur la carte */
+    .carousel-arrow-prev { left: -29px; }
+    .carousel-arrow-next { right: -29px; }
+    .carousel-arrow:hover:not(:disabled) { background: var(--red); border-color: var(--red); }
+    .carousel-arrow:disabled { opacity: 0.28; pointer-events: none; }
+    .carousel-arrow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     .art-link {
       display: flex;
@@ -757,6 +787,25 @@
       padding: 3px 8px;
       border-radius: 1px;
     }
+
+    /* Pastille lecture — cartes qui pointent vers une video */
+    .art-play {
+      position: absolute; inset: 0; margin: auto;
+      width: 54px; height: 54px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: rgba(207,0,0,0.9);
+      border: 1px solid rgba(255,255,255,0.85);
+      pointer-events: none;
+      transition: transform 0.3s ease;
+    }
+    .art-play::before {
+      content: ''; width: 0; height: 0;
+      border-style: solid; border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 3px;
+    }
+    article.article-card:hover .art-play { transform: scale(1.08); }
 
     /* Body */
     .art-body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; border-top: 1px solid var(--border); }
@@ -1257,19 +1306,9 @@
       .concept-grid { grid-template-columns: 1fr; gap: 36px; }
       .concept-paragraphs { grid-template-columns: 1fr; }
 
-      .episodes-grid {
-        grid-template-columns: 1fr 1fr;
-        border: 1px solid var(--border);
-      }
-      .episode-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-      .episode-card:nth-child(2n) { border-right: none; }
-      .episode-card:nth-last-child(-n+2) { border-bottom: none; }
 
-      .webzine-grid { grid-template-columns: 1fr 1fr; }
-      article.article-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-      article.article-card:nth-child(2n) { border-right: none; }
-      article.article-card:nth-child(odd):last-child { border-right: none; }
-      article.article-card:nth-last-child(-n+2) { border-bottom: none; }
+      /* Carrousel : 2 cartes visibles */
+      article.article-card, .episode-card { flex-basis: 50%; }
 
       .artistes-grid { grid-template-columns: 1fr; gap: 36px; }
       .newsletter-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1287,13 +1326,14 @@
       .hero-headline { font-size: clamp(2.8rem, 13vw, 4rem); }
       .hero-actions { flex-direction: column; align-items: flex-start; }
 
-      .episodes-grid { grid-template-columns: 1fr; }
-      .episode-card { border-right: none; border-bottom: 1px solid var(--border); }
-      .episode-card:last-child { border-bottom: none; }
 
-      .webzine-grid { grid-template-columns: 1fr; }
-      article.article-card { border-right: none; border-bottom: 1px solid var(--border); }
-      article.article-card:last-child { border-bottom: none; }
+      /* Carrousel : 1 carte plein cadre */
+      /* Fleches : plus compactes, et moins debordantes (padding mobile plus etroit) */
+      .carousel-arrow { width: 46px; height: 46px; }
+      .carousel-arrow svg { width: 18px; height: 18px; }
+      .carousel-arrow-prev { left: -16px; }
+      .carousel-arrow-next { right: -16px; }
+      article.article-card, .episode-card { flex-basis: 100%; }
 
       .footer-top { flex-direction: column; gap: 28px; }
       .footer-socials { flex-direction: row; justify-content: flex-start; flex-wrap: wrap; }
@@ -1530,8 +1570,8 @@
           <div class="next-event-left">
             <span class="next-event-label">Sur notre radar</span>
             <div>
-              <p class="next-event-name">Family Piknik 2026</p>
-              <p class="next-event-meta">31 Juil. — 2 Août · Pérols, Montpellier</p>
+              <p class="next-event-name">Rampage x Poney Club 2026</p>
+              <p class="next-event-meta">28 Août 2026 · Poney Club, Blagnac — Toulouse</p>
             </div>
           </div>
           <div class="next-event-right">
@@ -1733,77 +1773,141 @@
           </a>
         </div>
 
-        <div class="episodes-grid" role="list">
+        <div class="carousel">
 
-          <!-- EP 004 -->
-          <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-004.html" class="ep-thumb" aria-label="Voir l'épisode 004">
-              <img src="https://img.youtube.com/vi/hm5P3JAXgig/maxresdefault.jpg" alt="Miniature épisode 004 — Klemson" width="1280" height="720" loading="lazy" />
-              <div class="ep-thumb-overlay" aria-hidden="true"></div>
-              <span class="ep-thumb-ep">Ep. 004</span>
-              <div class="ep-thumb-play" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
-              </div>
-            </a>
-            <div class="ep-body">
-              <p class="ep-num">Épisode 004</p>
-              <h3 class="ep-guest">Klemson</h3>
-              <p class="ep-genre">UK Garage / Hard Bounce</p>
-              <div class="ep-foot">
-                <span class="ep-duration">1h11</span>
-                <span class="ep-dot"></span>
-                <span class="ep-date">Mai 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/klemson-pnp-dj-set-episode-004" class="ep-cta" aria-label="Écouter l'épisode 004 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
-              </div>
-            </div>
-          </article>
+          <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Épisodes précédents" aria-controls="episodes-grid">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" /></svg>
+          </button>
 
-          <!-- EP 003 -->
-          <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-003.html" class="ep-thumb" aria-label="Voir l'épisode 003">
-              <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Miniature épisode 003 — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
-              <div class="ep-thumb-overlay" aria-hidden="true"></div>
-              <span class="ep-thumb-ep">Ep. 003</span>
-              <div class="ep-thumb-play" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
-              </div>
-            </a>
-            <div class="ep-body">
-              <p class="ep-num">Épisode 003</p>
-              <h3 class="ep-guest">Ymka (from The Garage)</h3>
-              <p class="ep-genre">Bass House / Speed Garage</p>
-              <div class="ep-foot">
-                <span class="ep-duration">1h11</span>
-                <span class="ep-dot"></span>
-                <span class="ep-date">Avril 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Écouter l'épisode 003 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
-              </div>
-            </div>
-          </article>
+          <div class="episodes-grid carousel-track" id="episodes-grid" role="list" aria-label="Carrousel des derniers épisodes" tabindex="0">
 
-          <!-- EP 002 -->
-          <article class="episode-card" role="listitem">
-            <a href="guest-mixes/ep-002.html" class="ep-thumb" aria-label="Voir l'épisode 002">
-              <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Miniature épisode 002 — Onyx" width="1280" height="720" loading="lazy" />
-              <div class="ep-thumb-overlay" aria-hidden="true"></div>
-              <span class="ep-thumb-ep">Ep. 002</span>
-              <div class="ep-thumb-play" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+            <!-- EP 005 -->
+            <article class="episode-card" role="listitem">
+              <a href="guest-mixes/ep-005.html" class="ep-thumb" aria-label="Voir l'épisode 005 — Nyctipolos (from No Way Project)">
+                <img src="https://img.youtube.com/vi/z7MFPhY8Eh0/maxresdefault.jpg" alt="Miniature épisode 005 — Nyctipolos (from No Way Project)" width="1280" height="720" loading="lazy" />
+                <div class="ep-thumb-overlay" aria-hidden="true"></div>
+                <span class="ep-thumb-ep">Ep. 005</span>
+                <div class="ep-thumb-play" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+                </div>
+              </a>
+              <div class="ep-body">
+                <p class="ep-num">Épisode 005</p>
+                <h3 class="ep-guest">Nyctipolos (from No Way Project)</h3>
+                <p class="ep-genre">Dubstep</p>
+                <div class="ep-foot">
+                  <span class="ep-date">Juin 2026</span>
+                  <a href="https://on.soundcloud.com/Sm1ytnwdQWZ6uf5sP5" class="ep-cta" aria-label="Écouter l'épisode 005 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
+                    Écouter →
+                  </a>
+                </div>
               </div>
-            </a>
-            <div class="ep-body">
-              <p class="ep-num">Épisode 002</p>
-              <h3 class="ep-guest">Onyx</h3>
-              <p class="ep-genre">Liquid / Drum and Bass</p>
-              <div class="ep-foot">
-                <span class="ep-duration">57:48</span>
-                <span class="ep-dot"></span>
-                <span class="ep-date">Mars 2026</span>
-                <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Écouter l'épisode 002 sur SoundCloud" target="_blank" rel="noopener noreferrer"><svg width="22" height="16" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>Écouter →</a>
+            </article>
+            <!-- EP 004 -->
+            <article class="episode-card" role="listitem">
+              <a href="guest-mixes/ep-004.html" class="ep-thumb" aria-label="Voir l'épisode 004 — Klemson">
+                <img src="https://img.youtube.com/vi/hm5P3JAXgig/maxresdefault.jpg" alt="Miniature épisode 004 — Klemson" width="1280" height="720" loading="lazy" />
+                <div class="ep-thumb-overlay" aria-hidden="true"></div>
+                <span class="ep-thumb-ep">Ep. 004</span>
+                <div class="ep-thumb-play" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+                </div>
+              </a>
+              <div class="ep-body">
+                <p class="ep-num">Épisode 004</p>
+                <h3 class="ep-guest">Klemson</h3>
+                <p class="ep-genre">UK Garage / Hard Bounce</p>
+                <div class="ep-foot">
+                  <span class="ep-date">Mai 2026</span>
+                  <a href="https://soundcloud.com/phatandphuriousfm/klemson-pnp-dj-set-episode-004" class="ep-cta" aria-label="Écouter l'épisode 004 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
+                    Écouter →
+                  </a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+            <!-- EP 003 -->
+            <article class="episode-card" role="listitem">
+              <a href="guest-mixes/ep-003.html" class="ep-thumb" aria-label="Voir l'épisode 003 — Ymka (from The Garage)">
+                <img src="https://img.youtube.com/vi/1V7dw6x4z3I/maxresdefault.jpg" alt="Miniature épisode 003 — Ymka (from The Garage)" width="1280" height="720" loading="lazy" />
+                <div class="ep-thumb-overlay" aria-hidden="true"></div>
+                <span class="ep-thumb-ep">Ep. 003</span>
+                <div class="ep-thumb-play" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+                </div>
+              </a>
+              <div class="ep-body">
+                <p class="ep-num">Épisode 003</p>
+                <h3 class="ep-guest">Ymka (from The Garage)</h3>
+                <p class="ep-genre">Bass House / Speed Garage</p>
+                <div class="ep-foot">
+                  <span class="ep-duration">1h11</span>
+                  <span class="ep-dot"></span>
+                  <span class="ep-date">Avril 2026</span>
+                  <a href="https://soundcloud.com/phatandphuriousfm/episode003" class="ep-cta" aria-label="Écouter l'épisode 003 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
+                    Écouter →
+                  </a>
+                </div>
+              </div>
+            </article>
+            <!-- EP 002 -->
+            <article class="episode-card" role="listitem">
+              <a href="guest-mixes/ep-002.html" class="ep-thumb" aria-label="Voir l'épisode 002 — Onyx">
+                <img src="https://img.youtube.com/vi/j1u1AVZNSJ0/maxresdefault.jpg" alt="Miniature épisode 002 — Onyx" width="1280" height="720" loading="lazy" />
+                <div class="ep-thumb-overlay" aria-hidden="true"></div>
+                <span class="ep-thumb-ep">Ep. 002</span>
+                <div class="ep-thumb-play" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+                </div>
+              </a>
+              <div class="ep-body">
+                <p class="ep-num">Épisode 002</p>
+                <h3 class="ep-guest">Onyx</h3>
+                <p class="ep-genre">Liquid / Drum and Bass</p>
+                <div class="ep-foot">
+                  <span class="ep-duration">57:48</span>
+                  <span class="ep-dot"></span>
+                  <span class="ep-date">Mars 2026</span>
+                  <a href="https://soundcloud.com/phatandphuriousfm/pnp-episode-001-w-onyx-1h" class="ep-cta" aria-label="Écouter l'épisode 002 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
+                    Écouter →
+                  </a>
+                </div>
+              </div>
+            </article>
+            <!-- EP 001 -->
+            <article class="episode-card" role="listitem">
+              <a href="guest-mixes/ep-001.html" class="ep-thumb" aria-label="Voir l'épisode 001 — Alcid (from Bash)">
+                <img src="https://img.youtube.com/vi/yPO5NSHOfh8/maxresdefault.jpg" alt="Miniature épisode 001 — Alcid (from Bash)" width="1280" height="720" loading="lazy" />
+                <div class="ep-thumb-overlay" aria-hidden="true"></div>
+                <span class="ep-thumb-ep">Ep. 001</span>
+                <div class="ep-thumb-play" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+                </div>
+              </a>
+              <div class="ep-body">
+                <p class="ep-num">Épisode 001</p>
+                <h3 class="ep-guest">Alcid (from Bash)</h3>
+                <p class="ep-genre">Bass Music &amp; UKG</p>
+                <div class="ep-foot">
+                  <span class="ep-duration">1h06</span>
+                  <span class="ep-dot"></span>
+                  <span class="ep-date">Février 2026</span>
+                  <a href="https://soundcloud.com/phatandphuriousfm/pnp-alcid-episode-001" class="ep-cta" aria-label="Écouter l'épisode 001 sur SoundCloud" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="14" viewBox="0 0 24 18" fill="currentColor" aria-hidden="true" style="flex-shrink:0"><rect x="0" y="11" width="2.5" height="7" rx="1.25"/><rect x="3.5" y="8" width="2.5" height="10" rx="1.25"/><rect x="7" y="5" width="2.5" height="13" rx="1.25"/><rect x="10" y="13" width="13" height="5"/><circle cx="13" cy="10" r="3.5"/><circle cx="17" cy="8" r="5"/><circle cx="21" cy="11" r="3"/></svg>
+                    Écouter →
+                  </a>
+                </div>
+              </div>
+            </article>
 
+          </div>
+
+          <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Épisodes suivants" aria-controls="episodes-grid">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" /></svg>
+          </button>
         </div>
       </div>
     </section>
@@ -1822,28 +1926,213 @@
           <a href="news.html" class="see-all">Tous les articles →</a>
         </div>
 
-        <div class="webzine-grid" id="webzine-grid">
+        <div class="carousel">
 
-          <!-- Article épinglé — Sónar Live Report -->
-          <article class="article-card" data-pinned="true">
-            <a href="news/live-report-sonar-barcelona-2026.html" class="art-link">
-              <div class="art-thumb">
-                <img src="images/nimino-sonarvillage-sonar-2026.webp" alt="Nimino @ SonarVillage — Sónar 2026, Barcelone" loading="lazy" />
-                <span class="art-thumb-tag tag tag-red">Live Report</span>
-              </div>
-              <div class="art-body">
-                <p class="art-meta">25 juin 2026</p>
-                <p class="art-title">Sónar 2026, Barcelone. RIRIA, Nimino, The Prodigy. Le festival nous a fait confiance pour le couvrir.</p>
-                <div class="art-foot">
-                  <span class="art-read">Lire →</span>
+          <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Articles précédents" aria-controls="webzine-grid">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" /></svg>
+          </button>
+
+          <div class="webzine-grid carousel-track" id="webzine-grid" role="region" aria-label="Carrousel des derniers articles" tabindex="0">
+
+            <!-- Articles du webzine, du plus recent au plus ancien -->
+            <article class="article-card">
+              <a href="news/live-report-family-piknik-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/rebekah-hard-stage-family-piknik-2026.webp" alt="Rebekah face à la main room du Hard Stage — Family Piknik 2026, Montpellier" loading="lazy" style="object-position:center 75%;" />
+                  <span class="art-thumb-tag tag tag-red">Live Report</span>
                 </div>
-              </div>
-            </a>
-          </article>
+                <div class="art-body">
+                  <p class="art-meta">11 août 2026 · Montpellier, France</p>
+                  <p class="art-title">Family Piknik 2026, quinze ans à la maison. Deux jours au Parc des Expositions.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
 
-          <!-- Articles 2 & 3 — générés aléatoirement par JS -->
-          <article class="article-card" data-random-slot></article>
-          <article class="article-card" data-random-slot></article>
+            <article class="article-card">
+              <a href="events/sonar-2026-videos-samedi.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/the-prodigy-flames-sonarclub-sonar-2026.webp" alt="The Prodigy au SonarClub — Sónar 2026, Barcelone" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-red">Live Report</span>
+                  <span class="art-play" aria-hidden="true"></span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">27 juillet 2026 · Sónar, Barcelone</p>
+                  <p class="art-title">Sónar 2026 — le zapping vidéo du samedi. nimino, The Prodigy, Dom Dolla, Amélie Lens, filmés de l'intérieur.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="events/sonar-2026-videos.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/riria-sonarlab-rinse-sonar-2026.webp" alt="RIRIA au SonarLab — Sónar 2026, Barcelone" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-red">Live Report</span>
+                  <span class="art-play" aria-hidden="true"></span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">17 juillet 2026 · Sónar, Barcelone</p>
+                  <p class="art-title">Sónar 2026 — le zapping vidéo du vendredi. Skepta, Kelis, Sammy Virji, filmés de l'intérieur.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/plages-electroniques-2026-cannes.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/plages-electroniques-2026-cannes-pe26.webp" alt="Les Plages Électroniques 2026 — la fête les pieds dans le sable, Cannes" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-green">Festival</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">Cannes · 7-9 août 2026</p>
+                  <p class="art-title">Les Plages Électroniques 2026 — DJ Snake, Martin Garrix, Interplanetary Criminal. 20 ans, les pieds dans l'eau.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/family-piknik-2026-montpellier.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/family-festival-2026-parc-expositions-montpellier.webp" alt="Family Festival 2026 — affiche des 15 ans, Montpellier" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-green">Festival</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">Montpellier · 1-2 août 2026</p>
+                  <p class="art-title">Family Piknik 2026 — Armand van Helden, Etienne de Crécy, Blond:ish. 15 ans, à la maison.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/live-report-sonar-barcelona-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/nimino-sonarvillage-sonar-2026.webp" alt="Nimino @ SonarVillage — Sónar 2026, Barcelone" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-red">Live Report</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">25 Juin 2026 · Barcelone, Espagne</p>
+                  <p class="art-title">Sónar 2026, Barcelone. Le festival nous a fait confiance pour le couvrir, on vous raconte tout.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/release-dropout-marsh-what-remains-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/dropout-marsh-what-remains-2026.jpg" alt="Dropout Marsh — fondateur de Contre Jour Records, Montpellier" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-beige">Release</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">13 Juin 2026 · UK Garage / Speed Garage</p>
+                  <p class="art-title">Dropout Marsh — What Remains sort sur Contre Jour Records. Le UK Garage vu depuis Montpellier.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/skrillex-soma-review-juin-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/skrillex-soma-cover-2026.png" alt="Pochette de l'album SOMA de Skrillex — sorti le 5 juin 2026" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-beige">Release</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">5 Juin 2026 · Bass Music / Dubstep</p>
+                  <p class="art-title">Skrillex — SOMA est sorti à minuit. 13 titres, 42 minutes. Voici ce que ça vaut.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/habstrakt-live-trabendo-youtube-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/habstrakt-portrait-2026.png" alt="Habstrakt — portrait 2026" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-red">Live Report</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">Juin 2026 · Le Trabendo, Paris</p>
+                  <p class="art-title">Habstrakt publie son live complet du Trabendo. Asdek aussi. La nuit du 21 mars repasse en boucle.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/skrillex-soma-album-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/skrillex-portrait-2026.png" alt="Skrillex — portrait officiel 2026" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-blue">Découverte</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">Juin 2026 · Bass Music / Dubstep</p>
+                  <p class="art-title">Skrillex annonce SOMA — 13 titres, FEID, ISOxo, Chris Lake. Et le collectif Contra.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/never-say-die-vol-7-skism-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/never-say-die-vol-7-artwork.webp" alt="Never Say Die Vol. 7 — The Final Never Say Die Showcase" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-beige">Release</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">Juin 2026 · Never Say Die Records</p>
+                  <p class="art-title">Never Say Die Vol. 7 — SKisM tire le rideau sur 15 ans de bass music.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <article class="article-card">
+              <a href="news/portrait-dunne-prima-2026.html" class="art-link">
+                <div class="art-thumb">
+                  <img src="images/dunne-brooklyn-portrait.jpg" alt="dunne — Brooklyn, New York" loading="lazy" />
+                  <span class="art-thumb-tag tag tag-blue">Découverte</span>
+                </div>
+                <div class="art-body">
+                  <p class="art-meta">Mai 2026 · Brooklyn, NY</p>
+                  <p class="art-title">dunne — "pretty computer music" depuis Brooklyn. Son dernier release prima est à écouter maintenant.</p>
+                  <div class="art-foot">
+                    <span class="art-read">Lire →</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Articles suivants" aria-controls="webzine-grid">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" /></svg>
+          </button>
 
         </div>
       </div>
@@ -2102,29 +2391,32 @@
     })();
   </script>
   <script>
-    /* Webzine — articles aléatoires (sauf Sónar épinglé) */
+    /* Carrousels (webzine + episodes) — les fleches font defiler d'une page de cartes */
     (function() {
-      const pool = [
-        { href: 'news/skrillex-soma-review-juin-2026.html', img: 'images/skrillex-soma-cover-2026.png', alt: 'Pochette SOMA — Skrillex 2026', tag: 'Release', tagClass: 'tag-beige', meta: '5 juin 2026', title: 'Skrillex — SOMA est sorti à minuit. 13 titres, 42 minutes. Voici ce que ça vaut.' },
-        { href: 'news/skrillex-soma-album-2026.html', img: 'images/skrillex-portrait-2026.png', alt: 'Skrillex — portrait 2026', tag: 'Découverte', tagClass: 'tag-blue', meta: '4 juin 2026', title: 'Skrillex annonce SOMA — 13 titres, FEID, ISOxo, Chris Lake. Et le collectif Contra.' },
-        { href: 'news/habstrakt-live-trabendo-youtube-2026.html', img: 'images/habstrakt-portrait-2026.png', alt: 'Habstrakt — portrait 2026', tag: 'Live Report', tagClass: 'tag-red', meta: 'Juin 2026', title: 'Habstrakt publie son live complet du Trabendo. Asdek aussi. La nuit du 21 mars repasse en boucle.' },
-        { href: 'news/never-say-die-vol-7-skism-2026.html', img: 'images/never-say-die-vol-7-artwork.webp', alt: 'Never Say Die Vol. 7 artwork', tag: 'Release', tagClass: 'tag-beige', meta: 'Juin 2026', title: 'Never Say Die Vol. 7 — SKisM tire le rideau sur 15 ans de bass music.' },
-        { href: 'news/portrait-dunne-prima-2026.html', img: 'images/dunne-brooklyn-portrait.jpg', alt: 'dunne — Brooklyn, New York', tag: 'Découverte', tagClass: 'tag-blue', meta: 'Mai 2026', title: 'dunne — La prima donna du halftime qui vient de Brooklyn et ne demande rien à personne.' },
-        { href: 'news/skrillex-smoke-isoxo-cristale-teezandos-2026.html', img: 'images/skrillex-smoke-2026.jpg', alt: 'Skrillex & ISOxo — Smoke', tag: 'Release', tagClass: 'tag-beige', meta: '1er mai 2026', title: 'Skrillex & ISOxo — Smoke. Attendu depuis 2022, le track tient enfin ses promesses.' },
-        { href: 'news/sammy-virji-alexandra-palace-avril-2026.html', img: 'images/sammy-virji-alexandra-palace-avril-2026.jpg', alt: 'Sammy Virji à l\'Alexandra Palace', tag: 'Live Report', tagClass: 'tag-red', meta: '17 avril 2026', title: 'Sammy Virji à l\'Ally Pally — 10 000 personnes, sold out, et un B2B surprise avec Barry Can\'t Swim' },
-        { href: 'news/habstrakt-lineage-tour-trabendo-mars-2026.html', img: 'images/event-trabendo-habstrakt-mars-2026.jpg', alt: 'Habstrakt Lineage Tour — Le Trabendo', tag: 'Live Report', tagClass: 'tag-red', meta: 'Mars 2026', title: 'Habstrakt Lineage Tour — Un unreleased Elmyx x Jacknife, Tonton Habby dans la place.' },
-        { href: 'news/sammy-virji-phantom-mars-2026.html', img: 'images/event-phantom-sammy-virji-mars-2026.jpg', alt: 'Sammy Virji au Phantom, Paris', tag: 'Live Report', tagClass: 'tag-red', meta: 'Mars 2026', title: 'Sammy Virji au Phantom — Nostalgia joué à la bonne heure, dans la bonne salle. On s\'en souviendra.' }
-      ];
+      document.querySelectorAll('.carousel').forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const prev = carousel.querySelector('.carousel-arrow-prev');
+        const next = carousel.querySelector('.carousel-arrow-next');
+        if (!track || !prev || !next) return;
 
-      for (let i = pool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [pool[i], pool[j]] = [pool[j], pool[i]];
-      }
+        function refresh() {
+          const max = track.scrollWidth - track.clientWidth;
+          prev.disabled = track.scrollLeft <= 2;
+          next.disabled = track.scrollLeft >= max - 2;
+        }
 
-      document.querySelectorAll('[data-random-slot]').forEach((slot, i) => {
-        const a = pool[i];
-        if (!a) return;
-        slot.innerHTML = `<a href="${a.href}" class="art-link"><div class="art-thumb"><img src="${a.img}" alt="${a.alt}" loading="lazy" /><span class="art-thumb-tag tag ${a.tagClass}">${a.tag}</span></div><div class="art-body"><p class="art-meta">${a.meta}</p><p class="art-title">${a.title}</p><div class="art-foot"><span class="art-read">Lire →</span></div></div></a>`;
+        // On defile de la largeur visible : 3 cartes en desktop, 2 en tablette, 1 en mobile
+        prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+        next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+
+        let queued = false;
+        track.addEventListener('scroll', () => {
+          if (queued) return;
+          queued = true;
+          requestAnimationFrame(() => { queued = false; refresh(); });
+        }, { passive: true });
+        window.addEventListener('resize', refresh, { passive: true });
+        refresh();
       });
     })();
 
@@ -2135,9 +2427,9 @@
         '#featured-ep .featured-ep-wrap',
         '#concept .concept-grid',
         '#episodes .section-header',
-        '#episodes .episode-card',
+        '#episodes .carousel',
         '#webzine .section-header',
-        '#webzine .webzine-grid',
+        '#webzine .carousel',
         '#artistes .artistes-grid',
         '#newsletter .newsletter-grid',
       ];
@@ -2145,7 +2437,6 @@
       targets.forEach(sel => {
         document.querySelectorAll(sel).forEach((el, i) => {
           el.classList.add('reveal');
-          if (sel.endsWith('.episode-card')) el.style.transitionDelay = `${i * 0.09}s`;
           els.push(el);
         });
       });
