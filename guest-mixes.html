@@ -179,6 +179,73 @@
 
 
     /* ────────────────────────────────────────────
+       PNP X LE BARRI — serie live
+    ──────────────────────────────────────────── */
+    .barri-section { padding: var(--sec-py) 0; border-bottom: 1px solid var(--border); }
+    .barri-intro {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+    .barri-intro strong { color: var(--white); font-weight: 400; }
+    .barri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      gap: 0;
+    }
+    .ep-thumb-live {
+      position: absolute;
+      top: 14px; left: 14px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--white);
+      background: rgba(207,0,0,0.92);
+      border-radius: 1px;
+      padding: 4px 9px;
+    }
+    .ep-thumb-live::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--white);
+      flex-shrink: 0;
+    }
+    .episode-card.is-soon, .episode-card.is-soon:hover { background: #101010; }
+    .barri-soon-thumb {
+      aspect-ratio: 16 / 9;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(207,0,0,0.10) 0%, transparent 60%),
+        linear-gradient(to bottom, #0e0e0e 0%, #0a0a0a 100%);
+    }
+    .barri-soon-thumb span {
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--red);
+      background: rgba(207,0,0,0.08);
+      border: 1px solid rgba(207,0,0,0.22);
+      border-radius: 1px;
+      padding: 3px 9px;
+    }
+    @media (max-width: 960px) {
+      .barri-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .barri-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ────────────────────────────────────────────
        PHAT AND CURIOUS
     ──────────────────────────────────────────── */
     .pac-section {
@@ -481,6 +548,81 @@
         <p class="page-hero-sub">
           Un artiste. Une heure. Une caméra. L'esthétique empruntée au <strong>cà phê sữa đá</strong>, ce café vietnamien glacé, bu lentement, dense et concentré. <strong>Bass Music, UK Garage, Jungle, Liquid DnB</strong> : des artistes underground filmés dans leur élément, sans compromis de format.
         </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         PNP X LE BARRI — serie live
+         Pour ajouter un set : dupliquer la carte
+         active et remplacer une carte .is-soon.
+    ════════════════════════════════════════ -->
+    <section class="barri-section" id="pnp-x-le-barri" aria-labelledby="barri-title">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <div class="eyebrow"><span>PnP x Le Barri</span></div>
+            <h2 class="section-title" id="barri-title">La soirée, filmée.</h2>
+          </div>
+          <a href="https://www.youtube.com/@PhatAndPhuriousFM" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Tout voir sur YouTube</a>
+        </div>
+
+        <p class="barri-intro">
+          Le <strong>3 octobre 2026</strong>, le format est sorti de la chambre pour une nuit. Tous les DJs passés chez PnP depuis le premier épisode, réunis au <strong>Barri</strong> à Montpellier : six heures de son, un bar plein, six sets filmés. On les publie un par un, et on raconte la journée dans <a href="news/live-report-pnp-x-barri-2026.html" style="color:var(--beige);border-bottom:1px solid rgba(255,239,229,0.3)">notre live report</a>.
+        </p>
+
+        <div class="barri-grid" role="list">
+
+          <!-- PHAT — set de clôture -->
+          <article class="episode-card" role="listitem">
+            <a href="guest-mixes/barri-phat.html" class="ep-thumb" style="aspect-ratio:16/9; position:relative; overflow:hidden;" aria-label="Voir le set de Phat, live au Barri">
+              <img src="https://img.youtube.com/vi/8lSgwD3blJ4/maxresdefault.jpg" alt="Phat en clôture de PnP x Le Barri, Montpellier" width="1280" height="720" loading="lazy" />
+              <div class="ep-thumb-overlay" aria-hidden="true"></div>
+              <span class="ep-thumb-live">Live</span>
+              <div class="ep-thumb-play" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16"><polygon points="4,2 14,8 4,14"/></svg>
+              </div>
+            </a>
+            <div class="ep-body">
+              <p class="ep-num">PnP x Le Barri</p>
+              <h3 class="ep-guest">Phat</h3>
+              <p class="ep-genre">Bass House / Speed Garage / UK Garage</p>
+              <div class="ep-foot">
+                <span class="ep-duration">59:32</span>
+                <span class="ep-dot"></span>
+                <span class="ep-date">3 octobre 2026</span>
+                <a href="https://youtu.be/8lSgwD3blJ4" class="ep-cta" aria-label="Voir le set de Phat sur YouTube" target="_blank" rel="noopener noreferrer">Voir →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROCHAIN SET -->
+          <article class="episode-card is-soon" role="listitem">
+            <div class="barri-soon-thumb" aria-hidden="true"><span>Bientôt</span></div>
+            <div class="ep-body">
+              <p class="ep-num">PnP x Le Barri</p>
+              <h3 class="ep-guest">Prochain set</h3>
+              <p class="ep-genre">Onyx, Klemson, brbr_coeur, Nyctipolos, Ymka : les cinq autres sets de la soirée arrivent.</p>
+              <div class="ep-foot">
+                <span class="ep-date">Dans les prochaines semaines</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROCHAIN SET -->
+          <article class="episode-card is-soon" role="listitem">
+            <div class="barri-soon-thumb" aria-hidden="true"><span>Bientôt</span></div>
+            <div class="ep-body">
+              <p class="ep-num">PnP x Le Barri</p>
+              <h3 class="ep-guest">Prochain set</h3>
+              <p class="ep-genre">Abonne-toi à la chaîne pour ne pas rater les suivants.</p>
+              <div class="ep-foot">
+                <a href="https://www.youtube.com/@PhatAndPhuriousFM?sub_confirmation=1" class="ep-cta" style="margin-left:0" target="_blank" rel="noopener noreferrer">S'abonner →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 

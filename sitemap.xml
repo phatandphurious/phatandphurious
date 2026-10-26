@@ -5,16 +5,23 @@
 
   <url>
     <loc>https://phatandphurious.com/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://phatandphurious.com/guest-mixes.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/guest-mixes/barri-phat.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -68,7 +75,7 @@
 
   <url>
     <loc>https://phatandphurious.com/news.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -179,6 +186,13 @@
   </url>
 
   <url>
+    <loc>https://phatandphurious.com/news/live-report-pnp-x-barri-2026.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://phatandphurious.com/news/live-report-family-piknik-2026.html</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>never</changefreq>
@@ -244,16 +258,23 @@
 
   <url>
     <loc>https://phatandphurious.com/en/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://phatandphurious.com/en/guest-mixes.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/en/guest-mixes/barri-phat.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 
   <url>
@@ -307,7 +328,7 @@
 
   <url>
     <loc>https://phatandphurious.com/en/news.html</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -413,6 +434,13 @@
   <url>
     <loc>https://phatandphurious.com/en/news/worried-about-henry-drumsheds-londres-2026.html</loc>
     <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://phatandphurious.com/en/news/live-report-pnp-x-barri-2026.html</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
